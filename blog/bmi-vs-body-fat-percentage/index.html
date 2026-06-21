@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>BMI vs Body Fat Percentage: What's the Real Difference? | NexAlc</title>
+  <meta name="description" content="BMI and body fat percentage measure different things. Learn when BMI misleads, when body fat percentage matters more, and how to use both numbers together for a complete picture." />
+  <meta name="keywords" content="bmi vs body fat percentage, body fat index, bmi limitations, bmi formula, bmi vs body fat, is bmi accurate, body fat percentage calculator" />
+  <link rel="canonical" href="https://nexalc.com/blog/bmi-vs-body-fat-percentage/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="BMI vs Body Fat Percentage: What's the Real Difference?" />
+  <meta property="og:description" content="BMI and body fat percentage are not the same thing. Here's when each measurement matters — and when BMI actively misleads." />
+  <meta property="og:url" content="https://nexalc.com/blog/bmi-vs-body-fat-percentage/" />
+  <meta property="og:site_name" content="NexAlc" />
+  <meta property="og:image" content="https://nexalc.com/assets/og-bmi-calculator.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BMI vs Body Fat Percentage: What's the Real Difference?" />
+  <meta name="twitter:description" content="When BMI misleads and when body fat percentage matters more — a clear side-by-side comparison." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-bmi-calculator.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BMI vs Body Fat Percentage: What's the Real Difference?",
+    "description": "A clear comparison of BMI and body fat percentage: how each is calculated, what each measures, when BMI is misleading, and how to use both numbers together for a complete health picture.",
+    "url": "https://nexalc.com/blog/bmi-vs-body-fat-percentage/",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "publisher": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nexalc.com/blog/bmi-vs-body-fat-percentage/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nexalc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "BMI vs Body Fat Percentage", "item": "https://nexalc.com/blog/bmi-vs-body-fat-percentage/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BMI the same as body fat percentage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. BMI (Body Mass Index) is a ratio of weight to height squared — it does not measure fat directly. Body fat percentage is the proportion of your total weight that is fat mass. Two people with the same BMI can have very different body fat percentages depending on muscle mass, bone density, and fat distribution." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BMI or body fat percentage more accurate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Body fat percentage is a more direct measure of body composition than BMI. However, accurate body fat measurement requires tools like DEXA scans, hydrostatic weighing, or BodPod — none of which are accessible for everyday use. BMI is a free, instant calculation that works well as a population-level screening tool despite its individual-level limitations. For most people, both metrics together give a more complete picture than either alone." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a healthy body fat percentage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Healthy body fat ranges differ by sex. For men, 10–20% body fat is generally considered fit to healthy, with 20–25% in the acceptable range. For women, 18–28% is the healthy range, with 28–33% acceptable. Athletes typically fall below these ranges. Above 25% for men and 33% for women is generally classified as obese body composition." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you have a normal BMI but high body fat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. This condition is sometimes called 'normal weight obesity' or 'skinny fat.' It occurs when a person has a BMI in the normal range (18.5–24.9) but carries excess body fat relative to muscle mass. It is more common in sedentary individuals, older adults who have lost muscle, and people with low total body weight but poor body composition. It carries similar metabolic risks to traditional obesity despite a normal BMI." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #E55A1C;
+      --orange-glow: rgba(255,107,43,0.15);
+      --near-black: #0E0E0F;
+      --surface: #161618;
+      --surface-2: #1E1E21;
+      --surface-3: #252528;
+      --border: rgba(255,255,255,0.07);
+      --border-active: rgba(255,107,43,0.4);
+      --warm-white: #F5F0EB;
+      --text-primary: #F0EDE8;
+      --text-secondary: #9A9592;
+      --text-muted: #5A5755;
+      --green: #2ECC71;
+      --yellow: #F1C40F;
+      --red: #E74C3C;
+      --blue: #3498DB;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav.nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: 5px 10px; border-radius: 8px; transition: color .22s cubic-bezier(.4,0,.2,1), background .22s cubic-bezier(.4,0,.2,1); white-space: nowrap; }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after { content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .22s cubic-bezier(.4,0,.2,1); opacity: .6; }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 190px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 6px 6px; opacity: 0; pointer-events: none; transform: translateY(6px); transition: opacity .22s cubic-bezier(.4,0,.2,1), transform .22s cubic-bezier(.4,0,.2,1); z-index: 200; }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a { display: block; padding: 8px 12px; border-radius: 8px; font-size: .82rem; color: var(--text-secondary); white-space: nowrap; background: none; }
+    .nav-dropdown a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links > a:hover { color: var(--orange); }
+
+    .ad-zone-a { width: 100%; display: flex; justify-content: center; padding: 10px 0; background: var(--surface); border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+    .ad-placeholder { background: var(--surface-2); border: 1px dashed var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ad-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-rectangle { width: 336px; max-width: 100%; height: 280px; }
+
+    .hero { position: relative; z-index: 1; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 40px) clamp(32px, 4vw, 48px); max-width: 1280px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--orange-glow); border: 1px solid var(--border-active); border-radius: 100px; padding: 4px 12px; font-size: 0.72rem; font-weight: 600; color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--warm-white); margin-bottom: 14px; }
+    h1 em { font-style: normal; color: var(--orange); }
+    .hero-sub { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--text-secondary); max-width: 640px; line-height: 1.65; }
+    .hero-meta { display: flex; align-items: center; gap: 16px; margin-top: 20px; font-size: 0.78rem; color: var(--text-muted); }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .main-layout { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; }
+
+    .article-body { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(24px, 4vw, 48px); }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--warm-white); letter-spacing: -0.02em; margin: 36px 0 12px; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 28px 0 10px; }
+    .article-body p { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+    .article-body p strong { color: var(--text-primary); font-weight: 600; }
+    .article-body a { color: var(--orange); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+
+    /* ── HEAD-TO-HEAD COMPARE ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .compare-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .compare-card-head {
+      padding: 14px 18px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      background: var(--surface-3);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .compare-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .compare-dot.orange { background: var(--orange); }
+    .compare-dot.green { background: var(--green); }
+
+    .compare-rows { padding: 4px 0; }
+
+    .compare-row {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-row:last-child { border-bottom: none; }
+
+    .compare-row-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .compare-row-val {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .compare-row-val strong { color: var(--text-primary); }
+
+    /* ── BODY FAT TABLE ── */
+    .comparison-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .comparison-table thead tr { background: var(--surface-2); }
+    .comparison-table th { padding: 11px 14px; text-align: left; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .comparison-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: var(--surface-2); }
+    .comparison-table .col-cat { color: var(--text-primary); font-weight: 600; }
+    .t-green { color: var(--green); font-weight: 600; }
+    .t-yellow { color: var(--yellow); font-weight: 600; }
+    .t-orange { color: var(--orange); font-weight: 600; }
+    .t-red { color: var(--red); font-weight: 600; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+    .highlight-box strong { color: var(--text-primary); }
+    .highlight-box.green-accent { border-left-color: var(--green); }
+    .highlight-box.red-accent { border-left-color: var(--red); }
+
+    /* ── SCENARIO CARDS ── */
+    .scenario-list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+
+    .scenario-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .scenario-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: var(--orange-glow);
+      border: 1px solid var(--border-active);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .scenario-body { flex: 1; }
+    .scenario-title { font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+    .scenario-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    .scenario-desc strong { color: var(--text-primary); }
+
+    /* ── CTA ── */
+    .cta-block { background: var(--surface-2); border: 1px solid var(--border-active); border-radius: var(--radius-lg); padding: 24px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cta-text h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--warm-white); margin: 0 0 4px; }
+    .cta-text p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff !important; font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background 0.2s, transform 0.15s; }
+    .cta-btn:hover { background: var(--orange-dim); color: #fff !important; transform: translateY(-1px); }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .faq-section h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--warm-white); margin-bottom: 20px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
+    .faq-question { padding: 14px 18px; font-size: 0.92rem; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; transition: background 0.2s; }
+    .faq-question:hover { background: var(--surface-2); }
+    .faq-question.open { background: var(--surface-2); color: var(--orange); }
+    .faq-chevron { flex-shrink: 0; color: var(--text-muted); transition: transform 0.25s; }
+    .faq-question.open .faq-chevron { transform: rotate(180deg); color: var(--orange); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; padding: 0 18px; }
+    .faq-answer.visible { max-height: 320px; padding: 14px 18px; border-top: 1px solid var(--border); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .sidebar-card-header { padding: 12px 18px; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    .related-tool-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .related-tool-item:last-child { border-bottom: none; }
+    .related-tool-item:hover { background: var(--surface-2); }
+    .related-tool-name { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); }
+    .related-tool-tag { font-size: 0.68rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
+    .related-tool-tag.hot { background: var(--orange-glow); color: var(--orange); border-color: var(--border-active); }
+    .article-link-item { display: block; padding: 12px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .article-link-item:last-child { border-bottom: none; }
+    .article-link-item:hover { background: var(--surface-2); }
+    .article-link-title { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 4px; }
+    .article-link-meta { font-size: 0.72rem; color: var(--text-muted); }
+    .ad-zone-sidebar { display: flex; justify-content: center; }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 32px clamp(16px, 4vw, 40px); text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .cta-block { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logo.png" alt="NexAlc" style="height:36px;width:auto;display:block;mix-blend-mode:lighten;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+      <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/mortgage-calculator/">Finance Tools</a>
+        <div class="nav-dropdown">
+          <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+          <a href="/currency-converter/">💱 Currency Converter</a>
+          <a href="/tip-calculator/">🧾 Tip Calculator</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/bmi-calculator/" class="active">Health Tools</a>
+        <div class="nav-dropdown">
+          <a href="/bmi-calculator/" class="active">⚖️ BMI Calculator</a>
+          <a href="/age-calculator/">🎂 Age Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/countdown-timer/">Utility Tools</a>
+        <div class="nav-dropdown">
+          <a href="/countdown-timer/">⏳ Countdown Timer</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <!-- AD ZONE A -->
+  <div class="ad-zone-a">
+    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>BMI vs Body Fat Percentage</span>
+    </nav>
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Health Guide
+    </div>
+    <h1>BMI vs <em>Body Fat</em><br>Percentage</h1>
+    <p class="hero-sub">They sound like the same thing but measure completely different aspects of your body. Here's when each number matters — and when BMI actively gives you the wrong picture.</p>
+    <div class="hero-meta">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        6 min read
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Updated June 2026
+      </span>
+      <span>By NexAlc</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <article class="article-body">
+
+      <p>BMI and body fat percentage are both used to assess whether someone is at a healthy weight — but they measure fundamentally different things, and their weaknesses don't overlap. Understanding the difference tells you when to trust each number and when to look further.</p>
+
+      <h2>What Each Measurement Actually Calculates</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card">
+          <div class="compare-card-head">
+            <span class="compare-dot orange"></span>
+            BMI (Body Mass Index)
+          </div>
+          <div class="compare-rows">
+            <div class="compare-row">
+              <div class="compare-row-label">Formula</div>
+              <div class="compare-row-val"><strong>Weight (kg) ÷ Height (m²)</strong><br>or (lbs × 703) ÷ inches²</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">What it measures</div>
+              <div class="compare-row-val">Ratio of weight to height — a proxy for body size, not fat content</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">How to get it</div>
+              <div class="compare-row-val">Free, instant — just height and weight</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">Accuracy</div>
+              <div class="compare-row-val">Good population-level screening tool; unreliable for individuals with high muscle mass</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">Best for</div>
+              <div class="compare-row-val">First-pass health screening, tracking weight trends over time</div>
+            </div>
+          </div>
+        </div>
+        <div class="compare-card">
+          <div class="compare-card-head">
+            <span class="compare-dot green"></span>
+            Body Fat Percentage
+          </div>
+          <div class="compare-rows">
+            <div class="compare-row">
+              <div class="compare-row-label">Formula</div>
+              <div class="compare-row-val"><strong>Fat mass ÷ Total body weight × 100</strong><br>Various estimation methods exist</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">What it measures</div>
+              <div class="compare-row-val">Actual proportion of your body that is fat tissue</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">How to get it</div>
+              <div class="compare-row-val">DEXA scan, skinfold calipers, BIA scale, hydrostatic weighing</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">Accuracy</div>
+              <div class="compare-row-val">More precise than BMI; accuracy varies significantly by measurement method</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-row-label">Best for</div>
+              <div class="compare-row-val">Athletes, fitness tracking, cases where BMI misclassifies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Healthy Body Fat Percentage Ranges</h2>
+
+      <p>Unlike BMI, which uses the same thresholds for men and women, body fat percentage healthy ranges differ significantly by sex. Women carry more essential fat due to hormonal and reproductive physiology — this is normal and healthy, not excess.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Men</th>
+              <th>Women</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-cat">Essential Fat</td>
+              <td class="t-blue" style="color:var(--blue);font-weight:600;">2–5%</td>
+              <td class="t-blue" style="color:var(--blue);font-weight:600;">10–13%</td>
+              <td>Minimum required for basic physiological function</td>
+            </tr>
+            <tr>
+              <td class="col-cat">Athletic</td>
+              <td class="t-green">6–13%</td>
+              <td class="t-green">14–20%</td>
+              <td>Typical range for competitive athletes</td>
+            </tr>
+            <tr>
+              <td class="col-cat">Fit / Healthy</td>
+              <td class="t-green">14–17%</td>
+              <td class="t-green">21–24%</td>
+              <td>Good fitness level, low metabolic risk</td>
+            </tr>
+            <tr>
+              <td class="col-cat">Acceptable</td>
+              <td class="t-yellow">18–24%</td>
+              <td class="t-yellow">25–31%</td>
+              <td>Average for general population; some elevated risk</td>
+            </tr>
+            <tr>
+              <td class="col-cat">Obese</td>
+              <td class="t-red">25% and above</td>
+              <td class="t-red">32% and above</td>
+              <td>Elevated risk for metabolic disease, cardiovascular issues</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>When BMI Gets It Wrong</h2>
+
+      <p>BMI's core limitation is that it cannot distinguish between fat mass and lean mass. A kilogram of muscle and a kilogram of fat weigh the same — BMI treats them identically. This creates predictable failure cases.</p>
+
+      <div class="scenario-list">
+        <div class="scenario-card">
+          <div class="scenario-icon">💪</div>
+          <div class="scenario-body">
+            <div class="scenario-title">Muscular athletes classified as overweight</div>
+            <div class="scenario-desc">A 180 cm male weighing 90 kg has a BMI of 27.8 — technically "overweight." If that weight is mostly muscle, his body fat percentage may be <strong>10–14%</strong>, firmly in the athletic range. NFL players, bodybuilders, and serious weightlifters routinely hit BMI 28–32 despite single-digit body fat.</div>
+          </div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">⚠️</div>
+          <div class="scenario-body">
+            <div class="scenario-title">Normal weight obesity ("skinny fat")</div>
+            <div class="scenario-desc">A sedentary person can have a BMI of 22 — firmly "normal" — while carrying <strong>30%+ body fat</strong> due to low muscle mass. This condition carries similar metabolic risks to clinical obesity: elevated triglycerides, insulin resistance, and higher cardiovascular risk, all hidden behind a reassuring BMI number.</div>
+          </div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">👴</div>
+          <div class="scenario-body">
+            <div class="scenario-title">Older adults losing muscle silently</div>
+            <div class="scenario-desc">As covered in our <a href="/blog/healthy-bmi-by-age/">BMI by age guide</a>, sarcopenia causes adults to lose muscle and replace it with fat without significant weight change. A 65-year-old at BMI 23 may have a <strong>much higher body fat percentage</strong> than a 30-year-old at the same BMI — BMI misses this completely.</div>
+          </div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">🌍</div>
+          <div class="scenario-body">
+            <div class="scenario-title">Ethnicity and BMI thresholds</div>
+            <div class="scenario-desc">Research shows that South Asian, East Asian, and some other populations carry higher body fat at the same BMI compared to European populations. The WHO has proposed lower action thresholds (BMI 23 for overweight, 27.5 for obese) for Asian populations — a recognition that the standard chart can <strong>underestimate risk</strong> in certain groups.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>When BMI Is Good Enough</h2>
+
+      <p>Despite its limitations, BMI remains useful — and not just as a historical relic. For the majority of sedentary or moderately active adults who aren't athletes or elderly, BMI correlates reasonably well with body fat percentage at the population level.</p>
+
+      <div class="highlight-box green-accent">
+        <strong>BMI works well when:</strong> you are not highly muscular, you are between 20–55 years old, you want a free and instant screening metric, you are tracking weight trends over months or years, or a healthcare provider needs a quick baseline. In these cases, BMI is a practical and accurate-enough tool.
+      </div>
+
+      <h2>Using Both Together</h2>
+
+      <p>The most complete picture comes from using BMI and body fat percentage as complementary signals rather than competitors. BMI is your free, always-available baseline. Body fat percentage — measured by a DEXA scan, reliable BIA scale, or skinfold calipers — adds the composition layer BMI cannot provide.</p>
+
+      <p>A practical approach: check BMI regularly as a trend tracker. If your BMI is in range and you are regularly strength training, you are likely in good compositional health. If your BMI is in range but you are sedentary and notice increasing waist circumference, that's the signal to investigate body fat percentage more carefully — you may be in the normal weight obesity category that BMI alone would miss.</p>
+
+      <div class="highlight-box red-accent">
+        <strong>Waist circumference matters too:</strong> Neither BMI nor body fat percentage captures where fat is stored — and location matters enormously. Visceral fat around the abdomen (waist circumference above 94 cm for men, 80 cm for women) is independently associated with cardiovascular and metabolic risk, regardless of what your BMI or total body fat percentage shows.
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Calculate your BMI and body fat estimate</h3>
+          <p>The NexAlc BMI calculator includes a body fat percentage estimate alongside your BMI category and ideal weight range.</p>
+        </div>
+        <a href="/bmi-calculator/" class="cta-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2.5" stroke="white" stroke-width="1.4"/><path d="M4.5 7h5M7 4.5v5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Open BMI Calculator
+        </a>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is BMI the same as body fat percentage?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">No. BMI is a ratio of weight to height squared — it does not measure fat directly. Body fat percentage is the proportion of your total weight that is fat mass. Two people with the same BMI can have very different body fat percentages depending on muscle mass, bone density, and fat distribution.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is BMI or body fat percentage more accurate?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Body fat percentage is a more direct measure of body composition than BMI. However, accurate body fat measurement requires tools like DEXA scans, hydrostatic weighing, or BodPod — none of which are accessible for everyday use. BMI is a free, instant calculation that works well as a population-level screening tool despite its individual-level limitations. For most people, both metrics together give a more complete picture than either alone.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is a healthy body fat percentage?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Healthy body fat ranges differ by sex. For men, 14–17% body fat is the fit range, with 18–24% acceptable. For women, 21–24% is the fit range, with 25–31% acceptable. Athletes typically fall below these ranges. Above 25% for men and 32% for women is generally classified as obese body composition.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can you have a normal BMI but high body fat?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Yes. This condition is sometimes called "normal weight obesity" or "skinny fat." It occurs when a person has a BMI in the normal range (18.5–24.9) but carries excess body fat relative to muscle mass. It is more common in sedentary individuals, older adults who have lost muscle, and people with low total body weight but poor body composition. It carries similar metabolic risks to traditional obesity despite a normal BMI.</div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Calculator</div>
+        <a class="related-tool-item" href="/bmi-calculator/">
+          <span class="related-tool-name">BMI Calculator</span>
+          <span class="related-tool-tag hot">Try It</span>
+        </a>
+        <a class="related-tool-item" href="/mortgage-calculator/">
+          <span class="related-tool-name">Mortgage Calculator</span>
+          <span class="related-tool-tag">Finance</span>
+        </a>
+        <a class="related-tool-item" href="/age-calculator/">
+          <span class="related-tool-name">Age Calculator</span>
+          <span class="related-tool-tag">Utility</span>
+        </a>
+        <a class="related-tool-item" href="/percentage-calculator/">
+          <span class="related-tool-name">Percentage Calculator</span>
+          <span class="related-tool-tag">Math</span>
+        </a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Related Articles</div>
+        <a class="article-link-item" href="/blog/healthy-bmi-by-age/">
+          <div class="article-link-title">Healthy BMI by Age: What the Numbers Mean</div>
+          <div class="article-link-meta">Health · 7 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/bmi-chart-for-women/">
+          <div class="article-link-title">BMI Chart for Women: How to Interpret Your Result</div>
+          <div class="article-link-meta">Health · 5 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/15-vs-30-year-mortgage/">
+          <div class="article-link-title">15-Year vs 30-Year Mortgage: Which Saves You More?</div>
+          <div class="article-link-meta">Mortgage · 8 min read</div>
+        </a>
+      </div>
+
+      <div class="ad-zone-sidebar">
+        <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="/">NexAlc</a> · <a href="/blog/">Blog</a> · <a href="/bmi-calculator/">BMI Calculator</a> · For informational purposes only. Not medical advice.</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+      const answer = el.nextElementSibling;
+      answer.classList.toggle('visible');
+    }
+  </script>
+
+</body>
+</html>

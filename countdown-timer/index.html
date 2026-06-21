@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown Timer with Seconds - Count Down to Any Date | NexAlc</title>
+  <meta name="description" content="Free online countdown timer with seconds. Count down to any future date — birthdays, launches, New Year's Eve, and personal milestones. Live days, hours, minutes, and seconds." />
+
+  <!-- ─── SEO ─────────────────────────────────────────────── -->
+  <link rel="canonical" href="https://nexalc.com/countdown-timer/" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://nexalc.com/countdown-timer/" />
+  <link rel="alternate" hreflang="x-default" href="https://nexalc.com/countdown-timer/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nexalc.com/countdown-timer/" />
+  <meta property="og:title" content="Countdown Timer with Seconds — Count Down to Any Date | NexAlc" />
+  <meta property="og:description" content="Set a countdown to any future date and time. See live days, hours, minutes, and seconds tick down." />
+  <meta property="og:image" content="https://nexalc.com/assets/og-countdown-timer.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Countdown Timer | NexAlc" />
+  <meta name="twitter:description" content="Count down to birthdays, events, launches, and holidays in real time." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-countdown-timer.png" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- ─── Schema ────────────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Countdown Timer with Seconds",
+    "url": "https://nexalc.com/countdown-timer/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online countdown timer with seconds. Count down to any future date and time — birthdays, product launches, New Year's Eve, and personal milestones. Displays live days, hours, minutes, and seconds.",
+    "featureList": ["Live days, hours, minutes, and seconds display", "Quick-event presets for holidays and milestones", "Shareable countdown links", "Full-screen presentation mode", "Browser local storage persistence"],
+    "provider": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Countdown Timer with Seconds — Count Down to Any Date & Time | NexAlc",
+    "url": "https://nexalc.com/countdown-timer/",
+    "dateModified": "2026-06-01",
+    "description": "Free online countdown timer with seconds. Count down to any date — birthdays, launches, holidays, and personal milestones.",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-sub", ".content-section p", ".faq-a"]
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the countdown timer calculate time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It subtracts the current timestamp from your target timestamp in milliseconds, then converts that difference into days, hours, minutes, and seconds. The display updates every second using your device's system clock." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the timer keep running if I leave the page?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The target date is saved in your browser's local storage. When you return, the countdown will recalculate based on the current time — so it accurately reflects how much time is left, even after the tab is closed." }
+        },
+        {
+          "@type": "Question",
+          "name": "What time zone does the countdown use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The countdown uses your device's local time zone. If you're coordinating across time zones, enter the target time converted to your local time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I share my countdown with someone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — use the Copy Link button to copy a URL with the target date and event name encoded as parameters. Anyone who opens the link will see the same countdown running in their browser." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when the countdown hits zero?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The timer stops and displays a celebration message. If your device sound is on and the page is in focus, a brief audio tone plays to mark the moment." }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in the future can I set a countdown?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There's no enforced limit — you could technically set a countdown decades away. The days counter will expand to display any number of digits needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this as a 1 minute timer or short interval countdown?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set the target date and time to one minute from now for a quick 1 minute timer, or any other short interval. The seconds display will count down in real time." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from the Google timer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google's built-in timer is ideal for short kitchen-style intervals. This countdown timer is designed for counting down to a specific calendar date and time — days, weeks, or months in the future — making it better for events, milestones, and deadlines." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this countdown timer work on mobile?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The timer is fully responsive and works on all modern smartphones and tablets without any app download required." }
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Countdown Timer", "item": "https://nexalc.com/countdown-timer/" }
+    ]
+  }
+  </script>
+
+  <!-- ─── Fonts ─────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       TOKENS
+    ═══════════════════════════════════════════ */
+    :root {
+      --orange:     #FF6B2B;
+      --orange-dim: #cc5522;
+      --near-black: #0E0E0F;
+      --warm-white: #F5F0EB;
+      --surface:    #161617;
+      --surface2:   #1e1e1f;
+      --surface3:   #252526;
+      --border:     rgba(255,255,255,.07);
+      --text-main:  #F0EBE4;
+      --text-muted: #8a8480;
+      --radius:     14px;
+      --radius-sm:  8px;
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Grid overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,107,43,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+    .nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      font-size: .8rem; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; padding: 5px 10px; border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition); white-space: nowrap;
+    }
+    .nav-links a:hover  { color:var(--text-primary); background:rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+
+    /* DROPDOWN */
+    .nav-item{position:relative}
+    .nav-item>a{display:flex;align-items:center;gap:5px}
+    .nav-item>a::after{
+      content:'';
+      display:inline-block;
+      width:6px;height:6px;
+      border-right:1.5px solid currentColor;
+      border-bottom:1.5px solid currentColor;
+      transform:rotate(45deg) translateY(-2px);
+      transition:transform var(--transition);
+      opacity:.6;
+    }
+    .nav-item:hover>a{color:var(--orange)}
+    .nav-item:hover>a::after{transform:rotate(-135deg) translateY(-2px)}
+    .nav-dropdown{
+      position:absolute;
+      top:100%;
+      left:0;
+      padding-top:8px;
+      min-width:190px;
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:8px 6px 6px;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(6px);
+      transition:opacity var(--transition),transform var(--transition);
+      z-index:200;
+    }
+    .nav-item:hover .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .nav-dropdown a{
+      display:block;
+      padding:8px 12px;
+      border-radius:var(--radius-sm);
+      font-size:.82rem;
+      color:var(--text-muted);
+      white-space:nowrap;
+      background:none;
+    }
+    .nav-dropdown a:hover{color:var(--text-primary);background:rgba(255,255,255,.06)}
+    .nav-links>a:hover{color:var(--orange)}
+
+    /* ─── AD A ─── */
+    .ad-a {
+      width: 100%; max-width: 728px; height: 90px; margin: 0 auto;
+      background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; color: var(--text-muted); letter-spacing: .05em;
+      position: relative; z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       PAGE LAYOUT
+    ═══════════════════════════════════════════ */
+    .page-wrap {
+      position: relative; z-index: 1;
+      max-width: 1180px; margin: 0 auto;
+      padding: 48px clamp(16px, 4vw, 40px) 80px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      grid-column: 1 / -1;
+      animation: fadeUp .5s ease both;
+    }
+    .hero-eyebrow {
+      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--orange); font-weight: 600; margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1; color: var(--warm-white); margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero-sub { font-size: 1rem; color: var(--text-muted); max-width: 520px; line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════
+       MAIN COLUMN
+    ═══════════════════════════════════════════ */
+    .main-col { display: flex; flex-direction: column; gap: 24px; }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      animation: fadeUp .5s ease both;
+    }
+    .card:nth-child(2) { animation-delay: .08s; }
+    .card:nth-child(3) { animation-delay: .16s; }
+    .card-title {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
+      color: var(--warm-white); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-title svg { color: var(--orange); flex-shrink: 0; }
+
+    /* ─── Inputs ─── */
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block; font-size: .78rem; font-weight: 500;
+      color: var(--text-muted); margin-bottom: 6px; letter-spacing: .03em;
+    }
+    input[type="text"], input[type="datetime-local"] {
+      width: 100%; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      color: var(--text-main); font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; padding: 11px 14px;
+      outline: none; transition: border-color var(--transition), box-shadow var(--transition);
+      color-scheme: dark;
+    }
+    input[type="text"]:focus, input[type="datetime-local"]:focus {
+      border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,107,43,.15);
+    }
+
+    /* ─── Quick events ─── */
+    .quick-events {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .quick-btn {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 10px 14px;
+      cursor: pointer; text-align: left; transition: all var(--transition);
+    }
+    .quick-btn:hover { border-color: var(--orange); background: rgba(255,107,43,.06); }
+    .quick-btn .qb-name { font-size: .82rem; font-weight: 500; color: var(--text-main); }
+    .quick-btn .qb-date { font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ─── CTA button ─── */
+    .btn-start {
+      width: 100%; padding: 14px; border-radius: var(--radius-sm);
+      background: var(--orange); border: none; color: #fff;
+      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background var(--transition), transform var(--transition);
+      margin-top: 4px; letter-spacing: .02em;
+    }
+    .btn-start:hover { background: var(--orange-dim); transform: translateY(-1px); }
+    .btn-start:active { transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════
+       COUNTDOWN DISPLAY
+    ═══════════════════════════════════════════ */
+    .countdown-display {
+      text-align: center; padding: 36px 20px;
+    }
+
+    /* Event title */
+    .cd-event-name {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--warm-white); margin-bottom: 6px;
+    }
+    .cd-event-date {
+      font-size: .82rem; color: var(--text-muted); margin-bottom: 32px;
+    }
+
+    /* Flip blocks */
+    .cd-blocks {
+      display: flex; justify-content: center; gap: clamp(8px, 2vw, 20px);
+      flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .cd-block {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .cd-num-wrap {
+      position: relative; width: clamp(72px, 14vw, 100px); height: clamp(80px, 15vw, 108px);
+      perspective: 400px;
+    }
+    .cd-num {
+      width: 100%; height: 100%;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: var(--warm-white);
+      transition: color .1s;
+      position: relative; overflow: hidden;
+    }
+    .cd-num::after {
+      content: '';
+      position: absolute; left: 0; right: 0; top: 50%;
+      height: 1px; background: rgba(0,0,0,.35);
+    }
+    .cd-num.tick {
+      animation: flipTick .28s ease;
+    }
+    .cd-label {
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--text-muted); margin-top: 10px; font-weight: 500;
+    }
+
+    /* Progress arc — days only */
+    .cd-progress {
+      margin: 0 auto 20px;
+      width: clamp(100px, 18vw, 130px);
+      height: clamp(50px, 9vw, 65px);
+      position: relative;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .cd-progress svg { position: absolute; top: 0; left: 0; width: 100%; height: 200%; overflow: visible; }
+
+    /* Percent label */
+    .cd-pct {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: .85rem;
+      color: var(--orange); position: relative; z-index: 1;
+      margin-bottom: 4px;
+    }
+
+    /* Expired state */
+    .cd-expired {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.4rem, 4vw, 2rem); color: var(--orange);
+      padding: 28px 0; display: none;
+    }
+
+    /* Actions row */
+    .cd-actions {
+      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    }
+    .cd-btn {
+      padding: 9px 20px; border-radius: var(--radius-sm); font-size: .82rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer;
+      transition: all var(--transition);
+    }
+    .cd-btn-outline {
+      background: none; border: 1px solid var(--border); color: var(--text-muted);
+    }
+    .cd-btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+    .cd-btn-filled {
+      background: rgba(255,107,43,.12); border: 1px solid rgba(255,107,43,.3);
+      color: var(--orange);
+    }
+    .cd-btn-filled:hover { background: rgba(255,107,43,.22); }
+
+    /* ─── Empty state ─── */
+    .cd-idle {
+      text-align: center; padding: 36px 20px;
+      color: var(--text-muted); font-size: .88rem;
+    }
+    .cd-idle svg { margin: 0 auto 14px; display: block; opacity: .25; }
+    .cd-idle p { line-height: 1.6; }
+
+    /* ─── AD B ─── */
+    .ad-b {
+      width: 100%; height: 250px; max-width: 336px;
+      background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.06);
+      border-radius: var(--radius-sm); margin: 4px auto 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; color: var(--text-muted); letter-spacing: .05em;
+    }
+
+    /* ═══════════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════════ */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      animation: fadeUp .6s ease both;
+    }
+    .sidebar-card-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .related-tool-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+      cursor: pointer;
+    }
+    .related-tool-item:last-child { border-bottom: none; }
+    .related-tool-item:hover { background: var(--surface-2); }
+    .related-tool-name {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+    .related-tool-tag {
+      font-size: .68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      color: var(--text-muted);
+      background: var(--surface3);
+    }
+    .related-tool-tag.hot {
+      color: var(--orange);
+      background: rgba(255,107,43,.12);
+    }
+
+    /* Upcoming events sidebar list */
+    .upcoming-list { display: flex; flex-direction: column; gap: 6px; padding: 14px; }
+    .upcoming-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 12px; border-radius: var(--radius-sm);
+      background: var(--surface-2); border: 1px solid var(--border);
+      cursor: pointer; transition: all var(--transition);
+    }
+    .upcoming-item:hover { border-color: rgba(255,107,43,.3); }
+    .upcoming-item .ui-name { font-size: .82rem; color: var(--text-main); }
+    .upcoming-item .ui-days {
+      font-family: 'Syne', sans-serif; font-size: .8rem;
+      font-weight: 700; color: var(--orange);
+    }
+
+    .ad-c {
+      width: 160px; height: 600px;
+      background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.06);
+      border-radius: var(--radius-sm); margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; color: var(--text-muted); letter-spacing: .05em;
+      writing-mode: vertical-rl;
+    }
+
+    /* ═══════════════════════════════════════════
+       EDUCATIONAL CONTENT
+    ═══════════════════════════════════════════ */
+    .content-section {
+      grid-column: 1 / 2;
+      animation: fadeUp .7s ease both;
+    }
+    .content-section h2 {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem;
+      color: var(--warm-white); margin-bottom: 14px;
+    }
+    .content-section h3 {
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem;
+      color: var(--warm-white); margin: 22px 0 8px;
+    }
+    .content-section p {
+      font-size: .9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 10px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-section { grid-column: 1 / 2; }
+    .faq-section h2 {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem;
+      color: var(--warm-white); margin-bottom: 16px;
+    }
+    details.faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); margin-bottom: 8px; overflow: hidden;
+    }
+    summary.faq-q {
+      padding: 14px 18px; font-size: .9rem; font-weight: 500;
+      color: var(--text-main); cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: color var(--transition);
+    }
+    summary.faq-q:hover { color: var(--orange); }
+    summary.faq-q::after { content: '+'; font-size: 1.1rem; color: var(--orange); transition: transform var(--transition); flex-shrink: 0; }
+    details[open] summary.faq-q::after { transform: rotate(45deg); }
+    .faq-a { padding: 0 18px 14px; font-size: .86rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ─── Footer ─── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1rem, 4vw, 2rem);
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--warm-white); text-decoration: none;
+    }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem; color: var(--text-muted);
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
+
+    .ad-mobile-sticky {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      height: 50px; background: rgba(14,14,15,.96); border-top: 1px solid var(--border);
+      align-items: center; justify-content: center;
+      font-size: .7rem; color: var(--text-muted); letter-spacing: .05em;
+    }
+    @media (max-width: 768px) { .ad-mobile-sticky { display: flex; } body { padding-bottom: 50px; } }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes flipTick {
+      0%   { transform: rotateX(0deg);    opacity: 1; }
+      50%  { transform: rotateX(-25deg);  opacity: .6; }
+      100% { transform: rotateX(0deg);    opacity: 1; }
+    }
+    @keyframes expiredPulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .5; }
+    }
+    .cd-expired.show { display: block; animation: expiredPulse 1.5s ease infinite; }
+    /* ═══════════════════════════════════════════
+       FULLSCREEN MODE
+    ═══════════════════════════════════════════ */
+    .fullscreen-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--near-black);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      cursor: default;
+    }
+    .fullscreen-overlay.active { display: flex; }
+
+    /* subtle animated grid in fullscreen */
+    .fullscreen-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+    }
+
+    .fs-event-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1rem, 3vw, 1.6rem);
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      position: relative;
+    }
+
+    .fs-event-date {
+      font-size: clamp(.75rem, 1.5vw, .9rem);
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .fs-blocks {
+      display: flex;
+      justify-content: center;
+      gap: clamp(16px, 4vw, 48px);
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .fs-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fs-num {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(4rem, 15vw, 10rem);
+      line-height: 1;
+      color: var(--warm-white);
+      letter-spacing: -.04em;
+      min-width: 2ch;
+      text-align: center;
+      transition: color .1s;
+    }
+    .fs-num.tick { animation: flipTick .28s ease; }
+
+    .fs-label {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(.65rem, 1.2vw, .85rem);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .fs-sep {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      align-self: flex-start;
+      padding-top: .08em;
+      opacity: .5;
+    }
+
+    .fs-expired {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 8vw, 5rem);
+      color: var(--orange);
+      display: none;
+      animation: expiredPulse 1.5s ease infinite;
+      position: relative;
+    }
+    .fs-expired.show { display: block; }
+
+    .fs-progress-wrap {
+      width: min(600px, 80vw);
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .fs-progress-bar {
+      height: 4px;
+      background: var(--surface3);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .fs-progress-fill {
+      height: 100%;
+      background: var(--orange);
+      border-radius: 999px;
+      width: 0%;
+      transition: width .8s ease;
+    }
+
+    .fs-close-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 10001;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fs-close-btn:hover { background: rgba(255,255,255,.12); color: var(--text-main); border-color: rgba(255,255,255,.15); }
+
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown">
+        <a href="/countdown-timer/" class="active">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<!-- ─── AD A ─────────────────────────────────────────── -->
+<div class="ad-a">Advertisement</div>
+
+<!-- ─── PAGE WRAP ─────────────────────────────────────── -->
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Free Online Tool</div>
+    <h1>Countdown <span>Timer</span> with Seconds</h1>
+    <p class="hero-sub">Count down to any date and time — a birthday, product launch, New Year's Eve, holiday, or personal milestone. Live days, hours, minutes, and seconds updating in real time. No app, no sign-up.</p>
+  </header>
+
+  <!-- ═════ MAIN COLUMN ═════ -->
+  <main class="main-col">
+
+    <!-- CARD 1: Setup -->
+    <div class="card">
+      <div class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Set Your Countdown
+      </div>
+
+      <div class="field">
+        <label for="event-label">Event Name (optional)</label>
+        <input type="text" id="event-label" placeholder="e.g. New Year's Eve, My Birthday…" maxlength="60" />
+      </div>
+
+      <div class="field">
+        <label for="target-dt">Target Date &amp; Time</label>
+        <input type="datetime-local" id="target-dt" />
+      </div>
+
+      <div class="field" style="margin-bottom:6px;">
+        <label>Quick Events</label>
+        <div class="quick-events" id="quick-events"></div>
+      </div>
+
+      <button class="btn-start" onclick="startCountdown()">Start Countdown →</button>
+    </div>
+
+    <!-- CARD 2: Live Display -->
+    <div class="card">
+      <div class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
+        Live Countdown
+      </div>
+
+      <!-- IDLE STATE -->
+      <div class="cd-idle" id="cd-idle">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p>Pick a date above and hit <strong style="color:var(--warm-white)">Start Countdown</strong> to begin your live timer.</p>
+      </div>
+
+      <!-- ACTIVE COUNTDOWN -->
+      <div class="countdown-display" id="cd-active" style="display:none;">
+        <div class="cd-event-name" id="cd-name">—</div>
+        <div class="cd-event-date" id="cd-date-label">—</div>
+
+        <div class="cd-expired" id="cd-expired">🎉 It's here!</div>
+
+        <div id="cd-blocks-wrap">
+          <div class="cd-blocks">
+            <div class="cd-block">
+              <div class="cd-num-wrap"><div class="cd-num" id="cd-days">000</div></div>
+              <div class="cd-label">Days</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-num-wrap"><div class="cd-num" id="cd-hours">00</div></div>
+              <div class="cd-label">Hours</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-num-wrap"><div class="cd-num" id="cd-mins">00</div></div>
+              <div class="cd-label">Minutes</div>
+            </div>
+            <div class="cd-block">
+              <div class="cd-num-wrap"><div class="cd-num" id="cd-secs">00</div></div>
+              <div class="cd-label">Seconds</div>
+            </div>
+          </div>
+
+          <!-- Progress bar (% of time elapsed) -->
+          <div style="max-width:480px;margin:0 auto 20px;">
+            <div style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--text-muted);margin-bottom:6px;">
+              <span id="prog-start-label">Start</span>
+              <span id="prog-pct-label">—</span>
+              <span id="prog-end-label">Target</span>
+            </div>
+            <div style="height:6px;background:var(--surface3);border-radius:999px;overflow:hidden;">
+              <div id="prog-bar" style="height:100%;width:0%;background:var(--orange);border-radius:999px;transition:width .8s ease;"></div>
+            </div>
+          </div>
+
+          <!-- Total seconds remaining -->
+          <div style="font-size:.82rem;color:var(--text-muted);margin-bottom:20px;">
+            Total seconds remaining: <span id="cd-total-secs" style="color:var(--text-main);font-weight:600;">—</span>
+          </div>
+        </div>
+
+        <div class="cd-actions">
+          <button class="cd-btn cd-btn-outline" onclick="resetCountdown()">↺ Reset</button>
+          <button class="cd-btn cd-btn-filled" onclick="copyLink()">🔗 Copy Link</button>
+          <button class="cd-btn cd-btn-outline" onclick="openFullscreen()" id="fs-btn" style="display:none;">⛶ Full Screen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD B -->
+    <div class="ad-b">Advertisement</div>
+
+    <!-- ─── EDUCATIONAL ─────────────────── -->
+    <section class="content-section">
+      <p style="font-size:.75rem;color:var(--text-muted);margin-bottom:18px;">Last updated: June 2026</p>
+
+      <h2>What Is a Countdown Timer?</h2>
+      <p>A countdown timer measures the time remaining between the current moment and a specific future point — a date, time, or event. It continuously calculates the gap and displays it in human-readable units: days, hours, minutes, and seconds. As each second passes, the timer updates in real time, creating a live sense of anticipation for whatever comes next.</p>
+      <p>Countdown timers appear across almost every domain of life: product launches, weddings, sporting events, academic deadlines, New Year's Eve celebrations, and personal fitness goals. They are equally useful for professional project management (days until a deliverable is due) and personal milestones (days until a vacation or a birthday).</p>
+
+      <h3>How the Calculation Works</h3>
+      <p>The timer takes the difference between the target timestamp and the current timestamp in milliseconds, then converts it into days, hours, minutes, and seconds using integer division and modulo arithmetic. Days are calculated first (dividing total seconds by 86,400), then the remainder is broken into hours (÷ 3,600), minutes (÷ 60), and finally seconds. The display refreshes every second using your device's system clock, keeping it accurate to within one second at all times.</p>
+      <p>The progress bar shows the percentage of elapsed time between when you first set the countdown and the target date — giving a visual sense of how far through the waiting period you are.</p>
+
+      <h3>How to Use This Countdown Timer</h3>
+      <p>Using the countdown timer takes four steps. First, type an event name in the label field — for example, "My Birthday" or "Product Launch." Second, select the target date using the date picker. Third, optionally set a specific time if the event has an exact hour (otherwise midnight is used as the default). Fourth, press Start Countdown and your live timer begins, showing days, hours, minutes, and seconds ticking down in real time.</p>
+      <p>Once your countdown is running, two additional features become available. The Copy Link button generates a shareable URL with your event name and date encoded as parameters — anyone who opens the link sees the same countdown in their own browser. The Full Screen button expands the timer to fill your display, making it useful for presentations, classrooms, or event venues where the countdown needs to be visible across a room.</p>
+
+      <h3>Countdown Timer With Seconds — Why Seconds Matter</h3>
+      <p>Most basic countdown displays show only days and hours. Showing live seconds creates a fundamentally different experience: the timer feels urgent and real rather than static. Watching the seconds tick down on New Year's Eve, a product launch, or a sports event finish line creates anticipation in a way that a days-only display simply cannot. This countdown timer with seconds updates every single second — each tick is animated so the display never feels frozen, even when hours and minutes haven't changed yet.</p>
+      <p>For short-interval use, setting a target time one, five, or ten minutes from now turns this into a precise countdown timer with seconds for cooking, workouts, Pomodoro breaks, or any task that needs a clearly visible end point.</p>
+
+      <h3>Countdown Timer vs Google Timer: What's the Difference?</h3>
+      <p>The Google timer (accessible by searching "set a timer for X minutes" in Google Search) is designed for short kitchen-style intervals — counting down a set number of minutes or seconds from right now. This online countdown timer is built for a different purpose: counting down to a specific calendar date and time, whether that's hours, days, weeks, or months away. Use Google's built-in timer for a quick 5-minute pasta cook; use this tool for tracking days until your product launch, wedding, or next vacation.</p>
+
+      <h3>Countdown Timer Use Cases by Category</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem;margin-top:8px;">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.08);">
+            <th style="text-align:left;padding:8px 10px;color:var(--orange);font-family:'Syne',sans-serif;">Category</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--orange);font-family:'Syne',sans-serif;">Example Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
+            <td style="padding:8px 10px;color:var(--text-main);">Personal</td>
+            <td style="padding:8px 10px;color:var(--text-muted);">Birthdays, anniversaries, vacations, fitness challenges</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
+            <td style="padding:8px 10px;color:var(--text-main);">Professional</td>
+            <td style="padding:8px 10px;color:var(--text-muted);">Project deadlines, product launches, conference keynotes</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
+            <td style="padding:8px 10px;color:var(--text-main);">Academic</td>
+            <td style="padding:8px 10px;color:var(--text-muted);">Exam prep countdowns, assignment due dates, graduation day</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
+            <td style="padding:8px 10px;color:var(--text-main);">Events &amp; Holidays</td>
+            <td style="padding:8px 10px;color:var(--text-muted);">New Year's Eve, Christmas, weddings, sporting finals</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 10px;color:var(--text-main);">Short Intervals</td>
+            <td style="padding:8px 10px;color:var(--text-muted);">1 minute timer, 5 minute break, Pomodoro session end</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:24px;">Countdown Timers vs Stopwatches</h3>
+      <p>A countdown timer counts downward from a future point to the present. A stopwatch counts upward from a fixed start. Both measure time, but they serve opposite psychological purposes: countdowns build anticipation toward a positive future event, while stopwatches measure elapsed effort or performance. According to <a href="https://www.timeanddate.com/timer/" rel="nofollow noopener" target="_blank">TimeAndDate</a>, online timers are among the most-used time utilities on the web — alongside world clocks and calendar tools. A kitchen timer is technically a countdown; a sprint or race timer is typically a stopwatch.</p>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary class="faq-q">How does the countdown timer calculate time?</summary>
+        <div class="faq-a">It subtracts the current timestamp from your target timestamp in milliseconds, then converts that difference into days, hours, minutes, and seconds. The display updates every second using your device's system clock.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does the timer keep running if I leave the page?</summary>
+        <div class="faq-a">The target date is saved in your browser's local storage. When you return, the countdown will recalculate based on the current time — so it accurately reflects how much time is left, even after the tab is closed.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What time zone does the countdown use?</summary>
+        <div class="faq-a">The countdown uses your device's local time zone. If you're coordinating across time zones, enter the target time converted to your local time.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I share my countdown with someone?</summary>
+        <div class="faq-a">Yes — use the Copy Link button to copy a URL with the target date and event name encoded as parameters. Anyone who opens the link will see the same countdown running in their browser.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What happens when the countdown hits zero?</summary>
+        <div class="faq-a">The timer stops and displays a celebration message. If your device sound is on and the page is in focus, a brief audio tone plays to mark the moment.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How far in the future can I set a countdown?</summary>
+        <div class="faq-a">There's no enforced limit — you could technically set a countdown decades away. The days counter will expand to display any number of digits needed.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I use this as a 1 minute timer or short interval countdown?</summary>
+        <div class="faq-a">Yes. Set the target date and time to one minute from now for a quick 1 minute timer, or any other short interval. The seconds display will count down in real time with a visual tick animation.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How is this different from the Google timer?</summary>
+        <div class="faq-a">Google's built-in timer is designed for short intervals measured in minutes or seconds from right now. This countdown timer is built for counting down to a specific calendar date and time — hours, days, weeks, or months away — making it better suited for events, milestones, and deadlines.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does this countdown timer work on mobile?</summary>
+        <div class="faq-a">Yes. The timer is fully responsive and works on all modern smartphones and tablets. No app download is required — just open the page in your mobile browser.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How do I set a countdown timer with seconds?</summary>
+        <div class="faq-a">Enter your event name, select a target date and time, then press Start Countdown. The display will immediately show days, hours, minutes, and seconds counting down in real time. The seconds digit updates every second with a smooth animation — no refresh required. For a short-interval countdown, set the target time a few minutes from now and the seconds column becomes the primary focus.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I use this as a countdown to New Year's Eve or Christmas?</summary>
+        <div class="faq-a">Yes — and it's one of the most popular uses. Use the Quick Event presets to instantly load a countdown to New Year's Eve, Christmas Day, or other upcoming holidays without manually entering dates. The timer auto-calculates the next occurrence each year, so it stays accurate without any updates. You can also share the link so friends or colleagues see the same countdown in their browser.</div>
+      </details>
+    </section>
+
+  </main><!-- /main-col -->
+
+  <!-- ═════ SIDEBAR ═════ -->
+  <aside class="sidebar">
+
+    <!-- Upcoming events -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">Upcoming Events</div>
+      <div class="upcoming-list" id="sidebar-events"></div>
+    </div>
+
+    <!-- Other tools -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">Other Tools</div>
+      <a class="related-tool-item" href="/mortgage-calculator/">
+        <span class="related-tool-name">Mortgage Calculator</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+      <a class="related-tool-item" href="/bmi-calculator/">
+        <span class="related-tool-name">BMI Calculator</span>
+        <span class="related-tool-tag hot">Popular</span>
+      </a>
+      <a class="related-tool-item" href="/currency-converter/">
+        <span class="related-tool-name">Currency Converter</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+      <a class="related-tool-item" href="/percentage-calculator/">
+        <span class="related-tool-name">Percentage Calculator</span>
+        <span class="related-tool-tag">Math</span>
+      </a>
+      <a class="related-tool-item" href="/age-calculator/">
+        <span class="related-tool-name">Age Calculator</span>
+        <span class="related-tool-tag">Temporal</span>
+      </a>
+      <a class="related-tool-item" href="/tip-calculator/">
+        <span class="related-tool-name">Tip Calculator</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+    </div>
+
+    <!-- Ad C -->
+    <div class="ad-c">Advertisement</div>
+
+  </aside>
+
+</div><!-- /page-wrap -->
+
+
+<!-- ─── FULLSCREEN OVERLAY ─── -->
+<div class="fullscreen-overlay" id="fs-overlay">
+  <button class="fs-close-btn" onclick="closeFullscreen()">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg>
+    Exit (Esc)
+  </button>
+
+  <div class="fs-event-name" id="fs-name">—</div>
+  <div class="fs-event-date" id="fs-date">—</div>
+
+  <div class="fs-expired" id="fs-expired">🎉 It's Here!</div>
+
+  <div id="fs-blocks-wrap">
+    <div class="fs-blocks">
+      <div class="fs-block">
+        <div class="fs-num" id="fs-days">000</div>
+        <div class="fs-label">Days</div>
+      </div>
+      <div class="fs-sep">:</div>
+      <div class="fs-block">
+        <div class="fs-num" id="fs-hours">00</div>
+        <div class="fs-label">Hours</div>
+      </div>
+      <div class="fs-sep">:</div>
+      <div class="fs-block">
+        <div class="fs-num" id="fs-mins">00</div>
+        <div class="fs-label">Mins</div>
+      </div>
+      <div class="fs-sep">:</div>
+      <div class="fs-block">
+        <div class="fs-num" id="fs-secs">00</div>
+        <div class="fs-label">Secs</div>
+      </div>
+    </div>
+
+    <div class="fs-progress-wrap">
+      <div class="fs-progress-bar">
+        <div class="fs-progress-fill" id="fs-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+<!-- ─── MOBILE STICKY AD ─── -->
+<div class="ad-mobile-sticky">Advertisement</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════ -->
+<script>
+  /* ─────────────────────────────────────────────────
+     QUICK EVENTS — auto-calculated from today
+  ───────────────────────────────────────────────── */
+  function getUpcomingEvents() {
+    const now = new Date();
+    const year = now.getFullYear();
+
+    const candidates = [
+      { name: "New Year's Day",   month: 1,  day: 1  },
+      { name: "Valentine's Day",  month: 2,  day: 14 },
+      { name: "St. Patrick's Day",month: 3,  day: 17 },
+      { name: "Easter Sunday",    special: 'easter' },
+      { name: "Mother's Day",     special: 'mothers' },
+      { name: "Memorial Day",     special: 'memorial' },
+      { name: "Father's Day",     special: 'fathers' },
+      { name: "Independence Day", month: 7,  day: 4  },
+      { name: "Halloween",        month: 10, day: 31 },
+      { name: "Thanksgiving",     special: 'thanksgiving' },
+      { name: "Christmas Day",    month: 12, day: 25 },
+      { name: "New Year's Eve",   month: 12, day: 31 },
+    ];
+
+    function easterDate(y) {
+      const f = Math.floor, a = y % 19, b = f(y/100), c = y % 100;
+      const d = f(b/4), e = b % 4, g = f((b+8)/25);
+      const h = f((b-g+1)/3), i = (19*a+b-d-h+15) % 30;
+      const k = f(c/4), l = c % 4;
+      const m = (32+2*e+2*k-i-l) % 7;
+      const n = f((a+11*i+22*m)/451);
+      const month = f((i+m-7*n+114)/31);
+      const day2 = ((i+m-7*n+114) % 31)+1;
+      return new Date(y, month-1, day2);
+    }
+    function nthWeekday(y, m, weekday, n) {
+      const d = new Date(y, m-1, 1);
+      let count = 0;
+      while (true) {
+        if (d.getDay() === weekday) { count++; if (count === n) return new Date(d); }
+        d.setDate(d.getDate()+1);
+      }
+    }
+    function lastWeekday(y, m, weekday) {
+      const d = new Date(y, m, 0);
+      while (d.getDay() !== weekday) d.setDate(d.getDate()-1);
+      return d;
+    }
+
+    return candidates.map(ev => {
+      let dt;
+      for (let yr of [year, year+1]) {
+        if (ev.special === 'easter')       dt = easterDate(yr);
+        else if (ev.special === 'mothers') dt = nthWeekday(yr, 5, 0, 2);
+        else if (ev.special === 'memorial')dt = lastWeekday(yr, 5, 1);
+        else if (ev.special === 'fathers') dt = nthWeekday(yr, 6, 0, 3);
+        else if (ev.special === 'thanksgiving') dt = nthWeekday(yr, 11, 4, 4);
+        else dt = new Date(yr, ev.month-1, ev.day);
+
+        if (dt > now) break;
+      }
+      dt.setHours(0, 0, 0, 0);
+      const daysLeft = Math.ceil((dt - now) / 86400000);
+      return { name: ev.name, date: dt, daysLeft };
+    }).sort((a, b) => a.daysLeft - b.daysLeft);
+  }
+
+  function getEventSlug(name) {
+    const map = {
+      "Halloween":       "halloween",
+      "Thanksgiving":    "thanksgiving",
+      "Christmas Day":   "christmas",
+      "New Year's Eve":  "new-year-eve",
+      "New Year's Day":  "new-year",
+      "Black Friday":    "black-friday"
+    };
+    return map[name] || null;
+  }
+
+  const upcomingEvents = getUpcomingEvents();
+
+  // Render quick-event pills (first 6)
+  const quickWrap = document.getElementById('quick-events');
+  upcomingEvents.slice(0, 6).forEach(ev => {
+    const btn = document.createElement('button');
+    btn.className = 'quick-btn';
+    btn.innerHTML = `<div class="qb-name">${ev.name}</div><div class="qb-date">${ev.date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>`;
+    btn.onclick = () => {
+      const slug = getEventSlug(ev.name);
+      if (slug) { window.location.href = '/countdown-timer/' + slug + '/'; return; }
+      document.getElementById('event-label').value = ev.name;
+      const pad = n => String(n).padStart(2,'0');
+      const d = ev.date;
+      document.getElementById('target-dt').value =
+        `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T00:00`;
+    };
+    quickWrap.appendChild(btn);
+  });
+
+  // Render sidebar upcoming list
+  const sidebarEvts = document.getElementById('sidebar-events');
+  upcomingEvents.slice(0, 8).forEach(ev => {
+    const item = document.createElement('div');
+    item.className = 'upcoming-item';
+    item.innerHTML = `<span class="ui-name">${ev.name}</span><span class="ui-days">${ev.daysLeft}d</span>`;
+    item.onclick = () => {
+      const slug = getEventSlug(ev.name);
+      if (slug) { window.location.href = '/' + slug + '/'; return; }
+      document.getElementById('event-label').value = ev.name;
+      const pad = n => String(n).padStart(2,'0');
+      const d = ev.date;
+      document.getElementById('target-dt').value =
+        `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T00:00`;
+      startCountdown();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    sidebarEvts.appendChild(item);
+  });
+
+  /* ─────────────────────────────────────────────────
+     COUNTDOWN ENGINE
+  ───────────────────────────────────────────────── */
+  let targetTime = null;
+  let startTime  = null;
+  let timerID    = null;
+  let prevVals   = { d: null, h: null, m: null, s: null };
+  let expiredFired = false;
+
+  // Try restore from localStorage / URL params
+  (function restoreState() {
+    const params = new URLSearchParams(location.search);
+    const pTs = params.get('t'), pLbl = params.get('n');
+    if (pTs) {
+      const ts = parseInt(pTs);
+      if (!isNaN(ts) && ts > Date.now() - 86400000*7) {
+        targetTime = ts;
+        startTime  = parseInt(localStorage.getItem('nx_cd_start') || Date.now());
+        if (pLbl) document.getElementById('event-label').value = decodeURIComponent(pLbl);
+        const d = new Date(ts);
+        const pad = n => String(n).padStart(2,'0');
+        document.getElementById('target-dt').value =
+          `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+        showActive();
+        tick();
+        return;
+      }
+    }
+    const stored = localStorage.getItem('nx_cd_target');
+    if (stored) {
+      const obj = JSON.parse(stored);
+      targetTime = obj.target;
+      startTime  = obj.start;
+      if (obj.label) document.getElementById('event-label').value = obj.label;
+      if (targetTime > Date.now() - 86400000) {
+        const d = new Date(targetTime);
+        const pad = n => String(n).padStart(2,'0');
+        document.getElementById('target-dt').value =
+          `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+        showActive(); tick();
+      }
+    }
+  })();
+
+  function startCountdown() {
+    const dtVal = document.getElementById('target-dt').value;
+    if (!dtVal) { alert('Please select a target date and time.'); return; }
+    const target = new Date(dtVal).getTime();
+    if (target <= Date.now()) { alert('Please choose a future date and time.'); return; }
+
+    targetTime   = target;
+    startTime    = Date.now();
+    expiredFired = false;
+
+    const label = document.getElementById('event-label').value.trim();
+    localStorage.setItem('nx_cd_target', JSON.stringify({ target: targetTime, start: startTime, label }));
+    localStorage.setItem('nx_cd_start', startTime);
+
+    showActive();
+    if (timerID) clearInterval(timerID);
+    tick();
+    timerID = setInterval(tick, 1000);
+  }
+
+  function showActive() {
+    document.getElementById('cd-idle').style.display   = 'none';
+    document.getElementById('cd-active').style.display = 'block';
+    const label = document.getElementById('event-label').value.trim() || 'Countdown';
+    document.getElementById('cd-name').textContent = label;
+    document.getElementById('cd-date-label').textContent =
+      new Date(targetTime).toLocaleString('en-US',{ weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
+
+    // progress labels
+    document.getElementById('prog-start-label').textContent =
+      new Date(startTime).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    document.getElementById('prog-end-label').textContent =
+      new Date(targetTime).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  // Show fullscreen button
+  document.getElementById('fs-btn').style.display = 'inline-flex';
+  }
+
+  function tick() {
+    const now  = Date.now();
+    const diff = targetTime - now;
+
+    if (diff <= 0) {
+      setBlock('cd-days','0',  'd');
+      setBlock('cd-hours','00','h');
+      setBlock('cd-mins', '00','m');
+      setBlock('cd-secs', '00','s');
+      document.getElementById('cd-total-secs').textContent = '0';
+      document.getElementById('prog-bar').style.width = '100%';
+      document.getElementById('prog-pct-label').textContent = '100% elapsed';
+      document.getElementById('cd-blocks-wrap').style.opacity = '.3';
+      document.getElementById('cd-expired').classList.add('show');
+      if (!expiredFired) { expiredFired = true; playBeep(); }
+      if (timerID) { clearInterval(timerID); timerID = null; }
+      return;
+    }
+
+    document.getElementById('cd-blocks-wrap').style.opacity = '1';
+    document.getElementById('cd-expired').classList.remove('show');
+
+    const totalSec = Math.floor(diff / 1000);
+    const days  = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const mins  = Math.floor((totalSec % 3600)  / 60);
+    const secs  = totalSec % 60;
+
+    setBlock('cd-days',  String(days),           'd');
+    setBlock('cd-hours', pad2(hours),             'h');
+    setBlock('cd-mins',  pad2(mins),              'm');
+    setBlock('cd-secs',  pad2(secs),              's');
+
+    document.getElementById('cd-total-secs').textContent = totalSec.toLocaleString();
+
+    // progress
+    const totalSpan = targetTime - startTime;
+    const elapsed   = now - startTime;
+    const pct = Math.min(100, Math.max(0, (elapsed / totalSpan) * 100));
+    document.getElementById('prog-bar').style.width = pct.toFixed(1) + '%';
+    document.getElementById('prog-pct-label').textContent = pct.toFixed(1) + '% elapsed';
+
+    if (!timerID) timerID = setInterval(tick, 1000);
+
+    // Sync fullscreen display
+    fsTick();
+  }
+
+  function setBlock(id, val, key) {
+    const el = document.getElementById(id);
+    if (prevVals[key] !== val) {
+      el.textContent = val;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+      prevVals[key] = val;
+    }
+  }
+
+  function pad2(n) { return String(n).padStart(2,'0'); }
+
+  function resetCountdown() {
+    if (timerID) { clearInterval(timerID); timerID = null; }
+    targetTime = null; startTime = null; expiredFired = false;
+    prevVals = { d: null, h: null, m: null, s: null };
+    localStorage.removeItem('nx_cd_target');
+    localStorage.removeItem('nx_cd_start');
+    document.getElementById('cd-active').style.display = 'none';
+    document.getElementById('cd-idle').style.display   = 'block';
+    document.getElementById('event-label').value = '';
+    document.getElementById('target-dt').value = '';
+    closeFullscreen();
+    document.getElementById('fs-btn').style.display = 'none';
+    fsPrevVals = { d: null, h: null, m: null, s: null };
+  }
+
+  function copyLink() {
+    if (!targetTime) return;
+    const label = encodeURIComponent(document.getElementById('event-label').value.trim());
+    const url = `${location.origin}/countdown-timer/?t=${targetTime}&n=${label}`;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.querySelector('.cd-btn-filled');
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    }).catch(() => prompt('Copy this link:', url));
+  }
+
+  /* ─────────────────────────────────────────────────
+     BEEP on expiry (Web Audio API)
+  ───────────────────────────────────────────────── */
+  function playBeep() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      [0, 150, 300].forEach(delay => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.type = 'sine'; osc.frequency.value = 880;
+        gain.gain.setValueAtTime(.4, ctx.currentTime + delay/1000);
+        gain.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + delay/1000 + .3);
+        osc.start(ctx.currentTime + delay/1000);
+        osc.stop(ctx.currentTime + delay/1000 + .3);
+      });
+    } catch(e) { /* silently ignore if audio unavailable */ }
+  }
+
+  /* ─────────────────────────────────────────────────
+     FULLSCREEN MODE
+  ───────────────────────────────────────────────── */
+  let fsPrevVals = { d: null, h: null, m: null, s: null };
+
+  function openFullscreen() {
+    if (!targetTime) return;
+    const overlay = document.getElementById('fs-overlay');
+    overlay.classList.add('active');
+
+    // Populate static fields
+    const label = document.getElementById('event-label').value.trim() || 'Countdown';
+    document.getElementById('fs-name').textContent = label;
+    document.getElementById('fs-date').textContent =
+      new Date(targetTime).toLocaleString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long',
+        day: 'numeric', hour: '2-digit', minute: '2-digit'
+      });
+
+    // Sync numbers immediately
+    fsTick();
+
+    // Try native browser fullscreen
+    try {
+      if (overlay.requestFullscreen) overlay.requestFullscreen();
+      else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+    } catch(e) { /* ignore if blocked */ }
+
+    document.addEventListener('keydown', fsKeyHandler);
+  }
+
+  function closeFullscreen() {
+    const overlay = document.getElementById('fs-overlay');
+    overlay.classList.remove('active');
+    document.removeEventListener('keydown', fsKeyHandler);
+    try {
+      if (document.exitFullscreen && document.fullscreenElement) document.exitFullscreen();
+      else if (document.webkitExitFullscreen && document.webkitFullscreenElement) document.webkitExitFullscreen();
+    } catch(e) {}
+  }
+
+  function fsKeyHandler(e) {
+    if (e.key === 'Escape' || e.key === 'f' || e.key === 'F') closeFullscreen();
+  }
+
+  // Keep fullscreen display in sync with the live tick
+  function fsTick() {
+    const overlay = document.getElementById('fs-overlay');
+    if (!overlay.classList.contains('active')) return;
+
+    if (!targetTime) return;
+    const now  = Date.now();
+    const diff = targetTime - now;
+
+    if (diff <= 0) {
+      document.getElementById('fs-expired').classList.add('show');
+      document.getElementById('fs-blocks-wrap').style.opacity = '.3';
+      fsSetNum('fs-days',  '0',   'd');
+      fsSetNum('fs-hours', '00',  'h');
+      fsSetNum('fs-mins',  '00',  'm');
+      fsSetNum('fs-secs',  '00',  's');
+      document.getElementById('fs-progress-fill').style.width = '100%';
+      return;
+    }
+
+    document.getElementById('fs-expired').classList.remove('show');
+    document.getElementById('fs-blocks-wrap').style.opacity = '1';
+
+    const totalSec = Math.floor(diff / 1000);
+    const days  = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const mins  = Math.floor((totalSec % 3600)  / 60);
+    const secs  = totalSec % 60;
+
+    fsSetNum('fs-days',  String(days), 'd');
+    fsSetNum('fs-hours', pad2(hours),  'h');
+    fsSetNum('fs-mins',  pad2(mins),   'm');
+    fsSetNum('fs-secs',  pad2(secs),   's');
+
+    // Progress
+    if (startTime) {
+      const totalSpan = targetTime - startTime;
+      const elapsed   = now - startTime;
+      const pct = Math.min(100, Math.max(0, (elapsed / totalSpan) * 100));
+      document.getElementById('fs-progress-fill').style.width = pct.toFixed(1) + '%';
+    }
+  }
+
+  function fsSetNum(id, val, key) {
+    const el = document.getElementById(id);
+    if (fsPrevVals[key] !== val) {
+      el.textContent = val;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+      fsPrevVals[key] = val;
+    }
+  }
+
+
+
+</script>
+
+</body>
+</html>

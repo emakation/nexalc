@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Blog | Mortgage, BMI & Finance Guides | NexAlc</title>
+  <meta name="description" content="In-depth guides on mortgage calculations, BMI interpretation, and personal finance. Practical answers to your biggest money and health questions." />
+  <meta name="keywords" content="mortgage guide, BMI guide, finance tips, nexalc blog, mortgage calculator guide, bmi chart, amortization explained" />
+  <link rel="canonical" href="https://nexalc.com/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog | Mortgage, BMI & Finance Guides | NexAlc" />
+  <meta property="og:description" content="In-depth guides on mortgage calculations, BMI interpretation, and personal finance." />
+  <meta property="og:url" content="https://nexalc.com/blog/" />
+  <meta property="og:site_name" content="NexAlc" />
+  <meta property="og:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Mortgage, BMI & Finance Guides | NexAlc" />
+  <meta name="twitter:description" content="In-depth guides on mortgage calculations, BMI interpretation, and personal finance." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "NexAlc Blog",
+    "description": "In-depth guides on mortgage calculations, BMI interpretation, and personal finance.",
+    "url": "https://nexalc.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NexAlc",
+      "url": "https://nexalc.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nexalc.com/blog/" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #E55A1C;
+      --orange-glow: rgba(255,107,43,0.15);
+      --orange-glow-strong: rgba(255,107,43,0.25);
+      --near-black: #0E0E0F;
+      --surface: #161618;
+      --surface-2: #1E1E21;
+      --surface-3: #252528;
+      --border: rgba(255,255,255,0.07);
+      --border-active: rgba(255,107,43,0.4);
+      --warm-white: #F5F0EB;
+      --text-primary: #F0EDE8;
+      --text-secondary: #9A9592;
+      --text-muted: #8a8480;
+      --green: #2ECC71;
+      --green-dim: rgba(46,204,113,0.12);
+      --red: #E74C3C;
+      --red-dim: rgba(231,76,60,0.1);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      font-size: .8rem; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; padding: 5px 10px; border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition); white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform var(--transition);
+      opacity: .6;
+    }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown {
+      position: absolute; top: 100%; left: 0; min-width: 190px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 8px 6px 6px;
+      opacity: 0; pointer-events: none; transform: translateY(6px);
+      transition: opacity var(--transition), transform var(--transition); z-index: 200;
+    }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a {
+      display: block; padding: 8px 12px; border-radius: var(--radius-sm);
+      font-size: .82rem; color: var(--text-muted); white-space: nowrap; background: none;
+    }
+    .nav-dropdown a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-dropdown a.active { color: var(--orange); background: var(--orange-glow); }
+    .nav-links > a:hover { color: var(--orange); }
+
+    /* ── AD ZONE A ── */
+    .ad-zone-a {
+      width: 100%; display: flex; justify-content: center;
+      padding: 10px 0; background: var(--surface);
+      border-bottom: 1px solid var(--border); position: relative; z-index: 1;
+    }
+    .ad-placeholder {
+      background: var(--surface-2); border: 1px dashed var(--border);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .ad-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-rectangle { width: 336px; max-width: 100%; height: 280px; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position: relative; z-index: 1;
+      padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px) clamp(24px, 3vw, 40px);
+      max-width: 1280px; margin: 0 auto;
+    }
+    .page-hero-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--orange-glow); border: 1px solid var(--border-active);
+      border-radius: 100px; padding: 4px 12px;
+      font-size: 0.72rem; font-weight: 600; color: var(--orange);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--warm-white); margin-bottom: 12px;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--orange); }
+    .page-hero-sub {
+      font-size: clamp(0.92rem, 2vw, 1rem);
+      color: var(--text-secondary); max-width: 560px; line-height: 1.65;
+    }
+
+    /* ── MAIN CONTENT AREA ── */
+    .blog-wrap {
+      position: relative; z-index: 1;
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 48px) 80px;
+    }
+
+    /* ── FEATURED HERO POST ── */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 48px;
+      transition: border-color var(--transition);
+    }
+    .featured-post:hover { border-color: var(--border-active); }
+
+    .featured-post-body {
+      padding: clamp(24px, 3vw, 40px);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .featured-post-top { }
+    .featured-post-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--orange-glow); border: 1px solid var(--border-active);
+      border-radius: 100px; padding: 3px 10px;
+      font-size: 0.68rem; font-weight: 700; color: var(--orange);
+      letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .featured-label {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 600; color: var(--text-muted);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .featured-label svg { opacity: 0.5; }
+    .featured-post-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.025em; color: var(--warm-white);
+      text-decoration: none; display: block; margin-bottom: 14px;
+      transition: color var(--transition);
+    }
+    .featured-post-title:hover { color: var(--orange); }
+    .featured-post-excerpt {
+      font-size: 0.95rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 24px; max-width: 520px;
+    }
+    .featured-post-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 0.75rem; color: var(--text-muted); margin-bottom: 24px;
+    }
+    .featured-post-meta span { display: flex; align-items: center; gap: 4px; }
+    .featured-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff;
+      padding: 10px 20px; border-radius: var(--radius-sm);
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+      align-self: flex-start;
+    }
+    .featured-cta:hover { background: var(--orange-dim); transform: translateY(-1px); }
+
+    .featured-post-visual {
+      background: var(--surface-2);
+      border-left: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-post-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(255,107,43,0.08) 0%, transparent 70%);
+    }
+    .featured-visual-graphic {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 12px; width: 100%;
+    }
+    .fvg-bar-row {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .fvg-label {
+      font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .fvg-bar-track {
+      height: 8px; background: var(--surface-3); border-radius: 100px; overflow: hidden;
+    }
+    .fvg-bar-fill {
+      height: 100%; border-radius: 100px;
+      transition: width 0.8s cubic-bezier(.4,0,.2,1);
+    }
+    .fvg-bar-fill.orange { background: var(--orange); }
+    .fvg-bar-fill.green { background: var(--green); }
+    .fvg-stat {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--text-muted); margin-top: 2px;
+    }
+    .fvg-divider {
+      border: none; border-top: 1px solid var(--border); margin: 4px 0;
+    }
+    .fvg-savings {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--orange-glow); border: 1px solid var(--border-active);
+      border-radius: var(--radius-sm); padding: 10px 14px;
+    }
+    .fvg-savings-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
+    .fvg-savings-value {
+      font-family: 'Syne', sans-serif; font-size: 1rem;
+      font-weight: 800; color: var(--orange);
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .filter-bar-label {
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--text-muted); letter-spacing: 0.05em;
+      text-transform: uppercase; margin-right: 4px;
+    }
+    .filter-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 500;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all var(--transition);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover { color: var(--text-primary); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,0.12); }
+    .filter-btn.active {
+      color: var(--orange); background: var(--orange-glow);
+      border-color: var(--border-active);
+    }
+    .filter-count {
+      font-size: 0.65rem; font-weight: 700;
+      background: var(--surface-3); color: var(--text-muted);
+      padding: 1px 6px; border-radius: 100px;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(255,107,43,0.2); color: var(--orange);
+    }
+
+    /* ── POSTS SECTION HEADER ── */
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .section-count {
+      font-size: 0.75rem; color: var(--text-muted);
+    }
+
+    /* ── CARD GRID ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+    .post-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-2px);
+    }
+
+    .card-visual {
+      height: 120px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 20px;
+    }
+    .card-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(255,107,43,0.07) 0%, transparent 70%);
+    }
+    .card-visual-icon {
+      position: relative; z-index: 1;
+      width: 48px; height: 48px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      background: var(--surface-3); border: 1px solid var(--border);
+    }
+
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+
+    .card-cat {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card-cat.mortgage { color: var(--orange); }
+    .card-cat.bmi { color: var(--green); }
+    .card-cat.news { color: #7EB8FF; }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--warm-white); line-height: 1.3;
+      margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .post-card:hover .card-title { color: var(--orange); }
+
+    .card-excerpt {
+      font-size: 0.82rem; color: var(--text-secondary);
+      line-height: 1.6; flex: 1; margin-bottom: 14px;
+    }
+
+    .card-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.72rem; color: var(--text-muted);
+    }
+    .card-meta-left { display: flex; align-items: center; gap: 10px; }
+    .card-read-link {
+      font-size: 0.75rem; font-weight: 600; color: var(--orange);
+      text-decoration: none; display: flex; align-items: center; gap: 4px;
+      transition: gap var(--transition);
+    }
+    .post-card:hover .card-read-link { gap: 7px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center; padding: 60px 20px;
+      color: var(--text-muted); font-size: 0.9rem;
+      display: none;
+    }
+    .empty-state.visible { display: block; }
+
+    /* ── AD ZONE MID ── */
+    .ad-zone-mid {
+      display: flex; justify-content: center;
+      padding: 32px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px clamp(16px, 4vw, 40px);
+      text-align: center; font-size: 0.8rem; color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post-visual { display: none; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .filter-bar { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logo.png" alt="NexAlc" style="height:36px;width:auto;display:block;mix-blend-mode:lighten;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+      <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/mortgage-calculator/">Finance Tools</a>
+        <div class="nav-dropdown">
+          <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+          <a href="/currency-converter/">💱 Currency Converter</a>
+          <a href="/tip-calculator/">🧾 Tip Calculator</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/bmi-calculator/">Health Tools</a>
+        <div class="nav-dropdown">
+          <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+          <a href="/age-calculator/">🎂 Age Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/countdown-timer/">Utility Tools</a>
+        <div class="nav-dropdown">
+          <a href="/countdown-timer/">⏳ Countdown Timer</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <a href="/blog/" class="active">Blog</a>
+    </div>
+  </nav>
+
+  <!-- AD ZONE A -->
+  <div class="ad-zone-a">
+    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-label">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      NexAlc Blog
+    </div>
+    <h1>Guides that make the <em>numbers</em> make sense</h1>
+    <p class="page-hero-sub">Deep dives on mortgage terms, BMI interpretation, and the personal finance decisions behind the calculators.</p>
+  </header>
+
+  <!-- BLOG CONTENT -->
+  <main class="blog-wrap">
+
+    <!-- FEATURED POST: M1 pinned -->
+    <article class="featured-post" data-category="mortgage">
+      <div class="featured-post-body">
+        <div class="featured-post-top">
+          <div class="featured-label">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:var(--orange)"><path d="M5 0l1.12 3.45H9.76L6.82 5.59l1.12 3.45L5 7.1 2.06 9.04l1.12-3.45L.24 3.45H3.88z"/></svg>
+            Featured
+          </div>
+          <div class="featured-post-badge">Mortgage Guide</div>
+          <a href="/blog/15-vs-30-year-mortgage/" class="featured-post-title">
+            15-Year vs 30-Year Mortgage:<br>Which Saves You More?
+          </a>
+          <p class="featured-post-excerpt">On a $300,000 loan, choosing a 15-year term over 30 years can save over $230,000 in total interest. The math is clear — but the right answer still depends on your income stability and cash flow. Here's how to run your numbers.</p>
+          <div class="featured-post-meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5v2.8l1.8 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              8 min read
+            </span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1v2M4 1v2M1.5 5.5h9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Jun 17, 2026
+            </span>
+            <span>Mortgage</span>
+          </div>
+        </div>
+        <a href="/blog/15-vs-30-year-mortgage/" class="featured-cta">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Read the Guide
+        </a>
+      </div>
+      <div class="featured-post-visual">
+        <div class="featured-visual-graphic">
+          <div class="fvg-bar-row">
+            <div class="fvg-label">30-Year Total Interest</div>
+            <div class="fvg-bar-track"><div class="fvg-bar-fill orange" style="width:100%"></div></div>
+            <div class="fvg-stat">~$400,000</div>
+          </div>
+          <div class="fvg-bar-row">
+            <div class="fvg-label">15-Year Total Interest</div>
+            <div class="fvg-bar-track"><div class="fvg-bar-fill green" style="width:41%"></div></div>
+            <div class="fvg-stat">~$163,000</div>
+          </div>
+          <hr class="fvg-divider">
+          <div class="fvg-savings">
+            <span class="fvg-savings-label">You save</span>
+            <span class="fvg-savings-value">$237,000</span>
+          </div>
+          <div style="font-size:0.65rem;color:var(--text-muted);margin-top:8px;text-align:center;">$300k loan · 6.75% (30yr) · 6.25% (15yr)</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <span class="filter-bar-label">Filter:</span>
+      <button class="filter-btn active" data-filter="all" onclick="filterPosts('all', this)">
+        All <span class="filter-count" id="count-all">6</span>
+      </button>
+      <button class="filter-btn" data-filter="mortgage" onclick="filterPosts('mortgage', this)">
+        🏠 Mortgage <span class="filter-count" id="count-mortgage">3</span>
+      </button>
+      <button class="filter-btn" data-filter="bmi" onclick="filterPosts('bmi', this)">
+        ⚖️ BMI <span class="filter-count" id="count-bmi">3</span>
+      </button>
+      <button class="filter-btn" data-filter="news" onclick="filterPosts('news', this)">
+        📰 News &amp; Updates <span class="filter-count" id="count-news">0</span>
+      </button>
+    </div>
+
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <span class="section-title">All Articles</span>
+      <span class="section-count" id="visible-count">Showing 6 articles</span>
+    </div>
+
+    <!-- CARD GRID -->
+    <div class="card-grid" id="card-grid">
+
+      <!-- M2: How Much House Can I Afford -->
+      <a href="/blog/how-much-house-can-i-afford/" class="post-card" data-category="mortgage">
+        <div class="card-visual">
+          <div class="card-visual-icon">🏡</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Mortgage</span>
+          <div class="card-title">How Much House Can I Afford?</div>
+          <p class="card-excerpt">The real answer goes beyond the 28% rule. Understand DTI, down payments, and how lenders actually size your limit.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>6 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- M3: Amortization Schedule -->
+      <a href="/blog/what-is-an-amortization-schedule/" class="post-card" data-category="mortgage">
+        <div class="card-visual">
+          <div class="card-visual-icon">📊</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Mortgage</span>
+          <div class="card-title">What Is an Amortization Schedule?</div>
+          <p class="card-excerpt">Why your first years of payments are mostly interest — and how to read the table that shows exactly where every dollar goes.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>5 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- B1: Healthy BMI by Age -->
+      <a href="/blog/healthy-bmi-by-age/" class="post-card" data-category="bmi">
+        <div class="card-visual">
+          <div class="card-visual-icon">📈</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat bmi">BMI</span>
+          <div class="card-title">Healthy BMI by Age: What the Numbers Mean</div>
+          <p class="card-excerpt">Standard BMI ranges don't tell the full story. Here's how healthy weight shifts across age groups and what context actually matters.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>7 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- B2: BMI vs Body Fat -->
+      <a href="/blog/bmi-vs-body-fat-percentage/" class="post-card" data-category="bmi">
+        <div class="card-visual">
+          <div class="card-visual-icon">⚖️</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat bmi">BMI</span>
+          <div class="card-title">BMI vs Body Fat Percentage: What's the Difference?</div>
+          <p class="card-excerpt">BMI is a proxy. Body fat is a measurement. Here's when each number matters, what they miss, and how to interpret both together.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>6 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- B3: BMI Chart for Women -->
+      <a href="/blog/bmi-chart-for-women/" class="post-card" data-category="bmi">
+        <div class="card-visual">
+          <div class="card-visual-icon">📉</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat bmi">BMI</span>
+          <div class="card-title">BMI Chart for Women: Ranges, Risks, and What Doctors Look At</div>
+          <p class="card-excerpt">The standard BMI scale applies equally to men and women — but the health risks at each range don't. What the research actually shows.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>6 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Placeholder for News & Updates — hidden by default, shown if news filter active -->
+      <!-- Empty state card shown when a filter returns 0 results -->
+      <div class="empty-state" id="empty-state">
+        No articles in this category yet — check back soon.
+      </div>
+
+    </div><!-- end .card-grid -->
+
+    <!-- AD ZONE MID -->
+    <div class="ad-zone-mid">
+      <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone B</div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="/">NexAlc</a> · <a href="/blog/">Blog</a> · <a href="/mortgage-calculator/">Mortgage Calculator</a> · <a href="/bmi-calculator/">BMI Calculator</a> · For informational purposes only.</p>
+  </footer>
+
+  <script>
+    function filterPosts(category, btn) {
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update section title
+      const titles = { all: 'All Articles', mortgage: 'Mortgage', bmi: 'BMI', news: 'News & Updates' };
+      document.querySelector('.section-title').textContent = titles[category] || 'All Articles';
+
+      // Show/hide cards
+      const cards = document.querySelectorAll('.post-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const match = category === 'all' || card.dataset.category === category;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      // Empty state
+      const empty = document.getElementById('empty-state');
+      empty.classList.toggle('visible', visible === 0);
+
+      // Count label
+      document.getElementById('visible-count').textContent =
+        visible === 0 ? 'No articles found' :
+        visible === 1 ? 'Showing 1 article' :
+        `Showing ${visible} articles`;
+    }
+  </script>
+
+</body>
+</html>

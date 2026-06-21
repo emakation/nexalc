@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator — Calculate Your Exact Age from Date of Birth | NexAlc</title>
+  <meta name="description" content="Free age calculator: enter your date of birth to get your exact age in years, months, weeks, days and hours. Compare two ages, find your birthday countdown, or calculate how old you were in any year.">
+<link rel="canonical" href="https://nexalc.com/age-calculator/" />
+<link rel="icon" href="/assets/favicon.png" type="image/png" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Age Calculator — Calculate Your Exact Age | NexAlc" />
+<meta property="og:description" content="Free online age calculator. Enter your date of birth and instantly get your exact age in years, months, weeks, days, hours, and minutes." />
+<meta property="og:image" content="https://nexalc.com/assets/og-age-calculator.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nexalc.com/age-calculator/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Age Calculator — Calculate Your Exact Age | NexAlc" />
+<meta name="twitter:description" content="Free online age calculator. Enter your date of birth and instantly get your exact age in years, months, weeks, days, hours, and minutes." />
+
+<!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --orange:     #FF6B2B;
+      --orange-dim: #cc5522;
+      --near-black: #0E0E0F;
+      --warm-white: #F5F0EB;
+      --surface:    #161617;
+      --surface2:   #1e1e1f;
+      --surface3:   #252526;
+      --border:     rgba(255,255,255,.07);
+      --text-main:  #F0EBE4;
+      --text-muted: #8a8480;
+      --radius:     14px;
+      --radius-sm:  8px;
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--near-black);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image:
+        linear-gradient(rgba(255,107,43,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(14,14,15,.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo-txt {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text-main);
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-main); background: var(--surface2); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.1); }
+
+    /* DROPDOWN */
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform var(--transition);
+      opacity: .6;
+    }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-links > a:hover { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding-top: 8px;
+      min-width: 190px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      transition: opacity var(--transition), transform var(--transition);
+      z-index: 200;
+    }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: .82rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      background: none;
+    }
+    .nav-dropdown a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+
+    /* ── AD ZONE A ── */
+    .ad-a-wrap { padding: 16px 20px 0; }
+    .ad-zone-a {
+      max-width: 728px;
+      height: 90px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      display: grid;
+      grid-template-columns: 1fr 288px;
+      gap: 28px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .sidebar   { display: none; }
+    }
+    @media (max-width: 900px) { body { padding-bottom: 72px; } }
+
+    /* ── HERO ── */
+    .hero { margin-bottom: 26px; }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--warm-white);
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: .93rem;
+      max-width: 500px;
+      line-height: 1.65;
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 9px 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .83rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text-main); background: var(--surface2); }
+    .tab-btn.active { background: var(--orange); color: #fff; font-weight: 600; }
+
+    /* ── PANELS ── */
+    .tool-panel { display: none; }
+    .tool-panel.active { display: block; animation: fadeUp .28s ease; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 5px;
+    }
+    .card .subtitle {
+      color: var(--text-muted);
+      font-size: .85rem;
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+
+    /* ── FORM ── */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-row.single { grid-template-columns: 1fr; }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .field input {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      color: var(--text-main);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color var(--transition);
+      width: 100%;
+    }
+    .field input:focus { border-color: var(--orange); }
+    .field input::placeholder { color: var(--text-muted); opacity: .7; }
+    .field input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(.5) sepia(1) hue-rotate(330deg) saturate(4);
+      cursor: pointer;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
+
+    .person-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 30px;
+      display: inline-block;
+    }
+    .person-label.a { color: var(--orange); background: rgba(255,107,43,.12); }
+    .person-label.b { color: var(--text-muted); background: var(--surface2); }
+
+    .btn-calc {
+      width: 100%;
+      padding: 13px;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .98rem;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 6px;
+      letter-spacing: .02em;
+    }
+    .btn-calc:hover  { background: var(--orange-dim); transform: translateY(-1px); }
+    .btn-calc:active { transform: translateY(0); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border); margin: 22px 0; }
+
+    /* ── RESULT BLOCK ── */
+    .result-block { display: none; }
+    .result-block.show { display: block; animation: fadeUp .32s ease; }
+
+    /* ── STATS GRID ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 480px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .stat-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat-box .stat-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .stat-box .stat-lbl {
+      font-size: .72rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    /* ── GREETING ── */
+    .result-greeting {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .result-greeting .hi  { color: var(--orange); }
+
+    /* ── BIRTHDAY BOX ── */
+    .birthday-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, rgba(255,107,43,.1), rgba(255,107,43,.03));
+      border: 1px solid rgba(255,107,43,.22);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .bday-icon { font-size: 2rem; flex-shrink: 0; }
+    .bday-text { flex: 1; }
+    .bday-text strong {
+      font-family: 'Syne', sans-serif;
+      font-size: .98rem;
+      color: var(--orange);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .bday-text span { font-size: .84rem; color: var(--text-muted); }
+
+    /* ── DIFF RESULTS ── */
+    .diff-header {
+      background: var(--surface2);
+      border-radius: var(--radius-sm);
+      padding: 22px 18px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .diff-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .diff-lbl { color: var(--text-muted); font-size: .8rem; margin-top: 5px; text-transform: uppercase; letter-spacing: .06em; }
+    .diff-older { margin-top: 12px; font-size: .9rem; color: var(--text-main); }
+    .diff-older strong { color: var(--orange); }
+
+    /* ── FACTS ── */
+    .facts-section { margin-top: 4px; }
+    .facts-section h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 12px;
+    }
+    .fact-item {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 9px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: border-color var(--transition);
+    }
+    .fact-item:hover { border-color: rgba(255,107,43,.2); }
+    .fact-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
+    .fact-text { font-size: .87rem; color: var(--text-muted); line-height: 1.6; }
+    .fact-text strong { color: var(--text-main); font-weight: 600; }
+
+    /* ── HOW OLD ── */
+    .year-grid-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .year-grid-header span { font-size: .8rem; color: var(--text-muted); }
+    .decade-btns { display: flex; gap: 6px; }
+    .decade-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      transition: all var(--transition);
+    }
+    .decade-btn:hover { color: var(--orange); border-color: rgba(255,107,43,.3); }
+
+    .year-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+      gap: 7px;
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 3px;
+    }
+    .year-grid::-webkit-scrollbar { width: 4px; }
+    .year-grid::-webkit-scrollbar-track { background: transparent; }
+    .year-grid::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 4px; }
+
+    .year-btn {
+      padding: 8px 4px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+    .year-btn:hover { border-color: rgba(255,107,43,.4); color: var(--orange); background: rgba(255,107,43,.05); }
+    .year-btn.selected { background: var(--orange); color: #fff; border-color: var(--orange); font-weight: 700; }
+    .year-btn.future-yr { color: rgba(255,107,43,.45); font-style: italic; }
+    .year-btn.future-yr:hover { color: var(--orange); border-color: rgba(255,107,43,.4); }
+    .year-btn.not-born { color: var(--surface3); cursor: default; border-color: transparent; background: transparent; }
+    .year-btn.not-born:hover { color: var(--surface3); border-color: transparent; background: transparent; }
+
+    .howold-result {
+      background: linear-gradient(135deg, var(--surface2), var(--surface3));
+      border: 1px solid rgba(255,107,43,.18);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 18px;
+      animation: fadeUp .3s ease;
+    }
+    .howold-year-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .howold-age-num {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 10vw, 4.5rem);
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      margin: 6px 0;
+    }
+    .howold-context { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+    .howold-context em { color: var(--text-main); font-style: normal; font-weight: 500; }
+    .howold-not-born .howold-age-num { font-size: 1.4rem; color: var(--text-muted); }
+
+    /* ── AD B ── */
+    .ad-zone-b {
+      max-width: 336px;
+      height: 280px;
+      margin: 4px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .sidebar-card-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .related-tool-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+      cursor: pointer;
+    }
+    .related-tool-item:last-child { border-bottom: none; }
+    .related-tool-item:hover { background: var(--surface2); }
+    .related-tool-name {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+    .related-tool-tag {
+      font-size: .68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      color: var(--text-muted);
+      background: var(--surface3);
+    }
+    .related-tool-tag.hot {
+      color: var(--orange);
+      background: rgba(255,107,43,.12);
+    }
+
+    .ad-zone-c {
+      width: 100%;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── MOBILE AD ── */
+    .ad-mobile-sticky {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 62px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      color: var(--text-muted);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 900px) { .ad-mobile-sticky { display: flex; } }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1rem, 4vw, 2rem);
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--warm-white); text-decoration: none;
+    }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem; color: var(--text-muted);
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
+
+    /* ── CONFETTI ── */
+    #confetti-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/" class="active">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<!-- AD ZONE A -->
+<div class="ad-a-wrap">
+  <div class="ad-zone-a">Advertisement</div>
+</div>
+
+<!-- ═══════════════════ PAGE ═══════════════════ -->
+<div class="page-wrap">
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Age <span>Calculator</span></h1>
+      <p>Enter your date of birth to instantly calculate your exact age in years, months, weeks, days, and hours. Free, no sign-up required.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="age"     onclick="switchTab(this,'age')">🎂 My Age</button>
+      <button class="tab-btn"        data-tab="diff"    onclick="switchTab(this,'diff')">⚖️ Age Difference</button>
+      <button class="tab-btn"        data-tab="howold"  onclick="switchTab(this,'howold')">🕰️ How Old Was I</button>
+    </div>
+
+    <!-- ══════════ TOOL 1: MY AGE ══════════ -->
+    <div id="tab-age" class="tool-panel active">
+      <div class="card">
+        <h2>How Old Am I?</h2>
+        <p class="subtitle">Enter your date of birth for a complete age calculation — years, months, weeks, days, hours, and minutes — plus a countdown to your next birthday.</p>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Your Name (optional)</label>
+            <input type="text" id="age-name" placeholder="e.g. Alex" maxlength="30" />
+          </div>
+          <div class="field">
+            <label>Date of Birth</label>
+            <input type="date" id="age-dob" />
+          </div>
+        </div>
+        <button class="btn-calc" onclick="calcMyAge()">Calculate My Age →</button>
+
+        <div class="result-block" id="age-result">
+          <div class="divider"></div>
+          <div class="result-greeting" id="age-greeting"></div>
+          <div class="stats-grid" id="age-stats-grid"></div>
+          <div id="age-birthday-box"></div>
+        </div>
+      </div>
+
+      <div class="ad-zone-b">Advertisement</div>
+    </div>
+
+    <!-- ══════════ TOOL 2: AGE DIFFERENCE ══════════ -->
+    <div id="tab-diff" class="tool-panel">
+      <div class="card">
+        <h2>Age Difference Calculator</h2>
+        <p class="subtitle">Enter two dates of birth to calculate the exact age difference in years, months, weeks, and days — plus historical context from between those years.</p>
+
+        <div class="two-col">
+          <div>
+            <div class="person-label a">Person 1</div>
+            <div class="field" style="margin-bottom:12px;">
+              <label>Name</label>
+              <input type="text" id="diff-name-a" placeholder="e.g. Jordan" maxlength="30" />
+            </div>
+            <div class="field">
+              <label>Date of Birth</label>
+              <input type="date" id="diff-dob-a" />
+            </div>
+          </div>
+          <div>
+            <div class="person-label b">Person 2</div>
+            <div class="field" style="margin-bottom:12px;">
+              <label>Name</label>
+              <input type="text" id="diff-name-b" placeholder="e.g. Riley" maxlength="30" />
+            </div>
+            <div class="field">
+              <label>Date of Birth</label>
+              <input type="date" id="diff-dob-b" />
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-calc" style="margin-top:18px;" onclick="calcDiff()">Compare Ages →</button>
+
+        <div class="result-block" id="diff-result">
+          <div class="divider"></div>
+          <div class="diff-header" id="diff-header"></div>
+          <div class="stats-grid" id="diff-stats"></div>
+          <div class="facts-section" id="diff-facts"></div>
+        </div>
+      </div>
+
+      <div class="ad-zone-b">Advertisement</div>
+    </div>
+
+    <!-- ══════════ TOOL 3: HOW OLD WAS I ══════════ -->
+    <div id="tab-howold" class="tool-panel">
+      <div class="card">
+        <h2>How Old Was I / Will I Be?</h2>
+        <p class="subtitle">Enter your date of birth, then tap any year to instantly see how old you were — or will be — at that point in history.</p>
+
+        <div class="form-row single">
+          <div class="field">
+            <label>Your Date of Birth</label>
+            <input type="date" id="howold-dob" oninput="buildYearGrid()" />
+          </div>
+        </div>
+
+        <div id="howold-grid-section" style="display:none;">
+          <div class="year-grid-header">
+            <span>Tap any year ↓</span>
+            <div class="decade-btns">
+              <button class="decade-btn" onclick="shiftGrid(-1)">← Past</button>
+              <button class="decade-btn" onclick="shiftGrid(1)">Future →</button>
+            </div>
+          </div>
+          <div class="year-grid" id="year-grid"></div>
+          <div id="howold-result-area"></div>
+        </div>
+      </div>
+
+      <div class="ad-zone-b">Advertisement</div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">Other Tools</div>
+      <a class="related-tool-item" href="/mortgage-calculator/">
+        <span class="related-tool-name">Mortgage Calculator</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+      <a class="related-tool-item" href="/bmi-calculator/">
+        <span class="related-tool-name">BMI Calculator</span>
+        <span class="related-tool-tag hot">Popular</span>
+      </a>
+      <a class="related-tool-item" href="/currency-converter/">
+        <span class="related-tool-name">Currency Converter</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+      <a class="related-tool-item" href="/percentage-calculator/">
+        <span class="related-tool-name">Percentage Calculator</span>
+        <span class="related-tool-tag">Math</span>
+      </a>
+      <a class="related-tool-item" href="/tip-calculator/">
+        <span class="related-tool-name">Tip Calculator</span>
+        <span class="related-tool-tag">Finance</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/">
+        <span class="related-tool-name">Countdown Timer</span>
+        <span class="related-tool-tag">Temporal</span>
+      </a>
+    </div>
+    <div class="ad-zone-c">Advertisement</div>
+  </aside>
+</div>
+
+<!-- ═══════ SEO CONTENT ═══════ -->
+<section style="max-width:820px; margin:0 auto; padding:0 20px 64px;">
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:12px;">What Is an Age Calculator?</h2>
+    <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin:0;">An <strong>age calculator</strong> is a digital tool that determines a person's exact age by calculating the interval between their <strong>date of birth</strong> and a reference date, typically today, and expressing the result in years, months, weeks, and days. Instead of doing the mental arithmetic yourself, you enter your birth date and the calculator returns a precise breakdown: years, months, weeks, days, hours, and minutes. It handles edge cases automatically, including <strong>leap years</strong> and months with different lengths.</p>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:12px;">How to Calculate Your Age from Date of Birth</h2>
+    <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin-bottom:10px;">Using this birthday calculator takes three steps:</p>
+    <ol style="color:var(--text-muted); font-size:.9rem; line-height:1.9; padding-left:20px; margin:0;">
+      <li style="margin-bottom:6px;"><strong>Enter your date of birth</strong> — click the date field and select your birth date (day, month, year).</li>
+      <li style="margin-bottom:6px;"><strong>Click "Calculate My Age"</strong> — the tool runs the age calculation instantly.</li>
+      <li><strong>Read your results</strong> — your exact age appears in years, months, weeks, days, hours, and minutes, with a countdown to your next birthday.</li>
+    </ol>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:12px;">Age Calculation Formula</h2>
+    <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin-bottom:10px;">The standard age calculation formula is: <strong>Age = Reference Date − Date of Birth</strong>. The calculation proceeds unit by unit — years, then months, then days — borrowing from higher units where necessary to produce an accurate result across varying month lengths and leap years.</p>
+    <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin:0;">For age difference calculations: <strong>Age Gap = Older Birth Date − Younger Birth Date</strong>. Leap years are handled by treating February 28 as the birthday in non-leap years for anyone born on February 29.</p>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:12px;">Age Calculation Example</h2>
+    <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin-bottom:10px;">If your date of birth is <strong>15 March 1990</strong> and today is <strong>10 June 2026</strong>:</p>
+    <ul style="color:var(--text-muted); font-size:.9rem; line-height:1.9; padding-left:20px; margin:0;">
+      <li style="margin-bottom:6px;">Years completed: <strong>36</strong></li>
+      <li style="margin-bottom:6px;">Months after last birthday: <strong>2 months, 26 days</strong></li>
+      <li style="margin-bottom:6px;">Total days lived: approximately <strong>13,235 days</strong></li>
+      <li>Next birthday: <strong>15 March 2027</strong> — 278 days away</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:12px;">Why Use an Age Calculator?</h2>
+    <ul style="color:var(--text-muted); font-size:.9rem; line-height:1.9; padding-left:20px; margin:0;">
+      <li style="margin-bottom:6px;"><strong>Legal &amp; government eligibility</strong> — retirement age, pension qualification, voter registration, and driving licence deadlines all depend on your exact date of birth.</li>
+      <li style="margin-bottom:6px;"><strong>Healthcare &amp; medical</strong> — doctors and insurance providers often need age in precise weeks or months, especially for infants.</li>
+      <li style="margin-bottom:6px;"><strong>Financial planning</strong> — calculating years to retirement, age-based savings schemes, and insurance premium brackets.</li>
+      <li style="margin-bottom:6px;"><strong>School &amp; academic admissions</strong> — institutions set cut-off ages by a specific date; this tool confirms eligibility instantly.</li>
+      <li><strong>Fun &amp; social</strong> — settling age gap debates, or discovering what was happening in the world the year you were born.</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:20px;">
+    <h2 style="font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:var(--warm-white); margin-bottom:16px;">Frequently Asked Questions</h2>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:0;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">How do I calculate my exact age?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">To calculate your exact age, enter your date of birth and a reference date (defaulting to today) into an age calculator. The tool subtracts the birth date from the reference date and returns the result broken down into years, months, weeks, days, hours, and minutes.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:16px;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">What is the age calculation formula?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">Age = Current Date − Date of Birth. The calculator subtracts your birth date from today, accounting for leap years and varying month lengths to return a precise result.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:16px;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">How does the calculator handle leap year birthdays?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">For February 29 birthdays, the calculator uses February 28 in non-leap years as the annual birthday — the legal standard in most countries.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:16px;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">Can I calculate the age difference between two people?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">Yes. Switch to the "Age Difference" tab, enter both dates of birth, and the calculator returns the exact gap in years, months, weeks, and days.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:16px;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">Can I find out how old I was on a past date?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">Yes. Use the "How Old Was I" tab, enter your date of birth, and tap any year to see your exact age at that point in history — or in the future.</p>
+    </div>
+
+    <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:16px;">
+      <h3 style="font-family:'Syne',sans-serif; font-size:.97rem; font-weight:700; color:var(--warm-white); margin-bottom:7px;">Is this age calculator free?</h3>
+      <p style="color:var(--text-muted); font-size:.9rem; line-height:1.7; margin:0;">Completely free. No sign-up, no download, no limit on how many times you use it.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<p style="font-size: 13px; color: #888; margin-top: 2rem;">
+  Last reviewed: <time datetime="2026-06-10">June 10, 2026</time> · Methodology reviewed by the NexAlc editorial team.
+</p>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+<!-- MOBILE STICKY AD -->
+<div class="ad-mobile-sticky">Advertisement</div>
+
+<!-- ═══════════════════ SCRIPT ═══════════════════ -->
+<script>
+/* ─── TAB SWITCH ─── */
+function switchTab(btn, id) {
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ─── UTILS ─── */
+const fmt    = n => n.toLocaleString();
+const daysBetween = (a, b) => Math.floor(Math.abs(b - a) / 86400000);
+const safeName = (raw, fallback) => raw.trim() || fallback;
+
+function exactDiff(older, newer) {
+  let y = newer.getFullYear() - older.getFullYear();
+  let m = newer.getMonth()    - older.getMonth();
+  let d = newer.getDate()     - older.getDate();
+  if (d < 0) { m--; d += new Date(newer.getFullYear(), newer.getMonth(), 0).getDate(); }
+  if (m < 0) { y--; m += 12; }
+  return { y, m, d };
+}
+
+/* ═══════════════ TOOL 1: MY AGE ═══════════════ */
+function calcMyAge() {
+  const rawName = document.getElementById('age-name').value;
+  const dobVal  = document.getElementById('age-dob').value;
+
+  if (!dobVal) { alert('Please enter your date of birth.'); return; }
+
+  const name = safeName(rawName, '');
+  const dob  = new Date(dobVal + 'T00:00:00');
+  const now  = new Date();
+
+  if (dob >= now) { alert('Date of birth must be in the past.'); return; }
+
+  const { y: years, m: months, d: days } = exactDiff(dob, now);
+  const totalDays    = daysBetween(dob, now);
+  const totalWeeks   = Math.floor(totalDays / 7);
+  const totalMonths  = years * 12 + months;
+  const totalHours   = totalDays * 24;
+  const totalMinutes = totalHours * 60;
+
+  /* Greeting */
+  const greetEl = document.getElementById('age-greeting');
+  if (name) {
+    greetEl.innerHTML = `<span class="hi">${name}</span> is <span class="hi">${years} years, ${months} months & ${days} days</span> old.`;
+  } else {
+    greetEl.innerHTML = `You are <span class="hi">${years} years, ${months} months & ${days} days</span> old.`;
+  }
+
+  /* Stats */
+  const statsData = [
+    { val: fmt(years),        lbl: 'Years'   },
+    { val: fmt(totalMonths),  lbl: 'Months'  },
+    { val: fmt(totalWeeks),   lbl: 'Weeks'   },
+    { val: fmt(totalDays),    lbl: 'Days'    },
+    { val: fmt(totalHours),   lbl: 'Hours'   },
+    { val: fmt(totalMinutes), lbl: 'Minutes' },
+  ];
+  document.getElementById('age-stats-grid').innerHTML = statsData.map(s =>
+    `<div class="stat-box">
+      <div class="stat-val">${s.val}</div>
+      <div class="stat-lbl">${s.lbl}</div>
+    </div>`
+  ).join('');
+
+  /* Next birthday */
+  const nextBday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+  if (nextBday <= now) nextBday.setFullYear(now.getFullYear() + 1);
+  const daysLeft = daysBetween(now, nextBday);
+  const turningAge = nextBday.getFullYear() - dob.getFullYear();
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const bdayFmt = `${MONTHS[nextBday.getMonth()]} ${nextBday.getDate()}, ${nextBday.getFullYear()}`;
+
+  const bdayEl = document.getElementById('age-birthday-box');
+  if (daysLeft === 0) {
+    bdayEl.innerHTML = `<div class="birthday-box">
+      <div class="bday-icon">🎉</div>
+      <div class="bday-text">
+        <strong>Happy Birthday!</strong>
+        <span>${name ? name + ' turns' : 'You turn'} ${turningAge} today! Have an amazing day 🎂</span>
+      </div>
+    </div>`;
+    launchConfetti();
+  } else {
+    bdayEl.innerHTML = `<div class="birthday-box">
+      <div class="bday-icon">🎂</div>
+      <div class="bday-text">
+        <strong>${daysLeft} day${daysLeft !== 1 ? 's' : ''} until ${name ? name + "'s" : 'your'} next birthday</strong>
+        <span>${bdayFmt} · Turning ${turningAge}</span>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('age-result').classList.add('show');
+}
+
+/* ═══════════════ TOOL 2: AGE DIFFERENCE ═══════════════ */
+
+/* Fun fact data: historical events with year + general gap facts */
+const EVENTS = [
+  { y:1903, icon:'✈️', text:'<strong>1903 — First powered flight.</strong> The Wright Brothers flew at Kitty Hawk, North Carolina. Aviation didn\'t exist before their births.' },
+  { y:1928, icon:'🦠', text:'<strong>1928 — Penicillin discovered.</strong> Alexander Fleming\'s accident in a London lab launched the entire age of antibiotics.' },
+  { y:1945, icon:'🕊️', text:'<strong>1945 — WWII ended.</strong> The deadliest conflict in human history reshaped every border, every nation, every family on Earth.' },
+  { y:1953, icon:'🧬', text:'<strong>1953 — DNA structure revealed.</strong> Watson & Crick published the double helix — the foundation of modern biology and genetics.' },
+  { y:1957, icon:'🛸', text:'<strong>1957 — Sputnik launched.</strong> A Soviet beach-ball sized satellite put humanity in space for the first time. The Space Age began.' },
+  { y:1963, icon:'✊', text:'<strong>1963 — "I Have a Dream."</strong> Martin Luther King Jr. delivered the most iconic speech in civil rights history at the Lincoln Memorial.' },
+  { y:1969, icon:'🌕', text:'<strong>1969 — Moon landing.</strong> Neil Armstrong stepped onto the lunar surface. Humanity had left Earth for another world.' },
+  { y:1975, icon:'💻', text:'<strong>1975 — Microsoft founded.</strong> Bill Gates and Paul Allen started the company that would put a computer in every home.' },
+  { y:1976, icon:'🍎', text:'<strong>1976 — Apple founded.</strong> Steve Jobs and Steve Wozniak incorporated Apple in a garage. The personal computing era quietly began.' },
+  { y:1981, icon:'🖥️', text:'<strong>1981 — IBM PC launched.</strong> The personal computer became a real product. Offices, then homes, were never the same again.' },
+  { y:1989, icon:'🧱', text:'<strong>1989 — Berlin Wall fell.</strong> Cold War ended. Germany reunified. The global map was redrawn overnight.' },
+  { y:1991, icon:'🌐', text:'<strong>1991 — The World Wide Web went public.</strong> Tim Berners-Lee\'s invention became available to everyone. The internet age began.' },
+  { y:1994, icon:'🌍', text:'<strong>1994 — Nelson Mandela elected.</strong> South Africa\'s first fully democratic election ended apartheid after decades of struggle.' },
+  { y:1997, icon:'🐑', text:'<strong>1997 — Dolly the sheep cloned.</strong> The first mammal cloned from an adult cell — science fiction became science fact.' },
+  { y:1998, icon:'🔍', text:'<strong>1998 — Google founded.</strong> Brin and Page built a search engine in a garage. It became the lens through which billions see the world.' },
+  { y:2001, icon:'💔', text:'<strong>2001 — September 11 attacks.</strong> Nearly 3,000 lives lost. The event permanently reshaped global security, travel, and geopolitics.' },
+  { y:2004, icon:'👤', text:'<strong>2004 — Facebook launched.</strong> A Harvard dorm room project became a 3-billion-user platform that changed politics, relationships, and reality.' },
+  { y:2007, icon:'📱', text:'<strong>2007 — iPhone unveiled.</strong> Steve Jobs called it "an internet communicator, a phone, and an iPod." He was underselling it.' },
+  { y:2008, icon:'💸', text:'<strong>2008 — Global financial crisis.</strong> The worst economic collapse since 1929 wiped trillions in wealth and changed a generation\'s relationship with money.' },
+  { y:2012, icon:'🌌', text:'<strong>2012 — Higgs boson discovered.</strong> CERN confirmed the "God particle," completing the Standard Model of particle physics.' },
+  { y:2016, icon:'🗳️', text:'<strong>2016 — Brexit & Trump election.</strong> Two seismic political shocks in the same year. Populism reshaped democracies across the West.' },
+  { y:2020, icon:'😷', text:'<strong>2020 — COVID-19 pandemic.</strong> A novel coronavirus grounded the world, killing millions and changing how humans live and work permanently.' },
+  { y:2022, icon:'🤖', text:'<strong>2022 — ChatGPT launched.</strong> OpenAI\'s chatbot hit a million users in 5 days. The AI age — like the internet — arrived faster than anyone expected.' },
+];
+
+/* General gap-size facts (used when event list is thin) */
+const GAP_FACTS = [
+  { min:0,  max:3,  icon:'🌱', text:'A gap of just a few years means you two practically grew up in the same technological world — same phones, same pop culture, same internet.' },
+  { min:2,  max:7,  icon:'🎮', text:'In this window, an <strong>entire console generation</strong> could be born and die. Think: PS4 launched and PS5 replaced it — that\'s your gap in gaming time.' },
+  { min:5,  max:15, icon:'📱', text:'Smartphones didn\'t exist before 2007. <strong>Depending on this gap, one of you grew up with a phone in hand, the other without.</strong>' },
+  { min:8,  max:20, icon:'🌐', text:'One of you likely experienced a world <strong>before social media</strong> was mainstream — Facebook, Twitter, Instagram all exploded in the late 2000s.' },
+  { min:10, max:25, icon:'🚀', text:'In this span, <strong>SpaceX went from near-bankruptcy to routinely landing orbital rockets</strong> back on their launchpads and docking with the ISS.' },
+  { min:15, max:35, icon:'🧬', text:'<strong>The Human Genome Project</strong> — mapping all 3 billion DNA base pairs — took 13 years and was completed in 2003. That\'s the scale of your age gap.' },
+  { min:20, max:45, icon:'📺', text:'Television went from laboratory experiment to a screen in every living room within about 20 years, <strong>reshaping news, entertainment, and elections forever.</strong>' },
+  { min:25, max:60, icon:'💊', text:'Antibiotics were discovered in 1928 and were widely available by the 1940s — diseases that killed millions became treatable. <strong>That\'s the scale of your gap.</strong>' },
+  { min:30, max:70, icon:'🚗', text:'<strong>The automobile</strong> went from rich-man\'s novelty to reshaping every city, suburb, highway, and economy on Earth — all within about 40 years.' },
+  { min:50, max:100,icon:'⚡', text:'<strong>Electrification of entire cities</strong> — from Edison\'s first power station in 1882 to wired households — happened across roughly this timeframe.' },
+  { min:60, max:120,icon:'🏭', text:'The <strong>entire Industrial Revolution</strong> — steam engines, railways, factories, mass production — unfolded over about 80 years. Your gap spans it.' },
+];
+
+function pickFacts(olderYear, youngerYear, gapYears) {
+  const results = [];
+
+  /* 1. Pick historical events that fell between the two birth years */
+  const between = EVENTS
+    .filter(e => e.y > olderYear && e.y < youngerYear)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+  results.push(...between);
+
+  /* 2. If we still have room, add a gap-size fact */
+  if (results.length < 4) {
+    const gapMatch = GAP_FACTS
+      .filter(f => gapYears >= f.min && gapYears <= f.max)
+      .sort(() => Math.random() - 0.5)[0];
+    if (gapMatch) results.push(gapMatch);
+  }
+
+  /* 3. If still empty (very small gap / no events between) */
+  if (results.length === 0) {
+    results.push({
+      icon: '⚡',
+      text: 'You two were born so close together you practically entered the same world — same news cycle, same cultural moment, same tech era.',
+    });
+  }
+
+  return results.slice(0, 4);
+}
+
+function calcDiff() {
+  const rawA = document.getElementById('diff-name-a').value;
+  const rawB = document.getElementById('diff-name-b').value;
+  const dobAStr = document.getElementById('diff-dob-a').value;
+  const dobBStr = document.getElementById('diff-dob-b').value;
+
+  if (!dobAStr || !dobBStr) { alert('Please enter both dates of birth.'); return; }
+
+  let nA = safeName(rawA, 'Person 1');
+  let nB = safeName(rawB, 'Person 2');
+  let dobA = new Date(dobAStr + 'T00:00:00');
+  let dobB = new Date(dobBStr + 'T00:00:00');
+
+  /* Sort so olderDob is earlier */
+  let olderName, youngerName, olderDob, youngerDob;
+  if (dobA <= dobB) {
+    olderName = nA; youngerName = nB; olderDob = dobA; youngerDob = dobB;
+  } else {
+    olderName = nB; youngerName = nA; olderDob = dobB; youngerDob = dobA;
+  }
+
+  const { y, m, d } = exactDiff(olderDob, youngerDob);
+  const totalDays  = daysBetween(olderDob, youngerDob);
+  const totalWeeks = Math.floor(totalDays / 7);
+  const gapMonths  = y * 12 + m;
+  const gapYears   = y;
+
+  /* Header */
+  const sameDay = olderDob.getTime() === youngerDob.getTime();
+  document.getElementById('diff-header').innerHTML = sameDay
+    ? `<div class="diff-num">0</div>
+       <div class="diff-lbl">Age Gap</div>
+       <div class="diff-older">${olderName} & ${youngerName} share the same birthday! 🎂</div>`
+    : `<div class="diff-num">${y}y ${m}m ${d}d</div>
+       <div class="diff-lbl">Exact Age Gap</div>
+       <div class="diff-older"><strong>${olderName}</strong> is older · Born <strong>${olderDob.getFullYear()}</strong> vs <strong>${youngerDob.getFullYear()}</strong></div>`;
+
+  /* Stats */
+  document.getElementById('diff-stats').innerHTML = [
+    { val: fmt(gapYears),  lbl: 'Years'  },
+    { val: fmt(gapMonths), lbl: 'Months' },
+    { val: fmt(totalWeeks),lbl: 'Weeks'  },
+    { val: fmt(totalDays), lbl: 'Days'   },
+  ].map(s => `<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.lbl}</div></div>`).join('');
+
+  /* Facts */
+  const facts = pickFacts(olderDob.getFullYear(), youngerDob.getFullYear(), gapYears);
+  document.getElementById('diff-facts').innerHTML = `
+    <h3>🌍 What happened between <em>${olderName}</em> & <em>${youngerName}</em>'s births?</h3>
+    ${facts.map(f => `
+      <div class="fact-item">
+        <div class="fact-icon">${f.icon}</div>
+        <div class="fact-text">${f.text}</div>
+      </div>
+    `).join('')}
+  `;
+
+  document.getElementById('diff-result').classList.add('show');
+}
+
+/* ═══════════════ TOOL 3: HOW OLD WAS I ═══════════════ */
+
+/* Notable year context for extra flavour */
+const YEAR_CTX = {
+  1945:{ note:'WWII ended — the world was rebuilding from scratch.' },
+  1953:{ note:'Watson & Crick revealed the structure of DNA.' },
+  1957:{ note:'Sputnik launched — humanity entered the Space Age.' },
+  1963:{ note:'JFK assassinated; MLK delivered "I Have a Dream."' },
+  1969:{ note:'Neil Armstrong walked on the Moon.' },
+  1975:{ note:'Microsoft was founded; the PC era was beginning.' },
+  1976:{ note:'Apple Computer was founded by Jobs & Wozniak.' },
+  1981:{ note:'IBM PC launched — the personal computer went mainstream.' },
+  1989:{ note:'The Berlin Wall fell, ending the Cold War.' },
+  1991:{ note:'The World Wide Web went public for the first time.' },
+  1994:{ note:'Mandela elected — apartheid era ended in South Africa.' },
+  1997:{ note:'Dolly the sheep was cloned — a scientific first.' },
+  1998:{ note:'Google was founded. The internet was about to change forever.' },
+  2001:{ note:'September 11 attacks reshaped global security and politics.' },
+  2004:{ note:'Facebook launched from a Harvard dorm room.' },
+  2007:{ note:'Apple unveiled the original iPhone. Smartphones took over.' },
+  2008:{ note:'Global financial crisis — the worst crash since 1929.' },
+  2012:{ note:'CERN confirmed the Higgs boson — the "God particle."' },
+  2020:{ note:'COVID-19 pandemic changed daily life for billions.' },
+  2022:{ note:'ChatGPT launched — the mainstream AI age began.' },
+};
+
+function buildYearGrid() {
+  const dobStr = document.getElementById('howold-dob').value;
+  if (!dobStr) return;
+
+  const dob       = new Date(dobStr + 'T00:00:00');
+  const birthYear = dob.getFullYear();
+  const currYear  = new Date().getFullYear();
+  const startYear = birthYear - 5;
+  const endYear   = currYear + 20;
+
+  const grid = document.getElementById('year-grid');
+  let html = '';
+  for (let y = startYear; y <= endYear; y++) {
+    let cls = 'year-btn';
+    if (y < birthYear) cls += ' not-born';
+    else if (y > currYear) cls += ' future-yr';
+    const disabled = y < birthYear ? 'disabled' : '';
+    html += `<button class="${cls}" ${disabled} onclick="showHowOld(${y})">${y}</button>`;
+  }
+  grid.innerHTML = html;
+  document.getElementById('howold-result-area').innerHTML = '';
+  document.getElementById('howold-grid-section').style.display = 'block';
+
+  /* Scroll to birth year */
+  setTimeout(() => {
+    const btns = grid.querySelectorAll('.year-btn');
+    const idx = birthYear - startYear;
+    if (btns[idx]) btns[idx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, 80);
+}
+
+function shiftGrid(dir) {
+  document.getElementById('year-grid').scrollBy({ top: dir * 180, behavior: 'smooth' });
+}
+
+function showHowOld(year) {
+  const dobStr = document.getElementById('howold-dob').value;
+  if (!dobStr) return;
+
+  const dob       = new Date(dobStr + 'T00:00:00');
+  const birthYear = dob.getFullYear();
+  const currYear  = new Date().getFullYear();
+
+  /* Highlight */
+  document.querySelectorAll('#year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+
+  /* Age in that year (age they turn/turned that calendar year) */
+  const ageInYear = year - birthYear;
+
+  let tense, label;
+  if      (year < currYear)  { tense = 'were'; label = year; }
+  else if (year === currYear){ tense = 'are';  label = year; }
+  else                       { tense = 'will be'; label = year; }
+
+  const ctx = YEAR_CTX[year];
+  const ctxNote = ctx ? `<br><br><em>${ctx.note}</em>` : '';
+
+  const area = document.getElementById('howold-result-area');
+
+  if (ageInYear < 0) {
+    area.innerHTML = `
+      <div class="howold-result howold-not-born">
+        <div class="howold-year-label">In ${year}</div>
+        <div class="howold-age-num">Not yet born</div>
+        <div class="howold-context">You weren't born until <em>${birthYear}</em> — that's <em>${birthYear - year} year${birthYear - year !== 1 ? 's' : ''}</em> before your arrival.</div>
+      </div>`;
+    return;
+  }
+
+  if (ageInYear === 0) {
+    area.innerHTML = `
+      <div class="howold-result">
+        <div class="howold-year-label">In ${year}</div>
+        <div class="howold-age-num">Born</div>
+        <div class="howold-context">This is your birth year — <em>${birthYear}</em>. Welcome to the world.${ctxNote}</div>
+      </div>`;
+    return;
+  }
+
+  area.innerHTML = `
+    <div class="howold-result">
+      <div class="howold-year-label">In ${year}</div>
+      <div class="howold-age-num">${ageInYear}</div>
+      <div class="howold-context">You ${tense} <em>${ageInYear} years old</em> in ${label}.${ctxNote}</div>
+    </div>`;
+}
+
+/* ═══════════════ CONFETTI ═══════════════ */
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx    = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const COLORS = ['#FF6B2B','#F5F0EB','#FFD700','#FF3366','#4DD9FF','#A0FF6B'];
+  const pieces = Array.from({ length: 140 }, () => ({
+    x:     Math.random() * canvas.width,
+    y:     Math.random() * -200,
+    r:     Math.random() * 9 + 3,
+    speed: Math.random() * 3 + 1.5,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    angle: 0,
+    spin:  (Math.random() - .5) * .06,
+    tilt:  Math.random() * 10 - 5,
+  }));
+
+  let frame, tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.y     += p.speed;
+      p.angle += p.spin;
+      p.tilt   = Math.sin(p.angle) * 10;
+      if (p.y > canvas.height) { p.y = -20; p.x = Math.random() * canvas.width; }
+      ctx.beginPath();
+      ctx.lineWidth   = p.r / 2;
+      ctx.strokeStyle = p.color;
+      ctx.moveTo(p.x + p.tilt + p.r / 3, p.y);
+      ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 3);
+      ctx.stroke();
+    });
+    tick++;
+    if (tick < 220) frame = requestAnimationFrame(draw);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  cancelAnimationFrame(frame);
+  tick = 0;
+  draw();
+}
+</script>
+
+<!-- ═══════ SCHEMA ═══════ -->
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my exact age?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Enter your date of birth into the Age Calculator and press Calculate My Age. Your exact age in years, months, weeks, days, hours, and minutes appears immediately." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the age calculation formula?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Age = Current Date minus Date of Birth. The calculator subtracts your birth date from today, accounting for leap years and varying month lengths." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the calculator handle leap year birthdays?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For February 29 birthdays, the calculator uses February 28 in non-leap years, which is the legal standard in most countries." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate the age difference between two people?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Switch to the Age Difference tab, enter both dates of birth, and the calculator returns the exact gap in years, months, weeks, and days." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find out how old I was on a past date?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the How Old Was I tab, enter your date of birth, and tap any year to see your exact age at that point in history or in the future." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this age calculator free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Completely free. No sign-up, no download, no limit on how many times you use it." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Age from Date of Birth",
+  "step": [
+    { "@type": "HowToStep", "name": "Enter your date of birth", "text": "Click the Date of Birth field and select your birth date — day, month, and year." },
+    { "@type": "HowToStep", "name": "Click Calculate My Age", "text": "Press the orange Calculate My Age button to run the calculation." },
+    { "@type": "HowToStep", "name": "Read your results", "text": "Your exact age appears in years, months, weeks, days, hours, and minutes, along with a countdown to your next birthday." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Age Calculator",
+  "url": "https://nexalc.com/age-calculator/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free online age calculator. Calculate your exact age in years, months, weeks, days, hours, and minutes from your date of birth. Includes age difference calculator and historical age lookup.",
+  "featureList": [
+    "Exact age in years, months, weeks, days, hours, minutes",
+    "Age difference calculator",
+    "Historical age lookup (How Old Was I)",
+    "Next birthday countdown",
+    "Leap year handling"
+  ],
+  "dateModified": "2026-06-10",
+  "provider": {
+    "@type": "Organization",
+    "name": "NexAlc",
+    "url": "https://nexalc.com"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my exact age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To calculate your exact age, enter your date of birth and a reference date (defaulting to today) into an age calculator. The tool subtracts the birth date from the reference date and returns the result broken down into years, months, weeks, days, hours, and minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the age calculation formula?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Age = Current Date − Date of Birth. The calculator subtracts your birth date from today, accounting for leap years and varying month lengths to return a precise result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the calculator handle leap year birthdays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For February 29 birthdays, the calculator uses February 28 in non-leap years as the annual birthday — the legal standard in most countries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate the age difference between two people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Switch to the Age Difference tab, enter both dates of birth, and the calculator returns the exact gap in years, months, weeks, and days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find out how old I was on a past date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the How Old Was I tab, enter your date of birth, and tap any year to see your exact age at that point in history — or in the future."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this age calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Completely free. No sign-up, no download, no limit on how many times you use it."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://nexalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Age Calculator",
+      "item": "https://nexalc.com/age-calculator/"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

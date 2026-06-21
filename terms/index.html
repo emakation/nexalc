@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Terms of Use — NexAlc</title>
+<meta name="description" content="NexAlc Terms of Use. Free calculator tools provided as-is, no warranty. Not a substitute for professional advice."/>
+<link rel="canonical" href="https://nexalc.com/terms/"/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF6B2B;
+  --orange-dim:#cc5522;
+  --near-black:#0E0E0F;
+  --warm-white:#F5F0EB;
+  --surface:#161617;
+  --surface2:#1e1e1f;
+  --surface3:#252526;
+  --border:rgba(255,255,255,.07);
+  --text-main:#F0EBE4;
+  --text-muted:#8a8480;
+  --radius:14px;
+  --radius-sm:8px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--near-black);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(255,107,43,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,107,43,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;z-index:0;
+}
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background: rgba(14,14,15,.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+.nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+.nav-logo-txt span { color: var(--orange); }
+.nav-links { display: flex; gap: 6px; align-items: center; }
+.nav-links a { font-size: .8rem; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: 5px 10px; border-radius: var(--radius-sm); transition: color var(--transition), background var(--transition); white-space: nowrap; }
+.nav-links a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+.nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+.nav-item { position: relative; }
+.nav-item > a { display: flex; align-items: center; gap: 5px; }
+.nav-item > a::after {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--transition);
+  opacity: .6;
+}
+.nav-item:hover > a { color: var(--orange); }
+.nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+.nav-dropdown {
+  position: absolute; top: 100%; left: 0; min-width: 190px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 6px 6px;
+  opacity: 0; pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 200;
+}
+.nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.nav-dropdown a { display: block; padding: 8px 12px; border-radius: var(--radius-sm); font-size: .82rem; color: var(--text-muted); white-space: nowrap; background: none; }
+.nav-dropdown a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+.nav-links > a:hover { color: var(--orange); }
+
+/* AD ZONE A */
+.ad-leaderboard{
+  width:100%;max-width:728px;height:90px;
+  margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid var(--border);
+  font-size:.72rem;color:var(--text-muted);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+
+main{
+  position:relative;z-index:1;
+  max-width:760px;margin:0 auto;
+  padding:56px 24px 80px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{opacity:0;animation:fadeUp .55s cubic-bezier(.4,0,.2,1) forwards}
+.delay-1{animation-delay:.08s}
+.delay-2{animation-delay:.16s}
+
+.page-eyebrow{
+  display:inline-block;
+  font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:12px;
+}
+.page-headline{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.75rem,5vw,2.75rem);
+  font-weight:800;line-height:1.1;
+  color:var(--warm-white);margin-bottom:12px;
+}
+.page-meta{font-size:.85rem;color:var(--text-muted);margin-bottom:48px}
+
+.prose h2{
+  font-family:'Syne',sans-serif;
+  font-size:1.15rem;font-weight:700;
+  color:var(--warm-white);
+  margin:40px 0 10px;
+  padding-top:8px;
+  border-top:1px solid var(--border);
+}
+.prose h2:first-child{margin-top:0;border-top:none}
+.prose p{font-size:.96rem;line-height:1.82;color:var(--text-muted);margin-bottom:14px}
+.prose ul{margin:10px 0 18px 20px;display:flex;flex-direction:column;gap:8px}
+.prose li{font-size:.96rem;line-height:1.7;color:var(--text-muted)}
+.prose a{color:var(--orange);text-decoration:none}
+.prose a:hover{text-decoration:underline}
+.prose strong{color:var(--text-main);font-weight:500}
+
+.callout{
+  background:rgba(255,107,43,.08);
+  border:1px solid rgba(255,107,43,.2);
+  border-radius:var(--radius-sm);
+  padding:16px 20px;margin:24px 0;
+  font-size:.9rem;line-height:1.7;
+  color:var(--text-muted);
+}
+.callout strong{color:var(--orange)}
+
+.ad-rect{
+  width:100%;max-width:336px;height:280px;
+  margin:40px auto;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);border-radius:var(--radius);
+  font-size:.72rem;color:var(--text-muted);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+
+/* ── Footer ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1rem, 4vw, 2rem);
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--warm-white); text-decoration: none;
+    }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
+
+.ad-mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;height:50px;background:rgba(14,14,15,.95);border-top:1px solid var(--border);align-items:center;justify-content:center;font-size:.7rem;color:var(--text-muted);letter-spacing:.05em;text-transform:uppercase;z-index:200}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .ad-leaderboard{height:60px;font-size:.65rem}
+  .ad-mobile-sticky{display:flex}
+  body{padding-bottom:50px}
+  main{padding:36px 16px 60px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<div class="ad-leaderboard">Advertisement</div>
+
+<main>
+  <div class="fade-up">
+    <span class="page-eyebrow">Legal</span>
+    <h1 class="page-headline">Terms of Use</h1>
+    <p class="page-meta">Last updated: January 1, 2025 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+
+  <div class="callout fade-up delay-1">
+    <strong>Short version:</strong> NexAlc tools are free to use for personal, informational purposes. Results are estimates only — not professional financial, medical, or legal advice. Use at your own risk.
+  </div>
+
+  <div class="prose fade-up delay-2">
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using NexAlc at <strong>nexalc.com</strong> ("the Site"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Site. These terms apply to all visitors and users of the Site.</p>
+
+    <h2>2. Description of Service</h2>
+    <p>NexAlc provides free, browser-based calculator and utility tools including mortgage, BMI, currency, percentage, age, tip, and countdown calculators ("the Tools"). The Tools are provided for general informational and personal use only.</p>
+
+    <h2>3. No Professional Advice</h2>
+    <p>The results generated by NexAlc tools are <strong>estimates only</strong> and are intended for general informational purposes. Nothing on this Site constitutes:</p>
+    <ul>
+      <li>Financial, investment, or tax advice</li>
+      <li>Medical or health advice</li>
+      <li>Legal advice</li>
+      <li>Any other form of professional advice</li>
+    </ul>
+    <p>You should always consult a qualified professional — such as a licensed financial advisor, physician, or attorney — before making decisions based on any calculation results from this Site.</p>
+
+    <h2>4. Accuracy of Results</h2>
+    <p>While we strive to ensure our tools are accurate and up to date, NexAlc makes no warranties or representations regarding the accuracy, completeness, or reliability of any results. Calculations may rely on estimates, rounding, or generalized assumptions. Currency rates, interest rates, and other variable data may not reflect real-time market conditions.</p>
+    <p>You are solely responsible for verifying any results before relying on them for any purpose.</p>
+
+    <!-- AD ZONE B -->
+    <div class="ad-rect">Advertisement</div>
+
+    <h2>5. Disclaimer of Warranties</h2>
+    <p>The Site and its Tools are provided <strong>"as is" and "as available"</strong> without warranty of any kind, either express or implied, including but not limited to:</p>
+    <ul>
+      <li>Warranties of merchantability or fitness for a particular purpose</li>
+      <li>Warranties that the Site will be uninterrupted, error-free, or free of viruses or other harmful components</li>
+      <li>Warranties regarding the accuracy or reliability of any results</li>
+    </ul>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, NexAlc and its operators shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of — or inability to use — the Site or its Tools, including but not limited to:</p>
+    <ul>
+      <li>Financial losses resulting from actions taken based on calculator results</li>
+      <li>Errors or inaccuracies in calculation outputs</li>
+      <li>Interruptions or unavailability of the Site</li>
+      <li>Any other losses, however caused</li>
+    </ul>
+
+    <h2>7. Permitted Use</h2>
+    <p>You may use NexAlc for personal, non-commercial purposes. You agree not to:</p>
+    <ul>
+      <li>Use the Site in any way that violates applicable laws or regulations</li>
+      <li>Attempt to scrape, mirror, or reproduce the Site's content or tools at scale without permission</li>
+      <li>Use automated tools to access the Site in a manner that places unreasonable load on our infrastructure</li>
+      <li>Attempt to gain unauthorized access to any part of the Site</li>
+    </ul>
+
+    <h2>8. Intellectual Property</h2>
+    <p>All content on NexAlc — including text, design, code, and graphics — is owned by or licensed to NexAlc and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+
+    <h2>9. Third-Party Services</h2>
+    <p>NexAlc uses third-party services including Google AdSense and Google Analytics. Your use of these services is subject to their respective terms and privacy policies. NexAlc is not responsible for the practices of any third-party services.</p>
+
+    <h2>10. Modifications to the Site and Terms</h2>
+    <p>We reserve the right to modify, suspend, or discontinue the Site or any of its Tools at any time without notice. We may also update these Terms of Use at any time. The updated version will be effective upon posting. Your continued use of the Site after any changes constitutes acceptance of the revised terms.</p>
+
+    <h2>11. Governing Law</h2>
+    <p>These Terms of Use shall be governed by and construed in accordance with applicable law. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the appropriate courts.</p>
+
+    <h2>12. Contact</h2>
+    <p>If you have questions about these Terms of Use, please contact us at: <a href="mailto:hello@nexalc.com">hello@nexalc.com</a></p>
+
+  </div>
+</main>
+
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+<div class="ad-mobile-sticky">Advertisement</div>
+
+</body>
+</html>

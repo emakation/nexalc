@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About — NexAlc</title>
+<meta name="description" content="NexAlc is a free, fast, no-sign-up calculator suite. Learn what we build, how we stay free, and what's coming next."/>
+<link rel="canonical" href="https://nexalc.com/about/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF6B2B;
+  --orange-dim:#cc5522;
+  --near-black:#0E0E0F;
+  --warm-white:#F5F0EB;
+  --surface:#161617;
+  --surface2:#1e1e1f;
+  --surface3:#252526;
+  --border:rgba(255,255,255,.07);
+  --text-main:#F0EBE4;
+  --text-muted:#8a8480;
+  --radius:14px;
+  --radius-sm:8px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--near-black);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,107,43,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,107,43,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  background:rgba(14,14,15,.72);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:36px;width:auto;display:block;mix-blend-mode:lighten}
+.nav-logo-txt{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;color:var(--warm-white)}
+.nav-logo-txt span{color:var(--orange)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{
+  font-family:'DM Sans',sans-serif;
+  font-size:.82rem;
+  font-weight:500;
+  color:var(--text-muted);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:var(--radius-sm);
+  transition:color var(--transition),background var(--transition);
+}
+.nav-links a:hover{color:var(--text-main);background:rgba(255,255,255,.06)}
+.nav-links a.active{color:var(--orange)}
+
+/* DROPDOWN */
+.nav-item{position:relative}
+.nav-item>a{display:flex;align-items:center;gap:5px}
+.nav-item>a::after{
+  content:'';
+  display:inline-block;
+  width:6px;height:6px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform var(--transition);
+  opacity:.6;
+}
+.nav-item:hover>a{color:var(--orange)}
+.nav-item:hover>a::after{transform:rotate(-135deg) translateY(-2px)}
+.nav-dropdown{
+  position:absolute;
+  top:100%;
+  left:0;
+  padding-top:8px;
+  min-width:190px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:8px 6px 6px;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(6px);
+  transition:opacity var(--transition),transform var(--transition);
+  z-index:200;
+}
+.nav-item:hover .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.nav-dropdown a{
+  display:block;
+  padding:8px 12px;
+  border-radius:var(--radius-sm);
+  font-size:.82rem;
+  color:var(--text-muted);
+  white-space:nowrap;
+  background:none;
+}
+.nav-dropdown a:hover{color:var(--text-main);background:rgba(255,255,255,.06)}
+.nav-links>a:hover{color:var(--orange)}
+
+
+/* AD ZONE A */
+.ad-leaderboard{
+  width:100%;
+  max-width:728px;
+  height:90px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid var(--border);
+  font-size:.72rem;
+  color:var(--text-muted);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+/* MAIN */
+main{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto;
+  padding:64px 24px 80px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{opacity:0;animation:fadeUp .55s cubic-bezier(.4,0,.2,1) forwards}
+.delay-1{animation-delay:.1s}
+.delay-2{animation-delay:.2s}
+.delay-3{animation-delay:.3s}
+.delay-4{animation-delay:.4s}
+.delay-5{animation-delay:.5s}
+
+/* HERO */
+.about-eyebrow{
+  display:inline-block;
+  font-family:'Syne',sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:16px;
+}
+.about-headline{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,6vw,3.25rem);
+  font-weight:800;
+  line-height:1.08;
+  color:var(--warm-white);
+  margin-bottom:20px;
+}
+.about-lead{
+  font-size:1.1rem;
+  line-height:1.75;
+  color:var(--text-muted);
+  max-width:620px;
+  margin-bottom:48px;
+}
+
+/* DIVIDER */
+.divider{
+  width:48px;
+  height:3px;
+  background:var(--orange);
+  border-radius:2px;
+  margin:40px 0;
+}
+
+/* SECTIONS */
+.section-label{
+  font-family:'Syne',sans-serif;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:12px;
+}
+.section-title{
+  font-family:'Syne',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--warm-white);
+  margin-bottom:14px;
+}
+.section-body{
+  font-size:.975rem;
+  line-height:1.8;
+  color:var(--text-muted);
+  margin-bottom:12px;
+}
+.section-body a{color:var(--orange);text-decoration:none}
+.section-body a:hover{text-decoration:underline}
+
+/* TOOL GRID */
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:10px;
+  margin-top:20px;
+}
+.tool-chip{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  text-decoration:none;
+  color:var(--text-main);
+  font-size:.875rem;
+  font-weight:500;
+  transition:border-color var(--transition),background var(--transition),transform var(--transition);
+}
+.tool-chip:hover{
+  border-color:rgba(255,107,43,.3);
+  background:var(--surface3);
+  transform:translateY(-2px);
+}
+.tool-chip .chip-icon{
+  width:28px;height:28px;
+  border-radius:6px;
+  background:rgba(255,107,43,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;
+  flex-shrink:0;
+}
+
+/* AD ZONE B */
+.ad-rect{
+  width:100%;
+  max-width:336px;
+  height:280px;
+  margin:40px auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  font-size:.72rem;
+  color:var(--text-muted);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+/* ── Footer ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1rem, 4vw, 2rem);
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--warm-white); text-decoration: none;
+    }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
+
+/* MOBILE STICKY AD */
+.ad-mobile-sticky{
+  display:none;
+  position:fixed;
+  bottom:0;left:0;right:0;
+  height:50px;
+  background:rgba(14,14,15,.95);
+  border-top:1px solid var(--border);
+  align-items:center;
+  justify-content:center;
+  font-size:.7rem;
+  color:var(--text-muted);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  z-index:200;
+}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .ad-leaderboard{height:60px;font-size:.65rem}
+  .ad-mobile-sticky{display:flex}
+  body{padding-bottom:50px}
+  main{padding:40px 16px 60px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<!-- AD ZONE A -->
+<div class="ad-leaderboard">Advertisement</div>
+
+<main>
+
+  <div class="fade-up">
+    <span class="about-eyebrow">About NexAlc</span>
+    <h1 class="about-headline">Free tools.<br>No&nbsp;noise.</h1>
+    <p class="about-lead">NexAlc is a collection of everyday calculators built to be fast, accurate, and free — no account, no paywall, no AI-generated fluff. Just the number you need, when you need it.</p>
+  </div>
+
+  <div class="divider fade-up delay-1"></div>
+
+  <div class="fade-up delay-2">
+    <div class="section-label">What We Are</div>
+    <h2 class="section-title">A calculator suite that stays out of your way</h2>
+    <p class="section-body">
+      Most calculator sites are either buried in ads, stuck behind a sign-up wall, or so cluttered you can't find the input field. NexAlc is the opposite: one focused tool per page, a clean interface, and results you can trust.
+    </p>
+    <p class="section-body">
+      Every tool is built with real-world use in mind — splitting a dinner bill, estimating a mortgage, tracking a countdown to an important date. No unnecessary features. No dark patterns.
+    </p>
+  </div>
+
+  <div class="divider fade-up delay-3"></div>
+
+  <div class="fade-up delay-3">
+    <div class="section-label">The Tools</div>
+    <h2 class="section-title">Seven calculators, zero friction</h2>
+    <p class="section-body">Each tool loads independently — no bloated framework, no waiting on the others.</p>
+    <div class="tool-grid">
+      <a href="/mortgage-calculator/" class="tool-chip">
+        <span class="chip-icon">🏠</span>Mortgage
+      </a>
+      <a href="/bmi-calculator/" class="tool-chip">
+        <span class="chip-icon">⚖️</span>BMI
+      </a>
+      <a href="/currency-converter/" class="tool-chip">
+        <span class="chip-icon">💱</span>Currency
+      </a>
+      <a href="/percentage-calculator/" class="tool-chip">
+        <span class="chip-icon">%</span>Percentage
+      </a>
+      <a href="/age-calculator/" class="tool-chip">
+        <span class="chip-icon">🎂</span>Age
+      </a>
+      <a href="/tip-calculator/" class="tool-chip">
+        <span class="chip-icon">🧾</span>Tip
+      </a>
+      <a href="/countdown-timer/" class="tool-chip">
+        <span class="chip-icon">⏳</span>Countdown
+      </a>
+    </div>
+  </div>
+
+  <!-- AD ZONE B -->
+  <div class="ad-rect">Advertisement</div>
+
+  <div class="fade-up delay-4">
+    <div class="section-label">How We Stay Free</div>
+    <h2 class="section-title">Ad-supported, honestly</h2>
+    <p class="section-body">
+      NexAlc is free because it runs Google AdSense ads. You'll see a few display ads on each page — that's how the lights stay on. We don't sell your data, require a login, or shove a newsletter in your face.
+    </p>
+    <p class="section-body">
+      If an ad ever feels intrusive or breaks a tool, <a href="mailto:hello@nexalc.com">let us know</a>. We'd rather lose an impression than break your experience.
+    </p>
+  </div>
+
+  <div class="divider fade-up delay-5"></div>
+
+  <div class="fade-up delay-5">
+    <div class="section-label">Fine Print</div>
+    <h2 class="section-title">What NexAlc is (and isn't)</h2>
+    <p class="section-body">
+      NexAlc tools are for everyday estimates and quick calculations. They're not a substitute for professional financial, medical, or legal advice. Results may vary based on local conditions, rates, or data. Always verify anything important with a qualified professional.
+    </p>
+    <p class="section-body">
+      See our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms/">Terms of Use</a> for the full picture.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+<div class="ad-mobile-sticky">Advertisement</div>
+
+</body>
+</html>

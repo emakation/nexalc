@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>How Much House Can I Afford? A Simple Framework | NexAlc</title>
+  <meta name="description" content="Find out how much house you can realistically afford using income multipliers, the 28/36 rule, and debt-to-income ratio. Includes worked examples and a free mortgage calculator." />
+  <meta name="keywords" content="how much house can I afford, how much mortgage can I afford, mortgage affordability calculator, 28 36 rule mortgage, debt to income ratio home loan, home buying budget" />
+  <link rel="canonical" href="https://nexalc.com/blog/how-much-house-can-i-afford/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Much House Can I Afford? A Simple Framework" />
+  <meta property="og:description" content="Use income multipliers and the 28/36 rule to find your real home buying budget — before talking to a lender." />
+  <meta property="og:url" content="https://nexalc.com/blog/how-much-house-can-i-afford/" />
+  <meta property="og:site_name" content="NexAlc" />
+  <meta property="og:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Much House Can I Afford? A Simple Framework" />
+  <meta name="twitter:description" content="Use income multipliers and the 28/36 rule to find your real home buying budget." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Much House Can I Afford? A Simple Framework",
+    "description": "A practical guide to calculating mortgage affordability using the 28/36 rule, income multipliers, and debt-to-income ratio — with worked examples for different income levels.",
+    "url": "https://nexalc.com/blog/how-much-house-can-i-afford/",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "publisher": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nexalc.com/blog/how-much-house-can-i-afford/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nexalc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How Much House Can I Afford?", "item": "https://nexalc.com/blog/how-much-house-can-i-afford/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much house can I afford on a $60,000 salary?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On a $60,000 annual salary, the 28/36 rule allows a maximum monthly housing payment of $1,400 (28% of $5,000 gross monthly income). At current rates of around 6.75% over 30 years with a 10% down payment, this corresponds to a home price of roughly $185,000–$210,000 depending on property taxes and insurance in your area." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much house can I afford on a $100,000 salary?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On a $100,000 salary, the 28% front-end rule allows up to $2,333 per month in housing costs. At 6.75% over 30 years with a 20% down payment, this supports a purchase price of approximately $310,000–$350,000. With a 10% down payment and PMI, the figure drops to roughly $280,000–$310,000." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 28/36 rule for mortgages?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The 28/36 rule is a mortgage affordability guideline. The '28' means your monthly housing costs (mortgage principal, interest, taxes, and insurance) should not exceed 28% of your gross monthly income. The '36' means your total monthly debt payments — housing plus car loans, student loans, credit cards — should not exceed 36% of gross monthly income. Most conventional lenders use these thresholds during underwriting." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do I need to earn to afford a $400,000 house?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To afford a $400,000 home with a 20% down payment ($80,000 down, $320,000 loan) at 6.75% over 30 years, your principal and interest payment is approximately $2,075/month. Adding average property taxes and insurance brings total housing costs to roughly $2,600–$2,900/month. At the 28% rule, you would need a gross monthly income of at least $9,300–$10,400, or an annual salary of approximately $112,000–$125,000." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #E55A1C;
+      --orange-glow: rgba(255,107,43,0.15);
+      --orange-glow-strong: rgba(255,107,43,0.25);
+      --near-black: #0E0E0F;
+      --surface: #161618;
+      --surface-2: #1E1E21;
+      --surface-3: #252528;
+      --border: rgba(255,255,255,0.07);
+      --border-active: rgba(255,107,43,0.4);
+      --warm-white: #F5F0EB;
+      --text-primary: #F0EDE8;
+      --text-secondary: #9A9592;
+      --text-muted: #5A5755;
+      --green: #2ECC71;
+      --green-dim: rgba(46,204,113,0.12);
+      --red: #E74C3C;
+      --red-dim: rgba(231,76,60,0.1);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav.nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: 5px 10px; border-radius: 8px; transition: color .22s cubic-bezier(.4,0,.2,1), background .22s cubic-bezier(.4,0,.2,1); white-space: nowrap; }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after { content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .22s cubic-bezier(.4,0,.2,1); opacity: .6; }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 190px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 6px 6px; opacity: 0; pointer-events: none; transform: translateY(6px); transition: opacity .22s cubic-bezier(.4,0,.2,1), transform .22s cubic-bezier(.4,0,.2,1); z-index: 200; }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a { display: block; padding: 8px 12px; border-radius: 8px; font-size: .82rem; color: var(--text-secondary); white-space: nowrap; background: none; }
+    .nav-dropdown a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links > a:hover { color: var(--orange); } a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+
+    .ad-zone-a { width: 100%; display: flex; justify-content: center; padding: 10px 0; background: var(--surface); border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+    .ad-placeholder { background: var(--surface-2); border: 1px dashed var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ad-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-rectangle { width: 336px; max-width: 100%; height: 280px; }
+
+    .hero { position: relative; z-index: 1; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 40px) clamp(32px, 4vw, 48px); max-width: 1280px; margin: 0 auto; }
+
+    .breadcrumb { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb-sep { opacity: 0.4; }
+
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--orange-glow); border: 1px solid var(--border-active); border-radius: 100px; padding: 4px 12px; font-size: 0.72rem; font-weight: 600; color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--warm-white); margin-bottom: 14px; }
+    h1 em { font-style: normal; color: var(--orange); }
+
+    .hero-sub { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--text-secondary); max-width: 640px; line-height: 1.65; }
+
+    .hero-meta { display: flex; align-items: center; gap: 16px; margin-top: 20px; font-size: 0.78rem; color: var(--text-muted); }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .main-layout { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; }
+
+    .article-body { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(24px, 4vw, 48px); }
+
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--warm-white); letter-spacing: -0.02em; margin: 36px 0 12px; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 28px 0 10px; }
+    .article-body p { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+    .article-body p strong { color: var(--text-primary); font-weight: 600; }
+    .article-body a { color: var(--orange); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+
+    /* ── RULE BOX ── */
+    .rule-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .rule-box-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+
+    .rule-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rule-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .rule-pct {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      min-width: 56px;
+    }
+
+    .rule-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    .rule-desc strong { color: var(--text-primary); }
+
+    /* ── INCOME TABLE ── */
+    .comparison-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .comparison-table thead tr { background: var(--surface-2); }
+    .comparison-table th { padding: 12px 16px; text-align: left; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: var(--surface-2); }
+    .comparison-table .col-income { color: var(--text-primary); font-weight: 600; }
+    .comparison-table .col-price { color: var(--orange); font-weight: 600; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+    .highlight-box strong { color: var(--text-primary); }
+    .highlight-box.green-accent { border-left-color: var(--green); }
+
+    /* ── STEP LIST ── */
+    .step-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: steps; }
+
+    .step-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step-list li:last-child { border-bottom: none; }
+
+    .step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--orange-glow);
+      border: 1px solid var(--border-active);
+      border-radius: 50%;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .step-content { flex: 1; }
+    .step-title { font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .step-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    .step-desc strong { color: var(--text-primary); }
+
+    /* ── CTA ── */
+    .cta-block { background: var(--surface-2); border: 1px solid var(--border-active); border-radius: var(--radius-lg); padding: 24px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cta-text h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--warm-white); margin: 0 0 4px; }
+    .cta-text p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background 0.2s, transform 0.15s; }
+    .cta-btn:hover { background: var(--orange-dim); transform: translateY(-1px); }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .faq-section h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--warm-white); margin-bottom: 20px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
+    .faq-question { padding: 14px 18px; font-size: 0.92rem; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; transition: background 0.2s; }
+    .faq-question:hover { background: var(--surface-2); }
+    .faq-question.open { background: var(--surface-2); color: var(--orange); }
+    .faq-chevron { flex-shrink: 0; color: var(--text-muted); transition: transform 0.25s; }
+    .faq-question.open .faq-chevron { transform: rotate(180deg); color: var(--orange); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; padding: 0 18px; }
+    .faq-answer.visible { max-height: 300px; padding: 14px 18px; border-top: 1px solid var(--border); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .sidebar-card-header { padding: 12px 18px; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    .related-tool-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .related-tool-item:last-child { border-bottom: none; }
+    .related-tool-item:hover { background: var(--surface-2); }
+    .related-tool-name { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); }
+    .related-tool-tag { font-size: 0.68rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
+    .related-tool-tag.hot { background: var(--orange-glow); color: var(--orange); border-color: var(--border-active); }
+    .article-link-item { display: block; padding: 12px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .article-link-item:last-child { border-bottom: none; }
+    .article-link-item:hover { background: var(--surface-2); }
+    .article-link-title { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 4px; }
+    .article-link-meta { font-size: 0.72rem; color: var(--text-muted); }
+    .ad-zone-sidebar { display: flex; justify-content: center; }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 32px clamp(16px, 4vw, 40px); text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+    @media (max-width: 600px) {
+      .cta-block { flex-direction: column; align-items: flex-start; }
+      .rule-row { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logo.png" alt="NexAlc" style="height:36px;width:auto;display:block;mix-blend-mode:lighten;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+      <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/mortgage-calculator/" class="active">Finance Tools</a>
+        <div class="nav-dropdown">
+          <a href="/mortgage-calculator/" class="active">🏠 Mortgage Calculator</a>
+          <a href="/currency-converter/">💱 Currency Converter</a>
+          <a href="/tip-calculator/">🧾 Tip Calculator</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/bmi-calculator/">Health Tools</a>
+        <div class="nav-dropdown">
+          <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+          <a href="/age-calculator/">🎂 Age Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/countdown-timer/">Utility Tools</a>
+        <div class="nav-dropdown">
+          <a href="/countdown-timer/">⏳ Countdown Timer</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <!-- AD ZONE A -->
+  <div class="ad-zone-a">
+    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>How Much House Can I Afford?</span>
+    </nav>
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Mortgage Guide
+    </div>
+    <h1>How Much House<br>Can I <em>Afford?</em></h1>
+    <p class="hero-sub">A practical framework using the 28/36 rule, income multipliers, and debt-to-income ratio — so you know your real budget before talking to a lender.</p>
+    <div class="hero-meta">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        6 min read
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Updated June 2026
+      </span>
+      <span>By NexAlc</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <article class="article-body">
+
+      <p>The most common home-buying mistake isn't overpaying for a house — it's not knowing your actual budget before you start looking. Falling in love with a $450,000 home when your real ceiling is $320,000 is a predictable outcome of skipping the math upfront.</p>
+
+      <p>This guide gives you three tools lenders and financial advisors use to size a home purchase: the 28/36 rule, income multipliers, and debt-to-income ratio. Run all three before you talk to a real estate agent.</p>
+
+      <h2>The 28/36 Rule: Your Starting Point</h2>
+
+      <p>The 28/36 rule is the standard affordability guideline used by most conventional lenders in the US. It sets two limits on how much of your income can go toward debt.</p>
+
+      <div class="rule-box">
+        <div class="rule-box-title">The 28/36 Rule</div>
+        <div class="rule-row">
+          <div class="rule-pct">28%</div>
+          <div class="rule-desc">
+            <strong>Front-end ratio:</strong> Your total monthly housing costs — mortgage principal, interest, property taxes, and homeowner's insurance (PITI) — should not exceed 28% of your gross monthly income.
+          </div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-pct">36%</div>
+          <div class="rule-desc">
+            <strong>Back-end ratio:</strong> Your total monthly debt payments — housing costs plus car loans, student loans, credit cards, and any other recurring debt — should not exceed 36% of gross monthly income.
+          </div>
+        </div>
+      </div>
+
+      <p>These aren't soft suggestions. Lenders actively check both ratios during underwriting. Exceeding 36% back-end DTI will disqualify you from most conventional loans, regardless of your credit score or down payment size.</p>
+
+      <h3>Working the 28% Rule Backward</h3>
+
+      <p>To find your maximum monthly housing payment, multiply your <strong>gross monthly income</strong> (before taxes) by 0.28. Then work backward from that payment to a home price using current interest rates.</p>
+
+      <div class="highlight-box">
+        <strong>Example:</strong> Annual salary of $80,000 → gross monthly income of $6,667 → maximum housing payment of $6,667 × 0.28 = <strong>$1,867/month</strong>. At 6.75% over 30 years with a 20% down payment, this supports a purchase price of approximately <strong>$265,000–$285,000</strong> depending on local property taxes.
+      </div>
+
+      <h2>Income Multiplier: The Quick Estimate</h2>
+
+      <p>Before running detailed numbers, use the income multiplier as a fast sanity check. As a general rule, most buyers can afford a home priced at <strong>3x–5x their annual gross income</strong>. The exact multiplier depends on your down payment size, existing debt load, and local property tax rates.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Annual Income</th>
+              <th>3x (Conservative)</th>
+              <th>4x (Moderate)</th>
+              <th>5x (Aggressive)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-income">$50,000</td>
+              <td>$150,000</td>
+              <td>$200,000</td>
+              <td class="col-price">$250,000</td>
+            </tr>
+            <tr>
+              <td class="col-income">$75,000</td>
+              <td>$225,000</td>
+              <td>$300,000</td>
+              <td class="col-price">$375,000</td>
+            </tr>
+            <tr>
+              <td class="col-income">$100,000</td>
+              <td>$300,000</td>
+              <td>$400,000</td>
+              <td class="col-price">$500,000</td>
+            </tr>
+            <tr>
+              <td class="col-income">$150,000</td>
+              <td>$450,000</td>
+              <td>$600,000</td>
+              <td class="col-price">$750,000</td>
+            </tr>
+            <tr>
+              <td class="col-income">$200,000</td>
+              <td>$600,000</td>
+              <td>$800,000</td>
+              <td class="col-price">$1,000,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The 5x multiplier assumes a large down payment (20%+), minimal existing debt, and a low property tax area. Most first-time buyers with student loans or car payments should target the 3x–3.5x range to stay comfortably within the 28/36 rule.</p>
+
+      <h2>Debt-to-Income Ratio: The Number Lenders Actually Use</h2>
+
+      <p>While the 28/36 rule is a guideline, your <strong>debt-to-income (DTI) ratio</strong> is the actual number lenders calculate during underwriting. DTI is your total monthly debt payments divided by gross monthly income, expressed as a percentage.</p>
+
+      <p>Most conventional lenders cap total DTI at <strong>43–45%</strong>. FHA loans allow up to 50% DTI in some cases. VA loans are more flexible but still consider DTI in the approval process.</p>
+
+      <div class="highlight-box green-accent">
+        <strong>Critical point:</strong> Every existing debt payment reduces how much mortgage you qualify for. A $400/month car payment at a $80,000 salary consumes 6% of your back-end DTI allowance — directly reducing your maximum mortgage by approximately $40,000–$55,000. Calculate your existing DTI before estimating home price.
+      </div>
+
+      <h2>A Step-by-Step Framework</h2>
+
+      <ul class="step-list">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Calculate your gross monthly income</div>
+            <div class="step-desc">Add up all pre-tax income sources: salary, freelance, rental income, alimony. For variable income, use a 24-month average. For dual-income households, add both incomes together.</div>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Total your existing monthly debt payments</div>
+            <div class="step-desc">Include car loans, student loans, minimum credit card payments, personal loans, child support. Do <strong>not</strong> include utilities, groceries, subscriptions, or phone bills — these aren't counted in DTI.</div>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Find your maximum housing payment</div>
+            <div class="step-desc">Subtract existing monthly debts from 36% of gross monthly income. The result is the maximum you can allocate to housing under the back-end rule. Also check it's under 28% of gross income (front-end rule). Take the lower of the two.</div>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Estimate your home price from the payment</div>
+            <div class="step-desc">Use the mortgage calculator with your maximum monthly payment, expected interest rate, down payment, and estimated local property taxes. Work backward to find the home price that fits within that payment ceiling.</div>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Add a buffer for closing costs and reserves</div>
+            <div class="step-desc">Closing costs typically run <strong>2%–5% of the purchase price</strong>. Most lenders also want to see 2–3 months of mortgage payments in reserves after closing. Factor these into your total available cash before finalizing your budget.</div>
+          </div>
+        </li>
+      </ul>
+
+      <h2>What Lenders Don't Tell You</h2>
+
+      <p>Being <em>approved</em> for a mortgage amount and being able to <em>comfortably afford</em> that mortgage are two different things. Lenders approve you based on your ability to make the payment — they don't account for your lifestyle, savings goals, childcare costs, or the ongoing maintenance expenses of homeownership.</p>
+
+      <p>A widely cited rule of thumb is to budget <strong>1%–2% of the home's value annually</strong> for maintenance and repairs. On a $350,000 home, that's $3,500–$7,000 per year, or $290–$580 per month that doesn't show up in your mortgage payment but absolutely shows up in your budget. Build this into your affordability calculation, not just your lender's.</p>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Plug in your numbers</h3>
+          <p>Use the mortgage calculator to find your exact monthly payment at any home price, rate, and down payment — including taxes, insurance, and PMI.</p>
+        </div>
+        <a href="/mortgage-calculator/" class="cta-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2.5" stroke="white" stroke-width="1.4"/><path d="M4.5 7h5M7 4.5v5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Open Mortgage Calculator
+        </a>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How much house can I afford on a $60,000 salary?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">On a $60,000 annual salary, the 28/36 rule allows a maximum monthly housing payment of $1,400 (28% of $5,000 gross monthly income). At current rates of around 6.75% over 30 years with a 10% down payment, this corresponds to a home price of roughly $185,000–$210,000 depending on property taxes and insurance in your area.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How much house can I afford on a $100,000 salary?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">On a $100,000 salary, the 28% front-end rule allows up to $2,333 per month in housing costs. At 6.75% over 30 years with a 20% down payment, this supports a purchase price of approximately $310,000–$350,000. With a 10% down payment and PMI, the figure drops to roughly $280,000–$310,000.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the 28/36 rule for mortgages?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">The 28/36 rule is a mortgage affordability guideline. The "28" means your monthly housing costs (mortgage principal, interest, taxes, and insurance) should not exceed 28% of your gross monthly income. The "36" means your total monthly debt payments — housing plus car loans, student loans, credit cards — should not exceed 36% of gross monthly income. Most conventional lenders use these thresholds during underwriting.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How much do I need to earn to afford a $400,000 house?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">To afford a $400,000 home with a 20% down payment ($80,000 down, $320,000 loan) at 6.75% over 30 years, your principal and interest payment is approximately $2,075/month. Adding average property taxes and insurance brings total housing costs to roughly $2,600–$2,900/month. At the 28% rule, you would need a gross monthly income of at least $9,300–$10,400, or an annual salary of approximately $112,000–$125,000.</div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Calculator</div>
+        <a class="related-tool-item" href="/mortgage-calculator/">
+          <span class="related-tool-name">Mortgage Calculator</span>
+          <span class="related-tool-tag hot">Try It</span>
+        </a>
+        <a class="related-tool-item" href="/bmi-calculator/">
+          <span class="related-tool-name">BMI Calculator</span>
+          <span class="related-tool-tag">Health</span>
+        </a>
+        <a class="related-tool-item" href="/currency-converter/">
+          <span class="related-tool-name">Currency Converter</span>
+          <span class="related-tool-tag">Finance</span>
+        </a>
+        <a class="related-tool-item" href="/percentage-calculator/">
+          <span class="related-tool-name">Percentage Calculator</span>
+          <span class="related-tool-tag">Math</span>
+        </a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Related Articles</div>
+        <a class="article-link-item" href="/blog/15-vs-30-year-mortgage/">
+          <div class="article-link-title">15-Year vs 30-Year Mortgage: Which Saves You More?</div>
+          <div class="article-link-meta">Mortgage · 8 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/what-is-an-amortization-schedule/">
+          <div class="article-link-title">What Is an Amortization Schedule?</div>
+          <div class="article-link-meta">Mortgage · 5 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/healthy-bmi-by-age/">
+          <div class="article-link-title">Healthy BMI by Age: What the Numbers Mean</div>
+          <div class="article-link-meta">Health · 7 min read</div>
+        </a>
+      </div>
+
+      <div class="ad-zone-sidebar">
+        <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="/">NexAlc</a> · <a href="/blog/">Blog</a> · <a href="/mortgage-calculator/">Mortgage Calculator</a> · Not financial advice. For informational purposes only.</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+      const answer = el.nextElementSibling;
+      answer.classList.toggle('visible');
+    }
+  </script>
+
+</body>
+</html>

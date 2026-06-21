@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>What Is an Amortization Schedule and How Do You Read One? | NexAlc</title>
+  <meta name="description" content="Learn what an amortization schedule is, how to read one, and why the interest-to-principal ratio shifts over time. Includes a worked example and free mortgage calculator." />
+  <meta name="keywords" content="amortization schedule, what is amortization, loan amortization, interest amount amortization, mortgage amortization calculator, how amortization works" />
+  <link rel="canonical" href="https://nexalc.com/blog/what-is-an-amortization-schedule/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What Is an Amortization Schedule and How Do You Read One?" />
+  <meta property="og:description" content="Understand amortization: why you pay mostly interest at the start of a mortgage and how to use an amortization schedule to see every payment." />
+  <meta property="og:url" content="https://nexalc.com/blog/what-is-an-amortization-schedule/" />
+  <meta property="og:site_name" content="NexAlc" />
+  <meta property="og:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Is an Amortization Schedule and How Do You Read One?" />
+  <meta name="twitter:description" content="Understand amortization: why you pay mostly interest early and how to read your schedule." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is an Amortization Schedule and How Do You Read One?",
+    "description": "A clear explanation of loan amortization: how the interest-to-principal ratio shifts over time, how to read an amortization table, and how extra payments affect your payoff timeline.",
+    "url": "https://nexalc.com/blog/what-is-an-amortization-schedule/",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "publisher": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nexalc.com/blog/what-is-an-amortization-schedule/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nexalc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "What Is an Amortization Schedule?", "item": "https://nexalc.com/blog/what-is-an-amortization-schedule/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an amortization schedule?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An amortization schedule is a complete table of every loan payment broken down into principal and interest components, along with the remaining balance after each payment. It shows exactly how much of each payment reduces your loan balance versus how much goes to the lender as interest." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I pay more interest at the start of my mortgage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Because interest is calculated on the outstanding balance each month. At the start of a 30-year mortgage, your balance is at its highest — so the interest charge is at its highest. As you make payments and the balance decreases, each subsequent month's interest charge is slightly lower, and a slightly larger portion of your fixed payment goes toward principal. This is why early mortgage payments feel like they barely reduce your balance." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do extra payments affect an amortization schedule?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Extra principal payments directly reduce your outstanding balance, which reduces the interest charged in all future months. Even a small extra payment early in a loan has an outsized effect because it removes that principal from the interest calculation for the entire remaining loan term. On a 30-year mortgage, a single extra payment in year one can eliminate two or more future scheduled payments." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between amortization and an amortization schedule?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Amortization is the process of paying off a loan through regular scheduled payments that cover both principal and interest. An amortization schedule is the table that documents this process — listing every payment date, the split between principal and interest for that payment, and the remaining balance. Amortization is the concept; the schedule is the detailed record of it." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #E55A1C;
+      --orange-glow: rgba(255,107,43,0.15);
+      --near-black: #0E0E0F;
+      --surface: #161618;
+      --surface-2: #1E1E21;
+      --surface-3: #252528;
+      --border: rgba(255,255,255,0.07);
+      --border-active: rgba(255,107,43,0.4);
+      --warm-white: #F5F0EB;
+      --text-primary: #F0EDE8;
+      --text-secondary: #9A9592;
+      --text-muted: #5A5755;
+      --green: #2ECC71;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav.nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: 5px 10px; border-radius: 8px; transition: color .22s cubic-bezier(.4,0,.2,1), background .22s cubic-bezier(.4,0,.2,1); white-space: nowrap; }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after { content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .22s cubic-bezier(.4,0,.2,1); opacity: .6; }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 190px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 6px 6px; opacity: 0; pointer-events: none; transform: translateY(6px); transition: opacity .22s cubic-bezier(.4,0,.2,1), transform .22s cubic-bezier(.4,0,.2,1); z-index: 200; }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+    .ad-zone-a { width: 100%; display: flex; justify-content: center; padding: 10px 0; background: var(--surface); border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+    .ad-placeholder { background: var(--surface-2); border: 1px dashed var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ad-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-rectangle { width: 336px; max-width: 100%; height: 280px; }
+
+    .hero { position: relative; z-index: 1; padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 40px) clamp(32px, 4vw, 48px); max-width: 1280px; margin: 0 auto; }
+
+    .breadcrumb { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb-sep { opacity: 0.4; }
+
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--orange-glow); border: 1px solid var(--border-active); border-radius: 100px; padding: 4px 12px; font-size: 0.72rem; font-weight: 600; color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--warm-white); margin-bottom: 14px; }
+    h1 em { font-style: normal; color: var(--orange); }
+
+    .hero-sub { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--text-secondary); max-width: 640px; line-height: 1.65; }
+    .hero-meta { display: flex; align-items: center; gap: 16px; margin-top: 20px; font-size: 0.78rem; color: var(--text-muted); }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .main-layout { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; }
+
+    .article-body { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(24px, 4vw, 48px); }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--warm-white); letter-spacing: -0.02em; margin: 36px 0 12px; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 28px 0 10px; }
+    .article-body p { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+    .article-body p strong { color: var(--text-primary); font-weight: 600; }
+    .article-body a { color: var(--orange); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+
+    /* ── DEFINITION BOX ── */
+    .definition-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin: 24px 0;
+    }
+
+    .definition-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .definition-text {
+      font-size: 1rem;
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* ── AMORTIZATION TABLE ── */
+    .amort-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+
+    .amort-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .amort-table thead tr { background: var(--surface-2); }
+    .amort-table th { padding: 11px 14px; text-align: right; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .amort-table th:first-child { text-align: left; }
+    .amort-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); text-align: right; }
+    .amort-table td:first-child { text-align: left; color: var(--text-primary); font-weight: 500; }
+    .amort-table tbody tr:last-child td { border-bottom: none; }
+    .amort-table tbody tr:hover { background: var(--surface-2); }
+    .amort-table .interest-col { color: var(--orange); }
+    .amort-table .principal-col { color: var(--green); }
+    .amort-table .divider-row td { background: var(--surface-3); color: var(--text-muted); font-style: italic; font-size: 0.78rem; text-align: center; border-bottom: 1px solid var(--border); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+    .highlight-box strong { color: var(--text-primary); }
+    .highlight-box.green-accent { border-left-color: var(--green); }
+
+    /* ── COLUMNS ── */
+    .col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .col-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .col-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .col-dot.orange { background: var(--orange); }
+    .col-dot.green { background: var(--green); }
+
+    .col-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+    /* ── CTA ── */
+    .cta-block { background: var(--surface-2); border: 1px solid var(--border-active); border-radius: var(--radius-lg); padding: 24px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cta-text h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--warm-white); margin: 0 0 4px; }
+    .cta-text p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background 0.2s, transform 0.15s; }
+    .cta-btn:hover { background: var(--orange-dim); transform: translateY(-1px); }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .faq-section h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--warm-white); margin-bottom: 20px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
+    .faq-question { padding: 14px 18px; font-size: 0.92rem; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; transition: background 0.2s; }
+    .faq-question:hover { background: var(--surface-2); }
+    .faq-question.open { background: var(--surface-2); color: var(--orange); }
+    .faq-chevron { flex-shrink: 0; color: var(--text-muted); transition: transform 0.25s; }
+    .faq-question.open .faq-chevron { transform: rotate(180deg); color: var(--orange); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; padding: 0 18px; }
+    .faq-answer.visible { max-height: 300px; padding: 14px 18px; border-top: 1px solid var(--border); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .sidebar-card-header { padding: 12px 18px; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    .related-tool-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .related-tool-item:last-child { border-bottom: none; }
+    .related-tool-item:hover { background: var(--surface-2); }
+    .related-tool-name { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); }
+    .related-tool-tag { font-size: 0.68rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
+    .related-tool-tag.hot { background: var(--orange-glow); color: var(--orange); border-color: var(--border-active); }
+    .article-link-item { display: block; padding: 12px 18px; text-decoration: none; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .article-link-item:last-child { border-bottom: none; }
+    .article-link-item:hover { background: var(--surface-2); }
+    .article-link-title { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 4px; }
+    .article-link-meta { font-size: 0.72rem; color: var(--text-muted); }
+    .ad-zone-sidebar { display: flex; justify-content: center; }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 32px clamp(16px, 4vw, 40px); text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .col-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .cta-block { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logo.png" alt="NexAlc" style="height:36px;width:auto;display:block;mix-blend-mode:lighten;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+      <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="/mortgage-calculator/" class="active">Finance Tools</a>
+        <div class="nav-dropdown">
+          <a href="/mortgage-calculator/" class="active">🏠 Mortgage Calculator</a>
+          <a href="/currency-converter/">💱 Currency Converter</a>
+          <a href="/tip-calculator/">🧾 Tip Calculator</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/bmi-calculator/">Health Tools</a>
+        <div class="nav-dropdown">
+          <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+          <a href="/age-calculator/">🎂 Age Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/countdown-timer/">Utility Tools</a>
+        <div class="nav-dropdown">
+          <a href="/countdown-timer/">⏳ Countdown Timer</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <!-- AD ZONE A -->
+  <div class="ad-zone-a">
+    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>What Is an Amortization Schedule?</span>
+    </nav>
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Mortgage Guide
+    </div>
+    <h1>What Is an <em>Amortization</em><br>Schedule?</h1>
+    <p class="hero-sub">A plain-English explanation of how loan amortization works, why you pay mostly interest at first, and how to read your schedule payment by payment.</p>
+    <div class="hero-meta">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        5 min read
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Updated June 2026
+      </span>
+      <span>By NexAlc</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <article class="article-body">
+
+      <p>Most homeowners make their mortgage payment every month without ever looking at what's actually happening to that money. For the first several years of a 30-year mortgage, the answer is surprising — and a little frustrating: the vast majority of every payment is going to your lender as interest, not reducing what you owe.</p>
+
+      <p>An amortization schedule makes this visible. It shows you every single payment for the life of your loan, split into exactly how much is interest and how much is principal — and how your remaining balance changes over time.</p>
+
+      <h2>What Is Amortization?</h2>
+
+      <div class="definition-box">
+        <div class="definition-label">Definition</div>
+        <div class="definition-text">
+          <strong>Amortization</strong> is the process of paying off a debt through regular scheduled payments over a fixed period. Each payment covers both the interest owed for that period and a portion of the original loan balance (principal). Over time, the interest portion shrinks and the principal portion grows — until the final payment clears the balance entirely.
+        </div>
+      </div>
+
+      <p>The word comes from the Old French <em>amortir</em> — "to kill." You are gradually killing the debt with each payment. The amortization schedule is the record of that process from first payment to last.</p>
+
+      <h2>Why Does Interest Front-Load?</h2>
+
+      <p>This is the part most borrowers don't fully grasp until they see the numbers. Your monthly payment amount stays fixed for the life of the loan. But the <em>split</em> between interest and principal changes dramatically over time — and it's not in your favor early on.</p>
+
+      <p>Here's why: interest is calculated each month on your <strong>current outstanding balance</strong>. In month one, that balance is at its maximum — the full loan amount. So the interest charge is at its maximum too. Your fixed payment covers that interest first, with only the remainder reducing the principal.</p>
+
+      <p>As the balance slowly drops, each month's interest charge is slightly lower, and a slightly larger share of your payment chips away at principal. The effect compounds quietly over years — by year 20 of a 30-year mortgage, the split has reversed and most of each payment is now principal.</p>
+
+      <div class="highlight-box">
+        <strong>The front-loading reality:</strong> On a $300,000 mortgage at 6.75% (30-year), your month-one payment of $1,945 splits into approximately <strong>$1,688 interest</strong> and just <strong>$257 principal</strong>. You're 87% of the way through the payment before a single dollar reduces what you owe.
+      </div>
+
+      <h2>How to Read an Amortization Schedule</h2>
+
+      <p>Every amortization schedule has the same five columns. Here's what each one tells you:</p>
+
+      <div class="col-grid">
+        <div class="col-card">
+          <div class="col-card-title"><span class="col-dot orange"></span>Payment Number / Date</div>
+          <p>Which payment in the sequence this row represents. Payment 1 is your first monthly payment; payment 360 is your last on a 30-year loan.</p>
+        </div>
+        <div class="col-card">
+          <div class="col-card-title"><span class="col-dot orange"></span>Total Payment</div>
+          <p>Your fixed monthly amount — this stays constant for a standard fixed-rate mortgage from payment 1 to payment 360.</p>
+        </div>
+        <div class="col-card">
+          <div class="col-card-title"><span class="col-dot orange"></span>Interest Portion</div>
+          <p>How much of this payment goes to the lender as interest. Highest in month one, decreases with every payment.</p>
+        </div>
+        <div class="col-card">
+          <div class="col-card-title"><span class="col-dot green"></span>Principal Portion</div>
+          <p>How much of this payment actually reduces your loan balance. Lowest in month one, increases with every payment.</p>
+        </div>
+      </div>
+
+      <h2>A Worked Example: $300,000 at 6.75% Over 30 Years</h2>
+
+      <p>The table below shows selected rows from the amortization schedule for a $300,000 mortgage at 6.75% fixed — the approximate current 30-year rate. Monthly payment: $1,945.</p>
+
+      <div class="amort-table-wrap">
+        <table class="amort-table">
+          <thead>
+            <tr>
+              <th>Payment</th>
+              <th>Monthly Payment</th>
+              <th>Interest</th>
+              <th>Principal</th>
+              <th>Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,688</td>
+              <td class="principal-col">$257</td>
+              <td>$299,743</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,681</td>
+              <td class="principal-col">$264</td>
+              <td>$298,181</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,673</td>
+              <td class="principal-col">$272</td>
+              <td>$296,328</td>
+            </tr>
+            <tr class="divider-row">
+              <td colspan="5">— End of Year 1: balance reduced by only $3,672 despite paying $23,340 —</td>
+            </tr>
+            <tr>
+              <td>60</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,618</td>
+              <td class="principal-col">$327</td>
+              <td>$285,600</td>
+            </tr>
+            <tr class="divider-row">
+              <td colspan="5">— End of Year 5: balance reduced by only $14,400 despite paying $116,700 —</td>
+            </tr>
+            <tr>
+              <td>120</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,516</td>
+              <td class="principal-col">$429</td>
+              <td>$268,300</td>
+            </tr>
+            <tr class="divider-row">
+              <td colspan="5">— End of Year 10: balance reduced by $31,700 despite paying $233,400 —</td>
+            </tr>
+            <tr>
+              <td>216</td>
+              <td>$1,945</td>
+              <td class="interest-col">$1,285</td>
+              <td class="principal-col">$660</td>
+              <td>$227,600</td>
+            </tr>
+            <tr class="divider-row">
+              <td colspan="5">— Year 18: interest and principal begin to approach 50/50 —</td>
+            </tr>
+            <tr>
+              <td>300</td>
+              <td>$1,945</td>
+              <td class="interest-col">$811</td>
+              <td class="principal-col">$1,134</td>
+              <td>$142,800</td>
+            </tr>
+            <tr>
+              <td>360</td>
+              <td>$1,945</td>
+              <td class="interest-col">$11</td>
+              <td class="principal-col">$1,934</td>
+              <td>$0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The pattern is stark. In year one, $3,672 of the $23,340 you paid reduced your balance — just 16 cents of every dollar. By payment 360, nearly every dollar is principal because the balance is nearly zero.</p>
+
+      <h2>How Extra Payments Change Everything</h2>
+
+      <p>Because interest is calculated on the outstanding balance, any extra principal payment you make immediately reduces every future interest charge for the remainder of the loan. The effect is disproportionate to the amount — especially early in the loan.</p>
+
+      <div class="highlight-box green-accent">
+        <strong>Extra payment impact:</strong> On the $300,000 example above, making one extra monthly payment per year ($1,945 extra) reduces the 30-year loan to approximately 25 years and saves around $75,000 in total interest. Making $200 extra per month saves over $60,000 and cuts roughly 5 years off the loan term.
+      </div>
+
+      <p>The reason early extra payments are so powerful: when you reduce the balance in month 6, that reduction cascades through 354 remaining monthly interest calculations. The same extra payment made in year 25 only affects 60 remaining calculations. Early is always better.</p>
+
+      <h2>Amortization on Other Loan Types</h2>
+
+      <p>Mortgages aren't the only loans that amortize. Car loans, personal loans, and student loans all use the same structure — fixed payments, front-loaded interest, declining balance. The math is identical; only the loan term and interest rate differ.</p>
+
+      <p>A 5-year car loan at 7% amortizes much faster than a 30-year mortgage, so the front-loading effect is less dramatic. But the principle is the same: pay down the principal faster and you pay less total interest.</p>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>See your full amortization schedule</h3>
+          <p>Enter your loan details into the mortgage calculator to generate your complete schedule — every payment, every split, every year.</p>
+        </div>
+        <a href="/mortgage-calculator/" class="cta-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2.5" stroke="white" stroke-width="1.4"/><path d="M4.5 7h5M7 4.5v5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Open Mortgage Calculator
+        </a>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is an amortization schedule?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">An amortization schedule is a complete table of every loan payment broken down into principal and interest components, along with the remaining balance after each payment. It shows exactly how much of each payment reduces your loan balance versus how much goes to the lender as interest.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Why do I pay more interest at the start of my mortgage?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Because interest is calculated on the outstanding balance each month. At the start of a 30-year mortgage, your balance is at its highest — so the interest charge is at its highest. As you make payments and the balance decreases, each subsequent month's interest charge is slightly lower, and a slightly larger portion of your fixed payment goes toward principal. This is why early mortgage payments feel like they barely reduce your balance.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How do extra payments affect an amortization schedule?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Extra principal payments directly reduce your outstanding balance, which reduces the interest charged in all future months. Even a small extra payment early in a loan has an outsized effect because it removes that principal from the interest calculation for the entire remaining loan term. On a 30-year mortgage, a single extra payment in year one can eliminate two or more future scheduled payments.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between amortization and an amortization schedule?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Amortization is the process of paying off a loan through regular scheduled payments that cover both principal and interest. An amortization schedule is the table that documents this process — listing every payment date, the split between principal and interest for that payment, and the remaining balance. Amortization is the concept; the schedule is the detailed record of it.</div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Calculator</div>
+        <a class="related-tool-item" href="/mortgage-calculator/">
+          <span class="related-tool-name">Mortgage Calculator</span>
+          <span class="related-tool-tag hot">Try It</span>
+        </a>
+        <a class="related-tool-item" href="/bmi-calculator/">
+          <span class="related-tool-name">BMI Calculator</span>
+          <span class="related-tool-tag">Health</span>
+        </a>
+        <a class="related-tool-item" href="/currency-converter/">
+          <span class="related-tool-name">Currency Converter</span>
+          <span class="related-tool-tag">Finance</span>
+        </a>
+        <a class="related-tool-item" href="/percentage-calculator/">
+          <span class="related-tool-name">Percentage Calculator</span>
+          <span class="related-tool-tag">Math</span>
+        </a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">Related Articles</div>
+        <a class="article-link-item" href="/blog/15-vs-30-year-mortgage/">
+          <div class="article-link-title">15-Year vs 30-Year Mortgage: Which Saves You More?</div>
+          <div class="article-link-meta">Mortgage · 8 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/how-much-house-can-i-afford/">
+          <div class="article-link-title">How Much House Can I Afford?</div>
+          <div class="article-link-meta">Mortgage · 6 min read</div>
+        </a>
+        <a class="article-link-item" href="/blog/healthy-bmi-by-age/">
+          <div class="article-link-title">Healthy BMI by Age: What the Numbers Mean</div>
+          <div class="article-link-meta">Health · 7 min read</div>
+        </a>
+      </div>
+
+      <div class="ad-zone-sidebar">
+        <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="/">NexAlc</a> · <a href="/blog/">Blog</a> · <a href="/mortgage-calculator/">Mortgage Calculator</a> · Not financial advice. For informational purposes only.</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+      const answer = el.nextElementSibling;
+      answer.classList.toggle('visible');
+    }
+  </script>
+
+</body>
+</html>
