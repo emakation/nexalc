@@ -127,6 +127,20 @@
   }
   </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Mortgage Payment",
+  "step": [
+    { "@type": "HowToStep", "name": "Enter your home price and down payment", "text": "Type your home purchase price and your down payment amount or percentage into the corresponding fields." },
+    { "@type": "HowToStep", "name": "Set your interest rate and loan term", "text": "Enter your annual interest rate and select your loan term — typically 15 or 30 years." },
+    { "@type": "HowToStep", "name": "Add optional costs (recommended)", "text": "Expand the optional fields to include property taxes, homeowner's insurance, PMI, and HOA fees for a complete monthly payment estimate." },
+    { "@type": "HowToStep", "name": "Click Calculate", "text": "Press the Calculate button to see your monthly payment, total interest paid, full amortization schedule, and a 15 vs. 30-year comparison." }
+  ]
+}
+</script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1921,7 +1935,7 @@
                 <td>5.87%</td>
                 <td>6.52%</td>
                 <td>Conventional</td>
-                <td><a class="check-rate-btn" href="#" onclick="return false;">Check Rate</a></td>
+                <td><a class="check-rate-btn" href="/mortgage-calculator/">Check Rate</a></td>
               </tr>
               <tr>
                 <td class="lender-name">Rocket Mortgage</td>
@@ -1929,7 +1943,7 @@
                 <td>6.12%</td>
                 <td>6.78%</td>
                 <td>Conventional</td>
-                <td><a class="check-rate-btn" href="#" onclick="return false;">Check Rate</a></td>
+                <td><a class="check-rate-btn" href="/mortgage-calculator/">Check Rate</a></td>
               </tr>
               <tr>
                 <td class="lender-name">LoanDepot</td>
@@ -1937,7 +1951,7 @@
                 <td>6.24%</td>
                 <td>6.91%</td>
                 <td>FHA / VA</td>
-                <td><a class="check-rate-btn" href="#" onclick="return false;">Check Rate</a></td>
+                <td><a class="check-rate-btn" href="/mortgage-calculator/">Check Rate</a></td>
               </tr>
               <tr>
                 <td class="lender-name">Chase Home Lending</td>
@@ -1945,7 +1959,7 @@
                 <td>6.38%</td>
                 <td>7.02%</td>
                 <td>Jumbo</td>
-                <td><a class="check-rate-btn" href="#" onclick="return false;">Check Rate</a></td>
+                <td><a class="check-rate-btn" href="/mortgage-calculator/">Check Rate</a></td>
               </tr>
             </tbody>
           </table>
@@ -1955,6 +1969,8 @@
 
       <!-- Educational Content -->
       <div class="edu-section">
+        <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin:0 0 24px;">A <strong>mortgage calculator</strong> is a financial planning tool that applies the standard amortization formula — M = P × [r(1+r)ⁿ] ÷ [(1+r)ⁿ − 1] — to determine a homebuyer's fixed monthly payment based on <strong>loan principal</strong>, <strong>interest rate</strong>, and <strong>loan term</strong>. Beyond the base payment, it models the full amortization schedule (principal vs. interest split over time), compares 15-year vs. 30-year loan costs, and incorporates optional inputs such as property taxes, homeowner's insurance, PMI, and HOA fees to produce an all-in monthly housing cost estimate used by buyers, lenders, and real estate professionals.</p>
+
         <h2>How to Use This Mortgage Calculator</h2>
         <p>Enter your home price, down payment, interest rate, and loan term. Expand the optional fields to include property taxes, homeowner's insurance, PMI, and HOA fees for a more accurate picture. Hit Calculate to see your monthly payment, full amortization schedule, and a 15 vs. 30-year comparison.</p>
 

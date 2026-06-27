@@ -54,6 +54,24 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "NexAlc Blog Articles",
+    "description": "In-depth guides on mortgage calculations, BMI interpretation, and personal finance.",
+    "url": "https://nexalc.com/blog/",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "url": "https://nexalc.com/blog/15-vs-30-year-mortgage/", "name": "15-Year vs 30-Year Mortgage: Which Saves You More?" },
+      { "@type": "ListItem", "position": 2, "url": "https://nexalc.com/blog/how-much-house-can-i-afford/", "name": "How Much House Can I Afford? A Simple Framework" },
+      { "@type": "ListItem", "position": 3, "url": "https://nexalc.com/blog/what-is-an-amortization-schedule/", "name": "What Is an Amortization Schedule and How Do You Read One?" },
+      { "@type": "ListItem", "position": 4, "url": "https://nexalc.com/blog/healthy-bmi-by-age/", "name": "Healthy BMI by Age: What the Numbers Actually Mean" },
+      { "@type": "ListItem", "position": 5, "url": "https://nexalc.com/blog/bmi-vs-body-fat-percentage/", "name": "BMI vs Body Fat Percentage: What's the Real Difference?" },
+      { "@type": "ListItem", "position": 6, "url": "https://nexalc.com/blog/bmi-chart-for-women/", "name": "BMI Chart for Women: How to Interpret Your Result" }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -598,7 +616,7 @@
       <button class="filter-btn" data-filter="bmi" onclick="filterPosts('bmi', this)">
         ⚖️ BMI <span class="filter-count" id="count-bmi">3</span>
       </button>
-      <button class="filter-btn" data-filter="news" onclick="filterPosts('news', this)">
+      <button class="filter-btn" data-filter="news" onclick="filterPosts('news', this)" style="display:none;">
         📰 News &amp; Updates <span class="filter-count" id="count-news">0</span>
       </button>
     </div>
