@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact — NexAlc</title>
+<meta name="description" content="Get in touch with the NexAlc team. Questions, feedback, or bug reports — we read every message."/>
+<link rel="canonical" href="https://nexalc.com/contact/"/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF6B2B;
+  --orange-dim:#cc5522;
+  --near-black:#0E0E0F;
+  --warm-white:#F5F0EB;
+  --surface:#161617;
+  --surface2:#1e1e1f;
+  --surface3:#252526;
+  --border:rgba(255,255,255,.07);
+  --text-main:#F0EBE4;
+  --text-muted:#8a8480;
+  --radius:14px;
+  --radius-sm:8px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--near-black);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(255,107,43,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,107,43,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;z-index:0;
+}
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background: rgba(14,14,15,.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+.nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+.nav-logo-txt span { color: var(--orange); }
+.nav-links { display: flex; gap: 6px; align-items: center; }
+.nav-links a { font-size: .8rem; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: 5px 10px; border-radius: var(--radius-sm); transition: color var(--transition), background var(--transition); white-space: nowrap; }
+.nav-links a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+.nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+.nav-item { position: relative; }
+.nav-item > a { display: flex; align-items: center; gap: 5px; }
+.nav-item > a::after {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--transition);
+  opacity: .6;
+}
+.nav-item:hover > a { color: var(--orange); }
+.nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+.nav-dropdown {
+  position: absolute; top: 100%; left: 0; min-width: 190px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 6px 6px;
+  opacity: 0; pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 200;
+}
+.nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.nav-dropdown a { display: block; padding: 8px 12px; border-radius: var(--radius-sm); font-size: .82rem; color: var(--text-muted); white-space: nowrap; background: none; }
+.nav-dropdown a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+.nav-links > a:hover { color: var(--orange); }
+
+/* AD ZONE A */
+.ad-leaderboard{
+  width:100%;max-width:728px;height:90px;
+  margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid var(--border);
+  font-size:.72rem;color:var(--text-muted);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+
+main{
+  position:relative;z-index:1;
+  max-width:760px;margin:0 auto;
+  padding:56px 24px 80px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{opacity:0;animation:fadeUp .55s cubic-bezier(.4,0,.2,1) forwards}
+.delay-1{animation-delay:.08s}
+.delay-2{animation-delay:.16s}
+.delay-3{animation-delay:.24s}
+
+.page-eyebrow{
+  display:inline-block;
+  font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:12px;
+}
+.page-headline{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.75rem,5vw,2.75rem);
+  font-weight:800;line-height:1.1;
+  color:var(--warm-white);margin-bottom:12px;
+}
+.page-lead{
+  font-size:.96rem;line-height:1.82;
+  color:var(--text-muted);
+  max-width:560px;
+  margin-bottom:48px;
+}
+
+/* CONTACT LAYOUT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+@media(max-width:640px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+/* FORM */
+.contact-form{
+  display:flex;flex-direction:column;gap:20px;
+}
+.field-group{
+  display:flex;flex-direction:column;gap:6px;
+}
+.field-group label{
+  font-family:'Syne',sans-serif;
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-muted);
+}
+.field-group input,
+.field-group select,
+.field-group textarea{
+  font-family:'DM Sans',sans-serif;
+  font-size:.93rem;
+  color:var(--text-main);
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:12px 14px;
+  outline:none;
+  transition:border-color var(--transition),background var(--transition);
+  width:100%;
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder{color:var(--text-muted);opacity:.6}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus{
+  border-color:rgba(255,107,43,.5);
+  background:var(--surface3);
+}
+.field-group select{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8480' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:36px;
+  cursor:pointer;
+}
+.field-group select option{background:var(--surface2);color:var(--text-main)}
+.field-group textarea{
+  resize:vertical;
+  min-height:130px;
+  line-height:1.6;
+}
+
+.submit-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Syne',sans-serif;font-size:.875rem;font-weight:700;
+  letter-spacing:.04em;
+  color:#fff;
+  background:var(--orange);
+  border:none;border-radius:var(--radius-sm);
+  padding:13px 28px;
+  cursor:pointer;
+  transition:background var(--transition),transform var(--transition);
+  align-self:flex-start;
+}
+.submit-btn:hover{background:var(--orange-dim);transform:translateY(-1px)}
+.submit-btn:active{transform:translateY(0)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* SUCCESS / ERROR STATE */
+.form-status{
+  display:none;
+  padding:14px 18px;
+  border-radius:var(--radius-sm);
+  font-size:.9rem;line-height:1.6;
+}
+.form-status.success{
+  display:block;
+  background:rgba(255,107,43,.08);
+  border:1px solid rgba(255,107,43,.25);
+  color:var(--text-muted);
+}
+.form-status.success strong{color:var(--orange)}
+.form-status.error{
+  display:block;
+  background:rgba(220,50,50,.08);
+  border:1px solid rgba(220,50,50,.2);
+  color:var(--text-muted);
+}
+
+/* SIDEBAR INFO */
+.contact-info{
+  display:flex;flex-direction:column;gap:24px;
+}
+.info-card{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 22px;
+}
+.info-card-label{
+  font-family:'Syne',sans-serif;
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:8px;
+}
+.info-card-title{
+  font-family:'Syne',sans-serif;
+  font-size:.95rem;font-weight:700;
+  color:var(--warm-white);margin-bottom:6px;
+}
+.info-card-body{
+  font-size:.875rem;line-height:1.7;
+  color:var(--text-muted);
+}
+.info-card-body a{color:var(--orange);text-decoration:none}
+.info-card-body a:hover{text-decoration:underline}
+
+/* AD ZONE B */
+.ad-rect{
+  width:100%;max-width:336px;height:280px;
+  margin:48px auto 0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);border-radius:var(--radius);
+  font-size:.72rem;color:var(--text-muted);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+
+/* FOOTER */
+footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 2rem clamp(1rem, 4vw, 2rem);
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  align-items: center; justify-content: space-between;
+}
+.footer-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem; font-weight: 800;
+  color: var(--warm-white); text-decoration: none;
+}
+.footer-brand span { color: var(--orange); }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; }
+.footer-links a {
+  font-size: 0.8rem; color: var(--text-muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--warm-white); }
+.footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
+
+.ad-mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;height:50px;background:rgba(14,14,15,.95);border-top:1px solid var(--border);align-items:center;justify-content:center;font-size:.7rem;color:var(--text-muted);letter-spacing:.05em;text-transform:uppercase;z-index:200}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .ad-leaderboard{height:60px;font-size:.65rem}
+  .ad-mobile-sticky{display:flex}
+  body{padding-bottom:50px}
+  main{padding:36px 16px 60px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<div class="ad-leaderboard">Advertisement</div>
+
+<main>
+
+  <div class="fade-up">
+    <span class="page-eyebrow">Contact</span>
+    <h1 class="page-headline">Get in touch</h1>
+    <p class="page-lead">Found a bug, have a question, or just want to say something? Fill in the form and we'll get back to you.</p>
+  </div>
+
+  <div class="contact-grid fade-up delay-1">
+
+    <!-- FORM -->
+    <div>
+      <div id="form-success" class="form-status success" aria-live="polite">
+        <strong>Message sent.</strong> Thanks for reaching out — we'll reply within 1–2 business days.
+      </div>
+      <div id="form-error" class="form-status error" aria-live="polite">
+        Something went wrong. Please try again or email us directly at <a href="mailto:hello@nexalc.com" style="color:inherit;text-decoration:underline">hello@nexalc.com</a>.
+      </div>
+
+      <div class="contact-form" id="contact-form">
+
+        <div class="field-group">
+          <label for="cf-name">Your name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Jane Smith" autocomplete="name" required/>
+        </div>
+
+        <div class="field-group">
+          <label for="cf-email">Email address</label>
+          <input type="email" id="cf-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+        </div>
+
+        <div class="field-group">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject" name="subject" required>
+            <option value="" disabled selected>Select a topic…</option>
+            <option value="bug">Bug report</option>
+            <option value="feedback">General feedback</option>
+            <option value="tool-request">Tool request</option>
+            <option value="business">Business / partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+        </div>
+
+        <button type="button" class="submit-btn" id="submit-btn" onclick="handleSubmit()">
+          Send message
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-info fade-up delay-2">
+
+      <div class="info-card">
+        <div class="info-card-label">Email us directly</div>
+        <div class="info-card-title">hello@nexalc.com</div>
+        <div class="info-card-body">For anything urgent, email works fastest. We typically reply within one business day.</div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-label">Response time</div>
+        <div class="info-card-title">1–2 business days</div>
+        <div class="info-card-body">NexAlc is an independent project. We read every message but can't guarantee immediate replies.</div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-label">Found a bug?</div>
+        <div class="info-card-title">Tell us which tool</div>
+        <div class="info-card-body">Include the tool name, what you entered, and what result you expected. Screenshots help.</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- AD ZONE B -->
+  <div class="ad-rect">Advertisement</div>
+
+</main>
+
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+<div class="ad-mobile-sticky">Advertisement</div>
+
+<script>
+function handleSubmit() {
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value;
+  const message = document.getElementById('cf-message').value.trim();
+
+  // Basic validation
+  if (!name || !email || !subject || !message) {
+    // Trigger native validation on empty required fields
+    const inputs = [
+      document.getElementById('cf-name'),
+      document.getElementById('cf-email'),
+      document.getElementById('cf-subject'),
+      document.getElementById('cf-message')
+    ];
+    for (const el of inputs) {
+      if (!el.value.trim()) {
+        el.focus();
+        el.style.borderColor = 'rgba(220,50,50,.5)';
+        el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+        break;
+      }
+    }
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  // Formspree endpoint — replace YOUR_FORM_ID with your actual Formspree form ID
+  const ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  fetch(ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name, email, subject, message })
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      throw new Error('Non-OK response');
+    }
+  })
+  .catch(() => {
+    document.getElementById('form-error').style.display = 'block';
+    btn.disabled = false;
+    btn.innerHTML = 'Try again <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+  });
+}
+
+// Allow Enter key in inputs to submit (not textarea)
+document.querySelectorAll('#contact-form input, #contact-form select').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleSubmit();
+  });
+});
+</script>
+
+</body>
+</html>

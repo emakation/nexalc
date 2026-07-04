@@ -1,0 +1,7 @@
+# ads.txt — NexAlc
+# Update the publisher ID below once your Google AdSense account is approved
+# and nexalc.com is verified. Replace ca-pub-XXXXXXXXXXXXXXXXX with your real ID.
+#
+# Format: google.com, ca-pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+google.com, ca-pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

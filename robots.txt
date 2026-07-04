@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block utility/legal pages from indexing (already set via meta robots noindex, belt-and-suspenders)
+Disallow: /privacy-policy/
+Disallow: /terms/
+Disallow: /contact/
+Disallow: /about/
+
+# Sitemap — update this line once nexalc.com domain is live and sitemap.xml is created
+# Sitemap: https://nexalc.com/sitemap.xml
