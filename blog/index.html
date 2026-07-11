@@ -478,11 +478,18 @@
 
     /* ── FOOTER ── */
     footer {
-      position: relative; z-index: 1;
+      position: relative;
+      z-index: 1;
       border-top: 1px solid var(--border);
       padding: 32px clamp(16px, 4vw, 40px);
-      text-align: center; font-size: 0.8rem; color: var(--text-muted);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--orange); }
 
@@ -531,6 +538,7 @@
         </div>
       </div>
       <a href="/blog/" class="active">Blog</a>
+      <a href="/contact/">Contact</a>
     </div>
   </nav>
 
@@ -757,7 +765,15 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 <a href="/">NexAlc</a> · <a href="/blog/">Blog</a> · <a href="/mortgage-calculator/">Mortgage Calculator</a> · <a href="/bmi-calculator/">BMI Calculator</a> · For informational purposes only.</p>
+    <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+    <ul class="footer-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms of Use</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
   </footer>
 
   <script>
