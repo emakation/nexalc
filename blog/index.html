@@ -61,7 +61,7 @@
     "name": "NexAlc Blog Articles",
     "description": "In-depth guides on mortgage calculations, BMI interpretation, and personal finance.",
     "url": "https://nexalc.com/blog/",
-    "numberOfItems": 18,
+    "numberOfItems": 22,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "url": "https://nexalc.com/blog/how-much-should-your-monthly-mortgage-payment-be/", "name": "How Much Should Your Monthly Mortgage Payment Be?" },
       { "@type": "ListItem", "position": 2, "url": "https://nexalc.com/blog/15-vs-30-year-mortgage/", "name": "15-Year vs 30-Year Mortgage: Which Saves You More?" },
@@ -80,8 +80,12 @@
      { "@type": "ListItem", "position": 13, "url": "https://nexalc.com/blog/how-currency-exchange-rates-work/", "name": "How Currency Exchange Rates Work" },
       { "@type": "ListItem", "position": 14, "url": "https://nexalc.com/blog/best-time-to-exchange-currency-when-travelling/", "name": "Best Time to Exchange Currency When Travelling" },
       { "@type": "ListItem", "position": 15, "url": "https://nexalc.com/blog/usd-to-eur-historical-trends-explained/", "name": "USD to EUR Historical Trends Explained" },
-      { "@type": "ListItem", "position": 16, "url": "https://nexalc.com/blog/how-to-calculate-your-exact-age-in-days/", "name": "How to Calculate Your Exact Age in Days" }
-    ]
+      { "@type": "ListItem", "position": 16, "url": "https://nexalc.com/blog/how-to-calculate-your-exact-age-in-days/", "name": "How to Calculate Your Exact Age in Days" },
+      { "@type": "ListItem", "position": 17, "url": "https://nexalc.com/blog/what-generation-am-i-age-ranges-explained/", "name": "What Generation Am I? Age Ranges Explained" },
+      { "@type": "ListItem", "position": 18, "url": "https://nexalc.com/blog/age-calculation-in-different-cultures/", "name": "Age Calculation in Different Cultures" },
+      { "@type": "ListItem", "position": 19, "url": "https://nexalc.com/blog/how-much-should-you-tip-a-guide-by-service-type/", "name": "How Much Should You Tip? A Guide by Service Type" },
+      { "@type": "ListItem", "position": 20, "url": "https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/", "name": "Tip Pooling: How It Works and How to Calculate It" }
+      ]
   }
   </script>
 
@@ -469,6 +473,8 @@
     .card-cat.bmi { color: var(--green); }
     .card-cat.news { color: #7EB8FF; }
     .card-cat.currency { color: #4ECDC4; }
+    .card-cat.age { color: var(--orange); }
+    .card-cat.tip { color: #4ECDC4; }
 
     .card-title {
       font-family: 'Syne', sans-serif;
@@ -655,31 +661,31 @@
       </article>
 
       <!-- Slide 2: Latest -->
-      <article class="featured-post" data-category="age">
+      <article class="featured-post" data-category="tip">
         <div class="featured-post-body">
           <div class="featured-post-top">
             <div class="featured-label">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:var(--orange)"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
               Latest
             </div>
-            <div class="featured-post-badge">Age Guide</div>
-            <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="featured-post-title">
-              How to Calculate Your<br>Exact Age in Days
+            <div class="featured-post-badge">Tip Guide</div>
+            <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="featured-post-title">
+              Tip Pooling: How It Works<br>and How to Calculate It
             </a>
-            <p class="featured-post-excerpt">Years round down. Days don't. The step-by-step manual method, leap year logic, cultural differences, and why most people's mental estimate is off by hundreds of days.</p>
+            <p class="featured-post-excerpt">Hours-based, points-based, equal split — every calculation method with real math. Plus the FLSA rules on who can be in the pool, and how tip pooling differs from tip sharing and tipping out.</p>
             <div class="featured-post-meta">
               <span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5v2.8l1.8 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                8 min read
+                9 min read
               </span>
               <span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1v2M4 1v2M1.5 5.5h9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                Jul 30, 2026
+                Aug 10, 2026
               </span>
-              <span>Age</span>
+              <span>Tip</span>
             </div>
           </div>
-          <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="featured-cta">
+          <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="featured-cta">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Read the Guide
           </a>
@@ -687,21 +693,25 @@
         <div class="featured-post-visual">
           <div class="featured-visual-graphic">
             <div class="fvg-bar-row">
-              <div class="fvg-label">Age 30</div>
+              <div class="fvg-label">Servers</div>
               <div class="fvg-bar-track"><div class="fvg-bar-fill green" style="width:75%"></div></div>
-              <div class="fvg-stat">10,957 days</div>
+              <div class="fvg-stat">70%</div>
             </div>
             <div class="fvg-bar-row">
-              <div class="fvg-label">Age 20</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill orange" style="width:50%"></div></div>
-              <div class="fvg-stat">7,305 days</div>
+              <div class="fvg-label">Bussers</div>
+              <div class="fvg-bar-track"><div class="fvg-bar-fill orange" style="width:20%"></div></div>
+              <div class="fvg-stat">15%</div>
+            </div>
+            <div class="fvg-bar-row">
+              <div class="fvg-label">Runners</div>
+              <div class="fvg-bar-track"><div class="fvg-bar-fill" style="width:13%;background:#4ECDC4"></div></div>
+              <div class="fvg-stat">10%</div>
             </div>
             <hr class="fvg-divider">
             <div class="fvg-savings">
-              <span class="fvg-savings-label">Most people guess</span>
-              <span class="fvg-savings-value">~10,000 days</span>
+              <span class="fvg-savings-label">Managers get</span>
+              <span class="fvg-savings-value">$0 — it's the law</span>
             </div>
-            <div style="font-size:0.65rem;color:var(--text-muted);margin-top:8px;text-align:center;">They're usually off by hundreds</div>
           </div>
         </div>
       </article>
@@ -716,7 +726,7 @@
     <div class="filter-bar">
       <span class="filter-bar-label">Filter:</span>
       <button class="filter-btn active" data-filter="all" onclick="filterPosts('all', this)">
-        All <span class="filter-count" id="count-all">18</span>
+        All <span class="filter-count" id="count-all">22</span>
       </button>
       <button class="filter-btn" data-filter="mortgage" onclick="filterPosts('mortgage', this)">
         🏠 Mortgage <span class="filter-count" id="count-mortgage">8</span>
@@ -728,7 +738,10 @@
         💱 Currency <span class="filter-count" id="count-currency">4</span>
       </button>
       <button class="filter-btn" data-filter="age" onclick="filterPosts('age', this)">
-        🎂 Age <span class="filter-count" id="count-age">1</span>
+        🎂 Age <span class="filter-count" id="count-age">3</span>
+      </button>
+      <button class="filter-btn" data-filter="tip" onclick="filterPosts('tip', this)">
+        💸 Tip <span class="filter-count" id="count-tip">2</span>
       </button>
       <button class="filter-btn" data-filter="news" onclick="filterPosts('news', this)" style="display:none;">
         📰 News &amp; Updates <span class="filter-count" id="count-news">0</span>
@@ -738,7 +751,7 @@
     <!-- SECTION HEADER -->
     <div class="section-header">
       <span class="section-title">All Articles</span>
-      <span class="section-count" id="visible-count">Showing 15 articles</span>
+      <span class="section-count" id="visible-count">Showing 22 articles</span>
     </div>
 
     <!-- CARD GRID -->
@@ -1096,6 +1109,7 @@
         </div>
       </a>
 
+      <!-- C4: USD to EURO Historical Trends Explained -->
       <a href="/blog/usd-to-eur-historical-trends-explained/" class="post-card" data-category="currency">
         <div class="card-visual">
           <div class="card-visual-icon">📈</div>
@@ -1117,12 +1131,13 @@
         </div>
       </a>
 
+      <!-- A1: how to calculate your exact age in days -->
       <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="post-card" data-category="age">
         <div class="card-visual">
           <div class="card-visual-icon">🎂</div>
         </div>
         <div class="card-body">
-          <span class="card-cat" style="background:rgba(255,107,43,0.12);color:#FF6B2B;border:1px solid rgba(255,107,43,0.3);">Age</span>
+          <span class="card-cat age">Age</span>
           <div class="card-title">How to Calculate Your Exact Age in Days</div>
           <p class="card-excerpt">Years round down. Days don't lie. The step-by-step method, a reference table by age, and why leap years mean most people's mental estimate is off by hundreds of days.</p>
           <div class="card-meta">
@@ -1137,6 +1152,94 @@
           </div>
         </div>
       </a>
+
+      <!-- A2: What generation am i age ranges explained -->
+      <a href="/blog/what-generation-am-i-age-ranges-explained/" class="post-card" data-category="age">
+        <div class="card-visual">
+          <div class="card-visual-icon">🎂</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat age">Age</span>
+          <div class="card-title">What Generation Am I? Age Ranges Explained</div>
+          <p class="card-excerpt">Gen Z, Millennial, Gen X — the exact birth year ranges, current ages in 2026, and what actually defined each cohort beyond the label.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>9 min read</span>
+              <span>Aug 6, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- A3: Age calculation in different cultures -->
+      <a href="/blog/age-calculation-in-different-cultures/" class="post-card" data-category="age">
+        <div class="card-visual">
+          <div class="card-visual-icon">🌍</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat age">Age</span>
+          <div class="card-title">Age Calculation in Different Cultures</div>
+          <p class="card-excerpt">Korean age, Chinese lunar age, Islamic Hijri years — how the world counts age differently, and why the same date of birth gives you a different number depending on where you are.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>9 min read</span>
+              <span>Aug 7, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- T2: Tip Pooling -->
+      <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="post-card" data-category="tip">
+  <div class="card-visual">
+    <div class="card-visual-icon">🤝</div>
+  </div>
+  <div class="card-body">
+    <span class="card-cat tip">Tip</span>
+    <div class="card-title">Tip Pooling: How It Works and How to Calculate It</div>
+    <p class="card-excerpt">Hours-based, points-based, equal split — every method with real math examples. Plus FLSA rules on who can and can't be in the pool, and how pooling differs from tip sharing.</p>
+    <div class="card-meta">
+      <span class="card-meta-left">
+        <span>9 min read</span>
+        <span>Aug 10, 2026</span>
+      </span>
+      <span class="card-read-link">
+        Read
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+      <!-- T1: How much should you tip a guide by service type -->
+      <a href="/blog/how-much-should-you-tip-a-guide-by-service-type/" class="post-card" data-category="tip">
+  <div class="card-visual">
+    <div class="card-visual-icon">💸</div>
+  </div>
+  <div class="card-body">
+    <span class="card-cat tip">Tip</span>
+    <div class="card-title">How Much Should You Tip? A Guide by Service Type</div>
+    <p class="card-excerpt">Restaurants, hair salons, movers, hotel housekeeping, delivery drivers — exact tipping amounts for every service type, including the edge cases nobody talks about.</p>
+    <div class="card-meta">
+      <span class="card-meta-left">
+        <span>10 min read</span>
+        <span>Aug 9, 2026</span>
+      </span>
+      <span class="card-read-link">
+        Read
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
 
       <!-- Placeholder for News & Updates — hidden by default, shown if news filter active -->
 

@@ -6,6 +6,5 @@ Disallow: /privacy-policy/
 Disallow: /terms/
 Disallow: /contact/
 Disallow: /about/
-
-# Sitemap — update this line once nexalc.com domain is live and sitemap.xml is created
-# Sitemap: https://nexalc.com/sitemap.xml
+Disallow: /?s=
+Sitemap: https://nexalc.com/sitemap.xml

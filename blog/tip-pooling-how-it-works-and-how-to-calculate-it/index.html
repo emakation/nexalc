@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Tip Pooling: How It Works and How to Calculate It | NexAlc</title>
+  <meta name="description" content="What tip pooling actually is, how the math works (hours-based, points-based, equal split), what the law says, and how it differs from tip sharing and tipping out." />
+  <meta name="keywords" content="tip pooling, tip splitting, tip pool meaning, splitting tips, tip pooling laws, divide tips by hours worked, splitting tips by hours worked, tip pooling percentages, tip pooling system" />
+  <link rel="canonical" href="https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Tip Pooling: How It Works and How to Calculate It" />
+  <meta property="og:description" content="The full breakdown on tip pooling — what it means, how the math works by method, legal rules under the FLSA, and how it's different from tip sharing." />
+  <meta property="og:url" content="https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" />
+  <meta property="og:site_name" content="NexAlc" />
+  <meta property="og:image" content="https://nexalc.com/assets/og-tip-calculator.png" />
+  <meta property="article:published_time" content="2026-08-10T00:00:00+00:00" />
+  <meta property="article:modified_time" content="2026-08-10T00:00:00+00:00" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tip Pooling: How It Works and How to Calculate It" />
+  <meta name="twitter:description" content="Hours-based, points-based, equal split — every method explained with real math, plus what the law actually says about who can be in the pool." />
+  <meta name="twitter:image" content="https://nexalc.com/assets/og-tip-calculator.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Tip Pooling: How It Works and How to Calculate It",
+    "description": "A complete guide to tip pooling — the definition, calculation methods (hours-based, points-based, equal split), legal rules under the FLSA, and how tip pooling differs from tip sharing and tipping out.",
+    "url": "https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/",
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "author": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "publisher": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nexalc.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Tip Pooling: How It Works and How to Calculate It", "item": "https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the tip pool meaning in a restaurant?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A tip pool is a system where tipped employees combine all or part of their earned tips into a shared fund, which is then redistributed among eligible team members at the end of a shift. The redistribution formula varies by business — some divide by hours worked, others by role-based point values, and some simply split the total equally. Tip pooling is most common in restaurants, bars, and hotels." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is tip pooling legal?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, tip pooling is legal in the United States under the Fair Labor Standards Act (FLSA). However, the law places firm restrictions on who can participate. Employers, managers, and supervisors are strictly prohibited from receiving any portion of a tip pool. If the employer takes a tip credit (pays tipped staff less than minimum wage), back-of-house employees like cooks and dishwashers generally cannot be included in the pool. If the employer pays the full federal minimum wage to all staff, back-of-house inclusion is permitted." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between tip pooling and tip sharing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tip pooling collects all tips into a single fund and redistributes them to the whole team according to a set formula — no individual server keeps their own table tips. Tip sharing (also called tipping out) works differently: each server keeps most of their own tips but gives a percentage to supporting staff like bussers, bartenders, and food runners. Tip sharing preserves individual earnings while still compensating support roles; tip pooling eliminates individual variation entirely." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you divide tips by hours worked?",
+        "acceptedAnswer": { "@type": "Answer", "text": "First, add up the total tips collected for the shift. Then divide that total by the total hours worked by all participating staff to get the hourly tip rate. Finally, multiply each person's individual hours by that rate to find their share. For example: $600 total tips ÷ 24 total hours worked = $25 per hour. A server who worked 8 hours gets $200, one who worked 6 hours gets $150, and so on." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a manager take a cut of the tip pool?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Under federal law (the FLSA), managers and supervisors are explicitly prohibited from taking any portion of an employee tip pool. This applies regardless of whether the manager also performs tipped work during the shift. If a manager is caught taking from the tip pool, the employer may be liable for back wages and additional penalties. Some states have stricter laws on top of the federal baseline." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a tip pooling percentage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tip pooling percentages refer to how the total pool is divided among different staff roles. For example, servers might retain 70% of the pool collectively, with bartenders receiving 15%, bussers 10%, and food runners 5%. These percentages are set by the employer and should be documented in a written policy. This is different from tip-out percentages, which describe what servers individually owe to support staff under a tip-sharing model." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does tip splitting hurt high-performing servers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It can, and this is the most common complaint about tip pooling. A server who consistently earns higher tips — through skill, personality, or being assigned higher-volume sections — earns the same as a slower or newer colleague under a pooling model. Some high-performing servers dislike this intensely; others are fine with it because a strong team environment reduces their own workload. Whether it's a problem depends heavily on how consistent performance is across the team and how the policy is explained and enforced." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #E55A1C;
+      --orange-glow: rgba(255,107,43,0.15);
+      --orange-glow-strong: rgba(255,107,43,0.25);
+      --near-black: #0E0E0F;
+      --surface: #161618;
+      --surface-2: #1E1E21;
+      --surface-3: #252528;
+      --border: rgba(255,255,255,0.07);
+      --border-active: rgba(255,107,43,0.4);
+      --warm-white: #F5F0EB;
+      --text-primary: #F0EDE8;
+      --text-secondary: #9A9592;
+      --text-muted: #5A5755;
+      --green: #2ECC71;
+      --green-dim: rgba(46,204,113,0.12);
+      --red: #E74C3C;
+      --red-dim: rgba(231,76,60,0.1);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 48px);
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--warm-white); display: none; }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      font-size: .8rem; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; padding: 5px 10px; border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition); white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,.12); border-radius: 6px; padding: 4px 10px; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform var(--transition);
+      opacity: .6;
+    }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown {
+      position: absolute; top: 100%; left: 0; min-width: 190px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 8px 6px 6px;
+      opacity: 0; pointer-events: none; transform: translateY(6px);
+      transition: opacity var(--transition), transform var(--transition); z-index: 200;
+    }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a {
+      display: block; padding: 8px 12px; border-radius: var(--radius-sm);
+      font-size: .82rem; color: var(--text-muted); white-space: nowrap; background: none;
+    }
+    .nav-dropdown a:hover { color: var(--text-primary); background: rgba(255,255,255,.06); }
+    .nav-dropdown a.active { color: var(--orange); background: var(--orange-glow); }
+    .nav-links > a:hover { color: var(--orange); }
+
+    /* ── AD ZONE A ── */
+    .ad-zone-a {
+      width: 100%; display: flex; justify-content: center;
+      padding: 10px 0; background: var(--surface);
+      border-bottom: 1px solid var(--border); position: relative; z-index: 1;
+    }
+    .ad-placeholder {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--surface-2); border: 1px dashed var(--border);
+      border-radius: var(--radius-sm); color: var(--text-muted);
+      font-size: 0.75rem; font-weight: 500;
+    }
+    .ad-leaderboard { width: 728px; max-width: 100%; height: 90px; }
+    .ad-rectangle { width: 336px; max-width: 100%; height: 280px; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 860px; margin: 0 auto;
+      padding: clamp(32px, 6vw, 64px) clamp(16px, 4vw, 32px) clamp(24px, 4vw, 40px);
+      position: relative; z-index: 1;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+      font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;
+    }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb-sep { color: var(--border); }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--orange-glow); border: 1px solid var(--border-active);
+      border-radius: 20px; padding: 4px 12px;
+      font-size: 0.75rem; font-weight: 600; color: var(--orange);
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15;
+      color: var(--warm-white); margin-bottom: 16px;
+    }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.5vw, 1.08rem); color: var(--text-secondary);
+      max-width: 660px; line-height: 1.65; margin-bottom: 20px;
+    }
+    .hero-meta {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-layout {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 32px) clamp(40px, 6vw, 80px);
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      position: relative; z-index: 1;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body { min-width: 0; }
+    .article-body p {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--text-secondary); line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .article-body h2 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--warm-white);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: 'Syne', sans-serif; font-weight: 600;
+      font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--text-primary);
+      margin: 28px 0 10px;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 20px; margin-bottom: 20px;
+    }
+    .article-body li { margin-bottom: 6px; }
+    .article-body li { font-size: clamp(0.93rem, 1.1vw, 1.02rem); color: var(--text-secondary); line-height: 1.7; }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px;
+      margin-bottom: 28px; font-size: 0.9rem;
+      color: var(--text-secondary); line-height: 1.65;
+    }
+    .highlight-box strong { display: block; color: var(--text-primary); font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; }
+    .highlight-box.green-accent { border-left: 3px solid var(--green); }
+    .highlight-box.orange-accent { border-left: 3px solid var(--orange); }
+
+    /* ── FORMULA BOX ── */
+    .formula-box {
+      background: var(--surface-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 24px; margin: 24px 0;
+      font-family: 'DM Sans', monospace;
+    }
+    .formula-box .formula-label {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+    }
+    .formula-box .formula-line {
+      font-size: 1rem; color: var(--warm-white); font-weight: 500; margin-bottom: 6px;
+    }
+    .formula-box .formula-example {
+      font-size: 0.88rem; color: var(--text-secondary); margin-top: 10px;
+      border-top: 1px solid var(--border); padding-top: 10px;
+    }
+    .formula-box .formula-example strong { color: var(--green); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table-wrap { overflow-x: auto; margin: 24px 0 28px; border-radius: var(--radius); }
+    .comparison-table {
+      width: 100%; border-collapse: collapse;
+      font-size: clamp(0.82rem, 1vw, 0.92rem);
+    }
+    .comparison-table th {
+      background: var(--surface-2); color: var(--text-primary);
+      font-weight: 600; padding: 12px 16px; text-align: left;
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+    }
+    .comparison-table td {
+      padding: 11px 16px; color: var(--text-secondary);
+      border-bottom: 1px solid var(--border); vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: var(--surface-2); border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg); padding: 24px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; margin: 36px 0;
+    }
+    .cta-text h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--warm-white); margin-bottom: 6px;
+    }
+    .cta-text p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff;
+      font-weight: 600; font-size: 0.88rem;
+      padding: 10px 20px; border-radius: var(--radius-sm);
+      text-decoration: none; white-space: nowrap;
+      transition: background var(--transition);
+    }
+    .cta-btn:hover { background: var(--orange-dim); }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 12px; }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      margin-bottom: 8px; overflow: hidden;
+    }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; cursor: pointer;
+      font-size: 0.93rem; font-weight: 500; color: var(--text-primary);
+      background: var(--surface-2); transition: background var(--transition), color var(--transition);
+      gap: 12px;
+    }
+    .faq-question:hover { background: var(--surface-3); }
+    .faq-question.open { background: var(--surface-2); color: var(--orange); }
+    .faq-chevron { flex-shrink: 0; color: var(--text-muted); transition: transform 0.25s; }
+    .faq-question.open .faq-chevron { transform: rotate(180deg); color: var(--orange); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      padding: 0 18px;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;
+      background: var(--surface);
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-answer.visible {
+      max-height: 400px;
+      padding: 14px 18px 16px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky; top: 80px; height: fit-content;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .sidebar-widget {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px;
+    }
+    .sidebar-widget-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.8rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    .toc-list { list-style: none; padding: 0; }
+    .toc-list li { margin-bottom: 4px; }
+    .toc-list a {
+      font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;
+      display: block; padding: 5px 8px; border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .toc-list a:hover { color: var(--orange); background: var(--orange-glow); }
+    .sidebar-cta {
+      background: var(--surface-2); border: 1px solid var(--border-active);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .sidebar-cta-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; color: var(--warm-white); margin-bottom: 8px;
+    }
+    .sidebar-cta-desc {
+      font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.5;
+    }
+    .sidebar-cta-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--orange); color: #fff;
+      font-weight: 600; font-size: 0.83rem;
+      padding: 9px 16px; border-radius: var(--radius-sm);
+      text-decoration: none; width: 100%; justify-content: center;
+      transition: background var(--transition);
+    }
+    .sidebar-cta-btn:hover { background: var(--orange-dim); }
+    .article-link { display: flex; flex-direction: column; gap: 10px; }
+    .article-link-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      text-decoration: none; padding: 8px; border-radius: var(--radius-sm);
+      transition: background var(--transition);
+    }
+    .article-link-item:hover { background: rgba(255,255,255,0.04); }
+    .article-link-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .article-link-title { font-size: 0.83rem; color: var(--text-primary); font-weight: 500; line-height: 1.4; margin-bottom: 3px; }
+    .article-link-meta { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ── RELATED TOOLS ── */
+    .related-tools-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 32px) clamp(40px, 5vw, 64px);
+      position: relative; z-index: 1;
+    }
+    .related-tools-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .related-tools-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .related-tool-item {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 10px 16px;
+      text-decoration: none; transition: border-color var(--transition), background var(--transition);
+    }
+    .related-tool-item:hover { border-color: var(--border-active); background: var(--orange-glow); }
+    .related-tool-icon { font-size: 1.2rem; }
+    .related-tool-name { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px clamp(16px, 4vw, 48px);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      position: relative; z-index: 1;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 860px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .cta-block { flex-direction: column; align-items: flex-start; }
+      .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/nexalc-logo.png" alt="NexAlc" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span class="nav-logo-txt">Nex<span>Alc</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-item">
+        <a href="/bmi-calculator/">Health Tools</a>
+        <div class="nav-dropdown">
+          <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+          <a href="/tip-calculator/" class="active">💰 Tip Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/age-calculator/">Age Tools</a>
+        <div class="nav-dropdown">
+          <a href="/age-calculator/">🎂 Age Calculator</a>
+          <a href="/currency-calculator/">💱 Currency Calculator</a>
+          <a href="/percentage-calculator/">% Percentage Calculator</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+    </div>
+  </nav>
+
+  <!-- AD ZONE A -->
+  <div class="ad-zone-a">
+    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Tip Pooling: How It Works and How to Calculate It</span>
+    </nav>
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Tip Guide
+    </div>
+    <h1>Tip Pooling: <em>How It Works and How to Calculate It</em></h1>
+    <p class="hero-sub">What tip pooling actually means, every calculation method with real examples, who the law allows in the pool — and how it's different from tip sharing and tipping out.</p>
+    <div class="hero-meta">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        9 min read
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Updated August 2026
+      </span>
+      <span>By NexAlc</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <!-- ARTICLE -->
+    <article class="article-body">
+
+      <p>If you've ever worked in a restaurant, you've heard the term. If you've recently started managing a team of tipped employees, you're probably trying to figure out how to set it up correctly without running into legal trouble. And if you're just a curious person who saw "tip pool" on a paystub and wanted to understand what it means — this covers that too.</p>
+
+      <p>Tip pooling is one of those topics where a little misinformation travels a long way. Managers who think they can take a cut (they can't). Employees who assume back-of-house is always excluded (not necessarily true anymore). Owners who don't realize their tip credit status changes who's eligible. This guide breaks it all down — the definition, the math, the legal rules, and the practical differences between pooling, sharing, and tipping out.</p>
+
+      <div class="highlight-box green-accent" id="overview">
+        <strong>Quick Reference</strong>
+        Tip pool = all tips combined, redistributed to eligible staff. Managers cannot take any share. Three main methods: hours-based, points-based, equal split. If you take a tip credit, back-of-house generally can't participate. If you pay full minimum wage, they can. Tip sharing (tipping out) is different — servers keep their own tips but pay out a percentage to support staff.
+      </div>
+
+      <h2 id="meaning">What Is Tip Pooling? (The Actual Definition)</h2>
+
+      <p>Tip pooling is a system where tipped employees contribute all or part of their earned tips into a shared fund at the end of a shift. That fund is then divided among eligible team members according to a predetermined formula — usually hours worked, a point system based on role, or an equal split.</p>
+
+      <p>The key word there is <em>predetermined</em>. A functioning tip pool has a written policy. Everyone knows the formula before the shift starts. Tips aren't redistributed at a manager's discretion after the fact — they're calculated and distributed according to the same rule, every time.</p>
+
+      <p>Tip pooling is most common in full-service restaurants and bars, but it's also used in hotels, resorts, spas, and other hospitality settings where multiple staff members contribute to the guest experience and a single employee collects the tip.</p>
+
+      <h3>Why Businesses Use It</h3>
+      <p>The main argument for tip pooling is teamwork. In a full-service restaurant, the server takes the order and collects the tip — but the busser cleared the table, the food runner delivered the plates, and the bartender made the drinks. All of them affected the guest's experience. A tip pool distributes some of that reward to the people the guest never directly tipped.</p>
+
+      <p>There's also a practical management benefit: tip pooling smooths out the variance between sections. A server in the prime corner section on a Saturday night can easily out-earn someone stuck at the two-tops near the kitchen on a Tuesday, not because of anything either of them did, but because of how the floor was assigned. Pooling reduces that kind of structural inequality.</p>
+
+      <p>The downside — and it's a real one — is that high-performing servers often dislike it. If you're consistently better at your job and earning more because of it, the pool takes that away. This tension is one of the most common sources of staff conflict around tip pooling systems.</p>
+
+      <h2 id="pooling-vs-sharing">Tip Pooling vs. Tip Sharing vs. Tipping Out</h2>
+
+      <p>These three terms get used interchangeably online, but they describe meaningfully different systems. Getting the distinction right matters, especially if you're setting policy or trying to understand what your employer is actually doing.</p>
+
+      <h3>Tip Pooling</h3>
+      <p>In a true tip pool, <strong>all tips go into a central fund</strong> and no individual server keeps their own table's tip. Everything is redistributed by formula. A server who earned $180 in tips and a colleague who earned $120 both contribute to the same pool, and both receive a share based on hours, points, or equal division — not based on what their tables tipped them.</p>
+
+      <h3>Tip Sharing (Tipping Out)</h3>
+      <p>In a tip-sharing arrangement (the most common setup in American restaurants), servers <strong>keep most of their own tips</strong> but pay a percentage to support staff. A server might keep 85% of what their tables tipped and pay 15% out to the busser, bartender, and food runner pools. The individual server's total still varies by night and by table — the sharing just redistributes a piece of it.</p>
+
+      <h3>Tipping Out</h3>
+      <p>Tipping out is often used as a synonym for tip sharing, but it can also refer specifically to the <em>act</em> of one employee paying another. "She tipped out the bartender" means she gave the bartender a percentage of her sales or tips at the end of the shift. It's the transaction, not the overall system.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>How It Works</th>
+              <th>Individual Earnings Vary?</th>
+              <th>Common In</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tip Pooling</td>
+              <td>All tips combined, distributed by formula</td>
+              <td>No — determined by hours/points/equal split</td>
+              <td>Casual dining, cafes, some bars</td>
+            </tr>
+            <tr>
+              <td>Tip Sharing</td>
+              <td>Servers keep bulk of tips, pay % to support staff</td>
+              <td>Yes — based on individual sales/tips</td>
+              <td>Full-service restaurants, fine dining</td>
+            </tr>
+            <tr>
+              <td>Tipping Out</td>
+              <td>Individual payment from one employee to another</td>
+              <td>Yes — varies by the individual's earnings</td>
+              <td>Bars, any tipping-out context</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="methods">Tip Pooling Methods: How the Math Actually Works</h2>
+
+      <p>There are three main ways to calculate how a tip pool gets divided. Each has a different logic and fits different business types. Here's how each one works, with actual numbers.</p>
+
+      <h3>Method 1: Hours-Based Distribution</h3>
+
+      <p>This is the most widely used method. Every staff member in the pool earns tips proportional to the hours they worked in the shift. It's transparent, easy to verify, and hard to argue with — everyone can see the clock-in and clock-out times.</p>
+
+      <div class="formula-box">
+        <div class="formula-label">Hours-Based Formula</div>
+        <div class="formula-line">Hourly Tip Rate = Total Tip Pool ÷ Total Hours Worked (by all pool participants)</div>
+        <div class="formula-line">Individual Share = Hourly Tip Rate × Individual Hours Worked</div>
+        <div class="formula-example">
+          <strong>Example:</strong> Shift tip pool = $480. Four staff members worked: 8 hrs, 7 hrs, 5 hrs, 4 hrs = 24 total hours.<br>
+          Hourly rate = $480 ÷ 24 = <strong>$20/hr</strong><br>
+          8-hr worker gets $160 · 7-hr worker gets $140 · 5-hr worker gets $100 · 4-hr worker gets $80
+        </div>
+      </div>
+
+      <p>The hours method rewards longevity in the shift without making any judgment about role. A busser who worked 8 hours earns the same tip rate as a server who worked 8 hours. That's either a feature or a bug depending on your perspective — and your labor law situation.</p>
+
+      <h3>Method 2: Point-Based (Role-Weighted) Distribution</h3>
+
+      <p>Point-based pooling assigns different point values to different roles, then distributes tips based on each person's share of total points. This is the right method when you want to acknowledge that some roles contribute more directly to the tipping relationship — a server interacts with the guest more than a busser does, for example.</p>
+
+      <div class="formula-box">
+        <div class="formula-label">Points-Based Formula</div>
+        <div class="formula-line">Total Points = Sum of (Hours Worked × Role Point Value) for all participants</div>
+        <div class="formula-line">Tip Per Point = Total Tip Pool ÷ Total Points</div>
+        <div class="formula-line">Individual Share = (Individual Hours × Role Points) × Tip Per Point</div>
+        <div class="formula-example">
+          <strong>Example:</strong> Shift pool = $600. Point values: Servers = 3 pts/hr, Bartenders = 3 pts/hr, Bussers = 1.5 pts/hr, Food Runners = 1 pt/hr.<br>
+          Server A (6 hrs): 18 pts · Server B (6 hrs): 18 pts · Bartender (5 hrs): 15 pts · Busser (6 hrs): 9 pts · Runner (4 hrs): 4 pts = <strong>64 total points</strong><br>
+          $600 ÷ 64 = $9.375 per point<br>
+          Server A: <strong>$168.75</strong> · Bartender: <strong>$140.63</strong> · Busser: <strong>$84.38</strong> · Runner: <strong>$37.50</strong>
+        </div>
+      </div>
+
+      <p>The point system requires more record-keeping but produces more nuanced results. The role point values need to be defined in writing before the system is implemented — don't try to set them after a particularly good or bad night.</p>
+
+      <h3>Method 3: Equal Split</h3>
+
+      <p>The simplest method: take the total tip pool and divide it equally among all participating staff for that shift. No hourly calculation, no point values. Everyone on the floor during that service period gets the same amount.</p>
+
+      <div class="formula-box">
+        <div class="formula-label">Equal Split Formula</div>
+        <div class="formula-line">Individual Share = Total Tip Pool ÷ Number of Participating Staff</div>
+        <div class="formula-example">
+          <strong>Example:</strong> Shift pool = $350. 5 staff participated. Each person receives <strong>$70</strong>.
+        </div>
+      </div>
+
+      <p>Equal splitting works best in smaller, tight-knit teams where roles are fluid — a counter-service café where everyone makes drinks, takes orders, and cleans up. It breaks down fast in larger operations where someone worked a 9-hour double alongside someone who came in for 3 hours at the end of service.</p>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Running the Numbers on a Tip Split?</h3>
+          <p>NexAlc's Tip Calculator handles the math — enter the total, choose how to split it, and get everyone's share instantly.</p>
+        </div>
+        <a href="/tip-calculator/" class="cta-btn">
+          Use the Tip Calculator
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <h2 id="tip-pooling-percentages">Tip Pooling Percentages</h2>
+
+      <p>Some businesses run a hybrid: not a pure pool, but a percentage-based allocation where different roles receive a defined slice of the total tip fund. This is common in establishments that want role-based distribution but find the full point-system calculation too cumbersome to run every shift.</p>
+
+      <p>A common allocation structure might look like this: servers and bartenders collectively receive 70% of the pool, bussers receive 15%, food runners receive 10%, and the remaining 5% goes to the support station (expo, hosts who assist with seating and bussing). Each category is then divided equally among the staff who filled that role during the shift.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Pool Percentage (Example)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Servers / Bartenders</td>
+              <td>65–75%</td>
+              <td>Primary customer-facing roles</td>
+            </tr>
+            <tr>
+              <td>Bussers / Barbacks</td>
+              <td>10–20%</td>
+              <td>Support roles, high-volume contribution</td>
+            </tr>
+            <tr>
+              <td>Food Runners</td>
+              <td>5–10%</td>
+              <td>Often combined with busser allocation</td>
+            </tr>
+            <tr>
+              <td>Hosts (if included)</td>
+              <td>3–7%</td>
+              <td>Only if they perform tipped work, per FLSA</td>
+            </tr>
+            <tr>
+              <td>Back-of-House (cooks, dishwashers)</td>
+              <td>0–15%</td>
+              <td>Only legal if employer pays full minimum wage (no tip credit)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>These percentages aren't legally mandated — they're set by the employer. What matters is that they're documented, applied consistently, and don't include anyone the law says can't participate (more on that below).</p>
+
+      <h2 id="laws">Tip Pooling Laws: What the FLSA Actually Says</h2>
+
+      <p>Federal tip pooling law is governed by the Fair Labor Standards Act (FLSA), and the rules have changed meaningfully in the past several years. The 2018 Consolidated Appropriations Act and subsequent Department of Labor rulemaking in 2021 are the most significant updates. Here's where things stand.</p>
+
+      <h3>Managers and Supervisors Cannot Participate — Full Stop</h3>
+      <p>This is the clearest rule in tip pooling law, and it has no exceptions. <strong>Employers, managers, and supervisors are prohibited from taking any portion of an employee tip pool.</strong> This applies even if the manager occasionally waits tables or tends bar during a busy shift. The moment someone is classified as a manager or supervisor, they're out of the pool entirely.</p>
+
+      <p>Violations of this rule can trigger significant liability — the employer may owe back wages equal to the value of the tips the manager took, plus an equal amount in liquidated damages, plus potential civil penalties. State laws in places like California and New York are even stricter.</p>
+
+      <h3>The Tip Credit Question: Who Can Be in the Pool?</h3>
+      <p>This is where most employers get tripped up. The rules on pool eligibility depend entirely on whether the employer takes a <strong>tip credit</strong> — meaning whether they pay tipped employees a lower direct cash wage (as low as $2.13 per hour federally) and count tips toward meeting minimum wage obligations.</p>
+
+      <p><strong>If you take a tip credit:</strong> The pool is limited to employees who customarily and regularly receive tips — servers, bartenders, bussers, food runners. Back-of-house staff (cooks, prep cooks, dishwashers) cannot be included. They don't interact with guests and don't typically receive tips directly.</p>
+
+      <p><strong>If you do NOT take a tip credit</strong> (meaning you pay all staff at least the full federal minimum wage directly): You have significantly more flexibility. Back-of-house employees can be included in the tip pool. This was the change introduced in 2018 — before that, the restriction applied regardless of whether the employer took a tip credit.</p>
+
+      <h3>State Laws Add Another Layer</h3>
+      <p>Federal law is the floor, not the ceiling. Several states have passed their own tip pooling rules that are more restrictive. California, for example, prohibits any employer (not just managers) from taking a share of tips. Minnesota and Alaska ban tip credits entirely. If you're operating in a state with specific tip pooling legislation, you need to comply with both the FLSA and your state's requirements — whichever is stricter wins.</p>
+
+      <h3>Written Policy and Recordkeeping</h3>
+      <p>The FLSA doesn't technically require a written tip pool policy, but not having one is a significant liability. If a dispute arises — an employee claims they were shorted, or an audit finds inconsistent distributions — a written policy is the only thing that establishes what the system was supposed to be. It should specify the distribution method, which roles are included, when and how distributions happen, and who oversees the calculation.</p>
+
+      <div class="highlight-box orange-accent">
+        <strong>FLSA Tip Pooling Rules at a Glance</strong>
+        Managers/supervisors: never eligible · Tip credit employer: front-of-house only (servers, bartenders, bussers, runners) · Non-tip-credit employer: back-of-house can be included · State law: check your state — it may be stricter · Credit card processing fees: can be deducted from the tip before distribution in most states, but must be disclosed.
+      </div>
+
+      <h2 id="pros-cons">Pros and Cons of Tip Pooling</h2>
+
+      <p>Tip pooling isn't inherently good or bad — it's a tool, and like most management tools, whether it works depends on how it's implemented and whether it fits the culture and team structure you already have.</p>
+
+      <h3>The Arguments For It</h3>
+      <ul>
+        <li><strong>Team cohesion:</strong> When everyone shares in the outcome, there's less incentive to protect "your" tables at the expense of a colleague's. Bussers turn tables faster because it benefits the whole team, not just the server they're assigned to.</li>
+        <li><strong>Fairer compensation for support roles:</strong> Bussers and food runners directly affect service quality but rarely receive direct tips. A pool ensures they're compensated for their contribution.</li>
+        <li><strong>Reduces section envy:</strong> The prime Saturday night section is worth the same in earnings as the slower Tuesday lunch shift, so managers can assign based on skill and availability rather than as a reward or punishment.</li>
+        <li><strong>Simplicity for guests:</strong> Guests at establishments with known tip pooling policies sometimes feel less awkward about tipping, knowing it goes to the team rather than being dependent on who happened to be their server.</li>
+      </ul>
+
+      <h3>The Arguments Against It</h3>
+      <ul>
+        <li><strong>High performers get penalized:</strong> A skilled, experienced server who earns more because they're better at their job takes home less than they would under a keep-your-own-tips system. This is the most consistent complaint and the most common reason top-tier servers leave pooling establishments.</li>
+        <li><strong>Lowest-common-denominator effect:</strong> If effort and outcome are decoupled, some staff reduce effort to the team average. This doesn't happen everywhere, but it's a genuine risk.</li>
+        <li><strong>Administrative complexity:</strong> Tracking hours, calculating distributions, and maintaining records adds work. Small errors get noticed quickly by staff who are watching their pay carefully.</li>
+        <li><strong>Trust issues:</strong> If staff don't believe the calculation is being done accurately and transparently, tip pooling breeds resentment faster than almost any other policy.</li>
+      </ul>
+
+      <h2 id="best-practices">How to Run a Tip Pool That Actually Works</h2>
+
+      <p>Most tip pool failures aren't about the method — they're about execution. Here's what separates the tip pools that create goodwill from the ones that cause constant conflict.</p>
+
+      <h3>Put It in Writing Before You Start</h3>
+      <p>Define the method, the eligible roles, the point values (if using a point system), and when distributions happen. Have all participating employees acknowledge the policy in writing. This isn't just a legal protection — it's a management tool. When questions come up (and they will), you point to the document.</p>
+
+      <h3>Be Transparent With the Math</h3>
+      <p>Show your work. Post the nightly totals and the distribution calculation where staff can see it, or distribute a brief summary at the end of each shift. "The pool was $520, total hours were 26, hourly rate was $20, here's each person's share" takes two minutes to write and prevents a week of suspicion. Transparency builds trust; opacity destroys it.</p>
+
+      <h3>Use Accurate Timekeeping</h3>
+      <p>Hours-based distributions live or die by accurate clock records. Someone who clocks out 20 minutes before they actually left, or who forgets to clock in at the start, creates a calculation error that affects everyone. Enforce timekeeping the same way you'd enforce any other operational standard.</p>
+
+      <h3>Review the Policy Periodically</h3>
+      <p>Your team composition, role definitions, and volume patterns change over time. A point system that made sense for a team of six might be wrong for a team of twelve. Review the policy at least annually and adjust — with staff input where possible — to reflect the actual work being done.</p>
+
+      <!-- END CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Need to Split a Tip Pool Right Now?</h3>
+          <p>Enter the total amount and the number of people — NexAlc's Tip Calculator does the split in one step, no spreadsheet needed.</p>
+        </div>
+        <a href="/tip-calculator/" class="cta-btn">
+          Try the Tip Calculator
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the tip pool meaning in a restaurant?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">A tip pool is a system where tipped employees combine all or part of their earned tips into a shared fund, which is then redistributed among eligible team members at the end of a shift. The redistribution formula varies by business — some divide by hours worked, others by role-based point values, and some simply split the total equally. Tip pooling is most common in restaurants, bars, and hotels.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is tip pooling legal?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Yes, tip pooling is legal in the United States under the Fair Labor Standards Act (FLSA). However, the law places firm restrictions on who can participate. Employers, managers, and supervisors are strictly prohibited from receiving any portion of a tip pool. If the employer takes a tip credit (pays tipped staff less than minimum wage), back-of-house employees like cooks and dishwashers generally cannot be included in the pool. If the employer pays the full federal minimum wage to all staff, back-of-house inclusion is permitted.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between tip pooling and tip sharing?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Tip pooling collects all tips into a single fund and redistributes them to the whole team according to a set formula — no individual server keeps their own table tips. Tip sharing (also called tipping out) works differently: each server keeps most of their own tips but gives a percentage to supporting staff like bussers, bartenders, and food runners. Tip sharing preserves individual earnings while still compensating support roles; tip pooling eliminates individual variation entirely.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How do you divide tips by hours worked?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">First, add up the total tips collected for the shift. Then divide that total by the total hours worked by all participating staff to get the hourly tip rate. Finally, multiply each person's individual hours by that rate to find their share. For example: $600 total tips ÷ 24 total hours worked = $25 per hour. A server who worked 8 hours gets $200, one who worked 6 hours gets $150, and so on.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can a manager take a cut of the tip pool?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">No. Under federal law (the FLSA), managers and supervisors are explicitly prohibited from taking any portion of an employee tip pool. This applies regardless of whether the manager also performs tipped work during the shift. If a manager is caught taking from the tip pool, the employer may be liable for back wages and additional penalties. Some states have stricter laws on top of the federal baseline.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is a tip pooling percentage?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">Tip pooling percentages refer to how the total pool is divided among different staff roles. For example, servers might retain 70% of the pool collectively, with bartenders receiving 15%, bussers 10%, and food runners 5%. These percentages are set by the employer and should be documented in a written policy. This is different from tip-out percentages, which describe what servers individually owe to support staff under a tip-sharing model.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Does tip splitting hurt high-performing servers?
+            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="faq-answer">It can, and this is the most common complaint about tip pooling. A server who consistently earns higher tips — through skill, personality, or being assigned higher-volume sections — earns the same as a slower or newer colleague under a pooling model. Some high-performing servers dislike this intensely; others are fine with it because a strong team environment reduces their own workload. Whether it's a problem depends heavily on how consistent performance is across the team and how the policy is explained and enforced.</div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div style="display:flex; justify-content:center;">
+        <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
+      </div>
+
+      <!-- TABLE OF CONTENTS -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-title">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#overview">Quick Reference</a></li>
+          <li><a href="#meaning">What Is Tip Pooling?</a></li>
+          <li><a href="#pooling-vs-sharing">Pooling vs. Sharing vs. Tipping Out</a></li>
+          <li><a href="#methods">Calculation Methods</a></li>
+          <li><a href="#tip-pooling-percentages">Tip Pooling Percentages</a></li>
+          <li><a href="#laws">Tip Pooling Laws (FLSA)</a></li>
+          <li><a href="#pros-cons">Pros &amp; Cons</a></li>
+          <li><a href="#best-practices">Best Practices</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <!-- SIDEBAR CTA -->
+      <div class="sidebar-cta">
+        <div class="sidebar-cta-title">Calculate the Tip Split</div>
+        <div class="sidebar-cta-desc">Total amount, number of people — done in one step.</div>
+        <a href="/tip-calculator/" class="sidebar-cta-btn">
+          Tip Calculator
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- RELATED ARTICLES -->
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-title">Related Articles</div>
+        <div class="article-link">
+          <a class="article-link-item" href="/blog/how-much-should-you-tip-a-guide-by-service-type/">
+            <div class="article-link-icon">💸</div>
+            <div class="article-link-text">
+              <div class="article-link-title">How Much Should You Tip? A Guide by Service Type</div>
+              <div class="article-link-meta">Tip · 10 min read</div>
+            </div>
+          </a>
+          <a class="article-link-item" href="/blog/healthy-bmi-by-age/">
+            <div class="article-link-icon">⚖️</div>
+            <div class="article-link-text">
+              <div class="article-link-title">Healthy BMI by Age: What the Numbers Actually Mean</div>
+              <div class="article-link-meta">BMI · 8 min read</div>
+            </div>
+          </a>
+          <a class="article-link-item" href="/blog/how-to-calculate-your-exact-age-in-days/">
+            <div class="article-link-icon">📅</div>
+            <div class="article-link-text">
+              <div class="article-link-title">How to Calculate Your Exact Age in Days</div>
+              <div class="article-link-meta">Age · 8 min read</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- RELATED TOOLS -->
+  <section class="related-tools-section" aria-label="Related Tools">
+    <div class="related-tools-title">Related Calculators</div>
+    <div class="related-tools-grid">
+      <a class="related-tool-item" href="/tip-calculator/">
+        <span class="related-tool-icon">💰</span>
+        <span class="related-tool-name">Tip Calculator</span>
+      </a>
+      <a class="related-tool-item" href="/bmi-calculator/">
+        <span class="related-tool-icon">⚖️</span>
+        <span class="related-tool-name">BMI Calculator</span>
+      </a>
+      <a class="related-tool-item" href="/age-calculator/">
+        <span class="related-tool-icon">🎂</span>
+        <span class="related-tool-name">Age Calculator</span>
+      </a>
+      <a class="related-tool-item" href="/percentage-calculator/">
+        <span class="related-tool-icon">%</span>
+        <span class="related-tool-name">Percentage Calculator</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 NexAlc. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-question.open').forEach(q => {
+        q.classList.remove('open');
+        q.nextElementSibling.classList.remove('visible');
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        answer.classList.add('visible');
+      }
+    }
+  </script>
+
+</body>
+</html>
