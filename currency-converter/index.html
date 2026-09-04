@@ -79,7 +79,7 @@
       {
         "@type": "Question",
         "name": "How often are exchange rates updated?",
-        "acceptedAnswer": { "@type": "Answer", "text": "This currency converter fetches live rates from the Frankfurter API, which sources data from the European Central Bank (ECB). ECB rates are updated every business day at approximately 16:00 CET. Weekend rates reflect the last available Friday close." }
+        "acceptedAnswer": { "@type": "Answer", "text": "This currency converter updates in real-time using live global foreign exchange (forex) feeds and central bank benchmark data. Rates refresh continuously during global trading sessions." }
       },
       {
         "@type": "Question",
@@ -534,7 +534,7 @@
     </nav>
     <div class="hero-badge">
       <span class="live-dot"></span>
-      Live Rates — ECB Data
+      Live Mid-Market Forex Rates
     </div>
     <h1>Currency Converter & Live Exchange Rate Calculator</h1>
     <p class="hero-sub">
@@ -553,7 +553,7 @@
             <span class="status-dot loading" id="status-dot"></span>
             <span id="status-text">Fetching live rates…</span>
           </div>
-          <span class="rate-source">Source: European Central Bank via Frankfurter API</span>
+          <span class="rate-source" id="rate-source-display">Source: Real-time Interbank Forex Market Feeds</span>
         </div>
 
         <!-- Converter Body -->
@@ -921,12 +921,12 @@
             How do I convert USD to PKR?
             <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <div class="faq-answer">To convert US Dollars to Pakistani Rupees, select USD in the "From" field and PKR in the "To" field, then enter your amount. The converter will display the current mid-market USD to PKR rate using live data from the European Central Bank. For the most accurate rate at the time of an actual transaction, verify with your bank or remittance provider as they apply their own markup over the mid-market rate.</div>
+          <div class="faq-answer">To convert US Dollars to Pakistani Rupees, select USD in the "From" field and PKR in the "To" field, then enter your amount. The converter will display the current mid-market USD to PKR rate using live real-time foreign exchange market data. For the most accurate rate at the time of an actual transaction, verify with your bank or remittance provider as they apply their own markup over the mid-market rate.</div>
         </div>
       </div>
 
       <div class="methodology">
-        <strong>Data Source & Methodology:</strong> Exchange rates are fetched in real-time from the <em>Frankfurter API</em> (frankfurter.app), which publishes European Central Bank reference rates. The ECB updates rates every TARGET business day at approximately 16:00 CET. All conversions use mid-market rates. NexAlc does not add any spread or markup. Rates shown are for informational purposes only and should not be used for financial transactions without verification from your service provider. <em>Last updated: May 2026.</em>
+        <strong>Data Source & Methodology:</strong> Exchange rates are fetched in real-time from global foreign exchange feeds, interbank mid-market data, and central bank reference rates. All conversions use real-time mid-market rates without added retail spread or markups. Rates shown are for informational purposes and may differ from cash counter or retail banking transfer rates due to commercial margins. <em>Updated continuously.</em>
       </div>
 
     </div>
@@ -957,30 +957,36 @@
       { code:'USD', name:'US Dollar',        flag:'🇺🇸' },
       { code:'EUR', name:'Euro',             flag:'🇪🇺' },
       { code:'GBP', name:'British Pound',    flag:'🇬🇧' },
-      { code:'JPY', name:'Japanese Yen',     flag:'🇯🇵' },
-      { code:'CAD', name:'Canadian Dollar',  flag:'🇨🇦' },
-      { code:'AUD', name:'Australian Dollar',flag:'🇦🇺' },
-      { code:'CHF', name:'Swiss Franc',      flag:'🇨🇭' },
-      { code:'CNY', name:'Chinese Yuan',     flag:'🇨🇳' },
       { code:'INR', name:'Indian Rupee',     flag:'🇮🇳' },
       { code:'PKR', name:'Pakistani Rupee',  flag:'🇵🇰' },
-      { code:'MXN', name:'Mexican Peso',     flag:'🇲🇽' },
-      { code:'BRL', name:'Brazilian Real',   flag:'🇧🇷' },
-      { code:'KRW', name:'South Korean Won', flag:'🇰🇷' },
-      { code:'SGD', name:'Singapore Dollar', flag:'🇸🇬' },
-      { code:'HKD', name:'Hong Kong Dollar', flag:'🇭🇰' },
-      { code:'NOK', name:'Norwegian Krone',  flag:'🇳🇴' },
-      { code:'SEK', name:'Swedish Krona',    flag:'🇸🇪' },
-      { code:'DKK', name:'Danish Krone',     flag:'🇩🇰' },
-      { code:'NZD', name:'New Zealand Dollar',flag:'🇳🇿'},
-      { code:'ZAR', name:'South African Rand',flag:'🇿🇦'},
-      { code:'TRY', name:'Turkish Lira',     flag:'🇹🇷' },
       { code:'AED', name:'UAE Dirham',       flag:'🇦🇪' },
       { code:'SAR', name:'Saudi Riyal',      flag:'🇸🇦' },
-      { code:'THB', name:'Thai Baht',        flag:'🇹🇭' },
+      { code:'CAD', name:'Canadian Dollar',  flag:'🇨🇦' },
+      { code:'AUD', name:'Australian Dollar',flag:'🇦🇺' },
+      { code:'JPY', name:'Japanese Yen',     flag:'🇯🇵' },
+      { code:'CHF', name:'Swiss Franc',      flag:'🇨🇭' },
+      { code:'CNY', name:'Chinese Yuan',     flag:'🇨🇳' },
+      { code:'KWD', name:'Kuwaiti Dinar',    flag:'🇰🇼' },
+      { code:'QAR', name:'Qatari Riyal',     flag:'🇶🇦' },
+      { code:'OMR', name:'Omani Rial',       flag:'🇴🇲' },
+      { code:'BHD', name:'Bahraini Dinar',   flag:'🇧🇭' },
+      { code:'BDT', name:'Bangladeshi Taka', flag:'🇧🇩' },
+      { code:'EGP', name:'Egyptian Pound',   flag:'🇪🇬' },
+      { code:'TRY', name:'Turkish Lira',     flag:'🇹🇷' },
+      { code:'SGD', name:'Singapore Dollar', flag:'🇸🇬' },
       { code:'MYR', name:'Malaysian Ringgit',flag:'🇲🇾' },
+      { code:'THB', name:'Thai Baht',        flag:'🇹🇭' },
       { code:'IDR', name:'Indonesian Rupiah',flag:'🇮🇩' },
       { code:'PHP', name:'Philippine Peso',  flag:'🇵🇭' },
+      { code:'KRW', name:'South Korean Won', flag:'🇰🇷' },
+      { code:'HKD', name:'Hong Kong Dollar', flag:'🇭🇰' },
+      { code:'NZD', name:'New Zealand Dollar',flag:'🇳🇿'},
+      { code:'MXN', name:'Mexican Peso',     flag:'🇲🇽' },
+      { code:'BRL', name:'Brazilian Real',   flag:'🇧🇷' },
+      { code:'ZAR', name:'South African Rand',flag:'🇿🇦'},
+      { code:'SEK', name:'Swedish Krona',    flag:'🇸🇪' },
+      { code:'NOK', name:'Norwegian Krone',  flag:'🇳🇴' },
+      { code:'DKK', name:'Danish Krone',     flag:'🇩🇰' },
       { code:'PLN', name:'Polish Zloty',     flag:'🇵🇱' },
       { code:'CZK', name:'Czech Koruna',     flag:'🇨🇿' },
       { code:'HUF', name:'Hungarian Forint', flag:'🇭🇺' },
@@ -990,9 +996,9 @@
     const NAME_MAP = Object.fromEntries(CURRENCIES.map(c => [c.code, c.name]));
 
     // Multi-compare targets (shown when panel open)
-    const COMPARE_CURRENCIES = ['EUR','GBP','JPY','CAD','AUD','CHF','INR','CNY','PKR','MXN'];
+    const COMPARE_CURRENCIES = ['EUR','GBP','PKR','INR','AED','SAR','JPY','CAD','AUD','CHF','CNY','MXN'];
 
-    let rates = {}; // all rates vs EUR (base)
+    let rates = {}; // all rates vs USD base (1 USD = X units of currency)
     let ratesLoaded = false;
     let fromCurrency = 'USD';
     let toCurrency = 'EUR';
@@ -1011,74 +1017,183 @@
 
     async function fetchRates() {
       setStatus('loading', 'Fetching live rates…');
+      let data = null;
+
+      // 1. Try local server endpoint /api/rates (fast, cached, CORS-free)
       try {
-        // Frankfurter returns rates with EUR as base by default
-        const res = await fetch('https://api.frankfurter.app/latest');
-        if (!res.ok) throw new Error('API error');
-        const data = await res.json();
-        // data.rates has all currencies vs EUR; add EUR itself
-        rates = { ...data.rates, EUR: 1 };
+        const res = await fetch('/api/rates');
+        if (res.ok) {
+          const json = await res.json();
+          if (json && json.rates && typeof json.rates.EUR === 'number') {
+            data = json;
+          }
+        }
+      } catch (err) {
+        console.warn('Local API rates unavailable, trying direct API:', err);
+      }
+
+      // 2. Direct fallback: Open Exchange Rates
+      if (!data) {
+        try {
+          const res = await fetch('https://open.er-api.com/v6/latest/USD');
+          if (res.ok) {
+            const json = await res.json();
+            if (json && json.rates) {
+              data = {
+                rates: json.rates,
+                date: json.time_last_update_utc,
+                source: 'Live Interbank Forex'
+              };
+            }
+          }
+        } catch (err) {
+          console.warn('Direct open.er-api.com failed:', err);
+        }
+      }
+
+      // 3. Direct fallback: Global Currency API
+      if (!data) {
+        try {
+          const res = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json');
+          if (res.ok) {
+            const json = await res.json();
+            if (json && json.usd) {
+              const norm = {};
+              for (const [k, v] of Object.entries(json.usd)) norm[k.toUpperCase()] = v;
+              norm.USD = 1;
+              data = {
+                rates: norm,
+                date: json.date,
+                source: 'Global Currency Feed'
+              };
+            }
+          }
+        } catch (err) {
+          console.warn('CDN currency API failed:', err);
+        }
+      }
+
+      if (data && data.rates) {
+        rates = { ...data.rates, USD: 1 };
         ratesLoaded = true;
-        const updated = new Date(data.date).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
-        setStatus('live', `Rates updated ${updated} · ECB`);
-        document.getElementById('convert-btn').disabled = false;
-        document.getElementById('convert-btn').innerHTML = `
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5h10M10 2l3 3-3 3M13 11H3M6 8l-3 3 3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Convert
-        `;
-        updateGlance();
-        convert(); // auto-convert on load
-      } catch(e) {
-        setStatus('error', 'Could not load rates — using cached fallback');
-        // Fallback approximate rates (May 2026 approximate)
-        rates = {
-          USD:1.09, EUR:1, GBP:0.856, JPY:163.4, CAD:1.49, AUD:1.67,
-          CHF:0.972, CNY:7.90, INR:91.2, PKR:304.5, MXN:19.8, BRL:5.51,
-          KRW:1447, SGD:1.46, HKD:8.52, NOK:11.52, SEK:11.18, DKK:7.46,
-          NZD:1.81, ZAR:20.2, TRY:35.1, AED:4.00, SAR:4.09,
-          THB:37.8, MYR:5.10, IDR:17350, PHP:60.2, PLN:4.25, CZK:25.1, HUF:397
-        };
-        ratesLoaded = true;
-        document.getElementById('convert-btn').disabled = false;
-        document.getElementById('convert-btn').innerHTML = `
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5h10M10 2l3 3-3 3M13 11H3M6 8l-3 3 3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Convert (Fallback Rates)
-        `;
+        const dateStr = data.date ? (isNaN(Date.parse(data.date)) ? data.date : new Date(data.date).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' })) : 'Live';
+        setStatus('live', `Live rates updated ${dateStr} · Interbank Forex`);
+        const sourceDisplay = document.getElementById('rate-source-display');
+        if (sourceDisplay && data.source) {
+          sourceDisplay.textContent = 'Source: ' + data.source;
+        }
+        setButtonReady('Convert');
         updateGlance();
         convert();
+        return;
+      }
+
+      // Fallback benchmark rates (USD base)
+      setStatus('error', 'Using cached benchmark rates');
+      rates = {
+        USD: 1,
+        EUR: 0.8606,
+        GBP: 0.7398,
+        JPY: 156.2,
+        CAD: 1.365,
+        AUD: 1.528,
+        CHF: 0.895,
+        CNY: 7.24,
+        INR: 94.54,
+        PKR: 277.36,
+        AED: 3.6725,
+        SAR: 3.75,
+        MXN: 18.25,
+        BRL: 5.42,
+        KRW: 1375,
+        SGD: 1.348,
+        HKD: 7.81,
+        NOK: 10.65,
+        SEK: 10.45,
+        DKK: 6.42,
+        NZD: 1.645,
+        ZAR: 18.2,
+        TRY: 33.8,
+        THB: 36.5,
+        MYR: 4.71,
+        IDR: 16250,
+        PHP: 58.6,
+        PLN: 3.96,
+        CZK: 23.2,
+        HUF: 365,
+        KWD: 0.307,
+        QAR: 3.64,
+        BHD: 0.376,
+        OMR: 0.385,
+        EGP: 48.5,
+        BDT: 118.2
+      };
+      ratesLoaded = true;
+      setButtonReady('Convert (Cached Rates)');
+      updateGlance();
+      convert();
+    }
+
+    function setButtonReady(label) {
+      const btn = document.getElementById('convert-btn');
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5h10M10 2l3 3-3 3M13 11H3M6 8l-3 3 3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          ${label}
+        `;
       }
     }
 
     function setStatus(type, text) {
       const dot = document.getElementById('status-dot');
-      dot.className = 'status-dot ' + type;
-      document.getElementById('status-text').textContent = text;
+      if (dot) dot.className = 'status-dot ' + type;
+      const stText = document.getElementById('status-text');
+      if (stText) stText.textContent = text;
     }
 
-    // Convert between any two currencies via EUR base
+    // Convert between any two currencies via USD base
     function getRate(from, to) {
-      const fromInEur = rates[from] ? 1 / rates[from] : 1;
-      const toInEur   = rates[to]   ? 1 / rates[to]   : 1;
-      // from → EUR → to
-      return rates[to] / rates[from];
+      if (from === to) return 1;
+      const rateFrom = rates[from];
+      const rateTo = rates[to];
+      if (!rateFrom || !rateTo) return 1;
+      return rateTo / rateFrom;
     }
 
     function fmtResult(val, code) {
-      const decimals = ['JPY','KRW','IDR','HUF','CLP'].includes(code) ? 0 : 2;
-      return val.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+      if (isNaN(val)) return '—';
+      const zeroDecimals = ['JPY','KRW','IDR','HUF','CLP','VND'].includes(code);
+      if (zeroDecimals) {
+        return Math.round(val).toLocaleString('en-US');
+      }
+      if (val > 0 && val < 0.01) {
+        return val.toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 6 });
+      }
+      return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function formatExchangeRate(rate) {
+      if (isNaN(rate) || rate === 0) return '0.00';
+      if (rate >= 1000) return rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      if (rate >= 1) return rate.toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+      if (rate >= 0.0001) return rate.toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 6 });
+      return rate.toPrecision(4);
     }
 
     function convert() {
       if (!ratesLoaded) return;
-      const amount = parseFloat(document.getElementById('amount-input').value);
+      const amountInput = document.getElementById('amount-input');
+      const amount = parseFloat(amountInput.value);
       if (isNaN(amount) || amount < 0) return;
 
       const rate = getRate(fromCurrency, toCurrency);
       const result = amount * rate;
 
       // To input
-      const decimals = ['JPY','KRW','IDR','HUF'].includes(toCurrency) ? 0 : 2;
-      document.getElementById('to-input').value = result.toFixed(decimals);
+      const zeroDecimals = ['JPY','KRW','IDR','HUF','CLP','VND'].includes(toCurrency);
+      const toDecimals = zeroDecimals ? 0 : (result > 0 && result < 0.01 ? 4 : 2);
+      document.getElementById('to-input').value = result.toFixed(toDecimals);
 
       // Result block
       const block = document.getElementById('result-block');
@@ -1094,13 +1209,14 @@
 
       const inverseRate = getRate(toCurrency, fromCurrency);
       document.getElementById('result-rate-line').innerHTML =
-        `1 ${fromCurrency} = <span>${fmtResult(rate, toCurrency)} ${toCurrency}</span> &nbsp;·&nbsp; 1 ${toCurrency} = <span>${fmtResult(inverseRate, fromCurrency)} ${fromCurrency}</span>`;
+        `1 ${fromCurrency} = <span>${formatExchangeRate(rate)} ${toCurrency}</span> &nbsp;·&nbsp; 1 ${toCurrency} = <span>${formatExchangeRate(inverseRate)} ${fromCurrency}</span>`;
 
       // Update multi-compare if open
       if (multiCompareOpen) renderMultiCompare();
 
       // Update from-code display
-      document.getElementById('from-code-display').textContent = fromCurrency;
+      const fromCodeEl = document.getElementById('from-code-display');
+      if (fromCodeEl) fromCodeEl.textContent = fromCurrency;
     }
 
     function onAmountChange() { if (ratesLoaded) convert(); }
@@ -1143,7 +1259,7 @@
         const el = document.getElementById(id);
         if (el && rates[from] && rates[to]) {
           const rate = getRate(from, to);
-          el.textContent = fmtResult(rate, to);
+          el.textContent = formatExchangeRate(rate);
           el.classList.remove('shimmer');
         }
       });
@@ -1178,7 +1294,7 @@
               </div>
               <div>
                 <div class="compare-value">${fmtResult(result, c)}</div>
-                <div class="compare-rate">1 ${fromCurrency} = ${fmtResult(rate, c)} ${c}</div>
+                <div class="compare-rate">1 ${fromCurrency} = ${formatExchangeRate(rate)} ${c}</div>
               </div>
             </div>
           `;

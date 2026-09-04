@@ -1,0 +1,8 @@
+{
+  "name": "NexAlc",
+  "description": "Free online calculators for everyday decisions — mortgage, BMI, currency, percentage, age, tip, countdown timer, and more.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
