@@ -652,6 +652,99 @@ footer {
     @media (max-width: 600px) {
       .cta-block { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -721,6 +814,7 @@ footer {
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -735,6 +829,18 @@ footer {
 
       <div class="highlight-box green-accent">
         <strong>Quick answer:</strong> Your total monthly mortgage payment (principal, interest, taxes, and insurance) should generally stay at or below <strong>28% of your gross monthly income</strong>, and your total debt payments, mortgage included, shouldn't exceed <strong>36%</strong>. A more conservative version caps it at <strong>25% of your take-home pay</strong> instead, on a $75,000 salary that's the difference between roughly $1,750 and $1,220 a month.
+      </div>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="article-cta-box cta-block">
+        <div class="cta-text">
+          <h3>Calculate Your Target Monthly Payment</h3>
+          <p>Estimate your exact monthly payment based on home price, down payment, interest rate, and property taxes.</p>
+        </div>
+        <a href="/mortgage-calculator/" class="cta-btn">
+          Calculate Monthly Payment
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
 
       <h2>What Percentage of Your Income Should Go to Your Mortgage?</h2>
@@ -893,46 +999,58 @@ footer {
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much should your monthly mortgage payment be?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">As a starting point, your total mortgage payment (principal, interest, taxes, and insurance) should be at or below 28% of your gross monthly income, and your total debt payments, including the mortgage, shouldn't exceed 36%. On a $75,000 salary, that's roughly $1,750 a month for the mortgage itself, and $2,250 total across all debt.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much of my monthly income should my mortgage be?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Most lenders and financial guidelines cap your mortgage payment at 28% of gross monthly income under the 28/36 rule. A more conservative approach caps it at 25% of your take-home (after-tax) pay instead, which usually lands lower than the 28% gross figure and leaves more room in your budget.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much should my monthly house payment be based on take-home pay?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">A common conservative guideline caps your house payment at 25% of your net (after-tax) monthly pay. On take-home pay of about $4,875 a month, that works out to roughly $1,220, noticeably tighter than the 28% gross-income guideline.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What's included in your monthly mortgage payment?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">A full mortgage payment, often called PITI, includes four parts: principal, interest, property taxes, and homeowners insurance. If your down payment is under 20%, it typically also includes private mortgage insurance (PMI), and if your property has one, an HOA fee is usually budgeted separately but still counts against your total housing cost.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Is the 28/36 rule still a good guideline in 2026?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Yes, most conventional lenders still underwrite around some version of the 28/36 rule, though many will approve borrowers up to a 43-45% total debt-to-income ratio with strong credit and reserves. Just because a lender approves a higher ratio doesn't mean it fits your budget comfortably, the 28/36 guideline is still the safer target for day-to-day affordability.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -997,13 +1115,38 @@ footer {
   <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
 </footer>
 
-  <script>
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-      const answer = el.nextElementSibling;
-      answer.classList.toggle('visible');
-    }
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
+      });
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/mortgage-calculator/" class="sticky-cta-link">
+      Mortgage Calculator →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

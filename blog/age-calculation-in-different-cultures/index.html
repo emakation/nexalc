@@ -659,6 +659,99 @@
       .cta-block { flex-direction: column; align-items: flex-start; }
       .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 0.82rem; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -727,6 +820,7 @@
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -783,7 +877,7 @@
       <p>The actual Chinese New Year date shifts each year — it falls anywhere from late January to late February. This is why a precise lunar age calculation requires knowing both your birth date and the current year's Chinese New Year date.</p>
 
       <!-- MID-ARTICLE CTA -->
-      <div class="cta-block">
+      <div class="article-cta-box cta-block">
         <div class="cta-text">
           <h3>What's Your Exact Age Right Now?</h3>
           <p>Get your precise age in years, months, and days from your date of birth. Useful for calculating both Western and lunar age gaps.</p>
@@ -947,42 +1041,54 @@
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What cultures count age differently?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Several cultures have traditionally counted age differently from the Western standard. East Asian countries including China, historical Korea, and historical Japan used systems where a person is born at age one and gains a year collectively at the lunar new year rather than on their birthday. South Korea officially standardized to the Western system in June 2023. Islamic cultures calculate age using the Hijri calendar, which runs about 11 days shorter per year than the Gregorian calendar, meaning a person's age in Hijri years is slightly higher than their Gregorian age.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How old is 12 in Korean age?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Under the traditional Korean age system, a 12-year-old in the Western system would typically be 13 or 14 in Korean age. The traditional system added one year at birth and then added another year for everyone on January 1st — not on individual birthdays. South Korea formally abolished this system in June 2023, so legal documents and official contexts now use the international standard age.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How do Chinese calculate age?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">The traditional Chinese method (xu sui, or nominal age) counts a person as one year old at birth, since the year spent in the womb is counted as the first year of life. Age then increases for everyone on Chinese New Year's Day rather than on individual birthdays. Modern China uses the international age system for all official purposes, though the traditional xu sui system still appears in cultural, astrological, and fortune-telling contexts.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Why do Koreans add 2 years to their age?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Under the traditional Korean age system, a person was born at age one, and then gained another year on January 1st for everyone regardless of birthday. Someone born on December 31st would be age one at birth, then age two just one day later — a two-year gap compared to the Western method. People born earlier in the year were typically one year ahead of the Western count rather than two. South Korea officially moved to the international standard in June 2023.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How old is a 25-year-old in Korean age?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Under the now-abolished traditional Korean system, a 25-year-old in international age would typically be 26 or 27 in Korean age depending on whether their birthday had passed in the current year. Someone whose birthday had already occurred in the current year would be 26 in Korean age; someone whose birthday hadn't occurred yet could calculate as 27. Since June 2023, South Korea uses the international standard, so Korean age and international age are now the same thing for all official purposes.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -1083,20 +1189,38 @@
     </div>
   </footer>
 
-  <script>
-    function toggleFaq(el) {
-      const answer = el.nextElementSibling;
-      const isOpen = el.classList.contains('open');
-      document.querySelectorAll('.faq-question.open').forEach(q => {
-        q.classList.remove('open');
-        q.nextElementSibling.classList.remove('visible');
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
       });
-      if (!isOpen) {
-        el.classList.add('open');
-        answer.classList.add('visible');
-      }
-    }
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/age-calculator/" class="sticky-cta-link">
+      Age Calculator →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

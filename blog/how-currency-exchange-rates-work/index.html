@@ -652,6 +652,99 @@ footer {
     @media (max-width: 600px) {
       .cta-block { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -721,6 +814,7 @@ footer {
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -735,6 +829,18 @@ footer {
 
       <div class="highlight-box green-accent">
         <strong>Quick answer:</strong> An exchange rate is simply the price of one currency stated in terms of another. <strong>Floating currencies</strong> move constantly based on supply and demand in the global market, while <strong>fixed or pegged currencies</strong> are held at a set level by their central bank. Whatever the system, the number you're quoted day to day also includes a small markup, the <strong>bid-ask spread</strong>, which is how banks and exchange dealers make their money on the trade.
+      </div>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="article-cta-box cta-block">
+        <div class="cta-text">
+          <h3>Test Live Conversions in Real Time</h3>
+          <p>See current mid-market rates across 150+ world currencies with NexAlc's instant currency converter.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Use Currency Converter
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
 
       <h2>What an Exchange Rate Actually Is</h2>
@@ -916,50 +1022,74 @@ footer {
 
       <p>For most people, the practical takeaway is smaller in scope: knowing roughly how a rate is built means fewer surprises the next time a quoted number doesn't match what you expected, whether that's a wire transfer, an online purchase from abroad, or cash exchanged before a trip.</p>
 
+      <!-- END CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Calculate Real-Time Conversions</h3>
+          <p>Get exact calculations without bank markups or surprise spreads. Free, fast, and always up to date.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Open Currency Converter
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How does currency exchange work?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Currency exchange works by trading one country's money for another at a price called the exchange rate, which is set by supply and demand in the global currency market. Banks trade at a wholesale rate, and exchange counters or apps quote you a slightly different retail rate on top of that to cover their own margin.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How do exchange rates work?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">An exchange rate tells you how much of one currency it takes to buy one unit of another. Under a floating system, that number moves constantly as trading activity shifts, driven by interest rates, trade flows, and investor confidence, while a fixed or pegged currency is held steady by its central bank instead.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How do foreign exchange rates work?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Foreign exchange rates work the same way for any currency pair: the rate reflects what traders are currently willing to pay for one currency in terms of another. What you're quoted also depends on whether you're buying or selling, since dealers post separate bid and ask prices and keep the spread between them as their profit.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How does currency conversion work?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">To convert an amount, you multiply it by the current exchange rate for that currency pair. If you're converting between two currencies that aren't quoted directly against each other, you calculate a cross rate by routing the conversion through a common currency, usually the US dollar.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How do you work out currency exchange by hand?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Take the amount you're converting and multiply it by the exchange rate, using the rate quoted as units of the target currency per one unit of your starting currency. For a rough estimate this is enough, though the actual amount you receive will reflect the dealer's buy or sell rate rather than the mid-market figure.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -1025,13 +1155,38 @@ footer {
   <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
 </footer>
 
-  <script>
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-      const answer = el.nextElementSibling;
-      answer.classList.toggle('visible');
-    }
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
+      });
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/currency-converter/" class="sticky-cta-link">
+      Currency Converter →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

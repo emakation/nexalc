@@ -652,6 +652,99 @@ footer {
     @media (max-width: 600px) {
       .cta-block { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -721,6 +814,7 @@ footer {
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -735,6 +829,18 @@ footer {
 
       <div class="highlight-box green-accent">
         <strong>Quick answer:</strong> The USD to EUR rate has moved through five broad phases since the euro launched in 1999: an early slide to near-parity, a boom that peaked around 1.60 in 2008, a long crisis-driven fall back toward parity by 2015, a calmer range-bound stretch through 2019, and a shock era that touched parity again in 2022. There's no single "normal" rate, only the era you're comparing against.
+      </div>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="article-cta-box cta-block">
+        <div class="cta-text">
+          <h3>Check Current USD to EUR Exchange Rates</h3>
+          <p>See live rates updated every minute with real-time currency conversion for USD, EUR, and 150+ currencies.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Convert USD to EUR
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
 
       <h2>Era One: The Euro's Rocky Launch (1999–2002)</h2>
@@ -866,50 +972,74 @@ footer {
 
       <p>The practical habit worth keeping isn't predicting the next era, it's checking the current mid-market rate against a live converter before converting any meaningful amount, rather than assuming today's number resembles whatever you last remember seeing.</p>
 
+      <!-- END CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Track Live Exchange Rates</h3>
+          <p>Instant conversions, live charts, and accurate rates for USD, EUR, GBP, and global currency pairs.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Open Currency Converter
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What does the USD to EUR rate actually track?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">The USD to EUR rate tracks how many euros one US dollar buys at a given moment, set by the global currency market based on trade flows, interest rate differences, and investor demand for each currency. It moves constantly during trading hours, which is why the number you see quoted can differ slightly between providers checked minutes apart.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How has the USD to euro exchange rate changed since the euro launched?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">The USD to euro exchange rate has swung dramatically since 1999, starting near parity, sliding lower through 2000, climbing to a record high around 2008, sinking back toward parity during the European debt crisis, and touching parity again in 2022. There's no steady long-term direction, just a series of distinct eras driven by different economic events.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Why has the dollar to euro rate moved so much over the decades?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">The dollar to euro rate moves largely on interest rate differences between the US Federal Reserve and the European Central Bank, along with how investors judge relative economic strength and risk. Periods of crisis tend to push money toward the dollar as a perceived safe haven, while periods of confidence in European growth tend to lift the euro.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What does EUR to USD historical data actually show?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">EUR to USD historical data shows a currency pair that has traded in a wide range, from roughly 0.83 dollars per euro in 2000 to about 1.60 in 2008, before falling back toward parity twice since. Reading a chart of that data is less useful than knowing which economic event lines up with each major turn.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Where can I check historical exchange rates for euro to USD myself?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Historical exchange rates for euro to USD are available through central bank archives like the ECB's reference rate database, as well as financial data sites and most currency converter tools that offer a historical chart view. For quick day-to-day comparisons, a currency converter with a date picker is usually the fastest option.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
 
@@ -976,13 +1106,38 @@ footer {
   <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
 </footer>
 
-  <script>
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-      const answer = el.nextElementSibling;
-      answer.classList.toggle('visible');
-    }
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
+      });
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/currency-converter/" class="sticky-cta-link">
+      Currency Converter →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

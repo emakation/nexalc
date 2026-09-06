@@ -652,6 +652,99 @@ footer {
     @media (max-width: 600px) {
       .cta-block { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -721,6 +814,7 @@ footer {
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -735,6 +829,18 @@ footer {
 
       <div class="highlight-box green-accent">
         <strong>Quick answer:</strong> The best time to exchange currency when travelling is <strong>before you leave</strong>, ideally one to three weeks ahead through a bank or a reputable local exchange counter, not at the airport on departure day. If you need cash abroad, a local ATM using your regular debit card usually beats an in-country exchange counter too. Airports exist to catch travelers who ran out of time to plan, and the rate reflects exactly that.
+      </div>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="article-cta-box cta-block">
+        <div class="cta-text">
+          <h3>Check Today's Live Exchange Rates</h3>
+          <p>Get real-time mid-market rates for 150+ currencies before you travel, with zero markup or hidden fees.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Use the Currency Converter
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
 
       <h2>The Airport Trap: Why Waiting Until You Land Costs You</h2>
@@ -855,50 +961,74 @@ footer {
 
       <p>For most travelers, the practical takeaway isn't memorizing exchange rate theory, it's building a two-week reminder into trip planning: check the rate, compare a couple of providers, and exchange before the airport becomes the only option left on the table.</p>
 
+      <!-- END CTA -->
+      <div class="cta-block">
+        <div class="cta-text">
+          <h3>Convert Any Currency in Real Time</h3>
+          <p>Track live rates, calculate conversion fees, and compare currency pairs instantly with NexAlc's free tool.</p>
+        </div>
+        <a href="/currency-converter/" class="cta-btn">
+          Try Currency Converter
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Where can I exchange foreign currency near me?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Most people can exchange foreign currency near them at a bank branch, a credit union, or a dedicated currency exchange counter in a shopping area. Online providers that ship currency to your door are also worth checking, since they often beat what a walk-in counter can offer once you factor in the exchange rate and any handling fee.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What is foreign money exchange and how does it work?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Foreign money exchange is simply trading one currency for another at a quoted rate, plus a markup the provider keeps as its fee. That markup is why the rate you're offered at a counter is always a little worse than the mid-market rate you'd see on a converter app or financial news site.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Why is the airport currency exchange rate usually the worst?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Airport currency exchange rates tend to be the worst because the counters are dealing with a captive audience who need cash right before a flight and have little time to compare offers. High rent inside terminals also gets built into the spread, which is why the same conversion done a week earlier at a bank often costs noticeably less.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Should I use a bank to exchange foreign currency before a trip?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Using a bank to exchange foreign currency is usually one of the better options, especially if you already hold an account there, since banks often waive fees for customers and post competitive rates. The main trade-off is timing: banks frequently need a few business days to order less common currencies, so it isn't a same-day fix.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What's the difference between currency money exchange counters and a bank?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">A dedicated currency money exchange counter usually offers same-day service and longer hours, while a bank often has better rates but slower turnaround and stricter identification requirements. Which one wins depends on how far ahead you're planning and how much you're converting.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -964,13 +1094,38 @@ footer {
   <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
 </footer>
 
-  <script>
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-      const answer = el.nextElementSibling;
-      answer.classList.toggle('visible');
-    }
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
+      });
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/currency-converter/" class="sticky-cta-link">
+      Currency Converter →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

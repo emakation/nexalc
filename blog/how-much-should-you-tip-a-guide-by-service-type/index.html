@@ -485,6 +485,99 @@
       .cta-block { flex-direction: column; align-items: flex-start; }
       .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 0.82rem; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -547,6 +640,7 @@
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -636,7 +730,7 @@
       <p>Always calculate your tip based on the <strong>original, full-price cost of the service</strong> — not the discounted price after a coupon or gift card. The stylist did the full work regardless of what you paid. Tipping on the discounted total is technically acceptable but widely considered a faux pas in salon culture.</p>
 
       <!-- MID-ARTICLE CTA -->
-      <div class="cta-block">
+      <div class="article-cta-box cta-block">
         <div class="cta-text">
           <h3>Not Sure What the Tip Comes Out To?</h3>
           <p>Put in your bill amount and percentage — NexAlc's Tip Calculator gives you the exact dollar amount, split per person if you need it.</p>
@@ -761,56 +855,68 @@
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much should I tip a tour guide?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">For a private tour guide, 15% to 20% of the tour cost is the standard. For a group tour, $5 to $10 per person per day is typical. If it was a half-day tour, $5 per person is reasonable. Tip the guide directly in cash at the end of the tour — don't assume the company passes along gratuity.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much do I tip housekeeping on a $300 per night room?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">At $300 per night, a tip of $5 to $10 per night is appropriate — lean toward the higher end for a room at that price point, or for a longer stay. Leave cash daily in an obvious spot (on the pillow or by the TV) with a note that says "For Housekeeping" since different staff may clean your room each day.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Is a 10% tip disrespectful?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">At a sit-down restaurant in the US, 10% is generally considered below standard and signals dissatisfaction with the service. The baseline expectation in American dining culture is 15% to 18% for average service, and 20% for good service. A 10% tip is not inherently rude, but most servers will interpret it as a sign that something went wrong. For counter service, coffee shops, or quick-service spots, 10% is perfectly acceptable.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Do you have to tip Get Your Guide tours?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">No, tipping on Get Your Guide tours is not required, and the platform does not add a gratuity automatically. Whether you tip is entirely up to you. That said, guides on Get Your Guide operate independently and earn their income from the tour fee — a cash tip at the end of a great tour is a widely appreciated gesture. $5 to $10 per person for a group tour, or 15% for a private tour, is a reasonable amount.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Should I tip my hairdresser if they own the salon?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Yes, in most cases. The old etiquette rule said you don't tip salon owners because they set their own prices. That guidance is largely outdated. Today, the standard is to tip 15% to 20% regardless of whether the person cutting or coloring your hair owns the salon — unless they have a posted policy saying they don't accept tips. If you're unsure, it's always fine to offer and let them decline.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much should I tip movers?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">For a local move, tip $20 to $40 per mover for a half-day job, or $40 to $80 per mover for a full day. For long-distance moves, $50 to $100 per mover per day is appropriate. Always tip in cash, given directly to each mover at the end of the job — don't hand a single sum to the team lead.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How much should I tip a food delivery driver?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">The standard is 15% to 20% of the order total, with a minimum of $3 regardless of order size. For large orders, bad weather, or long distances, $5 to $7 minimum is more appropriate. Most delivery apps let you adjust the tip after delivery — if the service was good, updating it upward is always an option.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -909,20 +1015,38 @@
     </div>
   </footer>
 
-  <script>
-    function toggleFaq(el) {
-      const answer = el.nextElementSibling;
-      const isOpen = el.classList.contains('open');
-      document.querySelectorAll('.faq-question.open').forEach(q => {
-        q.classList.remove('open');
-        q.nextElementSibling.classList.remove('visible');
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
       });
-      if (!isOpen) {
-        el.classList.add('open');
-        answer.classList.add('visible');
-      }
-    }
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/tip-calculator/" class="sticky-cta-link">
+      Tip Calculator →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

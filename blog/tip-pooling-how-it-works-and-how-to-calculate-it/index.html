@@ -491,6 +491,99 @@
       .cta-block { flex-direction: column; align-items: flex-start; }
       .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 0.82rem; }
     }
+  
+    /* ── FIX P1 / FIX P2 / FIX P3 / FIX P4 / FIX P5 ── */
+    .article-cta-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .sticky-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FF6B2B;
+      color: #0E0E0F;
+      padding: 14px 20px;
+      z-index: 9999;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .sticky-cta-link {
+      color: #0E0E0F;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-close-btn {
+      background: none;
+      border: none;
+      color: #0E0E0F;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 0 0 16px;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta-bar { display: flex; }
+    }
+    .article-reviewed {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 4px;
+    }
+    .author-bio-block {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      margin: 40px 0 32px;
+    }
+    .author-bio-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .author-bio-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .author-bio-link {
+      color: #FF6B2B;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-question.active {
+      background: rgba(255,107,43,0.1);
+    }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-question.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open { max-height: 600px; }
+  
   </style>
 </head>
 <body>
@@ -553,6 +646,7 @@
       </span>
       <span>By NexAlc</span>
     </div>
+      <span class="article-reviewed">Last reviewed: June 2026</span>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -686,7 +780,7 @@
       <p>Equal splitting works best in smaller, tight-knit teams where roles are fluid — a counter-service café where everyone makes drinks, takes orders, and cleans up. It breaks down fast in larger operations where someone worked a 9-hour double alongside someone who came in for 3 hours at the end of service.</p>
 
       <!-- MID-ARTICLE CTA -->
-      <div class="cta-block">
+      <div class="article-cta-box cta-block">
         <div class="cta-text">
           <h3>Running the Numbers on a Tip Split?</h3>
           <p>NexAlc's Tip Calculator handles the math — enter the total, choose how to split it, and get everyone's share instantly.</p>
@@ -823,56 +917,68 @@
 
       <div class="faq-section">
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What is the tip pool meaning in a restaurant?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">A tip pool is a system where tipped employees combine all or part of their earned tips into a shared fund, which is then redistributed among eligible team members at the end of a shift. The redistribution formula varies by business — some divide by hours worked, others by role-based point values, and some simply split the total equally. Tip pooling is most common in restaurants, bars, and hotels.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Is tip pooling legal?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Yes, tip pooling is legal in the United States under the Fair Labor Standards Act (FLSA). However, the law places firm restrictions on who can participate. Employers, managers, and supervisors are strictly prohibited from receiving any portion of a tip pool. If the employer takes a tip credit (pays tipped staff less than minimum wage), back-of-house employees like cooks and dishwashers generally cannot be included in the pool. If the employer pays the full federal minimum wage to all staff, back-of-house inclusion is permitted.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What is the difference between tip pooling and tip sharing?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Tip pooling collects all tips into a single fund and redistributes them to the whole team according to a set formula — no individual server keeps their own table tips. Tip sharing (also called tipping out) works differently: each server keeps most of their own tips but gives a percentage to supporting staff like bussers, bartenders, and food runners. Tip sharing preserves individual earnings while still compensating support roles; tip pooling eliminates individual variation entirely.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             How do you divide tips by hours worked?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">First, add up the total tips collected for the shift. Then divide that total by the total hours worked by all participating staff to get the hourly tip rate. Finally, multiply each person's individual hours by that rate to find their share. For example: $600 total tips ÷ 24 total hours worked = $25 per hour. A server who worked 8 hours gets $200, one who worked 6 hours gets $150, and so on.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Can a manager take a cut of the tip pool?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">No. Under federal law (the FLSA), managers and supervisors are explicitly prohibited from taking any portion of an employee tip pool. This applies regardless of whether the manager also performs tipped work during the shift. If a manager is caught taking from the tip pool, the employer may be liable for back wages and additional penalties. Some states have stricter laws on top of the federal baseline.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             What is a tip pooling percentage?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">Tip pooling percentages refer to how the total pool is divided among different staff roles. For example, servers might retain 70% of the pool collectively, with bartenders receiving 15%, bussers 10%, and food runners 5%. These percentages are set by the employer and should be documented in a written policy. This is different from tip-out percentages, which describe what servers individually owe to support staff under a tip-sharing model.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             Does tip splitting hurt high-performing servers?
-            <svg class="faq-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="faq-chevron">▾</span>
           </div>
           <div class="faq-answer">It can, and this is the most common complaint about tip pooling. A server who consistently earns higher tips — through skill, personality, or being assigned higher-volume sections — earns the same as a slower or newer colleague under a pooling model. Some high-performing servers dislike this intensely; others are fine with it because a strong team environment reduces their own workload. Whether it's a problem depends heavily on how consistent performance is across the team and how the policy is explained and enforced.</div>
         </div>
       </div>
 
+          <!-- AUTHOR BIO BLOCK -->
+      <div class="author-bio-block">
+        <div class="author-bio-inner">
+          <div class="author-bio-text">
+            <p class="author-bio-name">Moeed Khan</p>
+            <p class="author-bio-desc">SEO specialist and web designer. IBM-certified in prompt engineering. Passionate about making financial calculations simple for everyone.</p>
+            <a href="/about/" class="author-bio-link">
+              About the Author →
+            </a>
+          </div>
+        </div>
+      </div>
     </article>
 
     <!-- SIDEBAR -->
@@ -972,20 +1078,38 @@
     </div>
   </footer>
 
-  <script>
-    function toggleFaq(el) {
-      const answer = el.nextElementSibling;
-      const isOpen = el.classList.contains('open');
-      document.querySelectorAll('.faq-question.open').forEach(q => {
-        q.classList.remove('open');
-        q.nextElementSibling.classList.remove('visible');
+    <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer')
+          .forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question')
+          .forEach(q2 => q2.classList.remove('active'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answer.classList.add('open');
+          q.classList.add('active');
+        }
       });
-      if (!isOpen) {
-        el.classList.add('open');
-        answer.classList.add('visible');
-      }
-    }
+    });
   </script>
 
+  <div id="sticky-cta" class="sticky-cta-bar">
+    <a href="/tip-calculator/" class="sticky-cta-link">
+      Tip Calculator →
+    </a>
+    <button id="sticky-close" class="sticky-close-btn" aria-label="Dismiss">×</button>
+  </div>
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const closeBtn = document.getElementById('sticky-close');
+    if (bar && closeBtn) {
+      closeBtn.addEventListener('click', () => bar.remove());
+      setTimeout(() => { if (bar) bar.remove(); }, 10000);
+    }
+  </script>
 </body>
 </html>

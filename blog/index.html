@@ -240,170 +240,188 @@
       padding: 0 clamp(16px, 4vw, 48px) 80px;
     }
 
-    /* ── FEATURED HERO POST ── */
-    .featured-post {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
+    /* ── FIX B1: EDITOR'S PICKS ── */
+    .editors-picks-section {
       margin-bottom: 48px;
-      transition: border-color var(--transition);
     }
-    .featured-post:hover { border-color: var(--border-active); }
-
-    .featured-post-body {
-      padding: clamp(24px, 3vw, 40px);
-      display: flex; flex-direction: column; justify-content: space-between;
+    .editors-picks-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
     }
-    .featured-post-top { }
-    .featured-post-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--orange-glow); border: 1px solid var(--border-active);
-      border-radius: 100px; padding: 3px 10px;
-      font-size: 0.68rem; font-weight: 700; color: var(--orange);
-      letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px;
-    }
-    .featured-label {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 0.68rem; font-weight: 600; color: var(--text-muted);
-      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px;
-    }
-    .featured-label svg { opacity: 0.5; }
-    .featured-post-title {
+    .editors-picks-title {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 800; line-height: 1.15;
-      letter-spacing: -0.025em; color: var(--warm-white);
-      text-decoration: none; display: block; margin-bottom: 14px;
+      font-size: 1.25rem; font-weight: 800; color: var(--warm-white);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .editors-picks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .editors-picks-grid { grid-template-columns: 1fr; }
+    }
+    .editors-pick-card {
+      background: rgba(22, 22, 24, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      text-decoration: none;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .editors-pick-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    .editors-pick-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .editors-pick-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--orange);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .editors-pick-badge {
+      font-size: 0.72rem; color: var(--text-muted);
+      background: var(--surface-3); padding: 3px 8px; border-radius: 999px;
+    }
+    .editors-pick-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: #ffffff;
+      line-height: 1.35; margin-bottom: 10px;
       transition: color var(--transition);
     }
-    .featured-post-title:hover { color: var(--orange); }
-    .featured-post-excerpt {
-      font-size: 0.95rem; color: var(--text-secondary);
-      line-height: 1.7; margin-bottom: 24px; max-width: 520px;
+    .editors-pick-card:hover .editors-pick-title {
+      color: var(--orange);
     }
-    .featured-post-meta {
-      display: flex; align-items: center; gap: 16px;
-      font-size: 0.75rem; color: var(--text-muted); margin-bottom: 24px;
+    .editors-pick-excerpt {
+      font-size: 0.85rem; color: var(--text-secondary);
+      line-height: 1.6; margin-bottom: 18px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-    .featured-post-meta span { display: flex; align-items: center; gap: 4px; }
-    .featured-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--orange); color: #fff;
-      padding: 10px 20px; border-radius: var(--radius-sm);
-      font-size: 0.85rem; font-weight: 600; text-decoration: none;
-      transition: background var(--transition), transform var(--transition);
-      align-self: flex-start;
+    .editors-pick-link {
+      font-size: 0.82rem; font-weight: 700; color: var(--orange);
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: gap var(--transition);
     }
-    .featured-cta:hover { background: var(--orange-dim); transform: translateY(-1px); }
+    .editors-pick-card:hover .editors-pick-link {
+      gap: 9px;
+    }
 
-    /* ── FEATURED SLIDER ── */
-    .featured-slider { position: relative; margin-bottom: 48px; }
-    .featured-slider .featured-post {
-      margin-bottom: 0;
-      display: none;
-      animation: fadeSlide 0.5s ease;
-    }
-    .featured-slider .featured-post.active { display: grid; }
-    @keyframes fadeSlide { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-    .slider-dots {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      margin-top: 14px;
-    }
-    .slider-dot {
-      width: 8px; height: 8px; border-radius: 100px;
-      background: var(--surface-3); border: 1px solid var(--border);
-      cursor: pointer; padding: 0; transition: all var(--transition);
-    }
-    .slider-dot.active { width: 24px; background: var(--orange); border-color: var(--border-active); }
-    .slider-dot:hover { background: rgba(255,107,43,0.4); }
-
-    .featured-post-visual {
-      background: var(--surface-2);
-      border-left: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      padding: 32px;
+    /* ── FIX B4: LIVE SEARCH ── */
+    .blog-search-wrap {
+      max-width: 640px; margin: 0 auto 20px;
       position: relative;
-      overflow: hidden;
     }
-    .featured-post-visual::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(255,107,43,0.08) 0%, transparent 70%);
+    .blog-search-input {
+      width: 100%; height: 44px;
+      background: #ffffff; color: #0E0E0F;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 8px;
+      padding: 0 16px 0 42px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500;
+      transition: border-color var(--transition), box-shadow var(--transition);
     }
-    .featured-visual-graphic {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; gap: 12px; width: 100%;
+    .blog-search-input::placeholder { color: #777777; }
+    .blog-search-input:focus {
+      outline: none; border-color: var(--orange);
+      box-shadow: 0 0 0 2px rgba(255,107,43,0.25);
     }
-    .fvg-bar-row {
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    .fvg-label {
-      font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
-      letter-spacing: 0.05em; text-transform: uppercase;
-    }
-    .fvg-bar-track {
-      height: 8px; background: var(--surface-3); border-radius: 100px; overflow: hidden;
-    }
-    .fvg-bar-fill {
-      height: 100%; border-radius: 100px;
-      transition: width 0.8s cubic-bezier(.4,0,.2,1);
-    }
-    .fvg-bar-fill.orange { background: var(--orange); }
-    .fvg-bar-fill.green { background: var(--green); }
-    .fvg-stat {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.72rem; font-weight: 700;
-      color: var(--text-muted); margin-top: 2px;
-    }
-    .fvg-divider {
-      border: none; border-top: 1px solid var(--border); margin: 4px 0;
-    }
-    .fvg-savings {
-      display: flex; align-items: center; justify-content: space-between;
-      background: var(--orange-glow); border: 1px solid var(--border-active);
-      border-radius: var(--radius-sm); padding: 10px 14px;
-    }
-    .fvg-savings-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
-    .fvg-savings-value {
-      font-family: 'Syne', sans-serif; font-size: 1rem;
-      font-weight: 800; color: var(--orange);
+    .blog-search-icon {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: #777777; pointer-events: none;
     }
 
-    /* ── FILTER BAR ── */
+    /* ── FIX B3: CATEGORY FILTER BAR ── */
     .filter-bar {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 28px; flex-wrap: wrap;
-    }
-    .filter-bar-label {
-      font-size: 0.75rem; font-weight: 600;
-      color: var(--text-muted); letter-spacing: 0.05em;
-      text-transform: uppercase; margin-right: 4px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
     }
     .filter-btn {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 6px 14px; border-radius: 100px;
-      font-size: 0.78rem; font-weight: 500;
-      border: 1px solid var(--border);
-      background: transparent; color: var(--text-muted);
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px;
+      font-size: 0.85rem; font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent; color: rgba(255,255,255,0.7);
       cursor: pointer; transition: all var(--transition);
       font-family: 'DM Sans', sans-serif;
     }
-    .filter-btn:hover { color: var(--text-primary); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,0.12); }
+    .filter-btn:hover {
+      color: var(--text-primary); border-color: var(--orange);
+    }
     .filter-btn.active {
-      color: var(--orange); background: var(--orange-glow);
-      border-color: var(--border-active);
+      background: #FF6B2B; color: #0E0E0F; font-weight: 700;
+      border-color: #FF6B2B;
     }
     .filter-count {
-      font-size: 0.65rem; font-weight: 700;
-      background: var(--surface-3); color: var(--text-muted);
-      padding: 1px 6px; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 700; opacity: 0.85;
     }
-    .filter-btn.active .filter-count {
-      background: rgba(255,107,43,0.2); color: var(--orange);
+
+    /* ── FIX B5: POPULAR CALCULATORS ── */
+    .popular-calcs-section {
+      margin-top: 60px; padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .popular-calcs-header {
+      text-align: center; margin-bottom: 32px;
+    }
+    .popular-calcs-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800; color: var(--warm-white);
+      margin-bottom: 8px;
+    }
+    .popular-calcs-sub {
+      font-size: 0.95rem; color: var(--text-muted);
+    }
+    .popular-calcs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .popular-calcs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .popular-calcs-grid { grid-template-columns: 1fr; }
+    }
+    .popular-calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      text-decoration: none;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .popular-calc-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .popular-calc-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: rgba(255,107,43,0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange); margin-bottom: 16px;
+    }
+    .popular-calc-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--warm-white);
+      margin-bottom: 8px;
+    }
+    .popular-calc-desc {
+      font-size: 0.84rem; color: var(--text-muted);
+      line-height: 1.55; margin-bottom: 16px; flex: 1;
+    }
+    .popular-calc-cta {
+      font-size: 0.82rem; font-weight: 700; color: var(--orange);
+      display: flex; align-items: center; gap: 6px;
     }
 
     /* ── POSTS SECTION HEADER ── */
@@ -423,6 +441,9 @@
     /* ── CARD GRID ── */
     .card-grid {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
@@ -605,146 +626,83 @@
   <!-- BLOG CONTENT -->
   <main class="blog-wrap">
 
-    <!-- FEATURED SLIDER: Most Popular + Latest -->
-    <div class="featured-slider" id="featured-slider">
-
-      <!-- Slide 1: Most Popular -->
-      <article class="featured-post active" data-category="mortgage">
-        <div class="featured-post-body">
-          <div class="featured-post-top">
-            <div class="featured-label">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:var(--orange)"><path d="M5 0l1.12 3.45H9.76L6.82 5.59l1.12 3.45L5 7.1 2.06 9.04l1.12-3.45L.24 3.45H3.88z"/></svg>
-              Most Popular
-            </div>
-            <div class="featured-post-badge">Mortgage Guide</div>
-            <a href="/blog/15-vs-30-year-mortgage/" class="featured-post-title">
-              15-Year vs 30-Year Mortgage:<br>Which Saves You More?
-            </a>
-            <p class="featured-post-excerpt">On a $300,000 loan, choosing a 15-year term over 30 years can save over $230,000 in total interest. The math is clear — but the right answer still depends on your income stability and cash flow. Here's how to run your numbers.</p>
-            <div class="featured-post-meta">
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5v2.8l1.8 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                8 min read
-              </span>
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1v2M4 1v2M1.5 5.5h9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                Jun 17, 2026
-              </span>
-              <span>Mortgage</span>
-            </div>
-          </div>
-          <a href="/blog/15-vs-30-year-mortgage/" class="featured-cta">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Read the Guide
-          </a>
-        </div>
-        <div class="featured-post-visual">
-          <div class="featured-visual-graphic">
-            <div class="fvg-bar-row">
-              <div class="fvg-label">30-Year Total Interest</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill orange" style="width:100%"></div></div>
-              <div class="fvg-stat">~$400,000</div>
-            </div>
-            <div class="fvg-bar-row">
-              <div class="fvg-label">15-Year Total Interest</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill green" style="width:41%"></div></div>
-              <div class="fvg-stat">~$163,000</div>
-            </div>
-            <hr class="fvg-divider">
-            <div class="fvg-savings">
-              <span class="fvg-savings-label">You save</span>
-              <span class="fvg-savings-value">$237,000</span>
-            </div>
-            <div style="font-size:0.65rem;color:var(--text-muted);margin-top:8px;text-align:center;">$300k loan · 6.75% (30yr) · 6.25% (15yr)</div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Slide 2: Latest -->
-      <article class="featured-post" data-category="tip">
-        <div class="featured-post-body">
-          <div class="featured-post-top">
-            <div class="featured-label">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style="color:var(--orange)"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              Latest
-            </div>
-            <div class="featured-post-badge">Tip Guide</div>
-            <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="featured-post-title">
-              Tip Pooling: How It Works<br>and How to Calculate It
-            </a>
-            <p class="featured-post-excerpt">Hours-based, points-based, equal split — every calculation method with real math. Plus the FLSA rules on who can be in the pool, and how tip pooling differs from tip sharing and tipping out.</p>
-            <div class="featured-post-meta">
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5v2.8l1.8 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                9 min read
-              </span>
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1v2M4 1v2M1.5 5.5h9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                Aug 10, 2026
-              </span>
-              <span>Tip</span>
-            </div>
-          </div>
-          <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="featured-cta">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Read the Guide
-          </a>
-        </div>
-        <div class="featured-post-visual">
-          <div class="featured-visual-graphic">
-            <div class="fvg-bar-row">
-              <div class="fvg-label">Servers</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill green" style="width:75%"></div></div>
-              <div class="fvg-stat">70%</div>
-            </div>
-            <div class="fvg-bar-row">
-              <div class="fvg-label">Bussers</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill orange" style="width:20%"></div></div>
-              <div class="fvg-stat">15%</div>
-            </div>
-            <div class="fvg-bar-row">
-              <div class="fvg-label">Runners</div>
-              <div class="fvg-bar-track"><div class="fvg-bar-fill" style="width:13%;background:#4ECDC4"></div></div>
-              <div class="fvg-stat">10%</div>
-            </div>
-            <hr class="fvg-divider">
-            <div class="fvg-savings">
-              <span class="fvg-savings-label">Managers get</span>
-              <span class="fvg-savings-value">$0 — it's the law</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="slider-dots">
-        <button class="slider-dot active" onclick="goToSlide(0)" aria-label="Most Popular slide"></button>
-        <button class="slider-dot" onclick="goToSlide(1)" aria-label="Latest slide"></button>
+    <!-- FIX B1: Static Editor's Picks -->
+    <section class="editors-picks-section">
+      <div class="editors-picks-header">
+        <h2 class="editors-picks-title">⭐ Editor's Picks</h2>
       </div>
+      <div class="editors-picks-grid">
+        <!-- Pick 1: 15 vs 30-Year Mortgage: Which Saves More? -->
+        <a href="/blog/15-vs-30-year-mortgage/" class="editors-pick-card">
+          <div>
+            <div class="editors-pick-top">
+              <span class="editors-pick-tag">MORTGAGE</span>
+              <span class="editors-pick-badge">5 min read</span>
+            </div>
+            <h3 class="editors-pick-title">15 vs 30-Year Mortgage: Which Saves More?</h3>
+            <p class="editors-pick-excerpt">Compare interest savings versus monthly cash flow on a $300k loan. See the real math before choosing your loan term.</p>
+          </div>
+          <div class="editors-pick-link">
+            Read Article →
+          </div>
+        </a>
+
+        <!-- Pick 2: How Much House Can I Afford? -->
+        <a href="/blog/how-much-house-can-i-afford/" class="editors-pick-card">
+          <div>
+            <div class="editors-pick-top">
+              <span class="editors-pick-tag">MORTGAGE</span>
+              <span class="editors-pick-badge">6 min read</span>
+            </div>
+            <h3 class="editors-pick-title">How Much House Can I Afford?</h3>
+            <p class="editors-pick-excerpt">The 28/36 debt-to-income rule, down payment formulas, and how lenders realistically size your maximum home purchase price.</p>
+          </div>
+          <div class="editors-pick-link">
+            Read Article →
+          </div>
+        </a>
+
+        <!-- Pick 3: What Is an Amortization Schedule? -->
+        <a href="/blog/what-is-an-amortization-schedule/" class="editors-pick-card">
+          <div>
+            <div class="editors-pick-top">
+              <span class="editors-pick-tag">MORTGAGE</span>
+              <span class="editors-pick-badge">4 min read</span>
+            </div>
+            <h3 class="editors-pick-title">What Is an Amortization Schedule?</h3>
+            <p class="editors-pick-excerpt">Why your first years of mortgage payments are almost entirely interest, and how to read the schedule that tracks your equity.</p>
+          </div>
+          <div class="editors-pick-link">
+            Read Article →
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FIX B4: Live Search -->
+    <div class="blog-search-wrap">
+      <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search articles by topic, keyword, or tool..." autocomplete="off" />
     </div>
 
-    <!-- FILTER BAR -->
-    <div class="filter-bar">
-      <span class="filter-bar-label">Filter:</span>
-      <button class="filter-btn active" data-filter="all" onclick="filterPosts('all', this)">
-        All <span class="filter-count" id="count-all">22</span>
+    <!-- FIX B3: Category Filter with Dynamic Counts -->
+    <div class="filter-bar" id="blogFilterBar" role="tablist" aria-label="Article Categories">
+      <button class="filter-btn active" data-category="all" id="filterBtnAll">
+        All <span class="filter-count" id="count-all">(22)</span>
       </button>
-      <button class="filter-btn" data-filter="mortgage" onclick="filterPosts('mortgage', this)">
-        🏠 Mortgage <span class="filter-count" id="count-mortgage">8</span>
+      <button class="filter-btn" data-category="finance" id="filterBtnFinance">
+        Finance <span class="filter-count" id="count-finance">(10)</span>
       </button>
-      <button class="filter-btn" data-filter="bmi" onclick="filterPosts('bmi', this)">
-        ⚖️ BMI <span class="filter-count" id="count-bmi">5</span>
+      <button class="filter-btn" data-category="health" id="filterBtnHealth">
+        Health <span class="filter-count" id="count-health">(5)</span>
       </button>
-      <button class="filter-btn" data-filter="currency" onclick="filterPosts('currency', this)">
-        💱 Currency <span class="filter-count" id="count-currency">4</span>
+      <button class="filter-btn" data-category="currency" id="filterBtnCurrency">
+        Currency <span class="filter-count" id="count-currency">(4)</span>
       </button>
-      <button class="filter-btn" data-filter="age" onclick="filterPosts('age', this)">
-        🎂 Age <span class="filter-count" id="count-age">3</span>
-      </button>
-      <button class="filter-btn" data-filter="tip" onclick="filterPosts('tip', this)">
-        💸 Tip <span class="filter-count" id="count-tip">2</span>
-      </button>
-      <button class="filter-btn" data-filter="news" onclick="filterPosts('news', this)" style="display:none;">
-        📰 News &amp; Updates <span class="filter-count" id="count-news">0</span>
+      <button class="filter-btn" data-category="time" id="filterBtnTime">
+        Time <span class="filter-count" id="count-time">(3)</span>
       </button>
     </div>
 
@@ -758,7 +716,7 @@
     <div class="card-grid" id="card-grid">
 
 <!-- M8: How Much Should Your Monthly Mortgage Payment Be -->
-<a href="/blog/how-much-should-your-monthly-mortgage-payment-be/" class="post-card" data-category="mortgage">
+<a href="/blog/how-much-should-your-monthly-mortgage-payment-be/" class="post-card" data-category="finance">
   <div class="card-visual">
     <div class="card-visual-icon">🧮</div>
   </div>
@@ -768,7 +726,7 @@
     <p class="card-excerpt">The 28/36 rule, the 25% take-home pay rule, and a real income example that shows exactly what your payment should look like.</p>
     <div class="card-meta">
       <span class="card-meta-left">
-        <span>7 min read</span>
+        <span>5 min read</span>
         <span>Jul 21, 2026</span>
       </span>
       <span class="card-read-link">
@@ -780,7 +738,7 @@
 </a>
 
       <!-- M1: 15 vs 30 Year Mortgage -->
-      <a href="/blog/15-vs-30-year-mortgage/" class="post-card" data-category="mortgage">
+      <a href="/blog/15-vs-30-year-mortgage/" class="post-card" data-category="finance">
         <div class="card-visual">
           <div class="card-visual-icon">🏦</div>
         </div>
@@ -788,28 +746,6 @@
           <span class="card-cat mortgage">Mortgage</span>
           <div class="card-title">15-Year vs 30-Year Mortgage: Which Saves You More?</div>
           <p class="card-excerpt">Lower payments now or massive interest savings later? Here's the real math behind both terms, with dollar-for-dollar comparisons.</p>
-          <div class="card-meta">
-            <span class="card-meta-left">
-              <span>6 min read</span>
-              <span>Jun 17, 2026</span>
-            </span>
-            <span class="card-read-link">
-              Read
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <!-- M4: Mortgage Discount Points -->
-      <a href="/blog/mortgage-discount-points/" class="post-card" data-category="mortgage">
-        <div class="card-visual">
-          <div class="card-visual-icon">💰</div>
-        </div>
-        <div class="card-body">
-          <span class="card-cat mortgage">Mortgage</span>
-          <div class="card-title">Calculate Mortgage Discount Points</div>
-          <p class="card-excerpt">Buying down your rate can save thousands — or waste money if you move too soon. Here's how to calculate your break-even point.</p>
           <div class="card-meta">
             <span class="card-meta-left">
               <span>5 min read</span>
@@ -823,8 +759,30 @@
         </div>
       </a>
 
+      <!-- M4: Mortgage Discount Points -->
+      <a href="/blog/mortgage-discount-points/" class="post-card" data-category="finance">
+        <div class="card-visual">
+          <div class="card-visual-icon">💰</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Mortgage</span>
+          <div class="card-title">Calculate Mortgage Discount Points</div>
+          <p class="card-excerpt">Buying down your rate can save thousands — or waste money if you move too soon. Here's how to calculate your break-even point.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>4 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
       <!-- M5: Fixed vs Adjustable Rate Mortgage -->
-      <a href="/blog/fixed-vs-adjustable-rate-mortgage/" class="post-card" data-category="mortgage">
+      <a href="/blog/fixed-vs-adjustable-rate-mortgage/" class="post-card" data-category="finance">
         <div class="card-visual">
           <div class="card-visual-icon">📐</div>
         </div>
@@ -834,7 +792,7 @@
           <p class="card-excerpt">ARMs look tempting with lower starting rates, but the risk isn't always obvious. Here's how to decide which structure fits your timeline.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>6 min read</span>
+              <span>5 min read</span>
               <span>Jun 17, 2026</span>
             </span>
             <span class="card-read-link">
@@ -846,7 +804,7 @@
       </a>
 
       <!-- M6: Pay Off Mortgage Early -->
-      <a href="/blog/pay-off-mortgage-early/" class="post-card" data-category="mortgage">
+      <a href="/blog/pay-off-mortgage-early/" class="post-card" data-category="finance">
         <div class="card-visual">
           <div class="card-visual-icon">🚀</div>
         </div>
@@ -856,7 +814,7 @@
           <p class="card-excerpt">Extra payments, biweekly schedules, refinancing — which strategy actually cuts years off your loan without wrecking your cash flow?</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>6 min read</span>
+              <span>5 min read</span>
               <span>Jun 17, 2026</span>
             </span>
             <span class="card-read-link">
@@ -868,7 +826,7 @@
       </a>
 
       <!-- M2: How Much House Can I Afford -->
-      <a href="/blog/how-much-house-can-i-afford/" class="post-card" data-category="mortgage">
+      <a href="/blog/how-much-house-can-i-afford/" class="post-card" data-category="finance">
         <div class="card-visual">
           <div class="card-visual-icon">🏡</div>
         </div>
@@ -890,7 +848,7 @@
       </a>
 
       <!-- M3: Amortization Schedule -->
-      <a href="/blog/what-is-an-amortization-schedule/" class="post-card" data-category="mortgage">
+      <a href="/blog/what-is-an-amortization-schedule/" class="post-card" data-category="finance">
         <div class="card-visual">
           <div class="card-visual-icon">📊</div>
         </div>
@@ -898,6 +856,72 @@
           <span class="card-cat mortgage">Mortgage</span>
           <div class="card-title">What Is an Amortization Schedule?</div>
           <p class="card-excerpt">Why your first years of payments are mostly interest — and how to read the table that shows exactly where every dollar goes.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>4 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- M7: Good Mortgage Rate Right Now -->
+      <a href="/blog/good-mortgage-rate-right-now/" class="post-card" data-category="finance">
+        <div class="card-visual">
+          <div class="card-visual-icon">📈</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Mortgage</span>
+          <div class="card-title">What Is a Good Mortgage Rate Right Now?</div>
+          <p class="card-excerpt">Today's benchmark rates by loan type, how your credit score shifts the number, and what a rate difference actually costs you monthly.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>4 min read</span>
+              <span>Jul 20, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- B1: Healthy BMI by Age -->
+      <a href="/blog/healthy-bmi-by-age/" class="post-card" data-category="health">
+        <div class="card-visual">
+          <div class="card-visual-icon">📈</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat bmi">BMI</span>
+          <div class="card-title">Healthy BMI by Age: What the Numbers Mean</div>
+          <p class="card-excerpt">Standard BMI ranges don't tell the full story. Here's how healthy weight shifts across age groups and what context actually matters.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>4 min read</span>
+              <span>Jun 17, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- B2: BMI vs Body Fat -->
+      <a href="/blog/bmi-vs-body-fat-percentage/" class="post-card" data-category="health">
+        <div class="card-visual">
+          <div class="card-visual-icon">⚖️</div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat bmi">BMI</span>
+          <div class="card-title">BMI vs Body Fat Percentage: What's the Difference?</div>
+          <p class="card-excerpt">BMI is a proxy. Body fat is a measurement. Here's when each number matters, what they miss, and how to interpret both together.</p>
           <div class="card-meta">
             <span class="card-meta-left">
               <span>5 min read</span>
@@ -911,74 +935,8 @@
         </div>
       </a>
 
-      <!-- B1: Healthy BMI by Age -->
-      <!-- M7: Good Mortgage Rate Right Now -->
-      <a href="/blog/good-mortgage-rate-right-now/" class="post-card" data-category="mortgage">
-        <div class="card-visual">
-          <div class="card-visual-icon">📈</div>
-        </div>
-        <div class="card-body">
-          <span class="card-cat mortgage">Mortgage</span>
-          <div class="card-title">What Is a Good Mortgage Rate Right Now?</div>
-          <p class="card-excerpt">Today's benchmark rates by loan type, how your credit score shifts the number, and what a rate difference actually costs you monthly.</p>
-          <div class="card-meta">
-            <span class="card-meta-left">
-              <span>7 min read</span>
-              <span>Jul 20, 2026</span>
-            </span>
-            <span class="card-read-link">
-              Read
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blog/healthy-bmi-by-age/" class="post-card" data-category="bmi">
-        <div class="card-visual">
-          <div class="card-visual-icon">📈</div>
-        </div>
-        <div class="card-body">
-          <span class="card-cat bmi">BMI</span>
-          <div class="card-title">Healthy BMI by Age: What the Numbers Mean</div>
-          <p class="card-excerpt">Standard BMI ranges don't tell the full story. Here's how healthy weight shifts across age groups and what context actually matters.</p>
-          <div class="card-meta">
-            <span class="card-meta-left">
-              <span>7 min read</span>
-              <span>Jun 17, 2026</span>
-            </span>
-            <span class="card-read-link">
-              Read
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <!-- B2: BMI vs Body Fat -->
-      <a href="/blog/bmi-vs-body-fat-percentage/" class="post-card" data-category="bmi">
-        <div class="card-visual">
-          <div class="card-visual-icon">⚖️</div>
-        </div>
-        <div class="card-body">
-          <span class="card-cat bmi">BMI</span>
-          <div class="card-title">BMI vs Body Fat Percentage: What's the Difference?</div>
-          <p class="card-excerpt">BMI is a proxy. Body fat is a measurement. Here's when each number matters, what they miss, and how to interpret both together.</p>
-          <div class="card-meta">
-            <span class="card-meta-left">
-              <span>6 min read</span>
-              <span>Jun 17, 2026</span>
-            </span>
-            <span class="card-read-link">
-              Read
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-
       <!-- B3: BMI Chart for Women -->
-      <a href="/blog/bmi-chart-for-women/" class="post-card" data-category="bmi">
+      <a href="/blog/bmi-chart-for-women/" class="post-card" data-category="health">
         <div class="card-visual">
           <div class="card-visual-icon">📉</div>
         </div>
@@ -988,7 +946,7 @@
           <p class="card-excerpt">The standard BMI scale applies equally to men and women — but the health risks at each range don't. What the research actually shows.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>6 min read</span>
+              <span>4 min read</span>
               <span>Jun 17, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1000,7 +958,7 @@
       </a>
 
       <!-- B4: Healthy Weight for My Height -->
-      <a href="/blog/healthy-weight-for-my-height/" class="post-card" data-category="bmi">
+      <a href="/blog/healthy-weight-for-my-height/" class="post-card" data-category="health">
         <div class="card-visual">
           <div class="card-visual-icon">📏</div>
         </div>
@@ -1010,7 +968,7 @@
           <p class="card-excerpt">A full height-and-weight chart, the BMI formula behind it, and separate healthy ranges for men and women — with the numbers explained.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>6 min read</span>
+              <span>5 min read</span>
               <span>Jul 20, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1022,7 +980,7 @@
       </a>
 
       <!-- B5: How to Lower Your BMI -->
-      <a href="/blog/how-to-lower-your-bmi-practical-steps/" class="post-card" data-category="bmi">
+      <a href="/blog/how-to-lower-your-bmi-practical-steps/" class="post-card" data-category="health">
         <div class="card-visual">
           <div class="card-visual-icon">📉</div>
         </div>
@@ -1032,7 +990,7 @@
           <p class="card-excerpt">Calorie deficit, exercise, sleep, and stress, the levers that actually move your BMI, plus a worked example showing how long it realistically takes.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>7 min read</span>
+              <span>6 min read</span>
               <span>Jul 21, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1054,7 +1012,7 @@
           <p class="card-excerpt">Interbank rate, open market rate, remittance pricing, they're rarely the same number. Here's what actually moves the dollar against the rupee and why.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>8 min read</span>
+              <span>4 min read</span>
               <span>Jul 22, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1076,7 +1034,7 @@
           <p class="card-excerpt">Fixed vs floating rates, bid vs ask prices, and how to actually work out a conversion by hand. A plain-English guide to the mechanics behind every rate you see.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>7 min read</span>
+              <span>5 min read</span>
               <span>Jul 23, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1098,7 +1056,7 @@
           <p class="card-excerpt">Most guides tell you where to exchange currency. Here's why timing matters more, and a simple before-you-fly framework that beats waiting until you land.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>8 min read</span>
+              <span>4 min read</span>
               <span>Jul 23, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1120,7 +1078,7 @@
           <p class="card-excerpt">From the euro's rocky 1999 launch to a $1.60 peak and back to parity in 2022 — the five eras behind the USD/EUR chart, with the events that drove each one.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>9 min read</span>
+              <span>6 min read</span>
               <span>Jul 28, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1132,7 +1090,7 @@
       </a>
 
       <!-- A1: how to calculate your exact age in days -->
-      <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="post-card" data-category="age">
+      <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="post-card" data-category="time">
         <div class="card-visual">
           <div class="card-visual-icon">🎂</div>
         </div>
@@ -1142,7 +1100,7 @@
           <p class="card-excerpt">Years round down. Days don't lie. The step-by-step method, a reference table by age, and why leap years mean most people's mental estimate is off by hundreds of days.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>8 min read</span>
+              <span>3 min read</span>
               <span>Jul 30, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1154,7 +1112,7 @@
       </a>
 
       <!-- A2: What generation am i age ranges explained -->
-      <a href="/blog/what-generation-am-i-age-ranges-explained/" class="post-card" data-category="age">
+      <a href="/blog/what-generation-am-i-age-ranges-explained/" class="post-card" data-category="time">
         <div class="card-visual">
           <div class="card-visual-icon">🎂</div>
         </div>
@@ -1164,7 +1122,7 @@
           <p class="card-excerpt">Gen Z, Millennial, Gen X — the exact birth year ranges, current ages in 2026, and what actually defined each cohort beyond the label.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>9 min read</span>
+              <span>4 min read</span>
               <span>Aug 6, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1176,7 +1134,7 @@
       </a>
 
       <!-- A3: Age calculation in different cultures -->
-      <a href="/blog/age-calculation-in-different-cultures/" class="post-card" data-category="age">
+      <a href="/blog/age-calculation-in-different-cultures/" class="post-card" data-category="time">
         <div class="card-visual">
           <div class="card-visual-icon">🌍</div>
         </div>
@@ -1186,7 +1144,7 @@
           <p class="card-excerpt">Korean age, Chinese lunar age, Islamic Hijri years — how the world counts age differently, and why the same date of birth gives you a different number depending on where you are.</p>
           <div class="card-meta">
             <span class="card-meta-left">
-              <span>9 min read</span>
+              <span>4 min read</span>
               <span>Aug 7, 2026</span>
             </span>
             <span class="card-read-link">
@@ -1198,7 +1156,7 @@
       </a>
 
       <!-- T2: Tip Pooling -->
-      <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="post-card" data-category="tip">
+      <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="post-card" data-category="finance">
   <div class="card-visual">
     <div class="card-visual-icon">🤝</div>
   </div>
@@ -1208,7 +1166,7 @@
     <p class="card-excerpt">Hours-based, points-based, equal split — every method with real math examples. Plus FLSA rules on who can and can't be in the pool, and how pooling differs from tip sharing.</p>
     <div class="card-meta">
       <span class="card-meta-left">
-        <span>9 min read</span>
+        <span>5 min read</span>
         <span>Aug 10, 2026</span>
       </span>
       <span class="card-read-link">
@@ -1220,7 +1178,7 @@
 </a>
 
       <!-- T1: How much should you tip a guide by service type -->
-      <a href="/blog/how-much-should-you-tip-a-guide-by-service-type/" class="post-card" data-category="tip">
+      <a href="/blog/how-much-should-you-tip-a-guide-by-service-type/" class="post-card" data-category="finance">
   <div class="card-visual">
     <div class="card-visual-icon">💸</div>
   </div>
@@ -1230,7 +1188,7 @@
     <p class="card-excerpt">Restaurants, hair salons, movers, hotel housekeeping, delivery drivers — exact tipping amounts for every service type, including the edge cases nobody talks about.</p>
     <div class="card-meta">
       <span class="card-meta-left">
-        <span>10 min read</span>
+        <span>4 min read</span>
         <span>Aug 9, 2026</span>
       </span>
       <span class="card-read-link">
@@ -1241,11 +1199,10 @@
   </div>
 </a>
 
-      <!-- Placeholder for News & Updates — hidden by default, shown if news filter active -->
-
-      <!-- Empty state card shown when a filter returns 0 results -->
+      <!-- Empty state card shown when a filter or search returns 0 results -->
       <div class="empty-state" id="empty-state">
-        No articles in this category yet — check back soon.
+        <p style="margin-bottom:14px;font-size:0.95rem;color:var(--text-muted);">No articles found. Try a different search term.</p>
+        <button type="button" class="filter-btn" id="resetFiltersBtn" style="display:inline-block;padding:8px 18px;margin:0 auto;cursor:pointer;">Reset Filters</button>
       </div>
 
     </div><!-- end .card-grid -->
@@ -1254,6 +1211,52 @@
     <div class="ad-zone-mid">
       <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone B</div>
     </div>
+
+    <!-- FIX B5: Popular Calculators Section -->
+    <section class="popular-calcs-section">
+      <div class="popular-calcs-header">
+        <h2 class="popular-calcs-title">Ready to run your numbers?</h2>
+        <p class="popular-calcs-sub">Explore our fast, private, and free financial and health calculators.</p>
+      </div>
+      <div class="popular-calcs-grid">
+        <a href="/mortgage-calculator/" class="popular-calc-card">
+          <div class="popular-calc-icon">🏠</div>
+          <h3 class="popular-calc-name">Mortgage Calculator</h3>
+          <p class="popular-calc-desc">Calculate monthly payments, PMI, taxes, and full amortization schedule.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+        <a href="/bmi-calculator/" class="popular-calc-card">
+          <div class="popular-calc-icon">⚖️</div>
+          <h3 class="popular-calc-name">BMI Calculator</h3>
+          <p class="popular-calc-desc">Check adult and child BMI with CDC and WHO clinical classifications.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+        <a href="/currency-converter/" class="popular-calc-card">
+          <div class="popular-calc-icon">💱</div>
+          <h3 class="popular-calc-name">Currency Converter</h3>
+          <p class="popular-calc-desc">Real-time live exchange rates across 150+ world currencies instantly.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+        <a href="/age-calculator/" class="popular-calc-card">
+          <div class="popular-calc-icon">🎂</div>
+          <h3 class="popular-calc-name">Age Calculator</h3>
+          <p class="popular-calc-desc">Exact age in years, months, days, hours, and next milestone countdown.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+        <a href="/tip-calculator/" class="popular-calc-card">
+          <div class="popular-calc-icon">🧾</div>
+          <h3 class="popular-calc-name">Tip Calculator</h3>
+          <p class="popular-calc-desc">Split bills, calculate tipping percentages, and round total amounts smoothly.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+        <a href="/percentage-calculator/" class="popular-calc-card">
+          <div class="popular-calc-icon">%</div>
+          <h3 class="popular-calc-name">Percentage Calculator</h3>
+          <p class="popular-calc-desc">Percentage increase, decrease, difference, and proportion solving in seconds.</p>
+          <span class="popular-calc-cta">Launch Calculator →</span>
+        </a>
+      </div>
+    </section>
 
   </main>
 
@@ -1271,70 +1274,126 @@
   </footer>
 
   <script>
-    function filterPosts(category, btn) {
-      // Update active button
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Update section title
-      const titles = { all: 'All Articles', mortgage: 'Mortgage', bmi: 'BMI', currency: 'Currency', news: 'News & Updates' };
-      document.querySelector('.section-title').textContent = titles[category] || 'All Articles';
-
-      // Show/hide cards
+    (function() {
+      const searchInput = document.getElementById('blogSearchInput');
+      const filterBtns = document.querySelectorAll('#blogFilterBar .filter-btn');
       const cards = document.querySelectorAll('.post-card');
-      let visible = 0;
+      const emptyState = document.getElementById('empty-state');
+      const visibleCountEl = document.getElementById('visible-count');
+      const sectionTitleEl = document.querySelector('.section-title');
+      const resetBtn = document.getElementById('resetFiltersBtn');
 
-      cards.forEach(card => {
-        const match = category === 'all' || card.dataset.category === category;
-        card.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
+      let currentCategory = 'all';
+      let searchQuery = '';
 
-      // Empty state
-      const empty = document.getElementById('empty-state');
-      empty.classList.toggle('visible', visible === 0);
-
-      // Count label
-      document.getElementById('visible-count').textContent =
-        visible === 0 ? 'No articles found' :
-        visible === 1 ? 'Showing 1 article' :
-        `Showing ${visible} articles`;
-    }
-
-    // ── FEATURED SLIDER ──
-    (function () {
-      const slider = document.getElementById('featured-slider');
-      if (!slider) return;
-      const slides = slider.querySelectorAll('.featured-post');
-      const dots = slider.querySelectorAll('.slider-dot');
-      let current = 0;
-      let timer;
-      const INTERVAL = 6000;
-
-      function showSlide(i) {
-        slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
-        dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
-        current = i;
-      }
-
-      window.goToSlide = function (i) {
-        showSlide(i);
-        restart();
+      const categoryTitles = {
+        all: 'All Articles',
+        finance: 'Finance Articles',
+        health: 'Health & Wellness',
+        currency: 'Currency & Exchange',
+        time: 'Time & Demographics'
       };
 
-      function next() {
-        showSlide((current + 1) % slides.length);
+      function updateCategoryCounts() {
+        const counts = { all: 0, finance: 0, health: 0, currency: 0, time: 0 };
+        cards.forEach(card => {
+          const title = (card.querySelector('.card-title')?.textContent || '').toLowerCase();
+          const excerpt = (card.querySelector('.card-excerpt')?.textContent || '').toLowerCase();
+          const cat = card.getAttribute('data-category');
+          const matchesQuery = !searchQuery || title.includes(searchQuery) || excerpt.includes(searchQuery);
+
+          if (matchesQuery) {
+            counts.all++;
+            if (counts[cat] !== undefined) {
+              counts[cat]++;
+            }
+          }
+        });
+
+        const countAll = document.getElementById('count-all');
+        const countFinance = document.getElementById('count-finance');
+        const countHealth = document.getElementById('count-health');
+        const countCurrency = document.getElementById('count-currency');
+        const countTime = document.getElementById('count-time');
+
+        if (countAll) countAll.textContent = `(${counts.all})`;
+        if (countFinance) countFinance.textContent = `(${counts.finance})`;
+        if (countHealth) countHealth.textContent = `(${counts.health})`;
+        if (countCurrency) countCurrency.textContent = `(${counts.currency})`;
+        if (countTime) countTime.textContent = `(${counts.time})`;
       }
 
-      function restart() {
-        clearInterval(timer);
-        timer = setInterval(next, INTERVAL);
+      function applyFilterAndSearch() {
+        let visible = 0;
+        const q = searchQuery.toLowerCase().trim();
+
+        cards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          const title = (card.querySelector('.card-title')?.textContent || '').toLowerCase();
+          const excerpt = (card.querySelector('.card-excerpt')?.textContent || '').toLowerCase();
+
+          const categoryMatch = (currentCategory === 'all' || cardCategory === currentCategory);
+          const searchMatch = !q || title.includes(q) || excerpt.includes(q);
+
+          if (categoryMatch && searchMatch) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (sectionTitleEl) {
+          if (q) {
+            sectionTitleEl.textContent = `Search: "${searchQuery}"`;
+          } else {
+            sectionTitleEl.textContent = categoryTitles[currentCategory] || 'All Articles';
+          }
+        }
+
+        if (visibleCountEl) {
+          visibleCountEl.textContent = visible === 0 ? 'No articles found' :
+            visible === 1 ? 'Showing 1 article' :
+            `Showing ${visible} articles`;
+        }
+
+        if (emptyState) {
+          emptyState.classList.toggle('visible', visible === 0);
+          emptyState.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        updateCategoryCounts();
       }
 
-      slider.addEventListener('mouseenter', () => clearInterval(timer));
-      slider.addEventListener('mouseleave', restart);
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentCategory = this.getAttribute('data-category') || 'all';
+          applyFilterAndSearch();
+        });
+      });
 
-      if (slides.length > 1) restart();
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          searchQuery = e.target.value;
+          applyFilterAndSearch();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+          if (searchInput) searchInput.value = '';
+          searchQuery = '';
+          currentCategory = 'all';
+          filterBtns.forEach(b => {
+            b.classList.toggle('active', b.getAttribute('data-category') === 'all');
+          });
+          applyFilterAndSearch();
+        });
+      }
+
+      applyFilterAndSearch();
     })();
   </script>
 
