@@ -92,7 +92,7 @@
   <!-- ─── Blog Index ─────────────────────────────────────────── -->
   <url>
     <loc>https://nexalc.com/blog/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -235,6 +235,14 @@
   <url>
     <loc>https://nexalc.com/blog/tip-pooling-how-it-works-and-how-to-calculate-it/</loc>
     <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ─── Blog: Percentage (1) ─────────────────────────────── -->
+  <url>
+    <loc>https://nexalc.com/blog/how-to-calculate-percentage-increase-and-decrease/</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
