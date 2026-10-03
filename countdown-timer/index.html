@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Countdown Timer — Live Days, Hours & Seconds | NexAlc</title>
-  <meta name="description" content="Free online countdown timer with seconds. Count down to any future date — birthdays, launches, New Year's Eve, and personal milestones. Live days, hours, minutes, and seconds." />
+  <title>Countdown Timer — Free Online Date Counter | NexAlc</title>
+  <meta name="description" content="Count down to any future date or event with live days, hours, minutes, and seconds. Share custom timer links with zero clutter. Try it free." />
 
   <!-- ─── SEO ─────────────────────────────────────────────── -->
   <link rel="canonical" href="https://nexalc.com/countdown-timer/" />
@@ -1174,6 +1174,35 @@
 
     <!-- Upcoming events -->
     <div class="sidebar-card">
+      <div class="sidebar-card-header">Popular Countdowns</div>
+      <a class="related-tool-item" href="/countdown-timer/new-year/">
+        <span class="related-tool-name">New Year's Day</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/new-year-eve/">
+        <span class="related-tool-name">New Year's Eve</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/christmas/">
+        <span class="related-tool-name">Christmas Day</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/thanksgiving/">
+        <span class="related-tool-name">Thanksgiving</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/halloween/">
+        <span class="related-tool-name">Halloween</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+      <a class="related-tool-item" href="/countdown-timer/black-friday/">
+        <span class="related-tool-name">Black Friday</span>
+        <span class="related-tool-tag">Holiday</span>
+      </a>
+    </div>
+
+    <!-- Upcoming events dynamic -->
+    <div class="sidebar-card">
       <div class="sidebar-card-header">Upcoming Events</div>
       <div class="upcoming-list" id="sidebar-events"></div>
     </div>
@@ -1404,7 +1433,7 @@
     item.innerHTML = `<span class="ui-name">${ev.name}</span><span class="ui-days">${ev.daysLeft}d</span>`;
     item.onclick = () => {
       const slug = getEventSlug(ev.name);
-      if (slug) { window.location.href = '/' + slug + '/'; return; }
+      if (slug) { window.location.href = '/countdown-timer/' + slug + '/'; return; }
       document.getElementById('event-label').value = ev.name;
       const pad = n => String(n).padStart(2,'0');
       const d = ev.date;

@@ -32,7 +32,7 @@ const pages = [
     type: "calculator",
     primaryKeyword: "Age Calculator",
     newTitle: "Age Calculator Tool — Free Online Calculator | NexAlc", // 53 chars
-    newDesc: "Calculate your exact age in years, months, weeks, and days from your date of birth instantly with leap-year precision. See your result." // 136 -> need 140-155
+    newDesc: "Calculate your exact age in years, months, weeks, and days from your date of birth instantly with leap-year precision. Fast and free. Calculate now." // 149 chars
   },
   {
     url: "https://nexalc.com/bmi-calculator/",
@@ -72,7 +72,7 @@ const pages = [
     type: "calculator",
     primaryKeyword: "New Year's Eve Countdown",
     newTitle: "New Year's Eve Countdown — Free Online Timer | NexAlc", // 53 chars
-    newDesc: "Track the live countdown to New Year's Eve with real-time days, hours, minutes, and seconds ticking down to midnight globally. Try it free." // 139 -> need 140-155
+    newDesc: "Track the live countdown to New Year's Eve with real-time days, hours, minutes, and seconds ticking down to midnight globally. Try it free now." // 143 chars
   },
   {
     url: "https://nexalc.com/countdown-timer/new-year/",
@@ -232,7 +232,7 @@ const pages = [
     type: "blog",
     primaryKeyword: "tip pooling",
     newTitle: "Tip Pooling: How It Works and How to Calculate It | NexAlc", // 58 chars
-    newDesc: "Understand tip pooling rules, hours-based distribution, points systems, and labor law compliance for restaurant staff. Calculate now." // 133 -> need 140-155
+    newDesc: "Understand tip pooling rules, hours-based distribution, points systems, and labor law compliance for restaurant staff. Learn the rules and math." // 145 chars
   },
   {
     url: "https://nexalc.com/blog/best-time-to-exchange-currency-when-travelling/",
@@ -240,7 +240,7 @@ const pages = [
     type: "blog",
     primaryKeyword: "best time to exchange currency",
     newTitle: "Best Time to Exchange Currency When Travelling | NexAlc", // 55 chars
-    newDesc: "Find the best time to exchange currency when travelling, avoid airport markups, and minimize international transaction fees. Calculate now." // 139 -> need 140-155
+    newDesc: "Find the best time to exchange currency when travelling abroad, avoid expensive airport markups, and minimize bank conversion fees. Calculate now." // 146 chars
   },
   {
     url: "https://nexalc.com/blog/usd-to-pkr-understanding-the-exchange-rate/",
@@ -248,14 +248,14 @@ const pages = [
     type: "blog",
     primaryKeyword: "usd to pkr exchange rate",
     newTitle: "USD to PKR Exchange Rate: What Drives the Price? | NexAlc", // 57 chars
-    newDesc: "Understand the USD to PKR exchange rate, what drives interbank versus open market pricing, and how remittances affect rates. Calculate now." // 139 -> need 140-155
+    newDesc: "Understand the USD to PKR exchange rate, what drives interbank versus open market pricing, and how remittances affect daily rates. Calculate now." // 146 chars
   },
   {
     url: "https://nexalc.com/blog/mortgage-discount-points/",
     file: "blog/mortgage-discount-points/index.html",
     type: "blog",
     primaryKeyword: "mortgage discount points",
-    newTitle: "Mortgage Discount Points: Are Rate Buydowns Worth It? | NexAlc", // 62 -> 50-60!
+    newTitle: "Mortgage Discount Points: Are Buydowns Worth It? | NexAlc", // 58 chars
     newDesc: "Evaluate mortgage discount points, upfront fees, break-even timelines, and monthly interest savings before buying down your rate. Calculate now." // 145 chars
   },
   {
@@ -263,8 +263,8 @@ const pages = [
     file: "blog/pay-off-mortgage-early/index.html",
     type: "blog",
     primaryKeyword: "pay off mortgage early",
-    newTitle: "Pay Off Mortgage Early: 5 Proven Extra Payment Steps | NexAlc", // 61 -> 50-60!
-    newDesc: "Discover how to pay off mortgage early using biweekly payments, principal curtailment, and lump-sum amortization reductions. Calculate now." // 139 -> need 140-155
+    newTitle: "Pay Off Mortgage Early: 5 Extra Payment Steps | NexAlc", // 55 chars
+    newDesc: "Discover how to pay off mortgage early using biweekly payments, principal curtailment, and extra amortization reductions. Calculate now." // 141 chars
   }
 ];
 

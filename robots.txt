@@ -1,10 +1,5 @@
 User-agent: *
 Allow: /
 
-# Block utility/legal pages from indexing (already set via meta robots noindex, belt-and-suspenders)
-Disallow: /privacy-policy/
-Disallow: /terms/
-Disallow: /contact/
-Disallow: /about/
 Disallow: /?s=
 Sitemap: https://nexalc.com/sitemap.xml
