@@ -15,8 +15,8 @@ const pages = [
     file: "percentage-calculator/index.html",
     type: "calculator",
     primaryKeyword: "Calculate Percentage",
-    newTitle: "Calculate Percentage — Free Online Calculator | NexAlc", // 54 chars
-    newDesc: "Calculate percentage increase, discounts, differences, and fractional changes in real time with exact formulas. Fast, clean math. Calculate now." // 145 chars
+    newTitle: "Percentage Calculator: Increase, Decrease & Discount | NexAlc", // 61 chars
+    newDesc: "Free percentage calculator: find X% of a number, percentage increase or decrease, and percent off in one click. Instant results, formulas included, no sign-up." // 145 chars
   },
   {
     url: "https://nexalc.com/currency-converter/",
