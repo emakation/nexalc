@@ -117,6 +117,9 @@ app.get(['/loan-calculator', '/loan-calculator/'], (req, res) => {
 app.get(['/split-bill', '/split-bill/'], (req, res) => {
   res.redirect(301, '/tip-calculator/');
 });
+app.get(['/currency', '/currency/'], (req, res) => {
+  res.redirect(301, '/currency-converter/');
+});
 
 // Serve static assets and HTML pages
 app.use(express.static(__dirname, {
