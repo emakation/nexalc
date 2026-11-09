@@ -8,6 +8,7 @@
   <title>Free Tip Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc</title>
   <meta name="description" content="Calculate accurate tip calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
   <link rel="canonical" href="https://nexalc.com/tip-calculator" />
+  <meta name="robots" content="index, follow" />
       
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -158,6 +159,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
   <style>
+    /* Reserved layout dimensions to eliminate Cumulative Layout Shift */
+    .calculator-output-card {
+      display: block;
+      min-height: 280px;
+      contain-intrinsic-size: 280px 420px;
+      content-visibility: auto;
+    }
+
     /* ═══════════════════════════════════════════
        TOKENS
     ═══════════════════════════════════════════ */
@@ -933,7 +942,7 @@
     </div>
 
     <!-- CARD 2: Results -->
-    <div class="card" id="results-card">
+    <div class="card calculator-output-card" id="results-card">
       <div class="card-title">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Results
