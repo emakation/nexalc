@@ -110,6 +110,14 @@ app.get('/api/rates', async (req, res) => {
   }
 });
 
+// 301 Redirects for legacy/deprecated paths
+app.get(['/loan-calculator', '/loan-calculator/'], (req, res) => {
+  res.redirect(301, '/mortgage-calculator/');
+});
+app.get(['/split-bill', '/split-bill/'], (req, res) => {
+  res.redirect(301, '/tip-calculator/');
+});
+
 // Serve static assets and HTML pages
 app.use(express.static(__dirname, {
   extensions: ['html'],

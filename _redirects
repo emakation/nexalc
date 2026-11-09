@@ -1,0 +1,5 @@
+# Redirects for NexAlc
+/loan-calculator  /mortgage-calculator  301!
+/loan-calculator/  /mortgage-calculator/  301!
+/split-bill  /tip-calculator  301!
+/split-bill/  /tip-calculator/  301!

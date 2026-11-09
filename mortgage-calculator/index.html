@@ -5,23 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO Meta -->
-  <title>Mortgage Calculator — Free Online Calculator | NexAlc</title>
-  <meta name="description" content="Estimate monthly mortgage payments including principal, interest, taxes, and insurance with complete amortization schedules. Calculate now." />
+  <title>Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc</title>
+  <meta name="description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
   <meta name="keywords" content="mortgage calculator, monthly payment calculator, home loan calculator, amortization schedule, mortgage payment estimator" />
-  <link rel="canonical" href="https://nexalc.com/mortgage-calculator/" />
+  <link rel="canonical" href="https://nexalc.com/mortgage-calculator" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mortgage Calculator | Monthly Payment & Amortization Schedule" />
-  <meta property="og:description" content="Free mortgage calculator with amortization schedule, property tax, PMI, and regional support for US, Canada, UK & Australia." />
+  <meta property="og:title" content="Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc" />
+  <meta property="og:description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
   <meta property="og:url" content="https://nexalc.com/mortgage-calculator/" />
   <meta property="og:site_name" content="NexAlc" />
 <meta property="og:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mortgage Calculator | Monthly Payment & Amortization Schedule" />
-  <meta name="twitter:description" content="Free mortgage calculator with amortization schedule, property tax, PMI, and regional support for US, Canada, UK & Australia." />
+  <meta name="twitter:title" content="Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc" />
+  <meta name="twitter:description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
 <meta name="twitter:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
 
 <!-- Favicon -->
@@ -517,14 +518,13 @@
     }
 
     .input-label {
-      font-size: 14px;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-secondary);
       letter-spacing: 0.04em;
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 8px;
     }
 
     .tooltip-icon {
@@ -627,51 +627,28 @@
       flex: 1;
       -webkit-appearance: none;
       appearance: none;
-      height: 44px;
-      background: transparent;
+      height: 4px;
+      background: var(--surface-3);
+      border-radius: 2px;
       outline: none;
       cursor: pointer;
       padding: 0;
       border: none;
-      margin: 0;
-    }
-
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 6px;
-      background: var(--surface-3);
-      border-radius: 3px;
-    }
-
-    input[type="range"]::-moz-range-track {
-      height: 6px;
-      background: var(--surface-3);
-      border-radius: 3px;
     }
 
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       background: var(--orange);
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 0 0 4px var(--orange-glow);
+      box-shadow: 0 0 0 3px var(--orange-glow);
       transition: box-shadow 0.2s;
-      margin-top: -8px;
-    }
-
-    input[type="range"]::-moz-range-thumb {
-      width: 22px;
-      height: 22px;
-      background: var(--orange);
-      border-radius: 50%;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 0 0 4px var(--orange-glow);
     }
 
     input[type="range"]::-webkit-slider-thumb:hover {
-      box-shadow: 0 0 0 6px var(--orange-glow-strong);
+      box-shadow: 0 0 0 5px var(--orange-glow-strong);
     }
 
     .range-value {
@@ -727,7 +704,6 @@
       padding: 20px 24px;
       background: var(--surface);
       border-top: 1px solid var(--border);
-      margin-bottom: 50px;
     }
 
     .calc-btn {
@@ -766,9 +742,17 @@
       background: var(--surface);
     }
 
+    /* Reserved layout dimensions to eliminate Cumulative Layout Shift */
+    .calculator-output-card {
+      display: block;
+      min-height: 280px;
+      contain-intrinsic-size: 280px 420px;
+      content-visibility: auto;
+    }
+
     /* ── RESULTS ── */
     .results-section {
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 0;
     }
@@ -798,15 +782,11 @@
 
     /* Monthly Payment Hero */
     .payment-hero {
-      padding: 24px;
+      padding: 20px 24px;
       display: flex;
       align-items: flex-end;
       gap: 16px;
-      border: 1px solid rgba(255, 107, 43, 0.35);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(255, 107, 43, 0.12) 0%, rgba(22, 22, 24, 0.95) 100%);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      margin: 16px 20px;
+      border-bottom: 1px solid var(--border);
     }
 
     .payment-main {
@@ -814,142 +794,35 @@
     }
 
     .payment-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: #FFB38A;
-      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .payment-amount {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2.6rem, 6vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3rem);
       font-weight: 800;
       color: var(--warm-white);
       letter-spacing: -0.04em;
       line-height: 1;
-      display: inline-flex;
-      align-items: baseline;
-      gap: 4px;
     }
 
-    .payment-amount #currency-sym {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    .payment-amount span {
+      font-size: 1.4rem;
       color: var(--orange);
-      font-weight: 700;
-    }
-
-    .payment-amount #monthly-payment {
-      font-size: inherit;
-      color: var(--warm-white);
-      font-weight: 800;
-    }
-
-    .payment-amount .payment-unit {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: normal;
-      margin-left: 4px;
+      vertical-align: top;
+      margin-top: 4px;
+      display: inline-block;
     }
 
     .payment-breakdown {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    .share-result-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      color: var(--warm-white);
-      font-family: 'DM Sans', sans-serif;
       font-size: 0.78rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: background var(--transition), border-color var(--transition), color var(--transition);
-      min-height: 36px;
-    }
-
-    .share-result-btn:hover {
-      background: rgba(255, 107, 43, 0.15);
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    .blog-cta-card {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--orange);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      margin: 18px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .blog-cta-content {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .blog-cta-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .blog-cta-title {
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    .blog-cta-link {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .blog-cta-link:hover {
-      color: #ff8e57;
-      text-decoration: underline;
-    }
-
-    .methodology-top-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 20px 24px;
-      margin: 18px 20px;
-    }
-
-    .methodology-top-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--warm-white);
-      margin-bottom: 6px;
+      color: var(--text-muted);
+      margin-top: 6px;
     }
 
     .payment-comparison {
@@ -1621,30 +1494,6 @@
       text-decoration: none; transition: color var(--transition);
     }
     .footer-links a:hover { color: var(--warm-white); }
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 16px;
-      width: 100%;
-    }
-    .footer-social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      transition: color 0.2s ease;
-      width: 20px;
-      height: 20px;
-    }
-    .footer-social-link:hover {
-      color: #FF6B2B;
-    }
-    .footer-social-link svg {
-      width: 20px;
-      height: 20px;
-    }
-
     .footer-copy { font-size: 0.78rem; color: #555; width: 100%; }
 
     /* ── ANIMATIONS ── */
@@ -1697,20 +1546,6 @@
       }
     }
 
-    @media (max-width: 768px) {
-      input[type="number"], input[type="text"], select, .calc-btn {
-        min-height: 44px;
-        font-size: 16px;
-      }
-      .input-label {
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-      input[type="range"] {
-        height: 44px;
-      }
-    }
-
     @media (max-width: 600px) {
       .payment-hero { flex-direction: column; align-items: flex-start; gap: 12px; }
       .breakdown-chart { flex-direction: column; }
@@ -1754,6 +1589,7 @@
       </div>
     </div>
     <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </div>
 </nav>
 
@@ -1934,26 +1770,25 @@
           </button>
         </div>
 
+        <!-- AD ZONE B: Below Calculate -->
+        <div class="ad-zone-b">
+          <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
+        </div>
+
         <!-- RESULTS -->
-        <div class="results-section" id="results">
+        <div class="results-section calculator-output-card" id="results">
 
           <div class="results-header">
             <span class="results-title">Your Estimate</span>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span class="last-updated" id="calc-timestamp"></span>
-              <button class="share-result-btn" id="shareResultBtn" onclick="shareResult()" title="Share this calculation" type="button">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                <span id="shareBtnText">Share this result</span>
-              </button>
-            </div>
+            <span class="last-updated" id="calc-timestamp"></span>
           </div>
 
           <!-- Monthly Payment Hero -->
           <div class="payment-hero">
             <div class="payment-main">
-              <div class="payment-label">Your Monthly Payment</div>
+              <div class="payment-label">Monthly Payment</div>
               <div class="payment-amount">
-                <span id="currency-sym">$</span><span id="monthly-payment">—</span><span class="payment-unit">/ month</span>
+                <span id="currency-sym">$</span><span id="monthly-payment">—</span>
               </div>
               <div class="payment-breakdown" id="payment-breakdown-line"></div>
             </div>
@@ -2036,34 +1871,6 @@
           </div>
 
         </div><!-- /results -->
-
-        <!-- AD ZONE B: Post-Results Position -->
-        <div class="ad-zone-b">
-          <div class="ad-placeholder ad-rectangle">336 × 280 — Ad Zone B</div>
-        </div>
-
-        <!-- INLINE BLOG CTA (Fix 2) -->
-        <div class="blog-cta-card">
-          <div class="blog-cta-content">
-            <span class="blog-cta-tag">Mortgage Strategy</span>
-            <span class="blog-cta-title">Want to cut your interest and build home equity years earlier?</span>
-          </div>
-          <a href="/blog/pay-off-mortgage-early/" class="blog-cta-link">How to Pay Off Your Mortgage Faster →</a>
-        </div>
-
-        <!-- FORMULA & METHODOLOGY (Fix 3 - placed directly after result area for SEO/AEO) -->
-        <div class="methodology-top-card">
-          <div class="methodology-top-title">Mortgage Payment Formula &amp; Calculation Methodology</div>
-          <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.65;margin:8px 0 12px;">
-            NexAlc computes your fixed monthly mortgage payment using the standard financial amortization formula. It accounts for loan principal, monthly interest rates, and loan terms:
-          </p>
-          <div class="formula-display">M = P × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]</div>
-          <div style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;margin-top:10px;">
-            <strong>P (Principal)</strong> = Home purchase price minus down payment.<br>
-            <strong>r (Monthly Interest Rate)</strong> = Annual interest rate divided by 12 (or semi-annually compounded for Canadian loans under the Interest Act: <em>(1 + rate/2)^(1/6) − 1</em>).<br>
-            <strong>n (Total Payments)</strong> = Loan term in years × 12 months (or 26 fortnightly / 52 weekly payments).
-          </div>
-        </div>
 
       </article><!-- /calc-card -->
     </div>
@@ -2294,31 +2101,11 @@
   <a href="/" class="footer-brand">Nex<span>Alc</span></a>
   <ul class="footer-links">
     <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/privacy-policy/">Privacy Policy</a></li>
     <li><a href="/terms/">Terms of Use</a></li>
   </ul>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/thenexalc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-    </a>
-    <a href="https://www.pinterest.com/thenexalc/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="footer-social-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-      </svg>
-    </a>
-    <a href="https://x.com/Emakation1" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="footer-social-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-      </svg>
-    </a>
-    <a href="https://www.linkedin.com/in/moeedcreates/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-social-link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-    </a>
-  </div>
   <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
 </footer>
 
@@ -2493,7 +2280,7 @@
     }
 
     // ── MAIN CALCULATE ──
-    function calculate() {
+    function calculate(shouldScroll = true) {
       const homePrice = parseFloat(document.getElementById('home-price').value) || 0;
       const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
       const annualRate = parseFloat(document.getElementById('interest-rate').value) || 0;
@@ -2579,20 +2366,12 @@
       // Show results
       const results = document.getElementById('results');
       results.classList.add('visible');
-      results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (shouldScroll) {
+        results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
 
       // Timestamp
       document.getElementById('calc-timestamp').textContent = 'Calculated ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-      // Update shareable URL without page reload
-      try {
-        const url = new URL(window.location.href);
-        url.searchParams.set('p', homePrice);
-        url.searchParams.set('dp', downPayment);
-        url.searchParams.set('r', annualRate);
-        url.searchParams.set('t', termYears);
-        window.history.pushState({}, '', url.toString());
-      } catch (e) {}
     }
 
     function renderDonut(principal, interest, tax, ins, sym) {
@@ -2747,47 +2526,8 @@
       updateDownPct();
     });
 
-    // Share result to clipboard
-    function shareResult() {
-      const url = window.location.href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-          const btn = document.getElementById('shareBtnText');
-          if (btn) {
-            const orig = btn.textContent;
-            btn.textContent = 'Link copied!';
-            setTimeout(() => { btn.textContent = orig; }, 2000);
-          }
-        }).catch(() => {
-          prompt('Copy link:', url);
-        });
-      } else {
-        prompt('Copy link:', url);
-      }
-    }
-
-    // Pre-fill inputs from URL query parameters & auto-calculate if present
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const p = params.get('p');
-      const dp = params.get('dp');
-      const r = params.get('r');
-      const t = params.get('t');
-      if (p) document.getElementById('home-price').value = p;
-      if (dp) document.getElementById('down-payment').value = dp;
-      if (r) document.getElementById('interest-rate').value = r;
-      if (t) {
-        document.getElementById('loan-term-input').value = t;
-        currentTerm = parseInt(t) || 30;
-        document.querySelectorAll('.term-btn').forEach(b => {
-          b.classList.toggle('active', parseInt(b.dataset.years) === currentTerm);
-        });
-      }
-      if (p && dp) updateDownPct();
-      if (p && r && t) {
-        calculate();
-      }
-    });
+    // Initialize default calculation on load to eliminate layout shifts
+    calculate(false);
   </script>
 
 </body>
