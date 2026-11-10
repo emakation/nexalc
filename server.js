@@ -120,6 +120,9 @@ app.get(['/split-bill', '/split-bill/'], (req, res) => {
 app.get(['/currency', '/currency/'], (req, res) => {
   res.redirect(301, '/currency-converter/');
 });
+app.get(['/finance/compound-interest', '/finance/compound-interest/'], (req, res) => {
+  res.redirect(301, '/');
+});
 
 // Serve static assets and HTML pages
 app.use(express.static(__dirname, {
