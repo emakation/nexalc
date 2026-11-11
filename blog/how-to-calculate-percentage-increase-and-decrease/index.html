@@ -814,6 +814,93 @@
       font-weight: 600;
       text-decoration: none;
     }
+  
+    /* ═══════════════════════════════════════════
+       PROMOTIONAL BANNER: Christmas Budget Planner
+    ═══════════════════════════════════════════ */
+    .ko-promo-banner {
+      background: #FFFDF9;
+      color: #362828;
+      border: 1px solid #EFE6DD;
+      border-radius: var(--radius, 14px);
+      padding: 24px 28px;
+      margin: 28px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .ko-promo-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .ko-promo-tag {
+      display: inline-block;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4A6353; /* Sage */
+      background: #EBF1ED;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .ko-promo-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 700;
+      color: #6A1A24; /* Burgundy */
+      line-height: 1.35;
+      margin: 0 0 6px 0;
+    }
+    .ko-promo-subtext {
+      font-size: 0.9rem;
+      color: #5C524F;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .ko-promo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #6A1A24; /* Burgundy */
+      color: #FFFDF9 !important;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(106, 26, 36, 0.25);
+    }
+    .ko-promo-btn:hover {
+      background: #50131B;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(106, 26, 36, 0.35);
+    }
+    .ko-promo-btn:active {
+      transform: translateY(0);
+    }
+    @media (max-width: 680px) {
+      .ko-promo-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      .ko-promo-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -933,6 +1020,17 @@
       <code class="formula-code">Percentage Increase = ((New Value / Original Value) - 1) × 100</code>
 
       <p>Both methods give identical results. For instance, what is the percentage increase if 250 is increased to 300? Subtracting 250 from 300 gives 50. Dividing 50 by baseline 250 yields 0.20, or 20%. Similarly, how to calculate 20% increase on any baseline? Multiply by 1.20, turning $50 into $60. What is a 5% increase of $100? Multiply 100 × 1.05 to reach $105.</p>
+
+      
+      <!-- PROMOTIONAL BANNER: Christmas Budget Planner -->
+      <aside class="ko-promo-banner" id="christmas-budget-banner" aria-label="Christmas Budget Planner Promotion">
+        <div class="ko-promo-content">
+          <span class="ko-promo-tag">Holiday Planning</span>
+          <h3 class="ko-promo-title">Hunting for the best holiday deals?</h3>
+          <p class="ko-promo-subtext">Don't let a good discount ruin your overall budget. Track your spending and stay stress-free with the ADHD-friendly Christmas Budget Planner 2026.</p>
+        </div>
+        <a href="https://kindlyorganized.gumroad.com/l/gcelq" class="ko-promo-btn gumroad-button" data-gumroad-overlay-checkout="true">Get the Planner</a>
+      </aside>
 
       <h2>The Percentage Decrease Formula</h2>
 
@@ -1279,5 +1377,6 @@
       setTimeout(() => { if (bar) bar.remove(); }, 10000);
     }
   </script>
+<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
