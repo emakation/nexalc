@@ -124,6 +124,11 @@ app.get(['/finance/compound-interest', '/finance/compound-interest/'], (req, res
   res.redirect(301, '/');
 });
 
+// Serve /0 directly to align HTTP 200 response with canonical https://nexalc.com/0
+app.get('/0', (req, res) => {
+  res.sendFile(path.join(__dirname, '0', 'index.html'));
+});
+
 // Serve static assets and HTML pages
 app.use(express.static(__dirname, {
   extensions: ['html'],
