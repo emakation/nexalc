@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO Meta -->
-  <title>Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc</title>
-  <meta name="description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
+  <title>Free Mortgage Calculator (2026) – Estimate Monthly Payment &amp; Taxes | NexAlc</title>
+  <meta name="description" content="Calculate exact monthly mortgage payments with taxes, insurance, and amortization schedules. 100% free, fast, and private on NexAlc.">
   <meta name="keywords" content="mortgage calculator, monthly payment calculator, home loan calculator, amortization schedule, mortgage payment estimator" />
   <link rel="canonical" href="https://nexalc.com/mortgage-calculator" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc" />
-  <meta property="og:description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
+  <meta property="og:title" content="Free Mortgage Calculator (2026) – Estimate Monthly Payment &amp; Taxes | NexAlc">
+  <meta property="og:description" content="Calculate exact monthly mortgage payments with taxes, insurance, and amortization schedules. 100% free, fast, and private on NexAlc.">
   <meta property="og:url" content="https://nexalc.com/mortgage-calculator/" />
   <meta property="og:site_name" content="NexAlc" />
 <meta property="og:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Mortgage Calculator (2026) - Fast, Accurate & Ad-Free | NexAlc" />
-  <meta name="twitter:description" content="Calculate accurate mortgage calculator results instantly. Simple, interactive, and completely free without intrusive ads or signups on NexAlc." />
+  <meta name="twitter:title" content="Free Mortgage Calculator (2026) – Estimate Monthly Payment &amp; Taxes | NexAlc">
+  <meta name="twitter:description" content="Calculate exact monthly mortgage payments with taxes, insurance, and amortization schedules. 100% free, fast, and private on NexAlc.">
 <meta name="twitter:image" content="https://nexalc.com/assets/og-mortgage-calculator.png" />
 
 <!-- Favicon -->
@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
   <!-- Chart.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -2527,7 +2527,9 @@
     });
 
     // Initialize default calculation on load to eliminate layout shifts
-    calculate(false);
+    document.addEventListener('DOMContentLoaded', function() {
+      calculate(false);
+    });
   </script>
 
 </body>
