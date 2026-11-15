@@ -123,6 +123,9 @@ app.get(['/currency', '/currency/'], (req, res) => {
 app.get(['/finance/compound-interest', '/finance/compound-interest/'], (req, res) => {
   res.redirect(301, '/');
 });
+app.get(['/calc/percentage', '/calc/percentage/'], (req, res) => {
+  res.redirect(301, '/');
+});
 
 // Serve /0 directly to align HTTP 200 response with canonical https://nexalc.com/0
 app.get('/0', (req, res) => {
