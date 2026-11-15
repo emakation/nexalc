@@ -9,6 +9,18 @@
   <meta name="description" content="Free Currency Converter with live exchange rates. Convert USD, EUR, GBP, INR, PKR and 150+ world currencies instantly using real-time foreign exchange data." />
   <link rel="canonical" href="https://nexalc.com/currency-converter" />
   <meta name="robots" content="index, follow" />
+  <!-- Inline protection: set noindex if loaded with query parameters for bots that execute JavaScript -->
+  <script>
+    if (window.location.search) {
+      var metaRobots = document.querySelector('meta[name="robots"]');
+      if (!metaRobots) {
+        metaRobots = document.createElement('meta');
+        metaRobots.setAttribute('name', 'robots');
+        document.head.appendChild(metaRobots);
+      }
+      metaRobots.setAttribute('content', 'noindex, follow');
+    }
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
