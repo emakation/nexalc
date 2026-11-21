@@ -240,22 +240,16 @@
     /* HERO */
     .hero {
       position:relative; z-index:1;
-      padding: clamp(40px,6vw,72px) clamp(16px,4vw,40px) clamp(28px,4vw,40px);
+      padding: 12px clamp(16px,4vw,40px) 0;
       max-width:1280px; margin:0 auto;
     }
-    .breadcrumb { font-size:0.78rem; color:var(--text-muted); margin-bottom:18px; display:flex; align-items:center; gap:6px; }
+    .breadcrumb { font-size:0.75rem; line-height:1.15; color:var(--text-muted); margin:0; display:flex; align-items:center; gap:6px; }
     .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
     .breadcrumb a:hover { color:var(--orange); }
-    .hero-badge {
-      display:inline-flex; align-items:center; gap:6px;
-      background:var(--orange-glow); border:1px solid var(--border-active);
-      border-radius:100px; padding:4px 12px;
-      font-size:0.72rem; font-weight:600; color:var(--orange);
-      letter-spacing:0.06em; text-transform:uppercase; margin-bottom:14px;
-    }
-    h1 { font-family:'Syne',sans-serif; font-size:clamp(2rem,5vw,3rem); font-weight:800; line-height:1.1; letter-spacing:-0.03em; color:var(--warm-white); margin-bottom:12px; }
+    .breadcrumb-sep { opacity:0.45; }
+    h1 { font-family:'Syne',sans-serif; font-size:clamp(1.5rem,2.2vw,1.85rem); font-weight:800; line-height:1.18; letter-spacing:-0.025em; color:var(--warm-white); margin:4px 0 14px; }
     h1 em { font-style:normal; color:var(--orange); }
-    .hero-sub { font-size:clamp(0.9rem,2vw,1rem); color:var(--text-secondary); max-width:560px; line-height:1.65; }
+    .hero-sub { font-size:0.94rem; color:var(--text-secondary); line-height:1.65; margin-bottom:14px; }
 
     /* MAIN LAYOUT */
     .main-layout {
@@ -732,26 +726,14 @@
   </div>
 </nav>
 
-  <!-- AD ZONE A -->
-  <div class="ad-zone-a">
-    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
-  </div>
-
   <!-- HERO -->
   <header class="hero">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>
-      <span>›</span>
+      <span class="breadcrumb-sep">›</span>
       <span>BMI Calculator</span>
     </nav>
-    <div class="hero-badge">
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
-      Free Tool — No Sign-Up
-    </div>
     <h1><em>BMI / Body Mass Index</em> Calculator</h1>
-    <p class="hero-sub">
-      Calculate your Body Mass Index (BMI) instantly using metric or imperial measurements. Compare your result against internationally recognized BMI classifications, discover your healthy weight range, and understand how your BMI relates to overall health and wellness.
-    </p>
   </header>
 
   <!-- MAIN LAYOUT -->
@@ -1081,6 +1063,10 @@
 
       <!-- Educational Content -->
       <div class="edu-section">
+
+        <p class="hero-sub">
+          Calculate your Body Mass Index (BMI) instantly using metric or imperial measurements. Compare your result against internationally recognized BMI classifications, discover your healthy weight range, and understand how your BMI relates to overall health and wellness.
+        </p>
 
         <p style="color:var(--text-muted); font-size:.9rem; line-height:1.75; margin:0 0 24px;"><strong>Body Mass Index (BMI)</strong> is a standardized screening measurement that estimates body fat by dividing a person's weight in kilograms by the square of their height in metres (kg/m²). Developed by Belgian statistician Adolphe Quetelet in 1832 and later adopted by the <strong>World Health Organization</strong>, BMI classifies adults into four primary weight-status categories — underweight, normal weight, overweight, and obese — and is used globally by clinicians, public-health researchers, and fitness professionals as a rapid, equipment-free indicator of weight-related health risk.</p>
 
