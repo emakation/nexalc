@@ -33,15 +33,46 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     "name": "Tip Calculator",
-    "url": "https://nexalc.com/tip-calculator/",
-    "applicationCategory": "UtilitiesApplication",
+    "url": "https://nexalc.com/tip-calculator",
+    "applicationCategory": "UtilityApplication",
     "operatingSystem": "All",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Calculate tip amount, total bill, and per-person split instantly.",
-    "provider": { "@type": "Organization", "name": "NexAlc", "url": "https://nexalc.com" },
-    "dateModified": "2026-06-01"
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate a Tip and Split a Bill",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter your bill amount",
+        "text": "Type the total bill amount in the Bill Amount field."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Choose a tip percentage",
+        "text": "Select a preset tip percentage (10%, 15%, 18%, 20%, 25%) or choose Custom to enter your own rate."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Set the number of people",
+        "text": "Use the minus and plus buttons under Number of People to split the bill evenly."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Review or round up your result",
+        "text": "Optionally toggle Round up per-person amount and view the instant tip, total bill, and per-person breakdown."
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -147,7 +178,7 @@
       "cssSelector": [".hero-sub", ".faq-a"]
     },
     "mainEntity": {
-      "@type": "SoftwareApplication",
+      "@type": "WebApplication",
       "name": "Tip Calculator"
     }
   }
