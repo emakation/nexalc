@@ -1933,11 +1933,12 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">
     <img src="/assets/logo.png" alt="NexAlc"
       style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
@@ -1946,9 +1947,9 @@
   </a>
   <div class="nav-links">
     <div class="nav-item">
-      <a href="/mortgage-calculator/">Finance Tools</a>
+      <a href="/mortgage-calculator/" class="active">Finance Tools</a>
       <div class="nav-dropdown">
-        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/mortgage-calculator/" class="active">🏠 Mortgage Calculator</a>
         <a href="/currency-converter/">💱 Currency Converter</a>
         <a href="/tip-calculator/">🧾 Tip Calculator</a>
         <a href="/percentage-calculator/">% Percentage Calculator</a>
@@ -1963,7 +1964,7 @@
     </div>
     <div class="nav-item">
       <a href="/countdown-timer/">Utility Tools</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown" style="left:auto;right:0;">
         <a href="/countdown-timer/">⏳ Countdown Timer</a>
         <a href="/percentage-calculator/">% Percentage Calculator</a>
       </div>
@@ -3306,5 +3307,7 @@
     });
   </script>
 
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>

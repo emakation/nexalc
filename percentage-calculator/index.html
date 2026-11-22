@@ -1011,11 +1011,12 @@
       .nexalc-callout-btn { width: 100%; padding: 9px 14px; font-size: 0.8rem; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
 
   <!-- ─── Nav ─── -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">
     <img src="/assets/logo.png" alt="NexAlc"
       style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
@@ -1024,7 +1025,7 @@
   </a>
   <div class="nav-links">
     <div class="nav-item">
-      <a href="/mortgage-calculator/">Finance Tools</a>
+      <a href="/mortgage-calculator/" class="active">Finance Tools</a>
       <div class="nav-dropdown">
         <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
         <a href="/currency-converter/">💱 Currency Converter</a>
@@ -1047,6 +1048,7 @@
       </div>
     </div>
     <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </div>
 </nav>
 
@@ -1859,5 +1861,7 @@ A $200 item with a 25% discount:
   })();
   </script>
 
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>

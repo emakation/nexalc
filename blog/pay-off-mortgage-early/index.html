@@ -862,43 +862,46 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
-    <a href="/" class="nav-logo">
-      <img src="/assets/logo.png" alt="NexAlc" style="height:36px;width:auto;display:block;mix-blend-mode:lighten;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
-      <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
-    </a>
-    <div class="nav-links">
-      <div class="nav-item">
-        <a href="/mortgage-calculator/" class="active">Finance Tools</a>
-        <div class="nav-dropdown">
-          <a href="/mortgage-calculator/" class="active">🏠 Mortgage Calculator</a>
-          <a href="/currency-converter/">💱 Currency Converter</a>
-          <a href="/tip-calculator/">🧾 Tip Calculator</a>
-          <a href="/percentage-calculator/">% Percentage Calculator</a>
-        </div>
+  <nav class="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
       </div>
-      <div class="nav-item">
-        <a href="/bmi-calculator/">Health Tools</a>
-        <div class="nav-dropdown">
-          <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
-          <a href="/age-calculator/">🎂 Age Calculator</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="/countdown-timer/">Utility Tools</a>
-        <div class="nav-dropdown">
-          <a href="/countdown-timer/">⏳ Countdown Timer</a>
-          <a href="/percentage-calculator/">% Percentage Calculator</a>
-        </div>
-      </div>
-      <a href="/blog/">Blog</a>
-      <a href="/contact/">Contact</a>
     </div>
-  </nav>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown" style="left:auto;right:0;">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
 
   <!-- AD ZONE A -->
   <div class="ad-zone-a">
@@ -1266,5 +1269,7 @@
     }
   </script>
 <script src="https://gumroad.com/js/gumroad.js"></script>
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>

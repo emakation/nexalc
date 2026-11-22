@@ -697,13 +697,14 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
   <!-- Cinematic Grain Overlay -->
   <div class="grain-overlay" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.035;mix-blend-mode:screen;background-image:radial-gradient(#ffffff 1px,transparent 1px);background-size:16px 16px;" aria-hidden="true"></div>
 
 <!-- ─── NAV ─────────────────────────────────────────── -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo" id="navHomeLink">
     <img src="/assets/logo.png" alt="NexAlc"
       style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
@@ -1271,5 +1272,7 @@
   })();
 </script>
 
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>

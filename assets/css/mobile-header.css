@@ -1,0 +1,211 @@
+/* Shared Mobile Header Styles (<= 768px only; desktop > 768px untouched) */
+.nexalc-mobile-dropdown-backdrop,
+.nexalc-mobile-dropdown-panel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+  }
+
+  .page-wrap,
+  .main-layout,
+  .content-section,
+  .post-calc-stack,
+  .article-layout,
+  .hero,
+  .hero-section,
+  footer {
+    max-width: 100%;
+  }
+
+  /* Two-row stacked sticky header */
+  .nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    background: rgba(14, 14, 15, 0.94) !important;
+    backdrop-filter: blur(16px) saturate(1.4) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.4) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    overflow: visible !important;
+  }
+
+  /* Row 1: Centered NexAlc logo */
+  .nav .nav-logo {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 9px 16px 6px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav .nav-logo img {
+    height: 30px !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+
+  .nav .nav-logo .nav-logo-txt {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Row 2: Single horizontally scrollable categories row */
+  .nav .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 6px 12px 8px !important;
+    margin: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .nav .nav-links::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .nav .nav-links > a,
+  .nav .nav-links > .nav-item {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    position: relative;
+  }
+
+  .nav .nav-links > a,
+  .nav .nav-item > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    padding: 7px 11px !important;
+    min-height: 36px !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    touch-action: manipulation;
+  }
+
+  /* Hide in-flow hover dropdowns on mobile (clipped by overflow-x: auto) */
+  .nav .nav-item .nav-dropdown,
+  .nav .nav-item:hover .nav-dropdown {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .nav .nav-item:hover > a::after {
+    transform: rotate(45deg) translateY(-2px) !important;
+  }
+
+  .nav .nav-item.mobile-open > a {
+    color: #FF6B2B !important;
+    background: rgba(255, 107, 43, 0.14) !important;
+  }
+
+  .nav .nav-item.mobile-open > a::after {
+    transform: rotate(-135deg) translateY(-2px) !important;
+    opacity: 1 !important;
+  }
+
+  /* Unclipped fixed mobile dropdown backdrop & panel mounted on <body> */
+  .nexalc-mobile-dropdown-backdrop.open {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    z-index: 1999;
+    background: rgba(0, 0, 0, 0.42);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nexalc-mobile-dropdown-panel.open {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    z-index: 2000;
+    background: #18181B;
+    border: 1px solid rgba(255, 107, 43, 0.35);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    max-height: calc(100vh - 132px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nexalc-mobile-dropdown-header {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9A9592;
+    padding: 4px 12px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 4px;
+  }
+
+  .nexalc-mobile-dropdown-panel a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    min-height: 44px;
+    border-radius: 8px;
+    color: #F0EDE8;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.25;
+    transition: background 0.15s ease, color 0.15s ease;
+    touch-action: manipulation;
+  }
+
+  .nexalc-mobile-dropdown-panel a:hover,
+  .nexalc-mobile-dropdown-panel a:active {
+    background: rgba(255, 255, 255, 0.07);
+    color: #FF6B2B;
+  }
+
+  .nexalc-mobile-dropdown-panel a.active {
+    color: #FF6B2B;
+    background: rgba(255, 107, 43, 0.14);
+    font-weight: 600;
+  }
+}

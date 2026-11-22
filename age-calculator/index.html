@@ -808,13 +808,14 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
 
 <canvas id="confetti-canvas"></canvas>
 
 <!-- ═══════════════════ NAV ═══════════════════ -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo">
     <img src="/assets/logo.png" alt="NexAlc"
       style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
@@ -832,7 +833,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="/bmi-calculator/">Health Tools</a>
+      <a href="/bmi-calculator/" class="active">Health Tools</a>
       <div class="nav-dropdown">
         <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
         <a href="/age-calculator/" class="active">🎂 Age Calculator</a>
@@ -846,6 +847,7 @@
       </div>
     </div>
     <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </div>
 </nav>
 
@@ -1786,5 +1788,7 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 </script>
 
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>

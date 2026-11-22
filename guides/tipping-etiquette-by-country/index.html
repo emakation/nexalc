@@ -93,10 +93,22 @@
       z-index: 100;
     }
     .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
     .nav-logo-txt { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--text-primary); }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color var(--transition); }
-    .nav-links a:hover { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 5px 10px; border-radius: var(--radius-sm); transition: color var(--transition), background var(--transition); white-space: nowrap; }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.06); }
+    .nav-links a.active { color: var(--orange); background: rgba(255,107,43,0.12); }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after { content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform var(--transition); opacity: 0.6; }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 190px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 6px 6px; opacity: 0; pointer-events: none; transform: translateY(6px); transition: opacity var(--transition), transform var(--transition); z-index: 200; }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a { display: block; padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; background: none; }
+    .nav-dropdown a:hover { color: var(--text-primary); background: rgba(255,255,255,0.06); }
+    .nav-links > a:hover { color: var(--orange); }
     .page-wrap { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; flex: 1; width: 100%; }
     .breadcrumb { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }
     .breadcrumb a { color: var(--text-muted); text-decoration: none; }
@@ -119,21 +131,45 @@
     footer a { color: var(--text-secondary); text-decoration: none; margin: 0 10px; }
     footer a:hover { color: var(--orange); }
   </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="/" class="nav-logo">
-      <span class="nav-logo-txt">Nex<span style="color:var(--orange);">Alc</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="/tip-calculator/">Tip Calculator</a>
-      <a href="/mortgage-calculator/">Mortgage</a>
-      <a href="/bmi-calculator/">BMI</a>
-      <a href="/percentage-calculator/">Percentage</a>
-      <a href="/blog/">Blog</a>
+  <nav class="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
     </div>
-  </nav>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown" style="left:auto;right:0;">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
 
   <div class="page-wrap">
     <nav class="breadcrumb">
@@ -251,5 +287,7 @@
     </div>
   </footer>
 
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
 </body>
 </html>
