@@ -489,6 +489,22 @@
       font-size: 1.4rem;
       background: var(--surface-3); border: 1px solid var(--border);
     }
+    .card-visual.card-visual--thumb {
+      padding: 0;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+    }
+    .card-visual.card-visual--thumb::before {
+      display: none;
+    }
+    .card-visual.card-visual--thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+    }
 
     .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
 
@@ -752,8 +768,8 @@
 
       <!-- Good Discount Percentage Guide -->
       <a href="/blog/what-is-a-good-discount-percentage/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">🏷️</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/good-discount-percentage.webp" alt="Matte dark price tag with a glowing orange percentage symbol illustrating good discount percentages" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Finance</span>
@@ -774,8 +790,8 @@
 
       <!-- Percentage Guide -->
       <a href="/blog/how-to-calculate-percentage-increase-and-decrease/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">%</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/percentage-increase-decrease.webp" alt="Glowing orange upward arrow and dark downward arrow over a bar chart illustrating percentage increase and decrease" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Finance</span>
@@ -796,8 +812,8 @@
 
 <!-- M8: How Much Should Your Monthly Mortgage Payment Be -->
 <a href="/blog/how-much-should-your-monthly-mortgage-payment-be/" class="post-card" data-category="finance">
-  <div class="card-visual">
-    <div class="card-visual-icon">🧮</div>
+  <div class="card-visual card-visual--thumb">
+    <img src="/assets/images/blog/monthly-mortgage-payment.webp" alt="Matte dark house model beside a glowing orange segmented donut chart representing monthly mortgage payment breakdown" loading="lazy" width="1200" height="675" />
   </div>
   <div class="card-body">
     <span class="card-cat mortgage">Mortgage</span>
@@ -818,8 +834,8 @@
 
       <!-- M1: 15 vs 30 Year Mortgage -->
       <a href="/blog/15-vs-30-year-mortgage/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">🏦</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/15-vs-30-year-mortgage.webp" alt="3D dark house behind glowing orange 15 and 30 numerals comparing 15-year and 30-year mortgage terms" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -840,8 +856,8 @@
 
       <!-- M4: Mortgage Discount Points -->
       <a href="/blog/mortgage-discount-points/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">💰</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/mortgage-discount-points.webp" alt="Glowing orange percentage sign stepping down matte dark stairs toward a house illustrating mortgage discount points" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -862,8 +878,8 @@
 
       <!-- M5: Fixed vs Adjustable Rate Mortgage -->
       <a href="/blog/fixed-vs-adjustable-rate-mortgage/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">📐</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/fixed-vs-adjustable-rate-mortgage.webp" alt="House resting on a flat glowing orange beam beside a house on a curved dark track comparing fixed and adjustable rate mortgages" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -884,8 +900,8 @@
 
       <!-- M6: Pay Off Mortgage Early -->
       <a href="/blog/pay-off-mortgage-early/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">🚀</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/pay-off-mortgage-early.webp" alt="Matte dark house encircled by a glowing orange arrow with stepping-stone coins illustrating paying off a mortgage early" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -906,8 +922,8 @@
 
       <!-- M2: How Much House Can I Afford -->
       <a href="/blog/how-much-house-can-i-afford/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">🏡</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/how-much-house-can-i-afford.webp" alt="Balance scale weighing a matte dark house against stacks of gold coins and a gauge illustrating home affordability" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -928,8 +944,8 @@
 
       <!-- M3: Amortization Schedule -->
       <a href="/blog/what-is-an-amortization-schedule/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">📊</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/what-is-an-amortization-schedule.webp" alt="Descending dark glass bar chart with a glowing orange curve leading to a house illustrating a mortgage amortization schedule" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
