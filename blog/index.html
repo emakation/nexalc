@@ -219,52 +219,52 @@
     /* ── PAGE HERO ── */
     .page-hero {
       position: relative; z-index: 1;
-      padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px) clamp(24px, 3vw, 40px);
+      padding: 16px clamp(16px, 4vw, 48px) 16px;
       max-width: 1280px; margin: 0 auto;
     }
     .page-hero-label {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--orange-glow); border: 1px solid var(--border-active);
-      border-radius: 100px; padding: 4px 12px;
-      font-size: 0.72rem; font-weight: 600; color: var(--orange);
-      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;
+      border-radius: 100px; padding: 3px 10px;
+      font-size: 0.7rem; font-weight: 600; color: var(--orange);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;
     }
     .page-hero h1 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -0.03em; color: var(--warm-white); margin-bottom: 12px;
+      font-size: clamp(1.5rem, 2.3vw, 1.95rem);
+      font-weight: 800; line-height: 1.18;
+      letter-spacing: -0.025em; color: var(--warm-white); margin-bottom: 6px;
     }
     .page-hero h1 em { font-style: normal; color: var(--orange); }
     .page-hero-sub {
-      font-size: clamp(0.92rem, 2vw, 1rem);
-      color: var(--text-secondary); max-width: 560px; line-height: 1.65;
+      font-size: 0.92rem;
+      color: var(--text-secondary); max-width: 600px; line-height: 1.55;
     }
 
     /* ── MAIN CONTENT AREA ── */
     .blog-wrap {
       position: relative; z-index: 1;
       max-width: 1280px; margin: 0 auto;
-      padding: 0 clamp(16px, 4vw, 48px) 80px;
+      padding: 0 clamp(16px, 4vw, 48px) 72px;
     }
 
     /* ── FIX B1: EDITOR'S PICKS ── */
     .editors-picks-section {
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
     .editors-picks-header {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
     .editors-picks-title {
       font-family: 'Syne', sans-serif;
-      font-size: 1.25rem; font-weight: 800; color: var(--warm-white);
+      font-size: 1.1rem; font-weight: 800; color: var(--warm-white);
       display: flex; align-items: center; gap: 8px;
     }
     .editors-picks-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
     @media (max-width: 768px) {
       .editors-picks-grid { grid-template-columns: 1fr; }
@@ -275,7 +275,7 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 24px;
+      padding: 18px 20px;
       display: flex; flex-direction: column; justify-content: space-between;
       text-decoration: none;
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
@@ -288,7 +288,7 @@
     }
     .editors-pick-top {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .editors-pick-tag {
       font-size: 0.72rem; font-weight: 700; color: var(--orange);
@@ -505,6 +505,10 @@
       display: block;
       border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
     }
+    .editors-pick-card .card-visual.card-visual--thumb {
+      margin: -18px -20px 16px;
+      width: calc(100% + 40px);
+    }
 
     .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
 
@@ -659,11 +663,6 @@
   </div>
 </nav>
 
-  <!-- AD ZONE A -->
-  <div class="ad-zone-a">
-    <div class="ad-placeholder ad-leaderboard">728 × 90 — Ad Zone A</div>
-  </div>
-
   <!-- PAGE HERO -->
   <header class="page-hero">
     <div class="page-hero-label">
@@ -683,45 +682,54 @@
         <h2 class="editors-picks-title">⭐ Editor's Picks</h2>
       </div>
       <div class="editors-picks-grid">
-        <!-- Pick 1: 15 vs 30-Year Mortgage: Which Saves More? -->
-        <a href="/blog/15-vs-30-year-mortgage/" class="editors-pick-card">
+        <!-- Pick 1: Best Holiday Budget Templates 2026 -->
+        <a href="/blog/best-holiday-budget-templates-2026/" class="editors-pick-card">
           <div>
-            <div class="editors-pick-top">
-              <span class="editors-pick-tag">MORTGAGE</span>
-              <span class="editors-pick-badge">5 min read</span>
+            <div class="card-visual card-visual--thumb">
+              <img src="/assets/images/blog/best-holiday-budget-templates-2026.webp" alt="Dark 3D tablet checklist beside a matte black gift box with an orange bow and glowing orange progress sliders illustrating 2026 holiday budget templates" loading="lazy" width="1200" height="675" />
             </div>
-            <h3 class="editors-pick-title">15 vs 30-Year Mortgage: Which Saves More?</h3>
-            <p class="editors-pick-excerpt">Compare interest savings versus monthly cash flow on a $300k loan. See the real math before choosing your loan term.</p>
-          </div>
-          <div class="editors-pick-link">
-            Read Article →
-          </div>
-        </a>
-
-        <!-- Pick 2: How Much House Can I Afford? -->
-        <a href="/blog/how-much-house-can-i-afford/" class="editors-pick-card">
-          <div>
             <div class="editors-pick-top">
-              <span class="editors-pick-tag">MORTGAGE</span>
+              <span class="editors-pick-tag">FINANCE</span>
               <span class="editors-pick-badge">6 min read</span>
             </div>
-            <h3 class="editors-pick-title">How Much House Can I Afford?</h3>
-            <p class="editors-pick-excerpt">The 28/36 debt-to-income rule, down payment formulas, and how lenders realistically size your maximum home purchase price.</p>
+            <h3 class="editors-pick-title">Best Holiday Budget Templates and Trackers for 2026</h3>
+            <p class="editors-pick-excerpt">Side-by-side comparison of YNAB, Monarch Money, DIY spreadsheets, and fillable printable planners — pricing, setup time, and which fits your family.</p>
           </div>
           <div class="editors-pick-link">
             Read Article →
           </div>
         </a>
 
-        <!-- Pick 3: What Is an Amortization Schedule? -->
-        <a href="/blog/what-is-an-amortization-schedule/" class="editors-pick-card">
+        <!-- Pick 2: Printable vs App Budget Trackers -->
+        <a href="/blog/printable-vs-app-budget-trackers/" class="editors-pick-card">
           <div>
-            <div class="editors-pick-top">
-              <span class="editors-pick-tag">MORTGAGE</span>
-              <span class="editors-pick-badge">4 min read</span>
+            <div class="card-visual card-visual--thumb">
+              <img src="/assets/images/blog/printable-vs-app-budget-trackers.webp" alt="Matte black spiral-bound notebook and pen beside a smartphone displaying a glowing orange ring chart comparing printable and app budget trackers" loading="lazy" width="1200" height="675" />
             </div>
-            <h3 class="editors-pick-title">What Is an Amortization Schedule?</h3>
-            <p class="editors-pick-excerpt">Why your first years of mortgage payments are almost entirely interest, and how to read the schedule that tracks your equity.</p>
+            <div class="editors-pick-top">
+              <span class="editors-pick-tag">FINANCE</span>
+              <span class="editors-pick-badge">5 min read</span>
+            </div>
+            <h3 class="editors-pick-title">Printable vs. App Budget Trackers: Which Actually Helps You Spend Less?</h3>
+            <p class="editors-pick-excerpt">Why passive auto-syncing apps often fail to stop overspending — and when a one-time printable or fillable planner changes real spending behavior.</p>
+          </div>
+          <div class="editors-pick-link">
+            Read Article →
+          </div>
+        </a>
+
+        <!-- Pick 3: What is a Good Discount Percentage? -->
+        <a href="/blog/what-is-a-good-discount-percentage/" class="editors-pick-card">
+          <div>
+            <div class="card-visual card-visual--thumb">
+              <img src="/assets/images/blog/good-discount-percentage.webp" alt="What is a Good Discount Percentage? A Shopping Guide" loading="lazy" width="1200" height="675" />
+            </div>
+            <div class="editors-pick-top">
+              <span class="editors-pick-tag">FINANCE</span>
+              <span class="editors-pick-badge">7 min read</span>
+            </div>
+            <h3 class="editors-pick-title">What is a Good Discount Percentage? A Shopping Guide</h3>
+            <p class="editors-pick-excerpt">Find out what counts as a good discount tier by category, how to calculate percent off in seconds, and the retail tricks behind inflated sticker prices.</p>
           </div>
           <div class="editors-pick-link">
             Read Article →
@@ -741,10 +749,10 @@
     <!-- FIX B3: Category Filter with Dynamic Counts -->
     <div class="filter-bar" id="blogFilterBar" role="tablist" aria-label="Article Categories">
       <button class="filter-btn active" data-category="all" id="filterBtnAll">
-        All <span class="filter-count" id="count-all">(24)</span>
+        All <span class="filter-count" id="count-all">(26)</span>
       </button>
       <button class="filter-btn" data-category="finance" id="filterBtnFinance">
-        Finance <span class="filter-count" id="count-finance">(12)</span>
+        Finance <span class="filter-count" id="count-finance">(14)</span>
       </button>
       <button class="filter-btn" data-category="health" id="filterBtnHealth">
         Health <span class="filter-count" id="count-health">(5)</span>
@@ -760,11 +768,55 @@
     <!-- SECTION HEADER -->
     <div class="section-header">
       <span class="section-title">All Articles</span>
-      <span class="section-count" id="visible-count">Showing 24 articles</span>
+      <span class="section-count" id="visible-count">Showing 26 articles</span>
     </div>
 
     <!-- CARD GRID -->
     <div class="card-grid" id="card-grid">
+
+      <!-- Best Holiday Budget Templates 2026 -->
+      <a href="/blog/best-holiday-budget-templates-2026/" class="post-card" data-category="finance">
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/best-holiday-budget-templates-2026.webp" alt="Dark 3D tablet checklist beside a matte black gift box with an orange bow and glowing orange progress sliders illustrating 2026 holiday budget templates" loading="lazy" width="1200" height="675" />
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Finance</span>
+          <div class="card-title">Best Holiday Budget Templates and Trackers for 2026</div>
+          <p class="card-excerpt">A practical breakdown of YNAB, Monarch Money, DIY spreadsheets, and fillable printable PDF planners — comparing price model, setup time, and offline usability.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>6 min read</span>
+              <span>Nov 22, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Printable vs App Budget Trackers -->
+      <a href="/blog/printable-vs-app-budget-trackers/" class="post-card" data-category="finance">
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/printable-vs-app-budget-trackers.webp" alt="Matte black spiral-bound notebook and pen beside a smartphone displaying a glowing orange ring chart comparing printable and app budget trackers" loading="lazy" width="1200" height="675" />
+        </div>
+        <div class="card-body">
+          <span class="card-cat mortgage">Finance</span>
+          <div class="card-title">Printable vs. App Budget Trackers: Which Actually Helps You Spend Less?</div>
+          <p class="card-excerpt">When bank-syncing apps create subscription fatigue and passive tracking, and why a fillable or printed planner drives sharper day-to-day spending awareness.</p>
+          <div class="card-meta">
+            <span class="card-meta-left">
+              <span>5 min read</span>
+              <span>Nov 22, 2026</span>
+            </span>
+            <span class="card-read-link">
+              Read
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
 
       <!-- Good Discount Percentage Guide -->
       <a href="/blog/what-is-a-good-discount-percentage/" class="post-card" data-category="finance">
@@ -966,8 +1018,8 @@
 
       <!-- M7: Good Mortgage Rate Right Now -->
       <a href="/blog/good-mortgage-rate-right-now/" class="post-card" data-category="finance">
-        <div class="card-visual">
-          <div class="card-visual-icon">📈</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/good-mortgage-rate-right-now.webp" alt="Modern dark house beside a glowing orange percentage sign with a downward arrow and rate gauge illustrating mortgage rate benchmarks" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat mortgage">Mortgage</span>
@@ -988,8 +1040,8 @@
 
       <!-- B1: Healthy BMI by Age -->
       <a href="/blog/healthy-bmi-by-age/" class="post-card" data-category="health">
-        <div class="card-visual">
-          <div class="card-visual-icon">📈</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/healthy-bmi-by-age.webp" alt="Dark gauge dial with a glowing orange needle flanked by segmented curved arc tracks representing healthy BMI ranges across ages" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat bmi">BMI</span>
@@ -1010,8 +1062,8 @@
 
       <!-- B2: BMI vs Body Fat -->
       <a href="/blog/bmi-vs-body-fat-percentage/" class="post-card" data-category="health">
-        <div class="card-visual">
-          <div class="card-visual-icon">⚖️</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/bmi-vs-body-fat-percentage.webp" alt="Split dark display comparing a linear BMI slider beside a human figure with a glowing orange percentage donut chart for body fat" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat bmi">BMI</span>
@@ -1032,8 +1084,8 @@
 
       <!-- B3: BMI Chart for Women -->
       <a href="/blog/bmi-chart-for-women/" class="post-card" data-category="health">
-        <div class="card-visual">
-          <div class="card-visual-icon">📉</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/bmi-chart-for-women.webp" alt="Stylized dark female silhouette next to a 3D isometric grid with glowing orange center cubes illustrating a BMI chart for women" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat bmi">BMI</span>
@@ -1054,8 +1106,8 @@
 
       <!-- B4: Healthy Weight for My Height -->
       <a href="/blog/healthy-weight-for-my-height/" class="post-card" data-category="health">
-        <div class="card-visual">
-          <div class="card-visual-icon">📏</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/healthy-weight-for-my-height.webp" alt="Glowing orange vertical height ruler linked by a curved line to a dark balance scale holding an orange weight" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat bmi">BMI</span>
@@ -1076,8 +1128,8 @@
 
       <!-- B5: How to Lower Your BMI -->
       <a href="/blog/how-to-lower-your-bmi-practical-steps/" class="post-card" data-category="health">
-        <div class="card-visual">
-          <div class="card-visual-icon">📉</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/how-to-lower-your-bmi-practical-steps.webp" alt="Descending dark stepped blocks with glowing orange arcs leading down to a glowing target ring illustrating steps to lower BMI" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat bmi">BMI</span>
@@ -1098,8 +1150,8 @@
 
       <!-- C1: USD to PKR Understanding the Exchange Rate -->
       <a href="/blog/usd-to-pkr-understanding-the-exchange-rate/" class="post-card" data-category="currency">
-        <div class="card-visual">
-          <div class="card-visual-icon">💱</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/usd-to-pkr-understanding-the-exchange-rate.webp" alt="Dark US dollar symbol and glowing orange rupee symbol connected by a luminous orange infinity exchange loop" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat currency">Currency</span>
@@ -1120,8 +1172,8 @@
 
       <!-- C2: How Currency Exchange Rates Work -->
       <a href="/blog/how-currency-exchange-rates-work/" class="post-card" data-category="currency">
-        <div class="card-visual">
-          <div class="card-visual-icon">💱</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/how-currency-exchange-rates-work.webp" alt="Dark dollar sign and glowing orange euro sign on interlocking gears encircled by luminous exchange arrows" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat currency">Currency</span>
@@ -1142,8 +1194,8 @@
 
       <!-- C3: Best Time to Exchange Currency When Travelling -->
       <a href="/blog/best-time-to-exchange-currency-when-travelling/" class="post-card" data-category="currency">
-        <div class="card-visual">
-          <div class="card-visual-icon">💱</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/best-time-to-exchange-currency-when-travelling.webp" alt="Dark clock dial with a glowing orange time window, airplane silhouette, and floating dollar, euro, and pound coins" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat currency">Currency</span>
@@ -1164,8 +1216,8 @@
 
       <!-- C4: USD to EURO Historical Trends Explained -->
       <a href="/blog/usd-to-eur-historical-trends-explained/" class="post-card" data-category="currency">
-        <div class="card-visual">
-          <div class="card-visual-icon">📈</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/usd-to-eur-historical-trends-explained.webp" alt="Ascending dark glass bar chart crossed by a glowing orange trend curve marked with dollar and euro symbols" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat currency">Currency</span>
@@ -1186,8 +1238,8 @@
 
       <!-- A1: how to calculate your exact age in days -->
       <a href="/blog/how-to-calculate-your-exact-age-in-days/" class="post-card" data-category="time">
-        <div class="card-visual">
-          <div class="card-visual-icon">🎂</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/how-to-calculate-your-exact-age-in-days.webp" alt="Dark 3D calendar flipping a glowing orange page beneath a segmented glowing clock ring and orbital dots" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat age">Age</span>
@@ -1208,8 +1260,8 @@
 
       <!-- A2: What generation am i age ranges explained -->
       <a href="/blog/what-generation-am-i-age-ranges-explained/" class="post-card" data-category="time">
-        <div class="card-visual">
-          <div class="card-visual-icon">🎂</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/what-generation-am-i-age-ranges-explained.webp" alt="Four stepped dark glass timeline panels progressing into brighter glowing orange bands representing generational age ranges" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat age">Age</span>
@@ -1230,8 +1282,8 @@
 
       <!-- A3: Age calculation in different cultures -->
       <a href="/blog/age-calculation-in-different-cultures/" class="post-card" data-category="time">
-        <div class="card-visual">
-          <div class="card-visual-icon">🌍</div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/age-calculation-in-different-cultures.webp" alt="Dark 3D globe encircled by intersecting glowing orange calibrated calendar rings representing age systems across cultures" loading="lazy" width="1200" height="675" />
         </div>
         <div class="card-body">
           <span class="card-cat age">Age</span>
@@ -1252,9 +1304,9 @@
 
       <!-- T2: Tip Pooling -->
       <a href="/blog/tip-pooling-how-it-works-and-how-to-calculate-it/" class="post-card" data-category="finance">
-  <div class="card-visual">
-    <div class="card-visual-icon">🤝</div>
-  </div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/tip-pooling-how-it-works-and-how-to-calculate-it.webp" alt="Glowing orange coins dropping into a central dark bowl connected by luminous channels to surrounding nodes illustrating tip pooling" loading="lazy" width="1200" height="675" />
+        </div>
   <div class="card-body">
     <span class="card-cat tip">Tip</span>
     <div class="card-title">Tip Pooling: How It Works and How to Calculate It</div>
@@ -1274,9 +1326,9 @@
 
       <!-- T1: How much should you tip a guide by service type -->
       <a href="/blog/how-much-should-you-tip-a-guide-by-service-type/" class="post-card" data-category="finance">
-  <div class="card-visual">
-    <div class="card-visual-icon">💸</div>
-  </div>
+        <div class="card-visual card-visual--thumb">
+          <img src="/assets/images/blog/how-much-should-you-tip-a-guide-by-service-type.webp" alt="Three tiered dark platforms displaying a glowing orange cloche, service bell, and luggage cart with rising tipping percentage bars" loading="lazy" width="1200" height="675" />
+        </div>
   <div class="card-body">
     <span class="card-cat tip">Tip</span>
     <div class="card-title">How Much Should You Tip? A Guide by Service Type</div>
@@ -1361,6 +1413,8 @@
     <ul class="footer-links">
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/how-it-works/">How It Works</a></li>
       <li><a href="/contact/">Contact</a></li>
       <li><a href="/privacy-policy/">Privacy Policy</a></li>
       <li><a href="/terms/">Terms of Use</a></li>

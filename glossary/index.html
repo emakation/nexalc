@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6XNRCBY3P8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6XNRCBY3P8');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial &amp; Everyday Math Glossary | NexAlc</title>
+  <meta name="description" content="Plain-English definitions for 18 core finance, health, currency, and everyday math terms used across NexAlc calculators — from amortization and APR to BMI and markup." />
+  <link rel="canonical" href="https://nexalc.com/glossary/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Financial &amp; Everyday Math Glossary | NexAlc" />
+  <meta property="og:description" content="Plain-English definitions for 18 core finance, health, currency, and everyday math terms used across NexAlc calculators." />
+  <meta property="og:url" content="https://nexalc.com/glossary/" />
+  <meta property="og:site_name" content="NexAlc" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Financial &amp; Everyday Math Glossary | NexAlc" />
+  <meta name="twitter:description" content="Plain-English definitions for 18 core finance, health, currency, and everyday math terms used across NexAlc calculators." />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "Financial & Everyday Math Glossary",
+    "description": "Plain-English definitions for core mortgage, personal finance, health, currency, and everyday math terms used across NexAlc calculators.",
+    "url": "https://nexalc.com/glossary/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NexAlc",
+      "url": "https://nexalc.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://nexalc.com/glossary/" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #FF6B2B;
+      --orange-dim: #cc5522;
+      --near-black: #0E0E0F;
+      --warm-white: #F5F0EB;
+      --surface: #161617;
+      --surface2: #1e1e1f;
+      --surface3: #252526;
+      --border: rgba(255,255,255,.07);
+      --border-active: rgba(255,107,43,.35);
+      --text-main: #F0EBE4;
+      --text-secondary: #B8B2AC;
+      --text-muted: #8a8480;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--near-black);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(14,14,15,.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; mix-blend-mode: lighten; }
+    .nav-logo-txt { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--warm-white); }
+    .nav-logo-txt span { color: var(--orange); }
+    .nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform var(--transition);
+      opacity: .6;
+    }
+    .nav-item:hover > a { color: var(--orange); }
+    .nav-item:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 190px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 6px 6px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      transition: opacity var(--transition), transform var(--transition);
+      z-index: 200;
+    }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: .82rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      background: none;
+    }
+    .nav-dropdown a:hover { color: var(--text-main); background: rgba(255,255,255,.06); }
+    .nav-links > a:hover { color: var(--orange); }
+
+    /* MAIN */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 20px 24px 72px;
+    }
+
+    .breadcrumb {
+      font-size: .75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb-sep { opacity: .45; }
+
+    .page-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      color: var(--warm-white);
+      margin-bottom: 8px;
+      text-wrap: balance;
+    }
+    .page-headline em { font-style: normal; color: var(--orange); }
+    .page-lead {
+      font-size: .95rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 660px;
+      margin-bottom: 20px;
+    }
+
+    /* CATEGORY JUMP BAR */
+    .jump-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 0 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .jump-link {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 7px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .jump-link:hover {
+      border-color: var(--border-active);
+      color: var(--warm-white);
+      background: var(--surface2);
+    }
+
+    /* GLOSSARY GROUPS */
+    .glossary-group {
+      margin-bottom: 40px;
+      scroll-margin-top: 76px;
+    }
+    .group-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      letter-spacing: -.015em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+    .term-list {
+      list-style: none;
+    }
+    .term-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .term-item:last-child {
+      border-bottom: none;
+    }
+    .term-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .term-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--warm-white);
+    }
+    .term-meta {
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+    .term-def {
+      font-size: .93rem;
+      line-height: 1.72;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .term-link {
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .term-link:hover { text-decoration: underline; }
+
+    /* NEXT STEP BAND */
+    .next-band {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .next-band h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 4px;
+    }
+    .next-band p {
+      font-size: .88rem;
+      color: var(--text-secondary);
+    }
+    .next-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: .84rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background var(--transition);
+    }
+    .next-btn:hover { background: var(--orange-dim); }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1rem, 4vw, 2rem);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--warm-white);
+      text-decoration: none;
+    }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; }
+    .footer-links a {
+      font-size: .8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--warm-white); }
+    .footer-copy { font-size: .78rem; color: var(--text-muted); width: 100%; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      main { padding: 16px 16px 56px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/mobile-header.css" />
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo.png" alt="NexAlc"
+      style="height:36px;width:auto;display:block;mix-blend-mode:lighten;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <span class="nav-logo-txt" style="display:none">Nex<span style="color:#FF6B2B">Alc</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item">
+      <a href="/mortgage-calculator/">Finance Tools</a>
+      <div class="nav-dropdown">
+        <a href="/mortgage-calculator/">🏠 Mortgage Calculator</a>
+        <a href="/currency-converter/">💱 Currency Converter</a>
+        <a href="/tip-calculator/">🧾 Tip Calculator</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/bmi-calculator/">Health Tools</a>
+      <div class="nav-dropdown">
+        <a href="/bmi-calculator/">⚖️ BMI Calculator</a>
+        <a href="/age-calculator/">🎂 Age Calculator</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/countdown-timer/">Utility Tools</a>
+      <div class="nav-dropdown" style="left:auto;right:0;">
+        <a href="/countdown-timer/">⏳ Countdown Timer</a>
+        <a href="/percentage-calculator/">% Percentage Calculator</a>
+      </div>
+    </div>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Glossary</span>
+  </nav>
+
+  <h1 class="page-headline">Financial &amp; Everyday Math <em>Glossary</em></h1>
+  <p class="page-lead">Plain-English definitions for 18 core terms used across NexAlc calculators, with direct links to run each number yourself.</p>
+
+  <nav class="jump-bar" aria-label="Glossary categories">
+    <a href="#mortgages-lending" class="jump-link">Mortgages &amp; Lending (8)</a>
+    <a href="#percentages-retail" class="jump-link">Percentages &amp; Pricing (4)</a>
+    <a href="#currency-gratuity" class="jump-link">Currency &amp; Gratuity (3)</a>
+    <a href="#health-time" class="jump-link">Health &amp; Calendar Math (3)</a>
+  </nav>
+
+  <!-- GROUP 1: MORTGAGES & LENDING -->
+  <section class="glossary-group" id="mortgages-lending">
+    <h2 class="group-heading">Mortgages &amp; Lending</h2>
+    <dl class="term-list">
+
+      <div class="term-item" id="amortization">
+        <div class="term-header">
+          <dt class="term-name">Amortization</dt>
+          <span class="term-meta">Loans · Mortgages</span>
+        </div>
+        <dd class="term-def">The scheduled process of paying off a debt over time through fixed, regular installments. In the early years of a standard amortizing mortgage, most of each payment covers interest; as the balance drops, an increasing share goes toward reducing the loan principal.</dd>
+        <a href="/mortgage-calculator/" class="term-link">Run an amortization schedule in the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="principal">
+        <div class="term-header">
+          <dt class="term-name">Principal</dt>
+          <span class="term-meta">Loans · Mortgages</span>
+        </div>
+        <dd class="term-def">The original sum of money borrowed (or the unpaid portion of that amount still remaining), excluding interest, taxes, and fees. On a $400,000 home purchased with an $80,000 down payment, your starting loan principal is $320,000.</dd>
+        <a href="/mortgage-calculator/" class="term-link">See principal vs. interest split in the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="apr">
+        <div class="term-header">
+          <dt class="term-name">APR (Annual Percentage Rate)</dt>
+          <span class="term-meta">Loans · Credit</span>
+        </div>
+        <dd class="term-def">The yearly cost of borrowing expressed as a percentage, combining the base interest rate with lender origination fees, discount points, and certain closing costs. Comparing APRs across lenders gives a more accurate picture of total borrowing cost than comparing headline interest rates alone.</dd>
+        <a href="/mortgage-calculator/" class="term-link">Compare loan rates with the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="escrow">
+        <div class="term-header">
+          <dt class="term-name">Escrow</dt>
+          <span class="term-meta">Mortgages · Housing</span>
+        </div>
+        <dd class="term-def">A dedicated holding account managed by a mortgage servicer to collect monthly portions of your annual property taxes and homeowners insurance alongside your principal and interest payment, then disburse those bills automatically when due.</dd>
+        <a href="/mortgage-calculator/" class="term-link">Estimate taxes &amp; insurance in the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="pmi">
+        <div class="term-header">
+          <dt class="term-name">PMI (Private Mortgage Insurance)</dt>
+          <span class="term-meta">Mortgages · Down Payment</span>
+        </div>
+        <dd class="term-def">Insurance required on most conventional mortgages when a buyer puts down less than 20% of the purchase price (an 80%+ loan-to-value ratio). PMI protects the lender—not the borrower—against default and typically adds 0.5% to 1.5% of the loan amount per year until equity reaches 20%.</dd>
+        <a href="/mortgage-calculator/" class="term-link">Model PMI costs in the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="down-payment">
+        <div class="term-header">
+          <dt class="term-name">Down Payment</dt>
+          <span class="term-meta">Real Estate · Financing</span>
+        </div>
+        <dd class="term-def">The upfront cash portion of a purchase paid out of pocket at closing, reducing the amount you must finance. A larger down payment lowers both your monthly payment and total interest paid over the life of the loan, and reaching 20% eliminates PMI on conventional mortgages.</dd>
+        <a href="/mortgage-calculator/" class="term-link">Test down payment scenarios in the Mortgage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="dti">
+        <div class="term-header">
+          <dt class="term-name">Debt-to-Income Ratio (DTI)</dt>
+          <span class="term-meta">Underwriting · Budgeting</span>
+        </div>
+        <dd class="term-def">Your total monthly debt obligations divided by your gross monthly income, expressed as a percentage. Under the classic 28/36 guideline, housing payments stay at or below 28% of gross income (front-end DTI) and all debts combined stay at or below 36% (back-end DTI).</dd>
+        <a href="/blog/how-much-should-your-monthly-mortgage-payment-be/" class="term-link">Read our monthly mortgage payment &amp; DTI guide →</a>
+      </div>
+
+      <div class="term-item" id="compound-interest">
+        <div class="term-header">
+          <dt class="term-name">Compound Interest</dt>
+          <span class="term-meta">Savings · Debt</span>
+        </div>
+        <dd class="term-def">Interest calculated on both the initial principal and the accumulated interest from prior periods. Compounding frequency—daily, monthly, or semi-annually (as legally mandated for fixed-rate mortgages in Canada)—directly affects the effective interest rate you earn or pay.</dd>
+        <a href="/how-it-works/" class="term-link">Inspect US vs. Canadian compounding formulas →</a>
+      </div>
+
+    </dl>
+  </section>
+
+  <!-- GROUP 2: PERCENTAGES & PRICING -->
+  <section class="glossary-group" id="percentages-retail">
+    <h2 class="group-heading">Percentages &amp; Everyday Pricing</h2>
+    <dl class="term-list">
+
+      <div class="term-item" id="percentage-change">
+        <div class="term-header">
+          <dt class="term-name">Percentage Change</dt>
+          <span class="term-meta">Math · Analytics</span>
+        </div>
+        <dd class="term-def">The relative increase or decrease between an original baseline value and a new value, calculated as ((New Value − Old Value) ÷ |Old Value|) × 100. Because it always divides by the starting value, a 25% drop followed by a 25% gain does not return you to the original number.</dd>
+        <a href="/percentage-calculator/" class="term-link">Solve increases and decreases with the Percentage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="percentage-points">
+        <div class="term-header">
+          <dt class="term-name">Percentage Points</dt>
+          <span class="term-meta">Rates · Statistics</span>
+        </div>
+        <dd class="term-def">The simple arithmetic difference between two percentages. If a mortgage rate rises from 5% to 6%, that is an increase of 1 percentage point—but a 20% relative percentage increase (1 ÷ 5 = 0.20). Distinguishing the two prevents misreading rate headlines and tax changes.</dd>
+        <a href="/percentage-calculator/" class="term-link">Compare percentages in the Percentage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="markup-vs-margin">
+        <div class="term-header">
+          <dt class="term-name">Markup vs. Margin</dt>
+          <span class="term-meta">Retail · Business Math</span>
+        </div>
+        <dd class="term-def">Markup measures profit as a percentage of cost ((Price − Cost) ÷ Cost), while gross margin measures profit as a percentage of selling price ((Price − Cost) ÷ Price). An item bought for $50 and sold for $100 carries a 100% markup but a 50% margin.</dd>
+        <a href="/percentage-calculator/" class="term-link">Check pricing ratios with the Percentage Calculator →</a>
+      </div>
+
+      <div class="term-item" id="discount-rate">
+        <div class="term-header">
+          <dt class="term-name">Discount Rate (Percent Off)</dt>
+          <span class="term-meta">Shopping · Budgeting</span>
+        </div>
+        <dd class="term-def">The percentage reduction applied to a product's original list price. To find the final checkout price quickly, multiply the original price by (1 − Discount Decimal)—for example, 30% off $80 equals $80 × 0.70 = $56, saving $24.</dd>
+        <a href="/blog/what-is-a-good-discount-percentage/" class="term-link">Read our guide on spotting genuine retail discounts →</a>
+      </div>
+
+    </dl>
+  </section>
+
+  <!-- GROUP 3: CURRENCY & GRATUITY -->
+  <section class="glossary-group" id="currency-gratuity">
+    <h2 class="group-heading">Currency &amp; Gratuity</h2>
+    <dl class="term-list">
+
+      <div class="term-item" id="mid-market-rate">
+        <div class="term-header">
+          <dt class="term-name">Mid-Market Exchange Rate</dt>
+          <span class="term-meta">Foreign Exchange · Travel</span>
+        </div>
+        <dd class="term-def">The midpoint between the wholesale buy (bid) and sell (ask) prices for two currencies traded on global interbank markets. It is the baseline reference rate without retail bank markups and is the benchmark used to judge how fair a travel exchange or wire quote really is.</dd>
+        <a href="/currency-converter/" class="term-link">Check live rates in the Currency Converter →</a>
+      </div>
+
+      <div class="term-item" id="exchange-rate-spread">
+        <div class="term-header">
+          <dt class="term-name">Exchange Rate Spread</dt>
+          <span class="term-meta">Foreign Exchange · Fees</span>
+        </div>
+        <dd class="term-def">The gap between the mid-market exchange rate and the rate a bank, card issuer, or airport kiosk actually offers you. Even services advertising "zero commission" frequently embed a 3% to 10% spread inside the conversion rate.</dd>
+        <a href="/currency-converter/" class="term-link">Compare your quote against the Currency Converter →</a>
+      </div>
+
+      <div class="term-item" id="gratuity">
+        <div class="term-header">
+          <dt class="term-name">Gratuity (Tip)</dt>
+          <span class="term-meta">Dining · Service</span>
+        </div>
+        <dd class="term-def">A voluntary percentage added to a service bill—most commonly 15% to 20% in US full-service dining—calculated on the pre-tax subtotal. Some venues add an automatic service charge for large groups, so always inspect the receipt before calculating an extra tip.</dd>
+        <a href="/tip-calculator/" class="term-link">Split a check cleanly with the Tip Calculator →</a>
+      </div>
+
+    </dl>
+  </section>
+
+  <!-- GROUP 4: HEALTH & CALENDAR MATH -->
+  <section class="glossary-group" id="health-time">
+    <h2 class="group-heading">Health &amp; Calendar Math</h2>
+    <dl class="term-list">
+
+      <div class="term-item" id="bmi">
+        <div class="term-header">
+          <dt class="term-name">BMI (Body Mass Index)</dt>
+          <span class="term-meta">Health · Screening</span>
+        </div>
+        <dd class="term-def">A standardized screening index defined by the World Health Organization as weight in kilograms divided by height in meters squared (kg/m²). While useful for population-level risk bands (underweight, healthy, overweight, obese), BMI does not directly distinguish between lean muscle mass and body fat.</dd>
+        <a href="/bmi-calculator/" class="term-link">Calculate your score in the BMI Calculator →</a>
+      </div>
+
+      <div class="term-item" id="body-fat-percentage">
+        <div class="term-header">
+          <dt class="term-name">Body Fat Percentage</dt>
+          <span class="term-meta">Health · Body Composition</span>
+        </div>
+        <dd class="term-def">The proportion of total body weight made up of adipose (fat) tissue rather than bone, muscle, organs, and water. Because muscle is denser than fat, two adults with identical BMI scores can have substantially different body fat percentages and metabolic risk profiles.</dd>
+        <a href="/bmi-calculator/" class="term-link">Estimate BMI and body composition in the BMI Calculator →</a>
+      </div>
+
+      <div class="term-item" id="chronological-age-leap-year">
+        <div class="term-header">
+          <dt class="term-name">Chronological Age &amp; Leap Year</dt>
+          <span class="term-meta">Calendar · Time</span>
+        </div>
+        <dd class="term-def">Chronological age measures the exact elapsed calendar time from your birth date to today in years, months, and days. Under the Gregorian calendar, a leap day (February 29) is added every year divisible by 4—except century years unless also divisible by 400—keeping calendar years aligned with Earth's 365.2425-day solar orbit.</dd>
+        <a href="/age-calculator/" class="term-link">Find your exact age in days with the Age Calculator →</a>
+        &nbsp;·&nbsp;
+        <a href="/countdown-timer/" class="term-link">Track upcoming dates in the Countdown Timer →</a>
+      </div>
+
+    </dl>
+  </section>
+
+  <section class="next-band">
+    <div>
+      <h2>Want the exact equations behind these terms?</h2>
+      <p>Read the mathematical formulas, clinical references, and rate sources powering every NexAlc tool.</p>
+    </div>
+    <a href="/how-it-works/" class="next-btn">See How It Works →</a>
+  </section>
+</main>
+
+<footer>
+  <a href="/" class="footer-brand">Nex<span>Alc</span></a>
+  <ul class="footer-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/glossary/">Glossary</a></li>
+    <li><a href="/how-it-works/">How It Works</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 NexAlc. All rights reserved.</p>
+</footer>
+
+  <script src="/assets/js/mobile-header.js" defer></script>
+  <script src="/assets/js/analytics-events.js" defer></script>
+</body>
+</html>
