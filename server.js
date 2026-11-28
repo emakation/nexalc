@@ -126,7 +126,7 @@ app.get(['/finance/compound-interest', '/finance/compound-interest/'], (req, res
 app.get(['/calc/percentage', '/calc/percentage/'], (req, res) => {
   res.redirect(301, '/');
 });
-app.get(['/countdown-timer/new-year-eve', '/countdown-timer/new-year-eve/'], (req, res) => {
+app.get(['/countdown-timer/new-year-eve', '/countdown-timer/new-year-eve/', '/countdown-timer/new-year-eve/index.html'], (req, res) => {
   res.redirect(301, '/countdown-timer/new-year/');
 });
 

@@ -7,10 +7,90 @@
 [build.processing.html]
   pretty_urls = true
 
-# Enforce canonical trailing-slash URLs for direct index.html requests
-# Note: Non-trailing-slash paths (e.g. /percentage-calculator -> /percentage-calculator/)
-# are 301-redirected automatically by Netlify Pretty URLs above without touching
-# static assets (.js, .css, .png, .svg, .xml, .txt, .json) or causing redirect loops.
+# 1. Consolidated New Year redirect rules (placed first with force = true)
+[[redirects]]
+  from = "/countdown-timer/new-year-eve"
+  to = "/countdown-timer/new-year/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/countdown-timer/new-year-eve/"
+  to = "/countdown-timer/new-year/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/countdown-timer/new-year-eve/index.html"
+  to = "/countdown-timer/new-year/"
+  status = 301
+  force = true
+
+# 2. Legacy tool redirects (consolidated from _redirects)
+[[redirects]]
+  from = "/loan-calculator"
+  to = "/mortgage-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/loan-calculator/"
+  to = "/mortgage-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/split-bill"
+  to = "/tip-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/split-bill/"
+  to = "/tip-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/currency"
+  to = "/currency-converter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/currency/"
+  to = "/currency-converter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance/compound-interest"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance/compound-interest/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calc/percentage"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calc/percentage/"
+  to = "/"
+  status = 301
+  force = true
+
+# 3. Canonical trailing-slash 301 redirects for direct index.html requests
+# (Non-trailing-slash directory routes like /percentage-calculator -> /percentage-calculator/
+# are 301-redirected automatically by Netlify Pretty URLs above without breaking static assets
+# or triggering Netlify URL-normalization redirect loops.)
 [[redirects]]
   from = "/index.html"
   to = "/"
