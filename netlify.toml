@@ -1,0 +1,90 @@
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
+# Enforce canonical trailing-slash URLs for direct index.html requests
+# Note: Non-trailing-slash paths (e.g. /percentage-calculator -> /percentage-calculator/)
+# are 301-redirected automatically by Netlify Pretty URLs above without touching
+# static assets (.js, .css, .png, .svg, .xml, .txt, .json) or causing redirect loops.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/percentage-calculator/index.html"
+  to = "/percentage-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tip-calculator/index.html"
+  to = "/tip-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/currency-converter/index.html"
+  to = "/currency-converter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/countdown-timer/index.html"
+  to = "/countdown-timer/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mortgage-calculator/index.html"
+  to = "/mortgage-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/age-calculator/index.html"
+  to = "/age-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bmi-calculator/index.html"
+  to = "/bmi-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/auto-loan-calculator/index.html"
+  to = "/auto-loan-calculator/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/index.html"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/*/index.html"
+  to = "/blog/:splat/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/countdown-timer/*/index.html"
+  to = "/countdown-timer/:splat/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/*/index.html"
+  to = "/guides/:splat/"
+  status = 301
+  force = true

@@ -126,13 +126,11 @@ app.get(['/finance/compound-interest', '/finance/compound-interest/'], (req, res
 app.get(['/calc/percentage', '/calc/percentage/'], (req, res) => {
   res.redirect(301, '/');
 });
-
-// Serve /0 directly to align HTTP 200 response with canonical https://nexalc.com/0
-app.get('/0', (req, res) => {
-  res.sendFile(path.join(__dirname, '0', 'index.html'));
+app.get(['/countdown-timer/new-year-eve', '/countdown-timer/new-year-eve/'], (req, res) => {
+  res.redirect(301, '/countdown-timer/new-year/');
 });
 
-// Serve static assets and HTML pages
+// Serve static assets and HTML pages (automatically 301-redirects directory routes without trailing slash)
 app.use(express.static(__dirname, {
   extensions: ['html'],
   index: 'index.html',

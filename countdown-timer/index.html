@@ -11,20 +11,20 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Countdown Timer — Free Online Date Counter | NexAlc</title>
-  <meta name="description" content="Count down to any future date or event with live days, hours, minutes, and seconds. Share custom timer links with zero clutter. Try it free." />
+  <title>Live Online Countdown Timer (Days, Hours, Minutes &amp; Seconds)</title>
+  <meta name="description" content="Free live countdown timer to any date or holiday. Set a custom milestone or track Christmas 2026 and New Year 2027 down to the exact second." />
 
   <!-- ─── SEO ─────────────────────────────────────────────── -->
-  <link rel="canonical" href="https://nexalc.com/countdown-timer" />
+  <link rel="canonical" href="https://nexalc.com/countdown-timer/" />
   <meta name="robots" content="index, follow" />
-  <link rel="alternate" hreflang="en" href="https://nexalc.com/countdown-timer" />
-  <link rel="alternate" hreflang="x-default" href="https://nexalc.com/countdown-timer" />
+  <link rel="alternate" hreflang="en" href="https://nexalc.com/countdown-timer/" />
+  <link rel="alternate" hreflang="x-default" href="https://nexalc.com/countdown-timer/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nexalc.com/countdown-timer/" />
-  <meta property="og:title" content="Countdown Timer with Seconds — Count Down to Any Date | NexAlc" />
-  <meta property="og:description" content="Set a countdown to any future date and time. See live days, hours, minutes, and seconds tick down." />
+  <meta property="og:title" content="Live Online Countdown Timer (Days, Hours, Minutes &amp; Seconds)" />
+  <meta property="og:description" content="Free live countdown timer to any date or holiday. Set a custom milestone or track Christmas 2026 and New Year 2027 down to the exact second." />
   <meta property="og:image" content="https://nexalc.com/assets/og-countdown-timer.png" />
 
   <!-- Twitter Card -->
@@ -294,6 +294,28 @@
     }
     .hero h1 span { color: var(--orange); }
     .hero-sub { font-size: 0.94rem; color: var(--text-muted); line-height: 1.65; margin: 0 0 14px; }
+    .seasonal-quick-links {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      margin-top: 12px;
+    }
+    .seasonal-quick-label {
+      font-size: .72rem; font-weight: 600; color: var(--text-muted);
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .seasonal-quick-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid rgba(255,107,43,.32);
+      border-radius: var(--radius-sm); padding: 7px 14px;
+      font-size: .82rem; font-weight: 600; color: var(--warm-white);
+      text-decoration: none; white-space: nowrap;
+      transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+    }
+    .seasonal-quick-link span { color: var(--orange); transition: transform var(--transition); }
+    .seasonal-quick-link:hover {
+      background: rgba(255,107,43,.12); border-color: var(--orange); color: #fff;
+      transform: translateY(-1px);
+    }
+    .seasonal-quick-link:hover span { transform: translateX(2px); }
 
     /* ═══════════════════════════════════════════
        MAIN COLUMN
@@ -1015,6 +1037,11 @@
       <a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Countdown Timer</span>
     </nav>
     <h1>Countdown <span>Timer</span> with Seconds</h1>
+    <div class="seasonal-quick-links" aria-label="Featured holiday countdowns">
+      <span class="seasonal-quick-label">Featured:</span>
+      <a href="/countdown-timer/christmas/" class="seasonal-quick-link">🎄 Christmas 2026 Countdown <span aria-hidden="true">→</span></a>
+      <a href="/countdown-timer/new-year/" class="seasonal-quick-link">🎆 New Year 2027 Countdown <span aria-hidden="true">→</span></a>
+    </div>
   </header>
 
   <!-- ═════ MAIN COLUMN ═════ -->
@@ -1290,10 +1317,6 @@
         <span class="related-tool-name">New Year's Day</span>
         <span class="related-tool-tag">Holiday</span>
       </a>
-      <a class="related-tool-item" href="/countdown-timer/new-year-eve/">
-        <span class="related-tool-name">New Year's Eve</span>
-        <span class="related-tool-tag">Holiday</span>
-      </a>
       <a class="related-tool-item" href="/countdown-timer/christmas/">
         <span class="related-tool-name">Christmas Day</span>
         <span class="related-tool-tag">Holiday</span>
@@ -1511,7 +1534,7 @@
       "Halloween":       "halloween",
       "Thanksgiving":    "thanksgiving",
       "Christmas Day":   "christmas",
-      "New Year's Eve":  "new-year-eve",
+      "New Year's Eve":  "new-year",
       "New Year's Day":  "new-year",
       "Black Friday":    "black-friday"
     };

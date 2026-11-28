@@ -544,6 +544,20 @@
       background: var(--surface3); border: 1px solid var(--border);
       color: #BDB8B3; letter-spacing: .04em;
     }
+    .tool-card-primary {
+      color: inherit; text-decoration: none;
+    }
+    .tool-card-primary::after {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+    }
+    .tag-link {
+      position: relative; z-index: 2; text-decoration: none;
+      border-color: rgba(255,107,43,.32); color: var(--warm-white);
+      transition: border-color var(--transition), background var(--transition), color var(--transition);
+    }
+    .tag-link:hover {
+      border-color: var(--orange); background: rgba(255,107,43,.14); color: var(--orange);
+    }
 
     .tool-cta {
       display: flex; align-items: center; justify-content: space-between;
@@ -988,22 +1002,22 @@
     </a>
 
     <!-- Countdown -->
-    <a href="/countdown-timer/" class="tool-card" data-category="tools,time" id="cardCountdown">
+    <div class="tool-card" data-category="tools,time" id="cardCountdown">
       <div class="tool-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
-      <div class="tool-name">Countdown Timer</div>
+      <div class="tool-name"><a href="/countdown-timer/" class="tool-card-primary">Countdown Timer</a></div>
       <div class="tool-desc">Live countdown to any date — birthdays, launches, holidays, or personal goals. Days, hours, minutes, seconds, with a shareable link.</div>
       <div class="tool-tags">
+        <a href="/countdown-timer/christmas/" class="tag tag-link">Christmas 2026</a>
+        <a href="/countdown-timer/new-year/" class="tag tag-link">New Year 2027</a>
         <span class="tag">Live Timer</span>
-        <span class="tag">Shareable</span>
-        <span class="tag">Any Date</span>
       </div>
       <div class="tool-cta">
         Start Counting
         <div class="tool-cta-arrow">→</div>
       </div>
-    </a>
+    </div>
 
     <!-- Blog: 15 vs 30-Year Mortgage -->
     <a href="/blog/15-vs-30-year-mortgage/" class="tool-card" data-category="finance" id="cardBlog15vs30">
